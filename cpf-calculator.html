@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Singapore CPF Calculator 2026 | Employee & Employer CPF Contributions</title>
+
+  <meta name="description" content="Free Singapore CPF calculator 2026. Calculate employee CPF, employer CPF, total CPF contribution and estimated take-home pay based on monthly salary and age group.">
+
+  <meta name="keywords" content="CPF calculator Singapore, Singapore CPF contribution calculator, employee CPF Singapore, employer CPF Singapore, CPF rates 2026">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://malaysiasalarytools.github.io/singapore-salary-tools/cpf-calculator.html">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f766e;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 12px auto 0;
+      font-size: 17px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #0f766e;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #0f766e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #115e59;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .result-box {
+      background: #f0fdfa;
+      border-left: 5px solid #0f766e;
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .result-box h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .amount {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #f0fdfa;
+    }
+
+    .note {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Singapore CPF Calculator 2026</h1>
+  <p>Calculate employee CPF, employer CPF, total CPF contribution and estimated take-home pay in Singapore.</p>
+</header>
+
+<nav>
+  <a href="index.html">Salary Calculator</a>
+  <a href="cpf-calculator.html">CPF Calculator</a>
+  <a href="income-tax-calculator.html">Income Tax Calculator</a>
+  <a href="cpf-guide.html">CPF Guide</a>
+</nav>
+
+<div class="container">
+
+  <section class="card">
+    <h2>Calculate CPF Contributions</h2>
+
+    <label for="salary">Monthly Ordinary Wage / Salary (SGD)</label>
+    <input type="number" id="salary" placeholder="Example: 5000">
+
+    <label for="age">Age Group</label>
+    <select id="age">
+      <option value="17,20">55 and below</option>
+      <option value="16,18">Above 55 to 60</option>
+      <option value="12.5,12.5">Above 60 to 65</option>
+      <option value="9,7.5">Above 65 to 70</option>
+      <option value="7.5,5">Above 70</option>
+    </select>
+
+    <button onclick="calculateCPF()">Calculate CPF</button>
+
+    <div class="results">
+      <div class="result-box">
+        <h3>Employee CPF</h3>
+        <div class="amount" id="employeeCpf">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Employer CPF</h3>
+        <div class="amount" id="employerCpf">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Total CPF</h3>
+        <div class="amount" id="totalCpf">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Take-Home Pay</h3>
+        <div class="amount" id="takeHome">S$0.00</div>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>Breakdown</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Monthly Gross Salary</td>
+        <td id="grossSalary">S$0.00</td>
+      </tr>
+      <tr>
+        <td>CPF Wage Used for Calculation</td>
+        <td id="cpfWage">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Employee CPF Rate</td>
+        <td id="employeeRate">0%</td>
+      </tr>
+      <tr>
+        <td>Employer CPF Rate</td>
+        <td id="employerRate">0%</td>
+      </tr>
+      <tr>
+        <td>Total CPF Rate</td>
+        <td id="totalRate">0%</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      This calculator is for estimation only. Actual CPF may differ due to rounding, additional wages, PR year, wage ceiling and other CPF rules.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Singapore CPF Contribution Rates 2026</h2>
+
+    <p>
+      CPF contributions are paid by both employee and employer. For Singapore Citizens and Singapore Permanent Residents from the third year onwards, CPF contribution rates depend on the employee’s age group.
+    </p>
+
+    <table>
+      <tr>
+        <th>Age Group</th>
+        <th>Employer CPF</th>
+        <th>Employee CPF</th>
+        <th>Total CPF</th>
+      </tr>
+      <tr>
+        <td>55 and below</td>
+        <td>17%</td>
+        <td>20%</td>
+        <td>37%</td>
+      </tr>
+      <tr>
+        <td>Above 55 to 60</td>
+        <td>16%</td>
+        <td>18%</td>
+        <td>34%</td>
+      </tr>
+      <tr>
+        <td>Above 60 to 65</td>
+        <td>12.5%</td>
+        <td>12.5%</td>
+        <td>25%</td>
+      </tr>
+      <tr>
+        <td>Above 65 to 70</td>
+        <td>9%</td>
+        <td>7.5%</td>
+        <td>16.5%</td>
+      </tr>
+      <tr>
+        <td>Above 70</td>
+        <td>7.5%</td>
+        <td>5%</td>
+        <td>12.5%</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>How to Calculate CPF in Singapore</h2>
+
+    <p>
+      CPF is calculated based on CPF contribution rates and the applicable wage ceiling. In 2026, the CPF Ordinary Wage ceiling is S$8,000 per month.
+    </p>
+
+    <p>
+      Example: if your monthly salary is S$5,000 and you are aged 55 and below, your employee CPF is 20% of S$5,000, which is S$1,000. Your employer CPF is 17% of S$5,000, which is S$850.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is CPF?</h3>
+    <p>
+      CPF stands for Central Provident Fund. It is a compulsory savings scheme for Singapore Citizens and Permanent Residents.
+    </p>
+
+    <h3>Is CPF deducted from salary?</h3>
+    <p>
+      Yes. Employee CPF is deducted from your gross salary. Employer CPF is paid by your employer on top of your salary.
+    </p>
+
+    <h3>Do foreigners need to contribute CPF?</h3>
+    <p>
+      Foreign employees on work passes generally do not contribute CPF. CPF mainly applies to Singapore Citizens and Singapore Permanent Residents.
+    </p>
+
+    <h3>What is the CPF Ordinary Wage ceiling in 2026?</h3>
+    <p>
+      The CPF Ordinary Wage ceiling is S$8,000 per month in 2026.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 Singapore Salary Calculator. All rights reserved.</p>
+</footer>
+
+<script>
+  function formatMoney(amount) {
+    return "S$" + amount.toLocaleString("en-SG", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function calculateCPF() {
+    const salary = parseFloat(document.getElementById("salary").value) || 0;
+    const selectedRates = document.getElementById("age").value.split(",");
+
+    const employerRate = parseFloat(selectedRates[0]);
+    const employeeRate = parseFloat(selectedRates[1]);
+
+    const cpfWageCeiling = 8000;
+    const cpfWage = Math.min(salary, cpfWageCeiling);
+
+    const employeeCpf = cpfWage * (employeeRate / 100);
+    const employerCpf = cpfWage * (employerRate / 100);
+    const totalCpf = employeeCpf + employerCpf;
+    const takeHome = salary - employeeCpf;
+
+    document.getElementById("employeeCpf").innerText = formatMoney(employeeCpf);
+    document.getElementById("employerCpf").innerText = formatMoney(employerCpf);
+    document.getElementById("totalCpf").innerText = formatMoney(totalCpf);
+    document.getElementById("takeHome").innerText = formatMoney(takeHome);
+
+    document.getElementById("grossSalary").innerText = formatMoney(salary);
+    document.getElementById("cpfWage").innerText = formatMoney(cpfWage);
+    document.getElementById("employeeRate").innerText = employeeRate + "%";
+    document.getElementById("employerRate").innerText = employerRate + "%";
+    document.getElementById("totalRate").innerText = (employeeRate + employerRate) + "%";
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Singapore CPF Calculator 2026",
+  "url": "https://malaysiasalarytools.github.io/singapore-salary-tools/cpf-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Free Singapore CPF calculator to estimate employee CPF, employer CPF and take-home pay."
+}
+</script>
+
+</body>
+</html>
