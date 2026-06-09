@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Singapore Income Tax Calculator 2026 | Personal Income Tax Estimate</title>
+
+  <meta name="description" content="Free Singapore income tax calculator 2026. Estimate your annual personal income tax, chargeable income and monthly tax amount based on Singapore resident tax rates.">
+
+  <meta name="keywords" content="Singapore income tax calculator, personal income tax calculator Singapore, IRAS tax calculator, Singapore tax rates 2026, resident tax calculator Singapore">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://malaysiasalarytools.github.io/singapore-salary-tools/income-tax-calculator.html">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f766e;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 12px auto 0;
+      font-size: 17px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #0f766e;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #0f766e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #115e59;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .result-box {
+      background: #f0fdfa;
+      border-left: 5px solid #0f766e;
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .result-box h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .amount {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #f0fdfa;
+    }
+
+    .note {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Singapore Income Tax Calculator 2026</h1>
+  <p>Estimate your Singapore personal income tax based on annual income, CPF contribution and tax reliefs.</p>
+</header>
+
+<nav>
+  <a href="index.html">Salary Calculator</a>
+  <a href="cpf-calculator.html">CPF Calculator</a>
+  <a href="income-tax-calculator.html">Income Tax Calculator</a>
+  <a href="cpf-guide.html">CPF Guide</a>
+</nav>
+
+<div class="container">
+
+  <section class="card">
+    <h2>Calculate Singapore Income Tax</h2>
+
+    <label for="annualIncome">Annual Employment Income (SGD)</label>
+    <input type="number" id="annualIncome" placeholder="Example: 60000">
+
+    <label for="cpfRelief">Employee CPF Contribution / CPF Relief (SGD)</label>
+    <input type="number" id="cpfRelief" placeholder="Example: 12000">
+
+    <label for="personalReliefs">Other Personal Reliefs (SGD)</label>
+    <input type="number" id="personalReliefs" placeholder="Example: 1000">
+
+    <button onclick="calculateTax()">Calculate Income Tax</button>
+
+    <div class="results">
+      <div class="result-box">
+        <h3>Annual Income</h3>
+        <div class="amount" id="incomeResult">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Chargeable Income</h3>
+        <div class="amount" id="chargeableResult">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Estimated Annual Tax</h3>
+        <div class="amount" id="taxResult">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Estimated Monthly Tax</h3>
+        <div class="amount" id="monthlyTaxResult">S$0.00</div>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>Breakdown</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Annual Employment Income</td>
+        <td id="annualIncomeBreakdown">S$0.00</td>
+      </tr>
+      <tr>
+        <td>CPF Relief</td>
+        <td id="cpfReliefBreakdown">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Other Personal Reliefs</td>
+        <td id="otherReliefsBreakdown">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Estimated Chargeable Income</td>
+        <td id="chargeableIncomeBreakdown">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Estimated Annual Income Tax</td>
+        <td id="annualTaxBreakdown">S$0.00</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      This calculator estimates Singapore resident individual income tax only. Actual tax payable may differ depending on IRAS assessment, tax residency, reliefs, rebates and personal circumstances.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Singapore Resident Income Tax Rates 2026</h2>
+
+    <p>
+      Singapore uses progressive tax rates for tax residents. This means higher income is taxed at higher marginal rates, while the first S$20,000 of chargeable income is taxed at 0%.
+    </p>
+
+    <table>
+      <tr>
+        <th>Chargeable Income</th>
+        <th>Tax Rate</th>
+      </tr>
+      <tr>
+        <td>First S$20,000</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>Next S$10,000</td>
+        <td>2%</td>
+      </tr>
+      <tr>
+        <td>Next S$10,000</td>
+        <td>3.5%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>7%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>11.5%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>15%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>18%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>19%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>19.5%</td>
+      </tr>
+      <tr>
+        <td>Next S$40,000</td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td>Next S$180,000</td>
+        <td>22%</td>
+      </tr>
+      <tr>
+        <td>Next S$500,000</td>
+        <td>23%</td>
+      </tr>
+      <tr>
+        <td>Above S$1,000,000</td>
+        <td>24%</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>How Singapore Income Tax Is Calculated</h2>
+
+    <p>
+      Singapore personal income tax is calculated based on your chargeable income. Chargeable income is usually your assessable income after deducting allowable expenses, donations and personal reliefs.
+    </p>
+
+    <p>
+      For employees, common items that reduce taxable income may include employee CPF contributions and personal reliefs. This calculator lets you enter CPF relief and other personal reliefs manually.
+    </p>
+
+    <p>
+      Example: if your annual employment income is S$60,000 and your CPF relief is S$12,000, your estimated chargeable income before other reliefs is S$48,000. The calculator then applies Singapore resident tax rates to estimate your annual tax.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is Singapore income tax deducted monthly?</h3>
+    <p>
+      For most employees, Singapore income tax is assessed annually by IRAS. It is not usually deducted monthly like payroll tax in some countries.
+    </p>
+
+    <h3>Who is considered a Singapore tax resident?</h3>
+    <p>
+      Generally, you may be treated as a Singapore tax resident if you stay or work in Singapore for at least 183 days in a year, subject to IRAS rules.
+    </p>
+
+    <h3>Does this calculator include tax rebates?</h3>
+    <p>
+      No. This calculator gives a simple estimate based on chargeable income and resident tax rates. Rebates and special reliefs are not automatically included.
+    </p>
+
+    <h3>Can foreigners use this calculator?</h3>
+    <p>
+      This page is designed mainly for Singapore tax residents. Non-residents may be taxed differently.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 Singapore Salary Calculator. All rights reserved.</p>
+</footer>
+
+<script>
+  function formatMoney(amount) {
+    return "S$" + amount.toLocaleString("en-SG", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function calculateIncomeTax(chargeableIncome) {
+    let tax = 0;
+
+    if (chargeableIncome <= 20000) {
+      tax = 0;
+    } else if (chargeableIncome <= 30000) {
+      tax = (chargeableIncome - 20000) * 0.02;
+    } else if (chargeableIncome <= 40000) {
+      tax = 200 + (chargeableIncome - 30000) * 0.035;
+    } else if (chargeableIncome <= 80000) {
+      tax = 550 + (chargeableIncome - 40000) * 0.07;
+    } else if (chargeableIncome <= 120000) {
+      tax = 3350 + (chargeableIncome - 80000) * 0.115;
+    } else if (chargeableIncome <= 160000) {
+      tax = 7950 + (chargeableIncome - 120000) * 0.15;
+    } else if (chargeableIncome <= 200000) {
+      tax = 13950 + (chargeableIncome - 160000) * 0.18;
+    } else if (chargeableIncome <= 240000) {
+      tax = 21150 + (chargeableIncome - 200000) * 0.19;
+    } else if (chargeableIncome <= 280000) {
+      tax = 28750 + (chargeableIncome - 240000) * 0.195;
+    } else if (chargeableIncome <= 320000) {
+      tax = 36550 + (chargeableIncome - 280000) * 0.20;
+    } else if (chargeableIncome <= 500000) {
+      tax = 44550 + (chargeableIncome - 320000) * 0.22;
+    } else if (chargeableIncome <= 1000000) {
+      tax = 84150 + (chargeableIncome - 500000) * 0.23;
+    } else {
+      tax = 199150 + (chargeableIncome - 1000000) * 0.24;
+    }
+
+    return tax;
+  }
+
+  function calculateTax() {
+    const annualIncome = parseFloat(document.getElementById("annualIncome").value) || 0;
+    const cpfRelief = parseFloat(document.getElementById("cpfRelief").value) || 0;
+    const personalReliefs = parseFloat(document.getElementById("personalReliefs").value) || 0;
+
+    const totalReliefs = cpfRelief + personalReliefs;
+    const chargeableIncome = Math.max(annualIncome - totalReliefs, 0);
+
+    const annualTax = calculateIncomeTax(chargeableIncome);
+    const monthlyTax = annualTax / 12;
+
+    document.getElementById("incomeResult").innerText = formatMoney(annualIncome);
+    document.getElementById("chargeableResult").innerText = formatMoney(chargeableIncome);
+    document.getElementById("taxResult").innerText = formatMoney(annualTax);
+    document.getElementById("monthlyTaxResult").innerText = formatMoney(monthlyTax);
+
+    document.getElementById("annualIncomeBreakdown").innerText = formatMoney(annualIncome);
+    document.getElementById("cpfReliefBreakdown").innerText = formatMoney(cpfRelief);
+    document.getElementById("otherReliefsBreakdown").innerText = formatMoney(personalReliefs);
+    document.getElementById("chargeableIncomeBreakdown").innerText = formatMoney(chargeableIncome);
+    document.getElementById("annualTaxBreakdown").innerText = formatMoney(annualTax);
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Singapore Income Tax Calculator 2026",
+  "url": "https://malaysiasalarytools.github.io/singapore-salary-tools/income-tax-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Free Singapore income tax calculator to estimate personal income tax and chargeable income."
+}
+</script>
+
+</body>
+</html>
