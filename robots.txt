@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://malaysiasalarytools.github.io/singapore-salary-tools/sitemap.xml
+Sitemap: https://sgsalarytools.com/sitemap.xml
