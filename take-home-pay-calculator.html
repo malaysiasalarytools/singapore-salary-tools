@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Singapore Take Home Pay Calculator 2026 | Net Salary After CPF & Tax</title>
+
+  <meta name="description" content="Free Singapore take home pay calculator 2026. Estimate your monthly net salary after CPF contribution and annual income tax.">
+
+  <meta name="keywords" content="Singapore take home pay calculator, net salary calculator Singapore, salary after CPF Singapore, salary after tax Singapore">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://malaysiasalarytools.github.io/singapore-salary-tools/take-home-pay-calculator.html">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f766e;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 12px auto 0;
+      font-size: 17px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #0f766e;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #0f766e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #115e59;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .result-box {
+      background: #f0fdfa;
+      border-left: 5px solid #0f766e;
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .result-box h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .amount {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #f0fdfa;
+    }
+
+    .note {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Singapore Take Home Pay Calculator 2026</h1>
+  <p>Estimate your monthly take-home salary after CPF contribution and annual income tax in Singapore.</p>
+</header>
+
+<nav>
+  <a href="index.html">Salary Calculator</a>
+  <a href="cpf-calculator.html">CPF Calculator</a>
+  <a href="income-tax-calculator.html">Income Tax Calculator</a>
+  <a href="take-home-pay-calculator.html">Take Home Pay</a>
+  <a href="cpf-guide.html">CPF Guide</a>
+</nav>
+
+<div class="container">
+
+  <section class="card">
+    <h2>Calculate Your Net Take-Home Pay</h2>
+
+    <label for="monthlySalary">Monthly Gross Salary (SGD)</label>
+    <input type="number" id="monthlySalary" placeholder="Example: 5000">
+
+    <label for="months">Months Paid Per Year</label>
+    <input type="number" id="months" value="12">
+
+    <label for="age">Age Group</label>
+    <select id="age">
+      <option value="20">55 and below</option>
+      <option value="18">Above 55 to 60</option>
+      <option value="12.5">Above 60 to 65</option>
+      <option value="7.5">Above 65 to 70</option>
+      <option value="5">Above 70</option>
+    </select>
+
+    <label for="otherReliefs">Other Personal Reliefs (SGD per year)</label>
+    <input type="number" id="otherReliefs" placeholder="Example: 1000">
+
+    <button onclick="calculateTakeHome()">Calculate Take-Home Pay</button>
+
+    <div class="results">
+      <div class="result-box">
+        <h3>Monthly Gross Salary</h3>
+        <div class="amount" id="grossMonthly">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Employee CPF</h3>
+        <div class="amount" id="monthlyCpf">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Monthly Tax Estimate</h3>
+        <div class="amount" id="monthlyTax">S$0.00</div>
+      </div>
+
+      <div class="result-box">
+        <h3>Final Take-Home Pay</h3>
+        <div class="amount" id="finalTakeHome">S$0.00</div>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>Breakdown</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Annual Gross Income</td>
+        <td id="annualGross">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Annual Employee CPF</td>
+        <td id="annualCpf">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Other Personal Reliefs</td>
+        <td id="reliefsResult">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Estimated Chargeable Income</td>
+        <td id="chargeableIncome">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Estimated Annual Income Tax</td>
+        <td id="annualTax">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Monthly Take-Home Before Tax</td>
+        <td id="takeHomeBeforeTax">S$0.00</td>
+      </tr>
+      <tr>
+        <td>Monthly Take-Home After CPF & Tax</td>
+        <td id="takeHomeAfterTax">S$0.00</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      This calculator gives an estimate only. Actual CPF and tax may differ depending on your CPF wage ceiling, PR status, bonuses, tax reliefs, rebates and IRAS assessment.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>What Is Take-Home Pay in Singapore?</h2>
+    <p>
+      Take-home pay is the amount of salary you receive after employee CPF contribution and estimated income tax. For Singapore Citizens and Permanent Residents, CPF usually reduces your monthly cash salary, while income tax is assessed annually.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Singapore Take-Home Pay Example</h2>
+    <p>
+      If your monthly gross salary is S$5,000 and your employee CPF rate is 20%, your monthly CPF deduction is S$1,000. Your take-home pay before income tax is S$4,000. This calculator also estimates your monthly tax cost based on your annual chargeable income.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is CPF included in take-home pay?</h3>
+    <p>
+      No. Employee CPF is deducted from your gross salary, so it reduces your monthly cash take-home pay.
+    </p>
+
+    <h3>Is Singapore income tax deducted monthly?</h3>
+    <p>
+      Usually no. Singapore income tax is generally assessed annually by IRAS. This calculator spreads estimated annual tax over 12 months to show the monthly impact.
+    </p>
+
+    <h3>Does this calculator include employer CPF?</h3>
+    <p>
+      No. This calculator focuses on employee take-home pay. Employer CPF is paid by the employer on top of your salary.
+    </p>
+
+    <h3>Can foreigners use this calculator?</h3>
+    <p>
+      Foreign employees generally do not contribute CPF. If you are a foreign employee, your take-home pay calculation may be different.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 Singapore Salary Calculator. All rights reserved.</p>
+</footer>
+
+<script>
+  function formatMoney(amount) {
+    return "S$" + amount.toLocaleString("en-SG", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function calculateIncomeTax(chargeableIncome) {
+    let tax = 0;
+
+    if (chargeableIncome <= 20000) {
+      tax = 0;
+    } else if (chargeableIncome <= 30000) {
+      tax = (chargeableIncome - 20000) * 0.02;
+    } else if (chargeableIncome <= 40000) {
+      tax = 200 + (chargeableIncome - 30000) * 0.035;
+    } else if (chargeableIncome <= 80000) {
+      tax = 550 + (chargeableIncome - 40000) * 0.07;
+    } else if (chargeableIncome <= 120000) {
+      tax = 3350 + (chargeableIncome - 80000) * 0.115;
+    } else if (chargeableIncome <= 160000) {
+      tax = 7950 + (chargeableIncome - 120000) * 0.15;
+    } else if (chargeableIncome <= 200000) {
+      tax = 13950 + (chargeableIncome - 160000) * 0.18;
+    } else if (chargeableIncome <= 240000) {
+      tax = 21150 + (chargeableIncome - 200000) * 0.19;
+    } else if (chargeableIncome <= 280000) {
+      tax = 28750 + (chargeableIncome - 240000) * 0.195;
+    } else if (chargeableIncome <= 320000) {
+      tax = 36550 + (chargeableIncome - 280000) * 0.20;
+    } else if (chargeableIncome <= 500000) {
+      tax = 44550 + (chargeableIncome - 320000) * 0.22;
+    } else if (chargeableIncome <= 1000000) {
+      tax = 84150 + (chargeableIncome - 500000) * 0.23;
+    } else {
+      tax = 199150 + (chargeableIncome - 1000000) * 0.24;
+    }
+
+    return tax;
+  }
+
+  function calculateTakeHome() {
+    const monthlySalary = parseFloat(document.getElementById("monthlySalary").value) || 0;
+    const months = parseFloat(document.getElementById("months").value) || 12;
+    const cpfRate = parseFloat(document.getElementById("age").value) || 0;
+    const otherReliefs = parseFloat(document.getElementById("otherReliefs").value) || 0;
+
+    const cpfWageCeiling = 8000;
+    const cpfWage = Math.min(monthlySalary, cpfWageCeiling);
+
+    const employeeCpfMonthly = cpfWage * (cpfRate / 100);
+    const annualGrossIncome = monthlySalary * months;
+    const annualEmployeeCpf = employeeCpfMonthly * months;
+
+    const chargeableIncome = Math.max(annualGrossIncome - annualEmployeeCpf - otherReliefs, 0);
+    const annualTax = calculateIncomeTax(chargeableIncome);
+    const monthlyTaxAmount = annualTax / 12;
+
+    const monthlyTakeHomeBeforeTax = monthlySalary - employeeCpfMonthly;
+    const monthlyTakeHomeAfterTax = monthlyTakeHomeBeforeTax - monthlyTaxAmount;
+
+    document.getElementById("grossMonthly").innerText = formatMoney(monthlySalary);
+    document.getElementById("monthlyCpf").innerText = formatMoney(employeeCpfMonthly);
+    document.getElementById("monthlyTax").innerText = formatMoney(monthlyTaxAmount);
+    document.getElementById("finalTakeHome").innerText = formatMoney(monthlyTakeHomeAfterTax);
+
+    document.getElementById("annualGross").innerText = formatMoney(annualGrossIncome);
+    document.getElementById("annualCpf").innerText = formatMoney(annualEmployeeCpf);
+    document.getElementById("reliefsResult").innerText = formatMoney(otherReliefs);
+    document.getElementById("chargeableIncome").innerText = formatMoney(chargeableIncome);
+    document.getElementById("annualTax").innerText = formatMoney(annualTax);
+    document.getElementById("takeHomeBeforeTax").innerText = formatMoney(monthlyTakeHomeBeforeTax);
+    document.getElementById("takeHomeAfterTax").innerText = formatMoney(monthlyTakeHomeAfterTax);
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Singapore Take Home Pay Calculator 2026",
+  "url": "https://malaysiasalarytools.github.io/singapore-salary-tools/take-home-pay-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Free Singapore take-home pay calculator to estimate net salary after CPF and income tax."
+}
+</script>
+
+</body>
+</html>
