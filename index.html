@@ -1,473 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <title>Singapore Salary Calculator 2026 | CPF, Income Tax & Take Home Pay</title>
-
-  <meta name="description" content="Free Singapore salary calculator 2026. Estimate your monthly take-home pay after CPF contributions and view annual income tax estimate for employees in Singapore.">
-
-  <meta name="keywords" content="Singapore salary calculator, Singapore take home pay calculator, CPF calculator Singapore, salary after tax Singapore, income tax calculator Singapore">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://sgsalarycalculator.com/">
+  <meta charset="UTF-8" />
+  <title>Singapore Salary Calculator 2026 | Take Home Pay, CPF & Income Tax</title>
+  <meta name="description" content="Free Singapore Salary Calculator 2026. Estimate your take-home pay after CPF contribution and income tax." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 0;
-      color: #222;
+      font-family: Inter, Arial, sans-serif;
+      background: #f5f7f4;
+      color: #10231a;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid #e4eadf;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.4px;
+      color: #163d2a;
+    }
+
+    .brand span {
+      color: #4d8f57;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #496154;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #eaf3e6;
+      color: #163d2a;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 22px 28px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 13px;
+      background: #eaf3e6;
+      color: #2d6b3f;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 54px;
+      line-height: 1.03;
+      letter-spacing: -2.4px;
+      margin: 0 0 18px;
+      color: #10231a;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #5d6d62;
+      max-width: 620px;
+      margin: 0 0 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: #173f2b;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #173f2b;
+      border: 1px solid #dbe5d7;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(25, 60, 37, 0.12);
+      border: 1px solid #edf2ea;
+    }
+
+    .hero-card-title {
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .mini-chart {
+      height: 220px;
+      display: flex;
+      align-items: end;
+      gap: 14px;
+      padding: 18px;
+      background: linear-gradient(180deg, #f9fbf7, #eef5eb);
+      border-radius: 24px;
+    }
+
+    .bar {
+      flex: 1;
+      border-radius: 14px 14px 0 0;
+      background: #7fb069;
+      min-height: 32px;
+    }
+
+    .bar:nth-child(2) { height: 65%; background: #a4c98a; }
+    .bar:nth-child(3) { height: 48%; background: #d7b56d; }
+    .bar:nth-child(4) { height: 82%; background: #4d8f57; }
+    .bar:nth-child(5) { height: 58%; background: #b8d99d; }
+
+    .calculator-section {
+      max-width: 1180px;
+      margin: 24px auto 0;
+      padding: 22px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.08);
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.8px;
+    }
+
+    .panel-desc {
+      margin: 0 0 24px;
+      color: #66746a;
       line-height: 1.6;
     }
 
-    header {
-      background: #0f766e;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      max-width: 760px;
-      margin: 12px auto 0;
-      font-size: 17px;
-    }
-
-    nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #0f766e;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    .field {
+      margin-bottom: 18px;
     }
 
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      font-size: 14px;
+      font-weight: 800;
+      color: #233b2d;
+      margin-bottom: 8px;
     }
 
-    input, select {
+    input,
+    select {
       width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid #d9e4d5;
+      border-radius: 16px;
+      padding: 15px 16px;
       font-size: 16px;
-      box-sizing: border-box;
+      background: #fbfcfa;
+      color: #10231a;
+      outline: none;
     }
 
-    button {
-      margin-top: 20px;
+    input:focus,
+    select:focus {
+      border-color: #7fb069;
+      box-shadow: 0 0 0 4px rgba(127, 176, 105, 0.16);
+    }
+
+    .calculate-btn {
       width: 100%;
-      padding: 14px;
-      background: #0f766e;
+      margin-top: 8px;
+      background: #173f2b;
       color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 17px;
-      font-weight: bold;
+      border-radius: 18px;
+      padding: 16px;
+      font-weight: 900;
+      font-size: 16px;
+      border: 0;
       cursor: pointer;
-    }
-
-    button:hover {
-      background: #115e59;
     }
 
     .results {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
+      gap: 18px;
     }
 
-    .result-box {
-      background: #f0fdfa;
-      border-left: 5px solid #0f766e;
-      padding: 18px;
-      border-radius: 8px;
+    .main-result {
+      background: #173f2b;
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .result-box h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
+    .main-result::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
     }
 
-    .amount {
+    .main-result small {
+      display: block;
+      color: #cfe3d3;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .take-home {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -1.8px;
+      margin-bottom: 8px;
+    }
+
+    .sub-result {
+      color: #cfe3d3;
+      font-size: 15px;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .result-card span {
+      display: block;
+      color: #6d7b70;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .result-card strong {
       font-size: 24px;
-      font-weight: bold;
-      color: #0f766e;
+      color: #10231a;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
+    .breakdown {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 26px;
+      padding: 24px;
     }
 
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
+    .breakdown h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
     }
 
-    th {
-      background: #f0fdfa;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf2ea;
+      color: #425346;
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+    }
+
+    .row strong {
+      color: #10231a;
+    }
+
+    .positive {
+      color: #2d6b3f;
+      font-weight: 800;
+    }
+
+    .negative {
+      color: #b45f3c;
+      font-weight: 800;
+    }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 22px 70px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .info-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .info-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .faq {
+      margin-top: 44px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #173f2b;
+    }
+
+    details p {
+      color: #647168;
+      line-height: 1.65;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      color: #666;
+      color: #77837a;
       font-size: 14px;
+      padding: 28px;
+      border-top: 1px solid #e4eadf;
+      background: white;
     }
 
-    .note {
-      background: #fff7ed;
-      border-left: 5px solid #f97316;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
+    @media (max-width: 900px) {
+      .hero,
+      .calculator-grid {
+        grid-template-columns: 1fr;
       }
 
-      nav a {
-        display: block;
-        margin: 8px 0;
+      h1 {
+        font-size: 40px;
+      }
+
+      .result-cards,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
       }
     }
   </style>
 </head>
 
 <body>
-
-<header>
-  <h1>Singapore Salary Calculator 2026</h1>
-  <p>Calculate your estimated monthly take-home pay after CPF contributions and view your estimated annual income tax in Singapore.</p>
-</header>
-
-<nav>
-<a href="index.html">Salary Calculator</a>
-<a href="cpf-calculator.html">CPF Calculator</a>
-<a href="income-tax-calculator.html">Income Tax Calculator</a>
-<a href="take-home-pay-calculator.html">Take Home Pay</a>
-<a href="annual-leave-calculator.html">Annual Leave</a>
-  
-</nav>
-
-<div class="container">
-
-  <section class="card">
-    <h2>Calculate Your Take-Home Pay</h2>
-
-    <label for="salary">Monthly Gross Salary (SGD)</label>
-    <input type="number" id="salary" placeholder="Example: 5000">
-
-    <label for="age">Age Group</label>
-    <select id="age">
-      <option value="20">55 and below</option>
-      <option value="18">Above 55 to 60</option>
-      <option value="12.5">Above 60 to 65</option>
-      <option value="7.5">Above 65 to 70</option>
-      <option value="5">Above 70</option>
-    </select>
-
-    <label for="months">Months Paid Per Year</label>
-    <input type="number" id="months" value="12">
-
-    <button onclick="calculateSalary()">Calculate Salary</button>
-
-    <div class="results">
-      <div class="result-box">
-        <h3>Monthly Gross Salary</h3>
-        <div class="amount" id="grossResult">S$0.00</div>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html">SG Salary<span>Tools</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
       </div>
+    </nav>
+  </header>
 
-      <div class="result-box">
-        <h3>Employee CPF</h3>
-        <div class="amount" id="cpfResult">S$0.00</div>
-      </div>
-
-      <div class="result-box">
-        <h3>Monthly Take-Home Pay</h3>
-        <div class="amount" id="takeHomeResult">S$0.00</div>
-      </div>
-
-      <div class="result-box">
-        <h3>Estimated Annual Tax</h3>
-        <div class="amount" id="taxResult">S$0.00</div>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Singapore Salary Calculator 2026</div>
+      <h1>Know your real take-home pay.</h1>
+      <p>
+        Estimate your monthly salary after CPF employee contribution and annual income tax.
+        Built for employees in Singapore who want a clear salary breakdown before accepting
+        a job offer, planning a raise, or comparing income.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#calculator">Calculate salary</a>
+        <a class="btn btn-secondary" href="#how">How it works</a>
       </div>
     </div>
 
-    <table>
-      <tr>
-        <th>Breakdown</th>
-        <th>Amount</th>
-      </tr>
-      <tr>
-        <td>Annual Gross Income</td>
-        <td id="annualGross">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Annual Employee CPF</td>
-        <td id="annualCpf">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Estimated Annual Taxable Income</td>
-        <td id="taxableIncome">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Estimated Monthly Tax</td>
-        <td id="monthlyTax">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Estimated Monthly Take-Home After CPF & Tax</td>
-        <td id="netAfterTax">S$0.00</td>
-      </tr>
-    </table>
-
-    <div class="note">
-      This calculator gives an estimate only. CPF and income tax may differ depending on your residency, bonus, reliefs, age, CPF wage ceiling and other personal circumstances.
+    <div class="hero-card">
+      <div class="hero-card-title">Estimated salary breakdown</div>
+      <div class="mini-chart">
+        <div class="bar" style="height: 42%;"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
   </section>
 
-<section class="card">
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-grid">
+      <div class="panel">
+        <h2>Salary inputs</h2>
+        <p class="panel-desc">
+          Enter your gross monthly salary and basic profile. This calculator gives an estimate only.
+        </p>
 
-<h2>Popular Singapore Salary Tools</h2>
+        <div class="field">
+          <label for="salary">Gross monthly salary</label>
+          <input id="salary" type="number" value="5000" min="0" step="100" />
+        </div>
 
-<ul>
-<li><a href="cpf-calculator.html">Singapore CPF Calculator</a></li>
+        <div class="field">
+          <label for="bonus">Annual bonus</label>
+          <input id="bonus" type="number" value="0" min="0" step="100" />
+        </div>
 
-<li><a href="income-tax-calculator.html">Singapore Income Tax Calculator</a></li>
+        <div class="field">
+          <label for="age">Age group</label>
+          <select id="age">
+            <option value="55below">55 and below</option>
+            <option value="55to60">Above 55 to 60</option>
+            <option value="60to65">Above 60 to 65</option>
+            <option value="65to70">Above 65 to 70</option>
+            <option value="70above">Above 70</option>
+          </select>
+        </div>
 
-<li><a href="take-home-pay-calculator.html">Singapore Take Home Pay Calculator</a></li>
+        <div class="field">
+          <label for="resident">Tax residency</label>
+          <select id="resident">
+            <option value="resident">Tax resident</option>
+            <option value="nonresident">Non-resident employment income</option>
+          </select>
+        </div>
 
-<li><a href="salary-after-tax-calculator.html">Singapore Salary After Tax Calculator</a></li>
+        <div class="field">
+          <label for="relief">Estimated annual tax reliefs</label>
+          <input id="relief" type="number" value="0" min="0" step="100" />
+        </div>
 
-<li><a href="annual-leave-calculator.html">Singapore Annual Leave Calculator</a></li>
-  
-</ul>
+        <button class="calculate-btn" onclick="calculateSalary()">Calculate take-home pay</button>
+      </div>
 
-</section>
+      <div class="results">
+        <div class="main-result">
+          <small>Estimated monthly take-home pay</small>
+          <div class="take-home" id="takeHome">$4,000</div>
+          <div class="sub-result" id="annualTakeHome">Estimated annual take-home: $48,000</div>
+        </div>
 
-<section class="card">
+        <div class="result-cards">
+          <div class="result-card">
+            <span>Employee CPF</span>
+            <strong id="employeeCpf">$1,000</strong>
+          </div>
+          <div class="result-card">
+            <span>Employer CPF</span>
+            <strong id="employerCpf">$850</strong>
+          </div>
+          <div class="result-card">
+            <span>Monthly tax estimate</span>
+            <strong id="monthlyTax">$0</strong>
+          </div>
+        </div>
 
-<h2>Singapore Employment Guides</h2>
+        <div class="breakdown">
+          <h3>Detailed breakdown</h3>
 
-<ul>
+          <div class="row">
+            <span>Gross monthly salary</span>
+            <strong id="grossMonthly">$5,000</strong>
+          </div>
 
-<li>
-<a href="cpf-guide.html">
-Singapore CPF Guide 2026
-</a>
-</li>
+          <div class="row">
+            <span>Less: employee CPF</span>
+            <strong class="negative" id="cpfDeduction">-$1,000</strong>
+          </div>
 
-<li>
-<a href="income-tax-guide.html">
-Singapore Income Tax Guide 2026
-</a>
-</li>
+          <div class="row">
+            <span>Less: estimated monthly income tax</span>
+            <strong class="negative" id="taxDeduction">-$0</strong>
+          </div>
 
-<li>
-<a href="public-holiday-guide.html">
-Singapore Public Holiday Guide 2026
-</a>
-</li>
+          <div class="row">
+            <span>Estimated monthly take-home</span>
+            <strong class="positive" id="netMonthly">$4,000</strong>
+          </div>
 
-<li>
-<a href="cpf-contribution-rates-guide.html">
-Singapore CPF Contribution Rates Guide 2026
-</a>
-</li>
-  
-</ul>
+          <div class="row">
+            <span>Annual gross income including bonus</span>
+            <strong id="annualGross">$60,000</strong>
+          </div>
 
-</section>
-  
-  <section class="card">
-    <h2>How This Singapore Salary Calculator Works</h2>
-    <p>
-      This calculator estimates your take-home salary by deducting employee CPF contributions from your gross monthly salary. It also provides a simple annual income tax estimate based on Singapore resident individual income tax brackets.
-    </p>
-    <p>
-      For Singapore Citizens and Singapore Permanent Residents from the third year onwards, the CPF employee contribution rate for employees aged 55 and below is 20% for monthly wages above S$750. CPF contribution rates are different for older employees. 
-    </p>
+          <div class="row">
+            <span>Estimated annual tax payable</span>
+            <strong id="annualTax">$0</strong>
+          </div>
+        </div>
+
+        <div class="note-box">
+          CPF is estimated using 2026 contribution rates for Singapore Citizens / SPR third year onwards
+          and the Ordinary Wage ceiling of $8,000. Income tax is simplified and may differ from your
+          actual IRAS assessment due to reliefs, rebates, deductions, bonuses and other income.
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="card">
-    <h2>What Is CPF in Singapore?</h2>
-    <p>
-      CPF stands for Central Provident Fund. It is a compulsory savings scheme for Singapore Citizens and Permanent Residents. Employees contribute part of their salary to CPF, while employers also contribute an additional amount.
-    </p>
-    <p>
-      CPF contributions help fund retirement, healthcare and housing needs. For employees, CPF reduces monthly cash take-home pay, but the money goes into CPF accounts.
-    </p>
-  </section>
+  <main class="content">
+    <section id="how">
+      <h2>How this Singapore salary calculator works</h2>
 
-  <section class="card">
-    <h2>Singapore Salary Example</h2>
-    <p>
-      If your monthly gross salary is S$5,000 and your employee CPF rate is 20%, your estimated employee CPF contribution is S$1,000. Your estimated monthly take-home pay before income tax would be S$4,000.
-    </p>
-  </section>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Start with gross salary</h3>
+          <p>
+            Your gross monthly salary is the amount before CPF, income tax and other deductions.
+          </p>
+        </div>
 
-  <section class="card">
-    <h2>Frequently Asked Questions</h2>
+        <div class="info-card">
+          <h3>2. Estimate CPF</h3>
+          <p>
+            Employee CPF is deducted from your salary. Employer CPF is paid by your employer on top
+            of your salary, subject to CPF rules and wage ceilings.
+          </p>
+        </div>
 
-    <h3>Is CPF deducted from salary in Singapore?</h3>
-    <p>
-      Yes. Employee CPF is deducted from your monthly gross salary if you are eligible to contribute CPF.
-    </p>
+        <div class="info-card">
+          <h3>3. Estimate tax</h3>
+          <p>
+            Singapore income tax is calculated annually. This calculator spreads the estimated annual
+            tax over 12 months to show a monthly view.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <h3>Do foreigners pay CPF in Singapore?</h3>
-    <p>
-      Foreign employees on work passes generally do not contribute CPF. CPF mainly applies to Singapore Citizens and Singapore Permanent Residents.
-    </p>
+    <section class="faq">
+      <h2>FAQ</h2>
 
-    <h3>Is income tax deducted monthly in Singapore?</h3>
-    <p>
-      For most employees, Singapore income tax is assessed annually by IRAS instead of being deducted every month like payroll tax in some other countries.
-    </p>
+      <details>
+        <summary>Is CPF calculated on the full salary?</summary>
+        <p>
+          Not always. CPF Ordinary Wage contributions are subject to a monthly wage ceiling.
+          For 2026, this calculator uses an Ordinary Wage ceiling of $8,000.
+        </p>
+      </details>
 
-    <h3>Does this calculator include bonus?</h3>
-    <p>
-      This first version focuses on monthly salary. Bonus and annual wage supplement can be added in a future version.
-    </p>
-  </section>
+      <details>
+        <summary>Is income tax deducted monthly in Singapore?</summary>
+        <p>
+          Usually, Singapore income tax is assessed annually by IRAS. This calculator shows a monthly
+          estimate so users can understand their practical take-home pay.
+        </p>
+      </details>
 
-</div>
+      <details>
+        <summary>Can foreigners use this calculator?</summary>
+        <p>
+          Yes, but foreigners who are not Singapore Citizens or PRs usually do not contribute CPF.
+          For better accuracy, you may create a separate foreign employee version later.
+        </p>
+      </details>
+    </section>
+  </main>
 
-<footer>
-  <p>© 2026 Singapore Salary Calculator. All rights reserved.</p>
-</footer>
+  <footer>
+    © 2026 SG Salary Tools. This calculator provides estimates only and is not official tax or CPF advice.
+  </footer>
 
-<script>
-  function formatMoney(amount) {
-    return "S$" + amount.toLocaleString("en-SG", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
-
-  function calculateIncomeTax(taxableIncome) {
-    let tax = 0;
-
-    if (taxableIncome <= 20000) {
-      tax = 0;
-    } else if (taxableIncome <= 30000) {
-      tax = (taxableIncome - 20000) * 0.02;
-    } else if (taxableIncome <= 40000) {
-      tax = 200 + (taxableIncome - 30000) * 0.035;
-    } else if (taxableIncome <= 80000) {
-      tax = 550 + (taxableIncome - 40000) * 0.07;
-    } else if (taxableIncome <= 120000) {
-      tax = 3350 + (taxableIncome - 80000) * 0.115;
-    } else if (taxableIncome <= 160000) {
-      tax = 7950 + (taxableIncome - 120000) * 0.15;
-    } else if (taxableIncome <= 200000) {
-      tax = 13950 + (taxableIncome - 160000) * 0.18;
-    } else if (taxableIncome <= 240000) {
-      tax = 21150 + (taxableIncome - 200000) * 0.19;
-    } else if (taxableIncome <= 280000) {
-      tax = 28750 + (taxableIncome - 240000) * 0.195;
-    } else if (taxableIncome <= 320000) {
-      tax = 36550 + (taxableIncome - 280000) * 0.20;
-    } else if (taxableIncome <= 500000) {
-      tax = 44550 + (taxableIncome - 320000) * 0.22;
-    } else if (taxableIncome <= 1000000) {
-      tax = 84150 + (taxableIncome - 500000) * 0.23;
-    } else {
-      tax = 199150 + (taxableIncome - 1000000) * 0.24;
+  <script>
+    function money(value) {
+      return "$" + Math.round(value).toLocaleString("en-SG");
     }
 
-    return tax;
-  }
+    function getCpfRates(ageGroup) {
+      const rates = {
+        "55below": { employee: 0.20, employer: 0.17 },
+        "55to60": { employee: 0.18, employer: 0.16 },
+        "60to65": { employee: 0.125, employer: 0.125 },
+        "65to70": { employee: 0.075, employer: 0.09 },
+        "70above": { employee: 0.05, employer: 0.075 }
+      };
 
-  function calculateSalary() {
-    const salary = parseFloat(document.getElementById("salary").value) || 0;
-    const cpfRate = parseFloat(document.getElementById("age").value) || 0;
-    const months = parseFloat(document.getElementById("months").value) || 12;
-
-    let monthlyCpf = salary * (cpfRate / 100);
-
-    /*
-      Simple CPF ordinary wage ceiling assumption.
-      For first version, cap employee CPF based on S$8,000 monthly ordinary wage ceiling.
-    */
-    const cpfWageCeiling = 8000;
-    if (salary > cpfWageCeiling) {
-      monthlyCpf = cpfWageCeiling * (cpfRate / 100);
+      return rates[ageGroup] || rates["55below"];
     }
 
-    const monthlyTakeHomeBeforeTax = salary - monthlyCpf;
+    function residentTax(chargeableIncome) {
+      const brackets = [
+        { limit: 20000, rate: 0 },
+        { limit: 10000, rate: 0.02 },
+        { limit: 10000, rate: 0.035 },
+        { limit: 40000, rate: 0.07 },
+        { limit: 40000, rate: 0.115 },
+        { limit: 40000, rate: 0.15 },
+        { limit: 40000, rate: 0.18 },
+        { limit: 40000, rate: 0.19 },
+        { limit: 40000, rate: 0.195 },
+        { limit: 40000, rate: 0.20 },
+        { limit: 180000, rate: 0.22 },
+        { limit: 500000, rate: 0.23 },
+        { limit: Infinity, rate: 0.24 }
+      ];
 
-    const annualGrossIncome = salary * months;
-    const annualEmployeeCpf = monthlyCpf * months;
+      let remaining = Math.max(0, chargeableIncome);
+      let tax = 0;
 
-    const estimatedTaxableIncome = Math.max(annualGrossIncome - annualEmployeeCpf, 0);
-    const annualTax = calculateIncomeTax(estimatedTaxableIncome);
-    const monthlyTax = annualTax / 12;
+      for (const bracket of brackets) {
+        const taxable = Math.min(remaining, bracket.limit);
+        tax += taxable * bracket.rate;
+        remaining -= taxable;
 
-    const monthlyTakeHomeAfterTax = monthlyTakeHomeBeforeTax - monthlyTax;
+        if (remaining <= 0) break;
+      }
 
-    document.getElementById("grossResult").innerText = formatMoney(salary);
-    document.getElementById("cpfResult").innerText = formatMoney(monthlyCpf);
-    document.getElementById("takeHomeResult").innerText = formatMoney(monthlyTakeHomeBeforeTax);
-    document.getElementById("taxResult").innerText = formatMoney(annualTax);
+      return tax;
+    }
 
-    document.getElementById("annualGross").innerText = formatMoney(annualGrossIncome);
-    document.getElementById("annualCpf").innerText = formatMoney(annualEmployeeCpf);
-    document.getElementById("taxableIncome").innerText = formatMoney(estimatedTaxableIncome);
-    document.getElementById("monthlyTax").innerText = formatMoney(monthlyTax);
-    document.getElementById("netAfterTax").innerText = formatMoney(monthlyTakeHomeAfterTax);
-  }
-</script>
+    function calculateSalary() {
+      const salary = Number(document.getElementById("salary").value) || 0;
+      const bonus = Number(document.getElementById("bonus").value) || 0;
+      const age = document.getElementById("age").value;
+      const resident = document.getElementById("resident").value;
+      const relief = Number(document.getElementById("relief").value) || 0;
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Singapore Salary Calculator 2026",
-  "url": "https://sgsalarycalculator.com/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "All",
-  "description": "Free Singapore salary calculator to estimate take-home pay after CPF and income tax."
-}
-</script>
+      const cpfCeiling = 8000;
+      const cpfSalary = Math.min(salary, cpfCeiling);
+      const rates = getCpfRates(age);
 
+      const employeeCpf = Math.floor(cpfSalary * rates.employee);
+      const employerCpf = Math.round(cpfSalary * rates.employer);
+
+      const annualGross = salary * 12 + bonus;
+      const annualEmployeeCpf = employeeCpf * 12;
+      const chargeableIncome = Math.max(0, annualGross - annualEmployeeCpf - relief);
+
+      let annualTax;
+
+      if (resident === "resident") {
+        annualTax = residentTax(chargeableIncome);
+      } else {
+        const progressiveTax = residentTax(chargeableIncome);
+        const nonResidentTax = annualGross * 0.15;
+        annualTax = Math.max(progressiveTax, nonResidentTax);
+      }
+
+      const monthlyTax = annualTax / 12;
+      const takeHome = salary - employeeCpf - monthlyTax;
+      const annualTakeHome = takeHome * 12 + bonus;
+
+      document.getElementById("takeHome").textContent = money(takeHome);
+      document.getElementById("annualTakeHome").textContent = "Estimated annual take-home: " + money(annualTakeHome);
+
+      document.getElementById("employeeCpf").textContent = money(employeeCpf);
+      document.getElementById("employerCpf").textContent = money(employerCpf);
+      document.getElementById("monthlyTax").textContent = money(monthlyTax);
+
+      document.getElementById("grossMonthly").textContent = money(salary);
+      document.getElementById("cpfDeduction").textContent = "-" + money(employeeCpf);
+      document.getElementById("taxDeduction").textContent = "-" + money(monthlyTax);
+      document.getElementById("netMonthly").textContent = money(takeHome);
+      document.getElementById("annualGross").textContent = money(annualGross);
+      document.getElementById("annualTax").textContent = money(annualTax);
+    }
+
+    calculateSalary();
+  </script>
 </body>
 </html>
