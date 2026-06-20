@@ -111,6 +111,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 18px;
     }
 
     .btn {
@@ -120,6 +121,7 @@
       font-weight: 800;
       cursor: pointer;
       font-size: 15px;
+      display: inline-flex;
     }
 
     .btn-primary {
@@ -131,6 +133,24 @@
       background: white;
       color: #173f2b;
       border: 1px solid #dbe5d7;
+    }
+
+    .quick-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .quick-stats span {
+      background: #ffffff;
+      border: 1px solid #dfe9db;
+      color: #2f5f3a;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.06);
     }
 
     .hero-card {
@@ -322,9 +342,11 @@
       padding: 24px;
     }
 
-    .breakdown h3 {
+    .breakdown h3,
+    .section-title {
       margin: 0 0 18px;
-      font-size: 22px;
+      font-size: 24px;
+      letter-spacing: -0.6px;
     }
 
     .row {
@@ -370,29 +392,98 @@
       padding: 40px 22px 70px;
     }
 
-    .info-grid {
+    .content-section {
+      margin-top: 44px;
+    }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: -6px 0 22px;
+    }
+
+    .info-grid,
+    .use-grid,
+    .related-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin-top: 20px;
     }
 
-    .info-card {
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-card,
+    .use-card,
+    .related-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
       padding: 24px;
     }
 
-    .info-card h3 {
+    .info-card h3,
+    .use-card h3,
+    .related-card h3 {
       margin: 0 0 10px;
       font-size: 19px;
     }
 
-    .info-card p {
+    .info-card p,
+    .use-card p,
+    .related-card p {
       margin: 0;
       color: #647168;
       line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 17px 20px;
+      border-bottom: 1px solid #edf2ea;
+    }
+
+    th {
+      background: #f7faf5;
+      color: #173f2b;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    td {
+      color: #425346;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
     }
 
     .faq {
@@ -438,7 +529,9 @@
       }
 
       .result-cards,
-      .info-grid {
+      .info-grid,
+      .use-grid,
+      .related-grid {
         grid-template-columns: 1fr;
       }
 
@@ -483,9 +576,17 @@
         Built for employees in Singapore who want a clear salary breakdown before accepting
         a job offer, planning a raise, or comparing income.
       </p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="#calculator">Calculate salary</a>
         <a class="btn btn-secondary" href="#how">How it works</a>
+      </div>
+
+      <div class="quick-stats">
+        <span>CPF Included</span>
+        <span>Income Tax Included</span>
+        <span>Updated for 2026</span>
+        <span>Free & Instant</span>
       </div>
     </div>
 
@@ -612,200 +713,245 @@
   </section>
 
   <main class="content">
-    <section id="how">
-      <h2>How this Singapore salary calculator works</h2>
+    <section id="how" class="content-section">
+      <h2 class="section-title">How this Singapore salary calculator works</h2>
 
       <div class="info-grid">
         <div class="info-card">
           <h3>1. Start with gross salary</h3>
-          <p>
-            Your gross monthly salary is the amount before CPF, income tax and other deductions.
-          </p>
+          <p>Your gross monthly salary is the amount before CPF, income tax and other deductions.</p>
         </div>
 
         <div class="info-card">
           <h3>2. Estimate CPF</h3>
-          <p>
-            Employee CPF is deducted from your salary. Employer CPF is paid by your employer on top
-            of your salary, subject to CPF rules and wage ceilings.
-          </p>
+          <p>Employee CPF is deducted from your salary. Employer CPF is paid by your employer on top of your salary.</p>
         </div>
 
         <div class="info-card">
           <h3>3. Estimate tax</h3>
-          <p>
-            Singapore income tax is calculated annually. This calculator spreads the estimated annual
-            tax over 12 months to show a monthly view.
-          </p>
+          <p>Singapore income tax is calculated annually. This calculator spreads the estimated annual tax over 12 months.</p>
         </div>
       </div>
     </section>
 
-<section class="faq">
-  <h2>Frequently Asked Questions</h2>
+    <section class="content-section">
+      <h2 class="section-title">Salary examples in Singapore</h2>
+      <p class="section-desc">
+        These examples assume an employee aged 55 and below with standard employee CPF contribution.
+        Actual take-home pay may differ depending on tax reliefs, bonuses, residency and CPF eligibility.
+      </p>
 
-  <details>
-    <summary>How do I calculate my take-home pay in Singapore?</summary>
-    <p>
-      Take-home pay is your gross salary minus employee CPF contributions and any income tax payable.
-      This calculator estimates both CPF and income tax to show your net salary.
-    </p>
-  </details>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Gross Monthly Salary</th>
+              <th>Estimated Employee CPF</th>
+              <th>Approx. Monthly Take-Home Before Tax</th>
+              <th>Common Search Intent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S$3,000</td>
+              <td>S$600</td>
+              <td>S$2,400</td>
+              <td>Entry-level salary planning</td>
+            </tr>
+            <tr>
+              <td>S$4,000</td>
+              <td>S$800</td>
+              <td>S$3,200</td>
+              <td>Is S$4,000 a good salary?</td>
+            </tr>
+            <tr>
+              <td>S$5,000</td>
+              <td>S$1,000</td>
+              <td>S$4,000</td>
+              <td>CPF on S$5,000 salary</td>
+            </tr>
+            <tr>
+              <td>S$6,000</td>
+              <td>S$1,200</td>
+              <td>S$4,800</td>
+              <td>Salary after CPF in Singapore</td>
+            </tr>
+            <tr>
+              <td>S$8,000</td>
+              <td>S$1,600</td>
+              <td>S$6,400</td>
+              <td>CPF wage ceiling estimate</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <details>
-    <summary>Does this calculator include CPF contributions?</summary>
-    <p>
-      Yes. The calculator estimates both employee CPF deductions and employer CPF contributions
-      based on your age group and salary.
-    </p>
-  </details>
+    <section class="content-section">
+      <h2 class="section-title">Who should use this calculator?</h2>
+      <p class="section-desc">
+        This calculator is useful for anyone who wants a quick estimate of salary after CPF and income tax in Singapore.
+      </p>
 
-  <details>
-    <summary>Is CPF calculated on the full salary?</summary>
-    <p>
-      CPF contributions are subject to CPF wage ceilings. If your salary exceeds the CPF Ordinary Wage ceiling,
-      CPF will only be calculated up to the applicable limit.
-    </p>
-  </details>
+      <div class="use-grid">
+        <div class="use-card">
+          <h3>Employees</h3>
+          <p>Check how much of your monthly salary you may actually receive after CPF and estimated tax.</p>
+        </div>
 
-  <details>
-    <summary>How much CPF do employees contribute in Singapore?</summary>
-    <p>
-      CPF contribution rates vary by age. Employees aged 55 and below generally contribute up to 20%
-      of eligible wages, while employers contribute up to 17%.
-    </p>
-  </details>
+        <div class="use-card">
+          <h3>Job Seekers</h3>
+          <p>Compare job offers and understand your estimated take-home pay before accepting a new role.</p>
+        </div>
 
-  <details>
-    <summary>How much CPF does my employer contribute?</summary>
-    <p>
-      Employer CPF contributions are paid separately by your employer and do not reduce your salary.
-      The amount depends on your age and CPF eligibility.
-    </p>
-  </details>
+        <div class="use-card">
+          <h3>HR & Employers</h3>
+          <p>Explain salary packages, CPF contributions and rough net pay to employees or candidates.</p>
+        </div>
+      </div>
+    </section>
 
-  <details>
-    <summary>Is income tax deducted monthly in Singapore?</summary>
-    <p>
-      Singapore income tax is usually assessed annually by IRAS. This calculator converts the estimated
-      annual tax into a monthly amount for easier salary planning.
-    </p>
-  </details>
+    <section class="content-section">
+      <h2 class="section-title">Calculation assumptions</h2>
+      <p class="section-desc">
+        This calculator is designed for quick planning. It does not replace official CPF or IRAS calculations.
+      </p>
 
-  <details>
-    <summary>Does this calculator include bonuses?</summary>
-    <p>
-      Yes. You can enter your annual bonus to estimate your annual income, CPF impact and tax payable.
-    </p>
-  </details>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>CPF rates</h3>
+          <p>CPF is estimated using Singapore Citizen / SPR third year onwards rates based on the selected age group.</p>
+        </div>
 
-  <details>
-    <summary>Can foreigners use this salary calculator?</summary>
-    <p>
-      Yes. However, most foreigners working in Singapore do not contribute CPF. Their take-home pay
-      may therefore differ significantly from Singapore Citizens and Permanent Residents.
-    </p>
-  </details>
+        <div class="info-card">
+          <h3>CPF wage ceiling</h3>
+          <p>The calculator applies an Ordinary Wage ceiling of S$8,000 for monthly CPF calculation.</p>
+        </div>
 
-  <details>
-    <summary>How accurate is this Singapore Salary Calculator?</summary>
-    <p>
-      This calculator provides an estimate based on publicly available CPF and income tax rules.
-      Actual results may vary depending on tax reliefs, deductions, bonuses and employment arrangements.
-    </p>
-  </details>
+        <div class="info-card">
+          <h3>Income tax</h3>
+          <p>Income tax is estimated annually and converted into a monthly estimate for easier salary planning.</p>
+        </div>
+      </div>
+    </section>
 
-  <details>
-    <summary>What salary do I need to take home S$5,000 per month?</summary>
-    <p>
-      The answer depends on your age, CPF contribution rates and tax situation.
-      Enter different salary amounts to estimate the gross salary required.
-    </p>
-  </details>
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore calculators</h2>
+      <p class="section-desc">
+        Explore other salary and employment calculators for Singapore employees.
+      </p>
 
-  <details>
-    <summary>Does overtime pay affect CPF and income tax?</summary>
-    <p>
-      In many cases, overtime pay is considered part of your employment income and may affect CPF
-      contributions and taxable income.
-    </p>
-  </details>
+      <div class="related-grid">
+        <a class="related-card" href="cpf-calculator.html">
+          <h3>CPF Calculator</h3>
+          <p>Estimate employee and employer CPF contributions based on salary and age.</p>
+        </a>
 
-  <details>
-    <summary>Does salary increment increase CPF contributions?</summary>
-    <p>
-      Yes. A higher salary generally results in higher CPF contributions, subject to CPF wage ceilings.
-    </p>
-  </details>
+        <a class="related-card" href="income-tax-calculator.html">
+          <h3>Income Tax Calculator</h3>
+          <p>Estimate Singapore resident income tax based on annual chargeable income.</p>
+        </a>
 
-<details>
-  <summary>What is a good salary in Singapore?</summary>
-  <p>
-    A good salary depends on your lifestyle, family size and housing situation. For a single person,
-    many consider a monthly salary between S$4,000 and S$6,000 sufficient for a comfortable lifestyle,
-    while higher incomes may be needed for home ownership and family expenses.
-  </p>
-</details>
+        <a class="related-card" href="salary-after-tax-calculator.html">
+          <h3>Salary After Tax Calculator</h3>
+          <p>Check estimated salary after CPF contribution and annual tax.</p>
+        </a>
 
-<details>
-  <summary>Is S$4,000 a good salary in Singapore?</summary>
-  <p>
-    S$4,000 per month is generally considered a decent entry-level to mid-level salary in Singapore.
-    After CPF contributions, your take-home pay may be around S$3,200, depending on your age and tax situation.
-  </p>
-</details>
+        <a class="related-card" href="take-home-pay-calculator.html">
+          <h3>Take Home Pay Calculator</h3>
+          <p>Understand your practical monthly net pay after common deductions.</p>
+        </a>
+      </div>
+    </section>
 
-<details>
-  <summary>Is S$5,000 a good salary in Singapore?</summary>
-  <p>
-    S$5,000 per month is above Singapore's median employee income and is often considered a comfortable salary
-    for a single person. Your actual take-home pay will depend on CPF contributions, taxes and personal expenses.
-  </p>
-</details>
+    <section class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
 
-<details>
-  <summary>How much CPF do I pay on a S$5,000 salary?</summary>
-  <p>
-    For employees aged 55 and below, CPF employee contributions are generally 20% of eligible wages.
-    On a monthly salary of S$5,000, the employee CPF contribution is approximately S$1,000,
-    while the employer contributes approximately S$850 separately.
-  </p>
-</details>
+      <details>
+        <summary>How do I calculate my take-home pay in Singapore?</summary>
+        <p>Take-home pay is your gross salary minus employee CPF contributions and any income tax payable. This calculator estimates both CPF and income tax to show your net salary.</p>
+      </details>
 
-<details>
-  <summary>How much tax do I pay on a S$60,000 salary in Singapore?</summary>
-  <p>
-    The amount of income tax payable depends on your tax residency status, CPF contributions and tax reliefs.
-    For many tax residents earning around S$60,000 annually, income tax is relatively low compared with many countries.
-    Use the calculator above for a personalised estimate.
-  </p>
-</details>
+      <details>
+        <summary>Does this calculator include CPF contributions?</summary>
+        <p>Yes. The calculator estimates both employee CPF deductions and employer CPF contributions based on your age group and salary.</p>
+      </details>
 
-  <details>
-  <summary>What salary is considered middle class in Singapore?</summary>
-  <p>
-    Middle-class income levels vary by household size and lifestyle. Many Singaporeans consider
-    monthly incomes between S$4,000 and S$8,000 per person to fall within the middle-income range.
-  </p>
-</details>
+      <details>
+        <summary>Is CPF calculated on the full salary?</summary>
+        <p>CPF contributions are subject to CPF wage ceilings. If your salary exceeds the CPF Ordinary Wage ceiling, CPF will only be calculated up to the applicable limit.</p>
+      </details>
 
-<details>
-  <summary>What salary is needed to live comfortably in Singapore?</summary>
-  <p>
-    The amount needed depends on housing, transport and lifestyle choices. Single individuals often
-    aim for at least S$4,000 to S$6,000 monthly, while families may require significantly more.
-  </p>
-</details>
+      <details>
+        <summary>How much CPF do employees contribute in Singapore?</summary>
+        <p>CPF contribution rates vary by age. Employees aged 55 and below generally contribute up to 20% of eligible wages, while employers contribute up to 17%.</p>
+      </details>
 
-<details>
-  <summary>How much salary increase should I expect in Singapore?</summary>
-  <p>
-    Annual salary increments vary by industry, performance and economic conditions. Many employees
-    receive salary increases ranging from a few percent to double-digit percentages depending on circumstances.
-  </p>
-</details>
+      <details>
+        <summary>How much CPF does my employer contribute?</summary>
+        <p>Employer CPF contributions are paid separately by your employer and do not reduce your salary. The amount depends on your age and CPF eligibility.</p>
+      </details>
 
-</section>
+      <details>
+        <summary>Is income tax deducted monthly in Singapore?</summary>
+        <p>Singapore income tax is usually assessed annually by IRAS. This calculator converts the estimated annual tax into a monthly amount for easier salary planning.</p>
+      </details>
+
+      <details>
+        <summary>Does this calculator include bonuses?</summary>
+        <p>Yes. You can enter your annual bonus to estimate your annual income, CPF impact and tax payable.</p>
+      </details>
+
+      <details>
+        <summary>Can foreigners use this salary calculator?</summary>
+        <p>Yes. However, most foreigners working in Singapore do not contribute CPF. Their take-home pay may therefore differ significantly from Singapore Citizens and Permanent Residents.</p>
+      </details>
+
+      <details>
+        <summary>How accurate is this Singapore Salary Calculator?</summary>
+        <p>This calculator provides an estimate based on publicly available CPF and income tax rules. Actual results may vary depending on tax reliefs, deductions, bonuses and employment arrangements.</p>
+      </details>
+
+      <details>
+        <summary>What salary do I need to take home S$5,000 per month?</summary>
+        <p>The answer depends on your age, CPF contribution rates and tax situation. Enter different salary amounts to estimate the gross salary required.</p>
+      </details>
+
+      <details>
+        <summary>Does overtime pay affect CPF and income tax?</summary>
+        <p>In many cases, overtime pay is considered part of your employment income and may affect CPF contributions and taxable income.</p>
+      </details>
+
+      <details>
+        <summary>Does salary increment increase CPF contributions?</summary>
+        <p>Yes. A higher salary generally results in higher CPF contributions, subject to CPF wage ceilings.</p>
+      </details>
+
+      <details>
+        <summary>What is a good salary in Singapore?</summary>
+        <p>A good salary depends on your lifestyle, family size and housing situation. For a single person, many consider a monthly salary between S$4,000 and S$6,000 sufficient for a comfortable lifestyle, while higher incomes may be needed for home ownership and family expenses.</p>
+      </details>
+
+      <details>
+        <summary>Is S$4,000 a good salary in Singapore?</summary>
+        <p>S$4,000 per month is generally considered a decent entry-level to mid-level salary in Singapore. After CPF contributions, your take-home pay may be around S$3,200, depending on your age and tax situation.</p>
+      </details>
+
+      <details>
+        <summary>Is S$5,000 a good salary in Singapore?</summary>
+        <p>S$5,000 per month is often considered a comfortable salary for a single person. Your actual take-home pay will depend on CPF contributions, taxes and personal expenses.</p>
+      </details>
+
+      <details>
+        <summary>How much CPF do I pay on a S$5,000 salary?</summary>
+        <p>For employees aged 55 and below, CPF employee contributions are generally 20% of eligible wages. On a monthly salary of S$5,000, the employee CPF contribution is approximately S$1,000, while the employer contributes approximately S$850 separately.</p>
+      </details>
+
+      <details>
+        <summary>How much tax do I pay on a S$60,000 salary in Singapore?</summary>
+        <p>The amount of income tax payable depends on your tax residency status, CPF contributions and tax reliefs. Use the calculator above for a personalised estimate.</p>
+      </details>
+    </section>
   </main>
 
   <footer>
@@ -894,11 +1040,9 @@
 
       document.getElementById("takeHome").textContent = money(takeHome);
       document.getElementById("annualTakeHome").textContent = "Estimated annual take-home: " + money(annualTakeHome);
-
       document.getElementById("employeeCpf").textContent = money(employeeCpf);
       document.getElementById("employerCpf").textContent = money(employerCpf);
       document.getElementById("monthlyTax").textContent = money(monthlyTax);
-
       document.getElementById("grossMonthly").textContent = money(salary);
       document.getElementById("cpfDeduction").textContent = "-" + money(employeeCpf);
       document.getElementById("taxDeduction").textContent = "-" + money(monthlyTax);
