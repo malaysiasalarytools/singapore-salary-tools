@@ -21,7 +21,7 @@
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #f5f7f4;
+      background: #f4f6f1;
       color: #10231a;
     }
 
@@ -31,219 +31,241 @@
     }
 
     .topbar {
-      background: #ffffff;
-      border-bottom: 1px solid #e4eadf;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e3eadf;
       position: sticky;
       top: 0;
       z-index: 50;
+      backdrop-filter: blur(14px);
     }
 
     .nav {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 18px 22px;
+      padding: 14px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 22px;
     }
 
     .brand {
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: -0.4px;
-      color: #163d2a;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 210px;
     }
 
-    .brand span {
-      color: #4d8f57;
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #173f2b;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(23, 63, 43, 0.18);
+      flex: 0 0 auto;
+    }
+
+    .brand-bars {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .brand-bars i {
+      width: 4px;
+      border-radius: 99px;
+      background: #f5efe2;
+      display: block;
+    }
+
+    .brand-bars i:nth-child(1) { height: 7px; opacity: 0.75; }
+    .brand-bars i:nth-child(2) { height: 12px; background: #8fbd75; }
+    .brand-bars i:nth-child(3) { height: 16px; background: #f5efe2; }
+
+    .brand-text strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+      color: #24241f;
+      white-space: nowrap;
+    }
+
+    .brand-text strong span {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #74776f;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
     }
 
     .nav-links a {
-      padding: 10px 14px;
+      padding: 13px 18px;
       border-radius: 999px;
-      font-size: 14px;
-      color: #496154;
-      font-weight: 600;
+      font-size: 15px;
+      color: #5d635b;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .nav-links a:hover,
+    .nav-links a:hover {
+      background: #edf5e9;
+      color: #173f2b;
+    }
+
     .nav-links a.active {
-      background: #eaf3e6;
-      color: #163d2a;
+      background: #22231f;
+      color: #ffffff;
+      box-shadow: 0 12px 26px rgba(35, 35, 31, 0.16);
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
+        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
+      border-bottom: 1px solid #e3eadf;
     }
 
     .hero {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 56px 22px 28px;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 42px;
-      align-items: center;
+      padding: 50px 22px 22px;
+      text-align: center;
     }
 
     .eyebrow {
       display: inline-flex;
-      padding: 8px 13px;
-      background: #eaf3e6;
-      color: #2d6b3f;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      background: #dfeee4;
+      color: #2f7d63;
+      border: 1px solid #bfd9c8;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 900;
       font-size: 13px;
-      margin-bottom: 18px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
     h1 {
-      font-size: 54px;
-      line-height: 1.03;
-      letter-spacing: -2.4px;
-      margin: 0 0 18px;
-      color: #10231a;
+      max-width: 820px;
+      margin: 0 auto 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 6.8vw, 76px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      font-weight: 500;
+      color: #25251f;
+    }
+
+    h1 em {
+      color: #2f7d63;
+      font-style: italic;
     }
 
     .hero p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #5d6d62;
-      max-width: 620px;
-      margin: 0 0 26px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 14px 22px;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 15px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-primary {
-      background: #173f2b;
-      color: white;
-    }
-
-    .btn-secondary {
-      background: white;
-      color: #173f2b;
-      border: 1px solid #dbe5d7;
+      font-size: 19px;
+      line-height: 1.75;
+      color: #6f7169;
+      max-width: 760px;
+      margin: 0 auto 26px;
+      font-weight: 650;
     }
 
     .quick-stats {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 6px;
+      margin: 0 auto;
+      max-width: 760px;
     }
 
     .quick-stats span {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid #dfe9db;
       color: #2f5f3a;
-      padding: 9px 12px;
+      padding: 10px 14px;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 800;
-      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.06);
+      font-weight: 900;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
     }
 
     .hero-card {
-      background: #ffffff;
-      border-radius: 30px;
-      padding: 28px;
-      box-shadow: 0 24px 70px rgba(25, 60, 37, 0.12);
-      border: 1px solid #edf2ea;
+      display: none;
     }
 
-    .hero-card-title {
-      font-weight: 800;
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .mini-chart {
-      height: 220px;
-      display: flex;
-      align-items: end;
-      gap: 14px;
-      padding: 18px;
-      background: linear-gradient(180deg, #f9fbf7, #eef5eb);
-      border-radius: 24px;
-    }
-
-    .bar {
-      flex: 1;
-      border-radius: 14px 14px 0 0;
-      background: #7fb069;
-      min-height: 32px;
-    }
-
-    .bar:nth-child(2) {
-      height: 65%;
-      background: #a4c98a;
-    }
-
-    .bar:nth-child(3) {
-      height: 48%;
-      background: #d7b56d;
-    }
-
-    .bar:nth-child(4) {
-      height: 82%;
-      background: #4d8f57;
-    }
-
-    .bar:nth-child(5) {
-      height: 58%;
-      background: #b8d99d;
+    .hero-actions {
+      display: none;
     }
 
     .calculator-section {
       max-width: 1180px;
-      margin: 24px auto 0;
-      padding: 22px;
+      margin: 0 auto;
+      padding: 34px 22px 10px;
     }
 
     .calculator-grid {
       display: grid;
-      grid-template-columns: 430px 1fr;
+      grid-template-columns: 440px 1fr;
       gap: 24px;
       align-items: start;
     }
 
     .panel {
-      background: white;
-      border: 1px solid #e5ece1;
-      border-radius: 28px;
-      padding: 26px;
-      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.08);
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #e1e7dc;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
     }
 
     .panel h2 {
       margin: 0 0 8px;
-      font-size: 26px;
-      letter-spacing: -0.8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      color: #25251f;
     }
 
     .panel-desc {
       margin: 0 0 24px;
-      color: #66746a;
+      color: #6f7169;
       line-height: 1.6;
+      font-weight: 650;
     }
 
     .field {
@@ -253,7 +275,7 @@
     label {
       display: block;
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       color: #233b2d;
       margin-bottom: 8px;
     }
@@ -261,32 +283,34 @@
     input,
     select {
       width: 100%;
-      border: 1px solid #d9e4d5;
+      border: 1px solid #d9e2d4;
       border-radius: 16px;
       padding: 15px 16px;
       font-size: 16px;
-      background: #fbfcfa;
+      background: #fffdfa;
       color: #10231a;
       outline: none;
+      font-weight: 750;
     }
 
     input:focus,
     select:focus {
-      border-color: #7fb069;
-      box-shadow: 0 0 0 4px rgba(127, 176, 105, 0.16);
+      border-color: #2f7d63;
+      box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.14);
     }
 
     .calculate-btn {
       width: 100%;
       margin-top: 8px;
-      background: #173f2b;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
       color: white;
       border-radius: 18px;
-      padding: 16px;
-      font-weight: 900;
+      padding: 17px;
+      font-weight: 950;
       font-size: 16px;
       border: 0;
       cursor: pointer;
+      box-shadow: 0 16px 34px rgba(47, 125, 99, 0.24);
     }
 
     .results {
@@ -295,12 +319,13 @@
     }
 
     .main-result {
-      background: #173f2b;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
       color: white;
       border-radius: 30px;
       padding: 30px;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
     }
 
     .main-result::after {
@@ -316,21 +341,27 @@
 
     .main-result small {
       display: block;
-      color: #cfe3d3;
-      font-weight: 700;
+      color: #d9eee0;
+      font-weight: 850;
       margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     .take-home {
-      font-size: 48px;
-      font-weight: 900;
+      font-size: 50px;
+      font-weight: 950;
       letter-spacing: -1.8px;
       margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
     }
 
     .sub-result {
-      color: #cfe3d3;
+      color: #d9eee0;
       font-size: 15px;
+      position: relative;
+      z-index: 1;
     }
 
     .result-cards {
@@ -344,13 +375,14 @@
       border: 1px solid #e5ece1;
       border-radius: 22px;
       padding: 20px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.06);
     }
 
     .result-card span {
       display: block;
       color: #6d7b70;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 8px;
     }
 
@@ -364,13 +396,15 @@
       border: 1px solid #e5ece1;
       border-radius: 26px;
       padding: 24px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.05);
     }
 
     .breakdown h3,
     .section-title {
       margin: 0 0 18px;
-      font-size: 24px;
+      font-size: 25px;
       letter-spacing: -0.6px;
+      color: #10231a;
     }
 
     .row {
@@ -393,12 +427,12 @@
 
     .positive {
       color: #2d6b3f;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .negative {
       color: #b45f3c;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .note-box {
@@ -414,7 +448,7 @@
     .content {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 38px 22px 70px;
+      padding: 34px 22px 70px;
     }
 
     .content-section {
@@ -452,6 +486,7 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       padding: 24px;
+      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
     .info-card h3,
@@ -514,7 +549,7 @@
 
     td {
       color: #425346;
-      font-weight: 600;
+      font-weight: 650;
     }
 
     tr:last-child td {
@@ -576,7 +611,7 @@
 
     summary {
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 850;
       color: #173f2b;
     }
 
@@ -595,13 +630,83 @@
     }
 
     @media (max-width: 900px) {
-      .hero,
+      .nav {
+        padding: 18px 20px 14px;
+        display: block;
+      }
+
+      .brand {
+        margin-bottom: 16px;
+      }
+
+      .brand-text strong {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 12px;
+        margin-left: -2px;
+        padding-bottom: 2px;
+      }
+
+      .nav-links a {
+        padding: 12px 18px;
+        font-size: 15px;
+      }
+
+      .hero {
+        padding: 36px 20px 22px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 0.98;
+        letter-spacing: -2.4px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+      }
+
+      .quick-stats {
+        justify-content: flex-start;
+      }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      .calculator-section {
+        padding: 24px 16px 8px;
+      }
+
       .calculator-grid {
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 40px;
+      .panel {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .panel h2 {
+        font-size: 32px;
+      }
+
+      .take-home {
+        font-size: 42px;
       }
 
       .result-cards,
@@ -614,20 +719,40 @@
         grid-template-columns: 1fr;
       }
 
-      .nav {
-        align-items: flex-start;
-        gap: 12px;
-        flex-direction: column;
+      .content {
+        padding: 26px 16px 60px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand {
+        min-width: 0;
       }
 
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 4px;
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand-text small {
+        font-size: 7px;
+        letter-spacing: 1.8px;
       }
 
       .nav-links a {
-        white-space: nowrap;
+        padding: 11px 17px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .result-card strong {
+        font-size: 22px;
       }
     }
   </style>
@@ -636,7 +761,19 @@
 <body>
   <header class="topbar">
     <nav class="nav">
-      <a class="brand" href="index.html">SG Salary<span>Tools</span></a>
+      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-bars">
+            <i></i><i></i><i></i>
+          </span>
+        </span>
+
+        <span class="brand-text">
+          <strong>SG Salary<span>Tools</span></strong>
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
+
       <div class="nav-links">
         <a class="active" href="index.html">Home</a>
         <a href="calculators.html">Calculators</a>
@@ -646,38 +783,22 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Singapore Salary Calculator 2026</div>
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="eyebrow">Updated for Singapore 2026 salary planning</div>
 
-      <h1>Calculate your salary after CPF and tax.</h1>
+      <h1>Know your real <em>take-home pay</em> in Singapore</h1>
 
       <p>
-        Estimate your monthly take-home pay after CPF employee contribution and annual income tax in Singapore.
-        Useful for job offers, salary increments, bonus planning and monthly budgeting.
+        Free Singapore salary calculator for employees, job seekers and payroll users.
+        Estimate CPF, income tax, monthly net salary and annual salary breakdown instantly.
       </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#calculator">Calculate salary</a>
-        <a class="btn btn-secondary" href="#examples">View examples</a>
-      </div>
 
       <div class="quick-stats">
         <span>CPF Included</span>
         <span>Income Tax Estimate</span>
-        <span>Updated for 2026 Planning</span>
         <span>Free & Instant</span>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <div class="hero-card-title">Estimated salary breakdown</div>
-      <div class="mini-chart">
-        <div class="bar" style="height: 42%;"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+        <span>Built for Singapore</span>
       </div>
     </div>
   </section>
