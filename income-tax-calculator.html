@@ -1,452 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
 
-  <title>Singapore Income Tax Calculator 2026 | Personal Income Tax Estimate</title>
-
-  <meta name="description" content="Free Singapore income tax calculator 2026. Estimate your annual personal income tax, chargeable income and monthly tax amount based on Singapore resident tax rates.">
-
-  <meta name="keywords" content="Singapore income tax calculator, personal income tax calculator Singapore, IRAS tax calculator, Singapore tax rates 2026, resident tax calculator Singapore">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="robots" content="index, follow">
+  <title>Singapore Income Tax Calculator 2026 | Estimate IRAS Tax Payable</title>
 
   <link rel="canonical" href="https://sgsalarytools.com/income-tax-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Singapore Income Tax Calculator 2026. Estimate resident and non-resident personal income tax, chargeable income and effective tax rate." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 0;
-      color: #222;
-      line-height: 1.6;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6f1;
+      color: #10231a;
     }
 
-    header {
-      background: #0f766e;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      max-width: 760px;
-      margin: 12px auto 0;
-      font-size: 17px;
-    }
-
-    nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #0f766e;
-      margin: 0 10px;
+    a {
+      color: inherit;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
+    .topbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e3eadf;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
     }
 
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
     }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+      color: #24241f;
+      white-space: nowrap;
+    }
+
+    .brand-text strong span {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #74776f;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      color: #5d635b;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #edf5e9;
+      color: #173f2b;
+    }
+
+    .nav-links a.active {
+      background: #22231f;
+      color: #ffffff;
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
+        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
+      border-bottom: 1px solid #e3eadf;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 22px 24px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      background: #dfeee4;
+      color: #2f7d63;
+      border: 1px solid #bfd9c8;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6.5vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      font-weight: 500;
+      color: #25251f;
+    }
+
+    h1 em {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.75;
+      color: #6f7169;
+      max-width: 760px;
+      margin: 0 auto 26px;
+      font-weight: 650;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 760px;
+    }
+
+    .quick-stats span {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid #dfe9db;
+      color: #2f5f3a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
+    }
+
+    .calculator-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 10px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #e1e7dc;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      color: #25251f;
+    }
+
+    .panel-desc {
+      margin: 0 0 24px;
+      color: #6f7169;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .field { margin-bottom: 18px; }
 
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      font-size: 14px;
+      font-weight: 900;
+      color: #233b2d;
+      margin-bottom: 8px;
     }
 
-    input {
+    input,
+    select {
       width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid #d9e2d4;
+      border-radius: 16px;
+      padding: 15px 16px;
       font-size: 16px;
-      box-sizing: border-box;
+      background: #fffdfa;
+      color: #10231a;
+      outline: none;
+      font-weight: 750;
     }
 
-    button {
-      margin-top: 20px;
+    input:focus,
+    select:focus {
+      border-color: #2f7d63;
+      box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.14);
+    }
+
+    .calculate-btn {
       width: 100%;
-      padding: 14px;
-      background: #0f766e;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
       color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 17px;
-      font-weight: bold;
+      border-radius: 18px;
+      padding: 17px;
+      font-weight: 950;
+      font-size: 16px;
+      border: 0;
       cursor: pointer;
-    }
-
-    button:hover {
-      background: #115e59;
+      box-shadow: 0 16px 34px rgba(47, 125, 99, 0.24);
     }
 
     .results {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
+      gap: 18px;
     }
 
-    .result-box {
-      background: #f0fdfa;
-      border-left: 5px solid #0f766e;
-      padding: 18px;
-      border-radius: 8px;
+    .main-result {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
     }
 
-    .result-box h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
+    .main-result::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
     }
 
-    .amount {
+    .main-result small {
+      display: block;
+      color: #d9eee0;
+      font-weight: 850;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .take-home {
+      font-size: 50px;
+      font-weight: 950;
+      letter-spacing: -1.8px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sub-result {
+      color: #d9eee0;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.5;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.06);
+    }
+
+    .result-card span {
+      display: block;
+      color: #6d7b70;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .result-card strong {
       font-size: 24px;
-      font-weight: bold;
-      color: #0f766e;
+      color: #10231a;
+    }
+
+    .breakdown {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.05);
+    }
+
+    .breakdown h3,
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 25px;
+      letter-spacing: -0.6px;
+      color: #10231a;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf2ea;
+      color: #425346;
+    }
+
+    .row:last-child { border-bottom: 0; }
+
+    .row strong {
+      color: #10231a;
+      text-align: right;
+    }
+
+    .positive {
+      color: #2d6b3f;
+      font-weight: 900;
+    }
+
+    .negative {
+      color: #b45f3c;
+      font-weight: 900;
+    }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 70px;
+    }
+
+    .content-section {
+      margin-top: 44px;
+    }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.7;
+      max-width: 820px;
+      margin: -6px 0 22px;
+    }
+
+    .info-grid,
+    .related-grid,
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-card,
+    .related-card,
+    .scenario-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
+    }
+
+    .info-card h3,
+    .related-card h3,
+    .scenario-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .info-card p,
+    .related-card p,
+    .scenario-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card,
+    .scenario-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover,
+    .scenario-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      min-width: 680px;
     }
 
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
+    th,
+    td {
       text-align: left;
+      padding: 17px 20px;
+      border-bottom: 1px solid #edf2ea;
     }
 
     th {
-      background: #f0fdfa;
+      background: #f7faf5;
+      color: #173f2b;
+      font-size: 14px;
+      font-weight: 900;
     }
 
-    .note {
-      background: #fff7ed;
-      border-left: 5px solid #f97316;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
+    td {
+      color: #425346;
+      font-weight: 650;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .view-all {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .view-all a {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 800;
+      border: 1px solid #dfe9db;
+    }
+
+    .faq {
+      margin-top: 44px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: #173f2b;
+    }
+
+    details p {
+      color: #647168;
+      line-height: 1.65;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      color: #666;
+      color: #77837a;
       font-size: 14px;
+      padding: 28px;
+      border-top: 1px solid #e4eadf;
+      background: white;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
+    @media (max-width: 900px) {
+      .nav {
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
       }
 
-      nav a {
-        display: block;
-        margin: 8px 0;
+      .brand {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        min-width: 138px;
+        gap: 7px;
       }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
+      }
+
+      .brand-text strong { font-size: 13px; }
+
+      .brand-text small {
+        font-size: 5.5px;
+        letter-spacing: 1.1px;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        gap: 6px;
+        overflow-x: auto;
+      }
+
+      .nav-links a {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 36px 20px 22px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 46px;
+        line-height: 0.98;
+        letter-spacing: -2.4px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+      }
+
+      .quick-stats {
+        justify-content: flex-start;
+      }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      .calculator-section {
+        padding: 24px 16px 8px;
+      }
+
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .panel h2 { font-size: 32px; }
+
+      .take-home { font-size: 42px; }
+
+      .result-cards,
+      .info-grid,
+      .related-grid,
+      .scenario-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        padding: 26px 16px 60px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      h1 { font-size: 42px; }
+      .hero p { font-size: 17px; }
+      .result-card strong { font-size: 22px; }
     }
   </style>
 </head>
 
 <body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
+        <img src="logo-icon.png" alt="SG Salary Tools">
 
-<header>
-  <h1>Singapore Income Tax Calculator 2026</h1>
-  <p>Estimate your Singapore personal income tax based on annual income, CPF contribution and tax reliefs.</p>
-</header>
+        <span class="brand-text">
+          <strong>SG Salary<span>Tools</span></strong>
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
 
-<nav>
-  <a href="index.html">Salary Calculator</a>
-  <a href="cpf-calculator.html">CPF Calculator</a>
-  <a href="income-tax-calculator.html">Income Tax Calculator</a>
-  <a href="cpf-guide.html">CPF Guide</a>
-</nav>
-
-<div class="container">
-
-  <section class="card">
-    <h2>Calculate Singapore Income Tax</h2>
-
-    <label for="annualIncome">Annual Employment Income (SGD)</label>
-    <input type="number" id="annualIncome" placeholder="Example: 60000">
-
-    <label for="cpfRelief">Employee CPF Contribution / CPF Relief (SGD)</label>
-    <input type="number" id="cpfRelief" placeholder="Example: 12000">
-
-    <label for="personalReliefs">Other Personal Reliefs (SGD)</label>
-    <input type="number" id="personalReliefs" placeholder="Example: 1000">
-
-    <button onclick="calculateTax()">Calculate Income Tax</button>
-
-    <div class="results">
-      <div class="result-box">
-        <h3>Annual Income</h3>
-        <div class="amount" id="incomeResult">S$0.00</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
       </div>
+    </nav>
+  </header>
 
-      <div class="result-box">
-        <h3>Chargeable Income</h3>
-        <div class="amount" id="chargeableResult">S$0.00</div>
-      </div>
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="eyebrow">Singapore Income Tax Calculator 2026</div>
 
-      <div class="result-box">
-        <h3>Estimated Annual Tax</h3>
-        <div class="amount" id="taxResult">S$0.00</div>
-      </div>
+      <h1>Estimate your Singapore <em>income tax</em></h1>
 
-      <div class="result-box">
-        <h3>Estimated Monthly Tax</h3>
-        <div class="amount" id="monthlyTaxResult">S$0.00</div>
+      <p>
+        Calculate estimated personal income tax in Singapore based on annual income,
+        tax residency, CPF deduction and tax reliefs. Useful for salary planning, bonus planning and IRAS tax estimation.
+      </p>
+
+      <div class="quick-stats">
+        <span>Resident Tax Rates</span>
+        <span>Non-Resident Option</span>
+        <span>Chargeable Income</span>
+        <span>Effective Tax Rate</span>
       </div>
     </div>
+  </section>
 
-    <table>
-      <tr>
-        <th>Breakdown</th>
-        <th>Amount</th>
-      </tr>
-      <tr>
-        <td>Annual Employment Income</td>
-        <td id="annualIncomeBreakdown">S$0.00</td>
-      </tr>
-      <tr>
-        <td>CPF Relief</td>
-        <td id="cpfReliefBreakdown">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Other Personal Reliefs</td>
-        <td id="otherReliefsBreakdown">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Estimated Chargeable Income</td>
-        <td id="chargeableIncomeBreakdown">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Estimated Annual Income Tax</td>
-        <td id="annualTaxBreakdown">S$0.00</td>
-      </tr>
-    </table>
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-grid">
+      <div class="panel">
+        <h2>Income tax inputs</h2>
+        <p class="panel-desc">
+          Enter your annual income and deductions to estimate your Singapore income tax payable.
+        </p>
 
-    <div class="note">
-      This calculator estimates Singapore resident individual income tax only. Actual tax payable may differ depending on IRAS assessment, tax residency, reliefs, rebates and personal circumstances.
+        <div class="field">
+          <label for="annualIncome">Annual employment income</label>
+          <input id="annualIncome" type="number" value="60000" min="0" step="100" />
+        </div>
+
+        <div class="field">
+          <label for="bonus">Additional bonus / other employment income</label>
+          <input id="bonus" type="number" value="0" min="0" step="100" />
+        </div>
+
+        <div class="field">
+          <label for="cpf">Annual employee CPF deduction</label>
+          <input id="cpf" type="number" value="12000" min="0" step="100" />
+        </div>
+
+        <div class="field">
+          <label for="relief">Estimated tax reliefs</label>
+          <input id="relief" type="number" value="0" min="0" step="100" />
+        </div>
+
+        <div class="field">
+          <label for="resident">Tax residency</label>
+          <select id="resident">
+            <option value="resident">Tax resident</option>
+            <option value="nonresident">Non-resident employment income</option>
+          </select>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateTax()">Calculate income tax</button>
+      </div>
+
+      <div class="results">
+        <div class="main-result">
+          <small>Estimated income tax payable</small>
+          <div class="take-home" id="taxPayable">S$550</div>
+          <div class="sub-result" id="monthlyTax">Estimated monthly tax allocation: S$46</div>
+        </div>
+
+        <div class="result-cards">
+          <div class="result-card">
+            <span>Chargeable income</span>
+            <strong id="chargeableIncome">S$48,000</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Effective tax rate</span>
+            <strong id="effectiveRate">0.9%</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Tax residency basis</span>
+            <strong id="taxBasis">Resident</strong>
+          </div>
+        </div>
+
+        <div class="breakdown">
+          <h3>Tax breakdown</h3>
+
+          <div class="row">
+            <span>Total annual income</span>
+            <strong id="totalIncome">S$60,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Less: employee CPF deduction</span>
+            <strong class="negative" id="cpfDeduction">-S$12,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Less: tax reliefs</span>
+            <strong class="negative" id="reliefDeduction">-S$0</strong>
+          </div>
+
+          <div class="row">
+            <span>Estimated chargeable income</span>
+            <strong id="taxableIncome">S$48,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Estimated annual income tax</span>
+            <strong class="negative" id="annualTax">-S$550</strong>
+          </div>
+
+          <div class="row">
+            <span>Estimated income after tax</span>
+            <strong class="positive" id="incomeAfterTax">S$59,450</strong>
+          </div>
+        </div>
+
+        <div class="note-box" id="calculationNote">
+          Tax resident income is estimated using Singapore progressive resident tax rates. Actual IRAS assessment may differ depending on reliefs, rebates and deductions.
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h2>Singapore Resident Income Tax Rates 2026</h2>
+  <main class="content">
+    <section class="content-section">
+      <h2 class="section-title">How this Singapore income tax calculator works</h2>
+      <p class="section-desc">
+        Singapore personal income tax is generally calculated on chargeable income.
+        Chargeable income is estimated after deducting allowable CPF deductions and personal tax reliefs from your annual income.
+      </p>
 
-    <p>
-      Singapore uses progressive tax rates for tax residents. This means higher income is taxed at higher marginal rates, while the first S$20,000 of chargeable income is taxed at 0%.
-    </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Add annual income</h3>
+          <p>Start with your annual employment income, bonus and other taxable employment income.</p>
+        </div>
 
-    <table>
-      <tr>
-        <th>Chargeable Income</th>
-        <th>Tax Rate</th>
-      </tr>
-      <tr>
-        <td>First S$20,000</td>
-        <td>0%</td>
-      </tr>
-      <tr>
-        <td>Next S$10,000</td>
-        <td>2%</td>
-      </tr>
-      <tr>
-        <td>Next S$10,000</td>
-        <td>3.5%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>7%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>11.5%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>15%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>18%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>19%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>19.5%</td>
-      </tr>
-      <tr>
-        <td>Next S$40,000</td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td>Next S$180,000</td>
-        <td>22%</td>
-      </tr>
-      <tr>
-        <td>Next S$500,000</td>
-        <td>23%</td>
-      </tr>
-      <tr>
-        <td>Above S$1,000,000</td>
-        <td>24%</td>
-      </tr>
-    </table>
-  </section>
+        <div class="info-card">
+          <h3>2. Deduct CPF and reliefs</h3>
+          <p>CPF deductions and tax reliefs may reduce your estimated chargeable income.</p>
+        </div>
 
-  <section class="card">
-    <h2>How Singapore Income Tax Is Calculated</h2>
+        <div class="info-card">
+          <h3>3. Apply tax rates</h3>
+          <p>Tax residents are taxed progressively. Non-resident employment income is taxed at 15% or resident rates, whichever gives higher tax.</p>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      Singapore personal income tax is calculated based on your chargeable income. Chargeable income is usually your assessable income after deducting allowable expenses, donations and personal reliefs.
-    </p>
+    <section class="content-section">
+      <h2 class="section-title">Singapore resident income tax rate examples</h2>
+      <p class="section-desc">
+        Singapore tax residents are taxed progressively. The table below shows simplified examples based on chargeable income only.
+      </p>
 
-    <p>
-      For employees, common items that reduce taxable income may include employee CPF contributions and personal reliefs. This calculator lets you enter CPF relief and other personal reliefs manually.
-    </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Chargeable Income</th>
+              <th>Estimated Tax Payable</th>
+              <th>Approx. Effective Tax Rate</th>
+              <th>Planning Note</th>
+            </tr>
+          </thead>
 
-    <p>
-      Example: if your annual employment income is S$60,000 and your CPF relief is S$12,000, your estimated chargeable income before other reliefs is S$48,000. The calculator then applies Singapore resident tax rates to estimate your annual tax.
-    </p>
-  </section>
+          <tbody>
+            <tr>
+              <td>S$20,000</td>
+              <td>S$0</td>
+              <td>0.0%</td>
+              <td>First S$20,000 is taxed at 0% for residents</td>
+            </tr>
 
-  <section class="card">
-    <h2>Frequently Asked Questions</h2>
+            <tr>
+              <td>S$40,000</td>
+              <td>S$550</td>
+              <td>1.4%</td>
+              <td>Common lower-middle income tax estimate</td>
+            </tr>
 
-    <h3>Is Singapore income tax deducted monthly?</h3>
-    <p>
-      For most employees, Singapore income tax is assessed annually by IRAS. It is not usually deducted monthly like payroll tax in some countries.
-    </p>
+            <tr>
+              <td>S$60,000</td>
+              <td>S$1,950</td>
+              <td>3.3%</td>
+              <td>Useful for mid-income salary planning</td>
+            </tr>
 
-    <h3>Who is considered a Singapore tax resident?</h3>
-    <p>
-      Generally, you may be treated as a Singapore tax resident if you stay or work in Singapore for at least 183 days in a year, subject to IRAS rules.
-    </p>
+            <tr>
+              <td>S$80,000</td>
+              <td>S$3,350</td>
+              <td>4.2%</td>
+              <td>Tax increases as income enters higher brackets</td>
+            </tr>
 
-    <h3>Does this calculator include tax rebates?</h3>
-    <p>
-      No. This calculator gives a simple estimate based on chargeable income and resident tax rates. Rebates and special reliefs are not automatically included.
-    </p>
+            <tr>
+              <td>S$120,000</td>
+              <td>S$7,950</td>
+              <td>6.6%</td>
+              <td>Bonus and relief planning becomes more important</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <h3>Can foreigners use this calculator?</h3>
-    <p>
-      This page is designed mainly for Singapore tax residents. Non-residents may be taxed differently.
-    </p>
-  </section>
+    <section class="content-section">
+      <h2 class="section-title">Common Singapore income tax scenarios</h2>
+      <p class="section-desc">
+        These examples are useful for common tax searches by employees, foreigners and job seekers.
+      </p>
 
-</div>
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <h3>Tax on S$60,000 income</h3>
+          <p>
+            If your chargeable income is around S$60,000, estimated resident tax may be around S$1,950 before any rebates.
+            Your actual tax may differ depending on reliefs and deductions.
+          </p>
+        </div>
 
-<footer>
-  <p>© 2026 Singapore Salary Calculator. All rights reserved.</p>
-</footer>
+        <div class="scenario-card">
+          <h3>Foreigner income tax</h3>
+          <p>
+            Foreigners may be treated as tax residents or non-residents depending on their stay and work period in Singapore.
+            Non-resident employment income is usually taxed at 15% or resident rates, whichever is higher.
+          </p>
+        </div>
 
-<script>
-  function formatMoney(amount) {
-    return "S$" + amount.toLocaleString("en-SG", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
+        <div class="scenario-card">
+          <h3>Tax relief planning</h3>
+          <p>
+            Tax reliefs can reduce chargeable income. Common examples may include earned income relief,
+            CPF relief and other personal reliefs where applicable.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  function calculateIncomeTax(chargeableIncome) {
-    let tax = 0;
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore calculators</h2>
+      <p class="section-desc">
+        Use these calculators together to understand salary, CPF and tax.
+      </p>
 
-    if (chargeableIncome <= 20000) {
-      tax = 0;
-    } else if (chargeableIncome <= 30000) {
-      tax = (chargeableIncome - 20000) * 0.02;
-    } else if (chargeableIncome <= 40000) {
-      tax = 200 + (chargeableIncome - 30000) * 0.035;
-    } else if (chargeableIncome <= 80000) {
-      tax = 550 + (chargeableIncome - 40000) * 0.07;
-    } else if (chargeableIncome <= 120000) {
-      tax = 3350 + (chargeableIncome - 80000) * 0.115;
-    } else if (chargeableIncome <= 160000) {
-      tax = 7950 + (chargeableIncome - 120000) * 0.15;
-    } else if (chargeableIncome <= 200000) {
-      tax = 13950 + (chargeableIncome - 160000) * 0.18;
-    } else if (chargeableIncome <= 240000) {
-      tax = 21150 + (chargeableIncome - 200000) * 0.19;
-    } else if (chargeableIncome <= 280000) {
-      tax = 28750 + (chargeableIncome - 240000) * 0.195;
-    } else if (chargeableIncome <= 320000) {
-      tax = 36550 + (chargeableIncome - 280000) * 0.20;
-    } else if (chargeableIncome <= 500000) {
-      tax = 44550 + (chargeableIncome - 320000) * 0.22;
-    } else if (chargeableIncome <= 1000000) {
-      tax = 84150 + (chargeableIncome - 500000) * 0.23;
-    } else {
-      tax = 199150 + (chargeableIncome - 1000000) * 0.24;
+      <div class="related-grid">
+        <a class="related-card" href="index.html">
+          <h3>Salary Calculator</h3>
+          <p>Estimate monthly take-home pay after CPF and tax.</p>
+        </a>
+
+        <a class="related-card" href="salary-after-tax-calculator.html">
+          <h3>Salary After Tax Calculator</h3>
+          <p>Estimate your net salary after CPF and income tax.</p>
+        </a>
+
+        <a class="related-card" href="cpf-calculator.html">
+          <h3>CPF Calculator</h3>
+          <p>Calculate employee and employer CPF contributions.</p>
+        </a>
+
+        <a class="related-card" href="take-home-pay-calculator.html">
+          <h3>Take Home Pay Calculator</h3>
+          <p>Understand your practical monthly net salary.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="calculators.html">View All Calculators →</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore tax guides</h2>
+      <p class="section-desc">
+        Learn the rules behind your Singapore income tax calculation.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="income-tax-guide.html">
+          <h3>Income Tax Guide</h3>
+          <p>Understand Singapore personal income tax for employees.</p>
+        </a>
+
+        <a class="related-card" href="tax-relief-guide.html">
+          <h3>Tax Relief Guide</h3>
+          <p>Learn how tax reliefs may reduce chargeable income.</p>
+        </a>
+
+        <a class="related-card" href="salary-after-tax-guide.html">
+          <h3>Salary After Tax Guide</h3>
+          <p>Understand how tax affects your final net salary.</p>
+        </a>
+
+        <a class="related-card" href="cpf-guide.html">
+          <h3>CPF Guide</h3>
+          <p>Learn how CPF affects salary and tax planning.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="guides.html">View All Guides →</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How is income tax calculated in Singapore?</summary>
+        <p>
+          For tax residents, Singapore income tax is calculated using progressive tax rates on chargeable income.
+          Chargeable income is generally income after allowable deductions and reliefs.
+        </p>
+      </details>
+
+      <details>
+        <summary>What is chargeable income?</summary>
+        <p>
+          Chargeable income is the amount used to calculate tax after deducting allowable deductions and reliefs from taxable income.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I pay tax if my income is below S$20,000?</summary>
+        <p>
+          For Singapore tax residents, the first S$20,000 of chargeable income is taxed at 0%.
+          However, you may still need to check your filing requirements.
+        </p>
+      </details>
+
+      <details>
+        <summary>Are foreigners taxed in Singapore?</summary>
+        <p>
+          Yes. Foreigners working in Singapore may be taxed as residents or non-residents depending on their stay and work period.
+        </p>
+      </details>
+
+      <details>
+        <summary>How are non-residents taxed on employment income?</summary>
+        <p>
+          Non-resident employment income is generally taxed at 15% or progressive resident rates, whichever gives a higher tax amount.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does CPF reduce taxable income?</summary>
+        <p>
+          Employee CPF contributions may be considered in tax calculations where applicable.
+          This calculator allows you to enter annual employee CPF deduction separately.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is income tax deducted monthly in Singapore?</summary>
+        <p>
+          Singapore personal income tax is usually assessed annually. This calculator shows a monthly tax allocation only for planning.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this calculator official?</summary>
+        <p>
+          No. This calculator provides estimates only. For official tax calculation and assessment, refer to IRAS.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SG Salary Tools. This calculator provides estimates only and is not official CPF, payroll or tax advice.
+  </footer>
+
+  <script>
+    function money(value) {
+      return "S$" + Math.round(value).toLocaleString("en-SG");
     }
 
-    return tax;
-  }
+    function percent(value) {
+      return value.toFixed(1) + "%";
+    }
 
-  function calculateTax() {
-    const annualIncome = parseFloat(document.getElementById("annualIncome").value) || 0;
-    const cpfRelief = parseFloat(document.getElementById("cpfRelief").value) || 0;
-    const personalReliefs = parseFloat(document.getElementById("personalReliefs").value) || 0;
+    function residentTax(chargeableIncome) {
+      const brackets = [
+        { limit: 20000, rate: 0 },
+        { limit: 10000, rate: 0.02 },
+        { limit: 10000, rate: 0.035 },
+        { limit: 40000, rate: 0.07 },
+        { limit: 40000, rate: 0.115 },
+        { limit: 40000, rate: 0.15 },
+        { limit: 40000, rate: 0.18 },
+        { limit: 40000, rate: 0.19 },
+        { limit: 40000, rate: 0.195 },
+        { limit: 40000, rate: 0.20 },
+        { limit: 180000, rate: 0.22 },
+        { limit: 500000, rate: 0.23 },
+        { limit: Infinity, rate: 0.24 }
+      ];
 
-    const totalReliefs = cpfRelief + personalReliefs;
-    const chargeableIncome = Math.max(annualIncome - totalReliefs, 0);
+      let remaining = Math.max(0, chargeableIncome);
+      let tax = 0;
 
-    const annualTax = calculateIncomeTax(chargeableIncome);
-    const monthlyTax = annualTax / 12;
+      for (const bracket of brackets) {
+        const taxable = Math.min(remaining, bracket.limit);
+        tax += taxable * bracket.rate;
+        remaining -= taxable;
 
-    document.getElementById("incomeResult").innerText = formatMoney(annualIncome);
-    document.getElementById("chargeableResult").innerText = formatMoney(chargeableIncome);
-    document.getElementById("taxResult").innerText = formatMoney(annualTax);
-    document.getElementById("monthlyTaxResult").innerText = formatMoney(monthlyTax);
+        if (remaining <= 0) break;
+      }
 
-    document.getElementById("annualIncomeBreakdown").innerText = formatMoney(annualIncome);
-    document.getElementById("cpfReliefBreakdown").innerText = formatMoney(cpfRelief);
-    document.getElementById("otherReliefsBreakdown").innerText = formatMoney(personalReliefs);
-    document.getElementById("chargeableIncomeBreakdown").innerText = formatMoney(chargeableIncome);
-    document.getElementById("annualTaxBreakdown").innerText = formatMoney(annualTax);
-  }
-</script>
+      return tax;
+    }
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Singapore Income Tax Calculator 2026",
-  "url": "https://sgsalarytools.com/income-tax-calculator.html",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "All",
-  "description": "Free Singapore income tax calculator to estimate personal income tax and chargeable income."
-}
-</script>
+    function calculateTax() {
+      const annualIncome = Number(document.getElementById("annualIncome").value) || 0;
+      const bonus = Number(document.getElementById("bonus").value) || 0;
+      const cpf = Number(document.getElementById("cpf").value) || 0;
+      const relief = Number(document.getElementById("relief").value) || 0;
+      const resident = document.getElementById("resident").value;
 
+      const totalIncome = annualIncome + bonus;
+      const chargeableIncome = Math.max(0, totalIncome - cpf - relief);
+
+      let taxPayable;
+      let basisText;
+
+      if (resident === "resident") {
+        taxPayable = residentTax(chargeableIncome);
+        basisText = "Resident";
+      } else {
+        const progressiveTax = residentTax(chargeableIncome);
+        const nonResidentTax = totalIncome * 0.15;
+        taxPayable = Math.max(progressiveTax, nonResidentTax);
+        basisText = "Non-resident";
+      }
+
+      const monthlyTax = taxPayable / 12;
+      const incomeAfterTax = totalIncome - taxPayable;
+      const effectiveRate = totalIncome > 0 ? (taxPayable / totalIncome) * 100 : 0;
+
+      document.getElementById("taxPayable").textContent = money(taxPayable);
+      document.getElementById("monthlyTax").textContent = "Estimated monthly tax allocation: " + money(monthlyTax);
+
+      document.getElementById("chargeableIncome").textContent = money(chargeableIncome);
+      document.getElementById("effectiveRate").textContent = percent(effectiveRate);
+      document.getElementById("taxBasis").textContent = basisText;
+
+      document.getElementById("totalIncome").textContent = money(totalIncome);
+      document.getElementById("cpfDeduction").textContent = "-" + money(cpf);
+      document.getElementById("reliefDeduction").textContent = "-" + money(relief);
+      document.getElementById("taxableIncome").textContent = money(chargeableIncome);
+      document.getElementById("annualTax").textContent = "-" + money(taxPayable);
+      document.getElementById("incomeAfterTax").textContent = money(incomeAfterTax);
+
+      const note = document.getElementById("calculationNote");
+
+      if (resident === "resident") {
+        note.textContent =
+          "Tax resident income is estimated using Singapore progressive resident tax rates. Actual IRAS assessment may differ depending on reliefs, rebates and deductions.";
+      } else {
+        note.textContent =
+          "Non-resident employment income is estimated at 15% of employment income or progressive resident rates, whichever gives a higher tax amount. Personal reliefs may not apply to non-residents.";
+      }
+    }
+
+    calculateTax();
+  </script>
 </body>
 </html>
