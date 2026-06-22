@@ -388,6 +388,7 @@
 
     .row strong {
       color: #10231a;
+      text-align: right;
     }
 
     .positive {
@@ -543,6 +544,13 @@
       text-align: center;
       font-weight: 900;
       color: #173f2b;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.09);
     }
 
     .authority-item span {
@@ -630,8 +638,8 @@
     <nav class="nav">
       <a class="brand" href="index.html">SG Salary<span>Tools</span></a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
         <a href="guides.html">Guides</a>
         <a href="about.html">About</a>
       </div>
@@ -657,7 +665,7 @@
       <div class="quick-stats">
         <span>CPF Included</span>
         <span>Income Tax Estimate</span>
-        <span>2026 Ready</span>
+        <span>Updated for 2026 Planning</span>
         <span>Free & Instant</span>
       </div>
     </div>
@@ -693,6 +701,14 @@
         </div>
 
         <div class="field">
+          <label for="cpfEligibility">CPF eligibility</label>
+          <select id="cpfEligibility">
+            <option value="cpf">Singapore Citizen / PR third year onwards</option>
+            <option value="noCpf">Foreigner / No CPF contribution</option>
+          </select>
+        </div>
+
+        <div class="field">
           <label for="age">Age group</label>
           <select id="age">
             <option value="55below">55 and below</option>
@@ -722,24 +738,24 @@
       <div class="results">
         <div class="main-result">
           <small>Estimated monthly take-home pay</small>
-          <div class="take-home" id="takeHome">$4,000</div>
-          <div class="sub-result" id="annualTakeHome">Estimated annual take-home: $48,000</div>
+          <div class="take-home" id="takeHome">S$4,000</div>
+          <div class="sub-result" id="annualTakeHome">Estimated annual take-home: S$48,000</div>
         </div>
 
         <div class="result-cards">
           <div class="result-card">
             <span>Employee CPF</span>
-            <strong id="employeeCpf">$1,000</strong>
+            <strong id="employeeCpf">S$1,000</strong>
           </div>
 
           <div class="result-card">
             <span>Employer CPF</span>
-            <strong id="employerCpf">$850</strong>
+            <strong id="employerCpf">S$850</strong>
           </div>
 
           <div class="result-card">
             <span>Monthly tax estimate</span>
-            <strong id="monthlyTax">$0</strong>
+            <strong id="monthlyTax">S$0</strong>
           </div>
         </div>
 
@@ -748,37 +764,37 @@
 
           <div class="row">
             <span>Gross monthly salary</span>
-            <strong id="grossMonthly">$5,000</strong>
+            <strong id="grossMonthly">S$5,000</strong>
           </div>
 
           <div class="row">
             <span>Less: employee CPF</span>
-            <strong class="negative" id="cpfDeduction">-$1,000</strong>
+            <strong class="negative" id="cpfDeduction">-S$1,000</strong>
           </div>
 
           <div class="row">
             <span>Less: estimated monthly income tax</span>
-            <strong class="negative" id="taxDeduction">-$0</strong>
+            <strong class="negative" id="taxDeduction">-S$0</strong>
           </div>
 
           <div class="row">
             <span>Estimated monthly take-home</span>
-            <strong class="positive" id="netMonthly">$4,000</strong>
+            <strong class="positive" id="netMonthly">S$4,000</strong>
           </div>
 
           <div class="row">
             <span>Annual gross income including bonus</span>
-            <strong id="annualGross">$60,000</strong>
+            <strong id="annualGross">S$60,000</strong>
           </div>
 
           <div class="row">
             <span>Estimated annual tax payable</span>
-            <strong id="annualTax">$0</strong>
+            <strong id="annualTax">S$0</strong>
           </div>
         </div>
 
-        <div class="note-box">
-          CPF is estimated using Singapore Citizen / SPR third year onwards rates and the Ordinary Wage ceiling of S$8,000.
+        <div class="note-box" id="calculationNote">
+          CPF is estimated using Singapore Citizen / PR third year onwards rates and the Ordinary Wage ceiling of S$8,000.
           Income tax is simplified and may differ from your actual IRAS assessment.
         </div>
       </div>
@@ -789,7 +805,7 @@
     <section id="how" class="content-section">
       <h2 class="section-title">How this calculator works</h2>
       <p class="section-desc">
-        Your gross salary is reduced by employee CPF contribution before you receive your monthly cash salary.
+        Your gross salary may be reduced by employee CPF contribution before you receive your monthly cash salary.
         Singapore income tax is assessed annually, so this calculator spreads the estimated annual tax over 12 months
         to give a practical take-home pay estimate.
       </p>
@@ -802,7 +818,7 @@
 
         <div class="info-card">
           <h3>2. CPF contribution</h3>
-          <p>Employee CPF is deducted from your salary. Employer CPF is paid separately by your employer.</p>
+          <p>Employee CPF is deducted from salary for eligible employees. Employer CPF is paid separately by the employer.</p>
         </div>
 
         <div class="info-card">
@@ -815,7 +831,7 @@
     <section id="examples" class="content-section">
       <h2 class="section-title">Salary examples in Singapore</h2>
       <p class="section-desc">
-        These examples assume an employee aged 55 and below with standard employee CPF contribution.
+        These examples assume a Singapore Citizen or PR third year onwards employee aged 55 and below with standard employee CPF contribution.
         Actual take-home pay may differ depending on tax reliefs, bonuses and CPF eligibility.
       </p>
 
@@ -880,7 +896,7 @@
         <div class="scenario-card">
           <h3>S$4,000 salary after CPF</h3>
           <p>
-            For employees aged 55 and below, employee CPF is approximately S$800.
+            For eligible employees aged 55 and below, employee CPF is approximately S$800.
             The estimated take-home pay before tax is around S$3,200.
           </p>
         </div>
@@ -888,15 +904,15 @@
         <div class="scenario-card">
           <h3>S$5,000 salary after CPF</h3>
           <p>
-            Employee CPF is approximately S$1,000. The estimated take-home pay before tax is around S$4,000,
-            before considering annual income tax.
+            Employee CPF is approximately S$1,000 for eligible employees aged 55 and below.
+            The estimated take-home pay before tax is around S$4,000.
           </p>
         </div>
 
         <div class="scenario-card">
-          <h3>S$8,000 salary after CPF</h3>
+          <h3>Foreigner salary without CPF</h3>
           <p>
-            Employee CPF is approximately S$1,600. This salary level is useful for CPF Ordinary Wage ceiling planning.
+            Many foreigners working in Singapore do not contribute CPF, so their salary calculation may mainly depend on income tax and other deductions.
           </p>
         </div>
       </div>
@@ -959,25 +975,25 @@
         </p>
 
         <div class="authority-list">
-          <div class="authority-item">
+          <a class="authority-item" href="https://www.cpf.gov.sg/" target="_blank" rel="noopener">
             CPF Board
             <span>CPF contribution rules</span>
-          </div>
+          </a>
 
-          <div class="authority-item">
+          <a class="authority-item" href="https://www.iras.gov.sg/" target="_blank" rel="noopener">
             IRAS
             <span>Income tax rules</span>
-          </div>
+          </a>
 
-          <div class="authority-item">
+          <a class="authority-item" href="https://www.mom.gov.sg/" target="_blank" rel="noopener">
             MOM
             <span>Employment guidance</span>
-          </div>
+          </a>
 
-          <div class="authority-item">
+          <a class="authority-item" href="https://www.singstat.gov.sg/" target="_blank" rel="noopener">
             SingStat
             <span>Salary statistics</span>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -999,14 +1015,14 @@
           <p>Estimate Singapore resident income tax based on annual chargeable income.</p>
         </a>
 
-        <a class="related-card" href="salary-after-tax-calculator.html">
-          <h3>Salary After Tax Calculator</h3>
-          <p>Check estimated salary after CPF contribution and annual tax.</p>
-        </a>
-
         <a class="related-card" href="take-home-pay-calculator.html">
           <h3>Take Home Pay Calculator</h3>
           <p>Understand your practical monthly net pay after common deductions.</p>
+        </a>
+
+        <a class="related-card" href="annual-leave-calculator.html">
+          <h3>Annual Leave Calculator</h3>
+          <p>Estimate annual leave entitlement for Singapore employment planning.</p>
         </a>
       </div>
     </section>
@@ -1025,7 +1041,16 @@
       <details>
         <summary>Does this calculator include CPF contributions?</summary>
         <p>
-          Yes. It estimates both employee CPF deductions and employer CPF contributions based on your age group and salary.
+          Yes. It estimates both employee CPF deductions and employer CPF contributions for eligible Singapore Citizens and PRs.
+          You can also choose the no CPF option if CPF does not apply to your employment situation.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do foreigners in Singapore need to contribute CPF?</summary>
+        <p>
+          Many foreigners working in Singapore do not contribute CPF. If CPF does not apply to you, choose the foreigner / no CPF option
+          so the calculator will estimate your salary without CPF deduction.
         </p>
       </details>
 
@@ -1070,7 +1095,8 @@
       <details>
         <summary>Can foreigners use this salary calculator?</summary>
         <p>
-          Yes, but many foreigners working in Singapore do not contribute CPF. Their take-home pay may differ from Singapore Citizens and PRs.
+          Yes. Foreigners can use the no CPF option to estimate salary without CPF deduction.
+          Tax treatment may still depend on tax residency and your employment arrangement.
         </p>
       </details>
 
@@ -1089,7 +1115,7 @@
 
   <script>
     function money(value) {
-      return "$" + Math.round(value).toLocaleString("en-SG");
+      return "S$" + Math.round(value).toLocaleString("en-SG");
     }
 
     function getCpfRates(ageGroup) {
@@ -1138,6 +1164,7 @@
     function calculateSalary() {
       const salary = Number(document.getElementById("salary").value) || 0;
       const bonus = Number(document.getElementById("bonus").value) || 0;
+      const cpfEligibility = document.getElementById("cpfEligibility").value;
       const age = document.getElementById("age").value;
       const resident = document.getElementById("resident").value;
       const relief = Number(document.getElementById("relief").value) || 0;
@@ -1146,8 +1173,13 @@
       const cpfSalary = Math.min(salary, cpfCeiling);
       const rates = getCpfRates(age);
 
-      const employeeCpf = Math.floor(cpfSalary * rates.employee);
-      const employerCpf = Math.round(cpfSalary * rates.employer);
+      let employeeCpf = 0;
+      let employerCpf = 0;
+
+      if (cpfEligibility === "cpf") {
+        employeeCpf = Math.floor(cpfSalary * rates.employee);
+        employerCpf = Math.round(cpfSalary * rates.employer);
+      }
 
       const annualGross = salary * 12 + bonus;
       const annualEmployeeCpf = employeeCpf * 12;
@@ -1178,6 +1210,16 @@
       document.getElementById("netMonthly").textContent = money(takeHome);
       document.getElementById("annualGross").textContent = money(annualGross);
       document.getElementById("annualTax").textContent = money(annualTax);
+
+      const note = document.getElementById("calculationNote");
+
+      if (cpfEligibility === "cpf") {
+        note.textContent =
+          "CPF is estimated using Singapore Citizen / PR third year onwards rates and the Ordinary Wage ceiling of S$8,000. Income tax is simplified and may differ from your actual IRAS assessment.";
+      } else {
+        note.textContent =
+          "CPF is set to S$0 because the foreigner / no CPF option is selected. Income tax is still estimated based on your selected tax residency and may differ from your actual IRAS assessment.";
+      }
     }
 
     calculateSalary();
