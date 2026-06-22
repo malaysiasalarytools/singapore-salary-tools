@@ -1,401 +1,1181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
 
-  <title>Singapore CPF Calculator 2026 | Employee & Employer CPF Contributions</title>
-
-  <meta name="description" content="Free Singapore CPF calculator 2026. Calculate employee CPF, employer CPF, total CPF contribution and estimated take-home pay based on monthly salary and age group.">
-
-  <meta name="keywords" content="CPF calculator Singapore, Singapore CPF contribution calculator, employee CPF Singapore, employer CPF Singapore, CPF rates 2026">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="robots" content="index, follow">
+  <title>CPF Calculator Singapore 2026 | Employee & Employer CPF Contribution</title>
 
   <link rel="canonical" href="https://sgsalarytools.com/cpf-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Singapore CPF Calculator 2026. Estimate employee CPF, employer CPF, total CPF contribution and salary after CPF based on monthly salary and age group." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
 
   <style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 0;
-      color: #222;
-      line-height: 1.6;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6f1;
+      color: #10231a;
     }
 
-    header {
-      background: #0f766e;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      max-width: 760px;
-      margin: 12px auto 0;
-      font-size: 17px;
-    }
-
-    nav {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #0f766e;
-      margin: 0 10px;
+    a {
+      color: inherit;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
+    .topbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e3eadf;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
     }
 
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
     }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+      color: #24241f;
+      white-space: nowrap;
+    }
+
+    .brand-text strong span {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #74776f;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      color: #5d635b;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #edf5e9;
+      color: #173f2b;
+    }
+
+    .nav-links a.active {
+      background: #22231f;
+      color: #ffffff;
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
+        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
+      border-bottom: 1px solid #e3eadf;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 22px 26px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      background: #dfeee4;
+      color: #2f7d63;
+      border: 1px solid #bfd9c8;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 6.8vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      font-weight: 500;
+      color: #25251f;
+    }
+
+    h1 em {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.75;
+      color: #6f7169;
+      max-width: 760px;
+      margin: 0 auto 26px;
+      font-weight: 650;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 760px;
+    }
+
+    .quick-stats span {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid #dfe9db;
+      color: #2f5f3a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
+    }
+
+    .calculator-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 10px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #e1e7dc;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      color: #25251f;
+    }
+
+    .panel-desc {
+      margin: 0 0 24px;
+      color: #6f7169;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .field { margin-bottom: 18px; }
 
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      font-size: 14px;
+      font-weight: 900;
+      color: #233b2d;
+      margin-bottom: 8px;
     }
 
-    input, select {
+    input,
+    select {
       width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid #d9e2d4;
+      border-radius: 16px;
+      padding: 15px 16px;
       font-size: 16px;
-      box-sizing: border-box;
+      background: #fffdfa;
+      color: #10231a;
+      outline: none;
+      font-weight: 750;
     }
 
-    button {
-      margin-top: 20px;
+    input:focus,
+    select:focus {
+      border-color: #2f7d63;
+      box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.14);
+    }
+
+    .calculate-btn {
       width: 100%;
-      padding: 14px;
-      background: #0f766e;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
       color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 17px;
-      font-weight: bold;
+      border-radius: 18px;
+      padding: 17px;
+      font-weight: 950;
+      font-size: 16px;
+      border: 0;
       cursor: pointer;
-    }
-
-    button:hover {
-      background: #115e59;
+      box-shadow: 0 16px 34px rgba(47, 125, 99, 0.24);
     }
 
     .results {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
+      gap: 18px;
     }
 
-    .result-box {
-      background: #f0fdfa;
-      border-left: 5px solid #0f766e;
-      padding: 18px;
-      border-radius: 8px;
+    .main-result {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
     }
 
-    .result-box h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
+    .main-result::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
     }
 
-    .amount {
+    .main-result small {
+      display: block;
+      color: #d9eee0;
+      font-weight: 850;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .take-home {
+      font-size: 50px;
+      font-weight: 950;
+      letter-spacing: -1.8px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sub-result {
+      color: #d9eee0;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.06);
+    }
+
+    .result-card span {
+      display: block;
+      color: #6d7b70;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .result-card strong {
       font-size: 24px;
-      font-weight: bold;
-      color: #0f766e;
+      color: #10231a;
+    }
+
+    .breakdown {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.05);
+    }
+
+    .breakdown h3,
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 25px;
+      letter-spacing: -0.6px;
+      color: #10231a;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf2ea;
+      color: #425346;
+    }
+
+    .row:last-child { border-bottom: 0; }
+
+    .row strong {
+      color: #10231a;
+      text-align: right;
+    }
+
+    .positive {
+      color: #2d6b3f;
+      font-weight: 900;
+    }
+
+    .negative {
+      color: #b45f3c;
+      font-weight: 900;
+    }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 70px;
+    }
+
+    .content-section { margin-top: 44px; }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: -6px 0 22px;
+    }
+
+    .info-grid,
+    .related-grid,
+    .scenario-grid,
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .related-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .info-card,
+    .related-card,
+    .scenario-card,
+    .trust-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
+    }
+
+    .info-card h3,
+    .related-card h3,
+    .scenario-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .info-card p,
+    .related-card p,
+    .scenario-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card,
+    .scenario-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover,
+    .scenario-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      min-width: 700px;
     }
 
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
+    th,
+    td {
       text-align: left;
+      padding: 17px 20px;
+      border-bottom: 1px solid #edf2ea;
     }
 
     th {
-      background: #f0fdfa;
+      background: #f7faf5;
+      color: #173f2b;
+      font-size: 14px;
+      font-weight: 900;
     }
 
-    .note {
-      background: #fff7ed;
-      border-left: 5px solid #f97316;
-      padding: 15px;
-      border-radius: 8px;
+    td {
+      color: #425346;
+      font-weight: 650;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
       margin-top: 20px;
+    }
+
+    .authority-item {
+      background: #f7faf5;
+      border: 1px solid #e1eadc;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+      font-weight: 900;
+      color: #173f2b;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.09);
+    }
+
+    .authority-item span {
+      display: block;
+      margin-top: 6px;
+      color: #647168;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .faq { margin-top: 44px; }
+
+    details {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: #173f2b;
+    }
+
+    details p {
+      color: #647168;
+      line-height: 1.65;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      color: #666;
+      color: #77837a;
       font-size: 14px;
+      padding: 28px;
+      border-top: 1px solid #e4eadf;
+      background: white;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
+    @media (max-width: 900px) {
+      .nav {
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
       }
 
-      nav a {
-        display: block;
-        margin: 8px 0;
+      .brand {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        min-width: 138px;
+        gap: 7px;
       }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
+      }
+
+      .brand-text strong { font-size: 13px; }
+
+      .brand-text small {
+        font-size: 5.5px;
+        letter-spacing: 1.1px;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 0;
+        margin-left: 0;
+      }
+
+      .nav-links a {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 36px 20px 22px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 0.98;
+        letter-spacing: -2.4px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+      }
+
+      .quick-stats { justify-content: flex-start; }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      .calculator-section { padding: 24px 16px 8px; }
+
+      .calculator-grid { grid-template-columns: 1fr; }
+
+      .panel {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .panel h2 { font-size: 32px; }
+
+      .take-home { font-size: 42px; }
+
+      .result-cards,
+      .info-grid,
+      .related-grid,
+      .scenario-grid,
+      .trust-grid,
+      .authority-list {
+        grid-template-columns: 1fr;
+      }
+
+      .content { padding: 26px 16px 60px; }
+    }
+
+    @media (max-width: 430px) {
+      h1 { font-size: 43px; }
+
+      .hero p { font-size: 17px; }
+
+      .result-card strong { font-size: 22px; }
     }
   </style>
 </head>
 
 <body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
+        <img src="logo-icon.png" alt="SG Salary Tools">
 
-<header>
-  <h1>Singapore CPF Calculator 2026</h1>
-  <p>Calculate employee CPF, employer CPF, total CPF contribution and estimated take-home pay in Singapore.</p>
-</header>
+        <span class="brand-text">
+          <strong>SG Salary<span>Tools</span></strong>
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
 
-<nav>
-  <a href="index.html">Salary Calculator</a>
-  <a href="cpf-calculator.html">CPF Calculator</a>
-  <a href="income-tax-calculator.html">Income Tax Calculator</a>
-  <a href="cpf-guide.html">CPF Guide</a>
-</nav>
-
-<div class="container">
-
-  <section class="card">
-    <h2>Calculate CPF Contributions</h2>
-
-    <label for="salary">Monthly Ordinary Wage / Salary (SGD)</label>
-    <input type="number" id="salary" placeholder="Example: 5000">
-
-    <label for="age">Age Group</label>
-    <select id="age">
-      <option value="17,20">55 and below</option>
-      <option value="16,18">Above 55 to 60</option>
-      <option value="12.5,12.5">Above 60 to 65</option>
-      <option value="9,7.5">Above 65 to 70</option>
-      <option value="7.5,5">Above 70</option>
-    </select>
-
-    <button onclick="calculateCPF()">Calculate CPF</button>
-
-    <div class="results">
-      <div class="result-box">
-        <h3>Employee CPF</h3>
-        <div class="amount" id="employeeCpf">S$0.00</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
       </div>
+    </nav>
+  </header>
 
-      <div class="result-box">
-        <h3>Employer CPF</h3>
-        <div class="amount" id="employerCpf">S$0.00</div>
-      </div>
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="eyebrow">Singapore CPF Calculator 2026</div>
 
-      <div class="result-box">
-        <h3>Total CPF</h3>
-        <div class="amount" id="totalCpf">S$0.00</div>
-      </div>
+      <h1>Calculate your <em>CPF contribution</em> in Singapore</h1>
 
-      <div class="result-box">
-        <h3>Take-Home Pay</h3>
-        <div class="amount" id="takeHome">S$0.00</div>
+      <p>
+        Estimate employee CPF, employer CPF, total CPF contribution and salary after CPF.
+        Built for Singapore Citizens and PRs planning monthly salary, bonus and payroll deductions.
+      </p>
+
+      <div class="quick-stats">
+        <span>Employee CPF</span>
+        <span>Employer CPF</span>
+        <span>OW Ceiling Included</span>
+        <span>2026 CPF Rates</span>
       </div>
     </div>
+  </section>
 
-    <table>
-      <tr>
-        <th>Breakdown</th>
-        <th>Amount</th>
-      </tr>
-      <tr>
-        <td>Monthly Gross Salary</td>
-        <td id="grossSalary">S$0.00</td>
-      </tr>
-      <tr>
-        <td>CPF Wage Used for Calculation</td>
-        <td id="cpfWage">S$0.00</td>
-      </tr>
-      <tr>
-        <td>Employee CPF Rate</td>
-        <td id="employeeRate">0%</td>
-      </tr>
-      <tr>
-        <td>Employer CPF Rate</td>
-        <td id="employerRate">0%</td>
-      </tr>
-      <tr>
-        <td>Total CPF Rate</td>
-        <td id="totalRate">0%</td>
-      </tr>
-    </table>
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-grid">
+      <div class="panel">
+        <h2>CPF inputs</h2>
+        <p class="panel-desc">
+          Enter your monthly salary and age group. The calculator estimates CPF for Ordinary Wages and optional bonus.
+        </p>
 
-    <div class="note">
-      This calculator is for estimation only. Actual CPF may differ due to rounding, additional wages, PR year, wage ceiling and other CPF rules.
+        <div class="field">
+          <label for="salary">Gross monthly salary</label>
+          <input id="salary" type="number" value="5000" min="0" step="100">
+        </div>
+
+        <div class="field">
+          <label for="bonus">Annual bonus / Additional Wage</label>
+          <input id="bonus" type="number" value="0" min="0" step="100">
+        </div>
+
+        <div class="field">
+          <label for="age">Age group</label>
+          <select id="age">
+            <option value="55below">55 and below</option>
+            <option value="55to60">Above 55 to 60</option>
+            <option value="60to65">Above 60 to 65</option>
+            <option value="65to70">Above 65 to 70</option>
+            <option value="70above">Above 70</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="cpfEligibility">CPF eligibility</label>
+          <select id="cpfEligibility">
+            <option value="cpf">Singapore Citizen / PR third year onwards</option>
+            <option value="noCpf">Foreigner / No CPF contribution</option>
+          </select>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateCpf()">Calculate CPF</button>
+      </div>
+
+      <div class="results">
+        <div class="main-result">
+          <small>Estimated monthly salary after employee CPF</small>
+          <div class="take-home" id="salaryAfterCpf">S$4,000</div>
+          <div class="sub-result" id="monthlyCpfSummary">
+            Employee CPF: S$1,000 · Employer CPF: S$850
+          </div>
+        </div>
+
+        <div class="result-cards">
+          <div class="result-card">
+            <span>Employee CPF</span>
+            <strong id="employeeCpf">S$1,000</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Employer CPF</span>
+            <strong id="employerCpf">S$850</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Total CPF</span>
+            <strong id="totalCpf">S$1,850</strong>
+          </div>
+        </div>
+
+        <div class="breakdown">
+          <h3>CPF breakdown</h3>
+
+          <div class="row">
+            <span>Gross monthly salary</span>
+            <strong id="grossMonthly">S$5,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Ordinary Wage subject to CPF</span>
+            <strong id="owSubject">S$5,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Less: employee CPF</span>
+            <strong class="negative" id="employeeCpfDeduction">-S$1,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Salary after employee CPF</span>
+            <strong class="positive" id="netMonthly">S$4,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Employer CPF contribution</span>
+            <strong id="employerCpfRow">S$850</strong>
+          </div>
+
+          <div class="row">
+            <span>Estimated CPF on annual bonus</span>
+            <strong id="bonusCpf">S$0</strong>
+          </div>
+        </div>
+
+        <div class="note-box" id="calculationNote">
+          This calculator uses 2026 CPF rates for Singapore Citizens and PRs from the third year onwards.
+          Ordinary Wages are capped at the CPF Ordinary Wage ceiling of S$8,000.
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h2>Singapore CPF Contribution Rates 2026</h2>
+  <main class="content">
+    <section class="content-section">
+      <h2 class="section-title">How this CPF calculator works</h2>
+      <p class="section-desc">
+        CPF contributions are calculated based on your CPF eligibility, age group and wages subject to CPF.
+        For monthly salary, CPF is generally calculated on Ordinary Wages up to the Ordinary Wage ceiling.
+        Employer CPF is paid by the employer separately, while employee CPF is deducted from your gross salary.
+      </p>
 
-    <p>
-      CPF contributions are paid by both employee and employer. For Singapore Citizens and Singapore Permanent Residents from the third year onwards, CPF contribution rates depend on the employee’s age group.
-    </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Enter salary</h3>
+          <p>Use your gross monthly salary before CPF deduction, tax or other payroll deductions.</p>
+        </div>
 
-    <table>
-      <tr>
-        <th>Age Group</th>
-        <th>Employer CPF</th>
-        <th>Employee CPF</th>
-        <th>Total CPF</th>
-      </tr>
-      <tr>
-        <td>55 and below</td>
-        <td>17%</td>
-        <td>20%</td>
-        <td>37%</td>
-      </tr>
-      <tr>
-        <td>Above 55 to 60</td>
-        <td>16%</td>
-        <td>18%</td>
-        <td>34%</td>
-      </tr>
-      <tr>
-        <td>Above 60 to 65</td>
-        <td>12.5%</td>
-        <td>12.5%</td>
-        <td>25%</td>
-      </tr>
-      <tr>
-        <td>Above 65 to 70</td>
-        <td>9%</td>
-        <td>7.5%</td>
-        <td>16.5%</td>
-      </tr>
-      <tr>
-        <td>Above 70</td>
-        <td>7.5%</td>
-        <td>5%</td>
-        <td>12.5%</td>
-      </tr>
-    </table>
-  </section>
+        <div class="info-card">
+          <h3>2. Select age group</h3>
+          <p>CPF rates change when an employee is above 55, above 60, above 65 and above 70.</p>
+        </div>
 
-  <section class="card">
-    <h2>How to Calculate CPF in Singapore</h2>
+        <div class="info-card">
+          <h3>3. Check CPF result</h3>
+          <p>See employee CPF, employer CPF, total CPF and salary after employee CPF deduction.</p>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      CPF is calculated based on CPF contribution rates and the applicable wage ceiling. In 2026, the CPF Ordinary Wage ceiling is S$8,000 per month.
-    </p>
+    <section class="content-section">
+      <h2 class="section-title">CPF contribution rates from 1 January 2026</h2>
+      <p class="section-desc">
+        The table below is for Singapore Citizens and Singapore Permanent Residents from the third year onwards,
+        based on monthly wages above S$750.
+      </p>
 
-    <p>
-      Example: if your monthly salary is S$5,000 and you are aged 55 and below, your employee CPF is 20% of S$5,000, which is S$1,000. Your employer CPF is 17% of S$5,000, which is S$850.
-    </p>
-  </section>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Employee Age</th>
+              <th>Employer CPF</th>
+              <th>Employee CPF</th>
+              <th>Total CPF</th>
+            </tr>
+          </thead>
 
-  <section class="card">
-    <h2>Frequently Asked Questions</h2>
+          <tbody>
+            <tr>
+              <td>55 and below</td>
+              <td>17%</td>
+              <td>20%</td>
+              <td>37%</td>
+            </tr>
 
-    <h3>What is CPF?</h3>
-    <p>
-      CPF stands for Central Provident Fund. It is a compulsory savings scheme for Singapore Citizens and Permanent Residents.
-    </p>
+            <tr>
+              <td>Above 55 to 60</td>
+              <td>16%</td>
+              <td>18%</td>
+              <td>34%</td>
+            </tr>
 
-    <h3>Is CPF deducted from salary?</h3>
-    <p>
-      Yes. Employee CPF is deducted from your gross salary. Employer CPF is paid by your employer on top of your salary.
-    </p>
+            <tr>
+              <td>Above 60 to 65</td>
+              <td>12.5%</td>
+              <td>12.5%</td>
+              <td>25%</td>
+            </tr>
 
-    <h3>Do foreigners need to contribute CPF?</h3>
-    <p>
-      Foreign employees on work passes generally do not contribute CPF. CPF mainly applies to Singapore Citizens and Singapore Permanent Residents.
-    </p>
+            <tr>
+              <td>Above 65 to 70</td>
+              <td>9%</td>
+              <td>7.5%</td>
+              <td>16.5%</td>
+            </tr>
 
-    <h3>What is the CPF Ordinary Wage ceiling in 2026?</h3>
-    <p>
-      The CPF Ordinary Wage ceiling is S$8,000 per month in 2026.
-    </p>
-  </section>
+            <tr>
+              <td>Above 70</td>
+              <td>7.5%</td>
+              <td>5%</td>
+              <td>12.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-</div>
+    <section class="content-section">
+      <h2 class="section-title">Common CPF examples</h2>
+      <p class="section-desc">
+        These examples assume a Singapore Citizen or PR third year onwards, aged 55 and below.
+      </p>
 
-<footer>
-  <p>© 2026 Singapore Salary Calculator. All rights reserved.</p>
-</footer>
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <h3>S$3,000 salary</h3>
+          <p>Employee CPF is about S$600. Employer CPF is about S$510. Salary after CPF is about S$2,400.</p>
+        </div>
 
-<script>
-  function formatMoney(amount) {
-    return "S$" + amount.toLocaleString("en-SG", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
+        <div class="scenario-card">
+          <h3>S$5,000 salary</h3>
+          <p>Employee CPF is about S$1,000. Employer CPF is about S$850. Salary after CPF is about S$4,000.</p>
+        </div>
 
-  function calculateCPF() {
-    const salary = parseFloat(document.getElementById("salary").value) || 0;
-    const selectedRates = document.getElementById("age").value.split(",");
+        <div class="scenario-card">
+          <h3>S$8,000 salary</h3>
+          <p>Employee CPF is about S$1,600. Employer CPF is about S$1,360. Salary after CPF is about S$6,400.</p>
+        </div>
+      </div>
+    </section>
 
-    const employerRate = parseFloat(selectedRates[0]);
-    const employeeRate = parseFloat(selectedRates[1]);
+    <section class="content-section">
+      <h2 class="section-title">Ordinary Wage and Additional Wage</h2>
+      <p class="section-desc">
+        Monthly salary is usually treated as Ordinary Wage. Bonuses, annual wage supplement and commissions may be treated as Additional Wages.
+        Additional Wage CPF depends on the annual Additional Wage ceiling, so this calculator provides a simplified estimate for planning.
+      </p>
 
-    const cpfWageCeiling = 8000;
-    const cpfWage = Math.min(salary, cpfWageCeiling);
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Ordinary Wage</h3>
+          <p>Regular monthly salary is usually Ordinary Wage. CPF applies up to the monthly OW ceiling.</p>
+        </div>
 
-    const employeeCpf = cpfWage * (employeeRate / 100);
-    const employerCpf = cpfWage * (employerRate / 100);
-    const totalCpf = employeeCpf + employerCpf;
-    const takeHome = salary - employeeCpf;
+        <div class="trust-card">
+          <h3>Additional Wage</h3>
+          <p>Bonus and annual wage supplement are usually Additional Wages and may be subject to the AW ceiling.</p>
+        </div>
 
-    document.getElementById("employeeCpf").innerText = formatMoney(employeeCpf);
-    document.getElementById("employerCpf").innerText = formatMoney(employerCpf);
-    document.getElementById("totalCpf").innerText = formatMoney(totalCpf);
-    document.getElementById("takeHome").innerText = formatMoney(takeHome);
+        <div class="trust-card">
+          <h3>CPF ceiling</h3>
+          <p>CPF is not always calculated on your full salary if your wages exceed CPF wage ceilings.</p>
+        </div>
+      </div>
+    </section>
 
-    document.getElementById("grossSalary").innerText = formatMoney(salary);
-    document.getElementById("cpfWage").innerText = formatMoney(cpfWage);
-    document.getElementById("employeeRate").innerText = employeeRate + "%";
-    document.getElementById("employerRate").innerText = employerRate + "%";
-    document.getElementById("totalRate").innerText = (employeeRate + employerRate) + "%";
-  }
-</script>
+    <section class="content-section">
+      <div class="authority-box">
+        <h2 class="section-title">Official sources to check</h2>
+        <p class="section-desc">
+          This calculator provides estimates only. For official CPF contribution rules and exact payroll calculation,
+          always refer to CPF Board resources.
+        </p>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Singapore CPF Calculator 2026",
-  "url": "https://sgsalarytools.com/cpf-calculator.html",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "All",
-  "description": "Free Singapore CPF calculator to estimate employee CPF, employer CPF and take-home pay."
-}
-</script>
+        <div class="authority-list">
+          <a class="authority-item" href="https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay" target="_blank" rel="noopener">
+            CPF Contribution Rates
+            <span>Official employer and employee CPF rates</span>
+          </a>
 
+          <a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-ordinary-wage-ow-ceiling" target="_blank" rel="noopener">
+            OW Ceiling
+            <span>Ordinary Wage ceiling explanation</span>
+          </a>
+
+          <a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-additional-wage-aw-ceiling" target="_blank" rel="noopener">
+            AW Ceiling
+            <span>Additional Wage ceiling explanation</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore calculators</h2>
+      <p class="section-desc">
+        Use these calculators to estimate salary, tax and take-home pay in Singapore.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="index.html">
+          <h3>Salary Calculator</h3>
+          <p>Estimate take-home pay after CPF and income tax.</p>
+        </a>
+
+        <a class="related-card" href="income-tax-calculator.html">
+          <h3>Income Tax Calculator</h3>
+          <p>Estimate Singapore resident income tax based on chargeable income.</p>
+        </a>
+
+        <a class="related-card" href="take-home-pay-calculator.html">
+          <h3>Take Home Pay Calculator</h3>
+          <p>Check monthly net salary after CPF and common deductions.</p>
+        </a>
+
+        <a class="related-card" href="annual-leave-calculator.html">
+          <h3>Annual Leave Calculator</h3>
+          <p>Estimate annual leave entitlement in Singapore.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How much CPF do employees contribute in Singapore?</summary>
+        <p>
+          For Singapore Citizens and PRs from the third year onwards, employees aged 55 and below generally contribute 20%
+          of wages subject to CPF. Rates are lower for older age groups.
+        </p>
+      </details>
+
+      <details>
+        <summary>How much CPF does the employer contribute?</summary>
+        <p>
+          For employees aged 55 and below, the employer CPF rate is generally 17% of wages subject to CPF.
+          Employer CPF is paid separately and does not reduce the employee's gross salary.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is CPF deducted from my salary?</summary>
+        <p>
+          Yes. Employee CPF is deducted from your gross salary before you receive your monthly pay.
+          Employer CPF is an additional contribution paid by your employer.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is CPF calculated on the full monthly salary?</summary>
+        <p>
+          Not always. CPF on Ordinary Wages is subject to the Ordinary Wage ceiling. In 2026, the Ordinary Wage ceiling is S$8,000.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do foreigners need to contribute CPF?</summary>
+        <p>
+          Foreign employees generally do not contribute CPF. CPF usually applies to Singapore Citizens and Singapore Permanent Residents.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does CPF apply to bonus?</summary>
+        <p>
+          Bonus is usually treated as Additional Wage. CPF may apply, but it is subject to the Additional Wage ceiling.
+          This calculator gives a simplified estimate for planning.
+        </p>
+      </details>
+
+      <details>
+        <summary>What is salary after CPF?</summary>
+        <p>
+          Salary after CPF means your gross monthly salary minus employee CPF contribution.
+          For example, if your salary is S$5,000 and employee CPF is S$1,000, salary after CPF is about S$4,000 before tax.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this CPF calculator official?</summary>
+        <p>
+          No. This is an independent calculator for simple salary planning. For official calculation, refer to CPF Board.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SG Salary Tools. This calculator provides estimates only and is not official CPF, payroll or tax advice.
+  </footer>
+
+  <script>
+    function money(value) {
+      return "S$" + Math.round(value).toLocaleString("en-SG");
+    }
+
+    function getCpfRates(ageGroup) {
+      const rates = {
+        "55below": { employee: 0.20, employer: 0.17 },
+        "55to60": { employee: 0.18, employer: 0.16 },
+        "60to65": { employee: 0.125, employer: 0.125 },
+        "65to70": { employee: 0.075, employer: 0.09 },
+        "70above": { employee: 0.05, employer: 0.075 }
+      };
+
+      return rates[ageGroup] || rates["55below"];
+    }
+
+    function calculateCpf() {
+      const salary = Number(document.getElementById("salary").value) || 0;
+      const bonus = Number(document.getElementById("bonus").value) || 0;
+      const age = document.getElementById("age").value;
+      const cpfEligibility = document.getElementById("cpfEligibility").value;
+
+      const owCeiling = 8000;
+      const annualWageCeiling = 102000;
+
+      const owSubject = Math.min(salary, owCeiling);
+      const rates = getCpfRates(age);
+
+      let employeeCpf = 0;
+      let employerCpf = 0;
+      let bonusEmployeeCpf = 0;
+      let bonusEmployerCpf = 0;
+
+      if (cpfEligibility === "cpf") {
+        employeeCpf = Math.round(owSubject * rates.employee);
+        employerCpf = Math.round(owSubject * rates.employer);
+
+        const annualOwSubject = owSubject * 12;
+        const awCeiling = Math.max(0, annualWageCeiling - annualOwSubject);
+        const bonusSubject = Math.min(bonus, awCeiling);
+
+        bonusEmployeeCpf = Math.round(bonusSubject * rates.employee);
+        bonusEmployerCpf = Math.round(bonusSubject * rates.employer);
+      }
+
+      const totalCpf = employeeCpf + employerCpf;
+      const salaryAfterCpf = salary - employeeCpf;
+      const bonusTotalCpf = bonusEmployeeCpf + bonusEmployerCpf;
+
+      document.getElementById("salaryAfterCpf").textContent = money(salaryAfterCpf);
+      document.getElementById("monthlyCpfSummary").textContent =
+        "Employee CPF: " + money(employeeCpf) + " · Employer CPF: " + money(employerCpf);
+
+      document.getElementById("employeeCpf").textContent = money(employeeCpf);
+      document.getElementById("employerCpf").textContent = money(employerCpf);
+      document.getElementById("totalCpf").textContent = money(totalCpf);
+
+      document.getElementById("grossMonthly").textContent = money(salary);
+      document.getElementById("owSubject").textContent = money(owSubject);
+      document.getElementById("employeeCpfDeduction").textContent = "-" + money(employeeCpf);
+      document.getElementById("netMonthly").textContent = money(salaryAfterCpf);
+      document.getElementById("employerCpfRow").textContent = money(employerCpf);
+      document.getElementById("bonusCpf").textContent = money(bonusTotalCpf);
+
+      const note = document.getElementById("calculationNote");
+
+      if (cpfEligibility === "cpf") {
+        note.textContent =
+          "This calculator uses 2026 CPF rates for Singapore Citizens and PRs from the third year onwards. Ordinary Wages are capped at S$8,000. Bonus CPF is simplified and subject to the estimated annual Additional Wage ceiling.";
+      } else {
+        note.textContent =
+          "CPF is set to S$0 because the no CPF option is selected. This is commonly used for foreign employees who are not required to contribute CPF.";
+      }
+    }
+
+    calculateCpf();
+  </script>
 </body>
 </html>
