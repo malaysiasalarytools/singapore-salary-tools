@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Singapore Overtime Calculator 2026 | Calculate OT Pay</title>
+
+  <link rel="canonical" href="https://sgsalarytools.com/overtime-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Singapore Overtime Calculator 2026. Estimate overtime pay using MOM formula, hourly basic rate, monthly salary and overtime hours." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6f1;
+      color: #10231a;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e3eadf;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+      color: #24241f;
+      white-space: nowrap;
+    }
+
+    .brand-text strong span {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #74776f;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      color: #5d635b;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #edf5e9;
+      color: #173f2b;
+    }
+
+    .nav-links a.active {
+      background: #22231f;
+      color: #ffffff;
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
+        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
+      border-bottom: 1px solid #e3eadf;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 22px 24px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      background: #dfeee4;
+      color: #2f7d63;
+      border: 1px solid #bfd9c8;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin: 0 auto 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6.5vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      font-weight: 500;
+      color: #25251f;
+    }
+
+    h1 em {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.75;
+      color: #6f7169;
+      max-width: 780px;
+      margin: 0 auto 26px;
+      font-weight: 650;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 860px;
+    }
+
+    .quick-stats span {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid #dfe9db;
+      color: #2f5f3a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
+    }
+
+    .calculator-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 10px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #e1e7dc;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      color: #25251f;
+    }
+
+    .panel-desc {
+      margin: 0 0 24px;
+      color: #6f7169;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .field { margin-bottom: 18px; }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 900;
+      color: #233b2d;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid #d9e2d4;
+      border-radius: 16px;
+      padding: 15px 16px;
+      font-size: 16px;
+      background: #fffdfa;
+      color: #10231a;
+      outline: none;
+      font-weight: 750;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2f7d63;
+      box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.14);
+    }
+
+    .mini-note {
+      margin-top: -8px;
+      margin-bottom: 18px;
+      color: #6f7169;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 650;
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 18px;
+      padding: 17px;
+      font-weight: 950;
+      font-size: 16px;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(47, 125, 99, 0.24);
+    }
+
+    .results {
+      display: grid;
+      gap: 18px;
+    }
+
+    .main-result {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+    }
+
+    .main-result::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+
+    .main-result small {
+      display: block;
+      color: #d9eee0;
+      font-weight: 850;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .take-home {
+      font-size: 50px;
+      font-weight: 950;
+      letter-spacing: -1.8px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sub-result {
+      color: #d9eee0;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.5;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.06);
+    }
+
+    .result-card span {
+      display: block;
+      color: #6d7b70;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .result-card strong {
+      font-size: 24px;
+      color: #10231a;
+    }
+
+    .breakdown {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.05);
+    }
+
+    .breakdown h3,
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 25px;
+      letter-spacing: -0.6px;
+      color: #10231a;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf2ea;
+      color: #425346;
+    }
+
+    .row:last-child { border-bottom: 0; }
+
+    .row strong {
+      color: #10231a;
+      text-align: right;
+    }
+
+    .positive {
+      color: #2d6b3f;
+      font-weight: 900;
+    }
+
+    .negative {
+      color: #b45f3c;
+      font-weight: 900;
+    }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 70px;
+    }
+
+    .content-section {
+      margin-top: 44px;
+    }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: -6px 0 22px;
+    }
+
+    .info-grid,
+    .related-grid,
+    .scenario-grid,
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-card,
+    .related-card,
+    .scenario-card,
+    .authority-item {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
+    }
+
+    .info-card h3,
+    .related-card h3,
+    .scenario-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .info-card p,
+    .related-card p,
+    .scenario-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card,
+    .scenario-card,
+    .authority-item {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover,
+    .scenario-card:hover,
+    .authority-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 17px 20px;
+      border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f7faf5;
+      color: #173f2b;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    td {
+      color: #425346;
+      font-weight: 650;
+      line-height: 1.55;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    .authority-item {
+      display: block;
+      text-align: center;
+      background: #f7faf5;
+    }
+
+    .authority-item strong {
+      display: block;
+      color: #173f2b;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .authority-item span {
+      color: #647168;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .view-all a {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 800;
+      border: 1px solid #dfe9db;
+    }
+
+    .faq {
+      margin-top: 44px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: #173f2b;
+    }
+
+    details p {
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    footer {
+      text-align: center;
+      color: #77837a;
+      font-size: 14px;
+      padding: 28px;
+      border-top: 1px solid #e4eadf;
+      background: white;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        min-width: 138px;
+        gap: 7px;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
+      }
+
+      .brand-text strong { font-size: 13px; }
+
+      .brand-text small {
+        font-size: 5.5px;
+        letter-spacing: 1.1px;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        gap: 6px;
+        overflow-x: auto;
+      }
+
+      .nav-links a {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 36px 20px 22px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 46px;
+        line-height: 0.98;
+        letter-spacing: -2.4px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+      }
+
+      .quick-stats {
+        justify-content: flex-start;
+      }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      .calculator-section {
+        padding: 24px 16px 8px;
+      }
+
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .panel h2 { font-size: 32px; }
+
+      .take-home { font-size: 42px; }
+
+      .result-cards,
+      .info-grid,
+      .related-grid,
+      .scenario-grid,
+      .authority-list {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        padding: 26px 16px 60px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      h1 { font-size: 42px; }
+      .hero p { font-size: 17px; }
+      .result-card strong { font-size: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
+        <img src="logo-icon.png" alt="SG Salary Tools">
+
+        <span class="brand-text">
+          <strong>SG Salary<span>Tools</span></strong>
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="eyebrow">Singapore Overtime Calculator 2026</div>
+
+      <h1>Calculate your Singapore <em>overtime pay</em></h1>
+
+      <p>
+        Estimate overtime pay using the MOM-style formula for monthly-rated employees.
+        Enter your monthly basic salary, employee type and overtime hours to calculate OT pay.
+      </p>
+
+      <div class="quick-stats">
+        <span>1.5× OT Rate</span>
+        <span>Hourly Basic Rate</span>
+        <span>Monthly-Rated Employee</span>
+        <span>MOM Formula Reference</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-grid">
+      <div class="panel">
+        <h2>Overtime inputs</h2>
+        <p class="panel-desc">
+          Enter your monthly basic salary and overtime hours. This calculator gives an estimate only.
+        </p>
+
+        <div class="field">
+          <label for="monthlySalary">Monthly basic salary</label>
+          <input id="monthlySalary" type="number" value="2600" min="0" step="100" oninput="calculateOvertime()" />
+        </div>
+
+        <div class="field">
+          <label for="employeeType">Employee type</label>
+          <select id="employeeType" onchange="calculateOvertime()">
+            <option value="nonworkman">Non-workman</option>
+            <option value="workman">Workman</option>
+            <option value="custom">Custom / company policy estimate</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="weeklyHours">Weekly working hours used for hourly rate</label>
+          <input id="weeklyHours" type="number" value="44" min="1" step="1" oninput="calculateOvertime()" />
+        </div>
+
+        <p class="mini-note">
+          MOM's monthly-rated employee formula commonly uses 44 hours per week:
+          (12 × monthly basic salary) ÷ (52 × 44).
+        </p>
+
+        <div class="field">
+          <label for="overtimeHours">Overtime hours worked</label>
+          <input id="overtimeHours" type="number" value="10" min="0" step="0.5" oninput="calculateOvertime()" />
+        </div>
+
+        <div class="field">
+          <label for="multiplier">Overtime multiplier</label>
+          <select id="multiplier" onchange="calculateOvertime()">
+            <option value="1.5">1.5× standard overtime rate</option>
+            <option value="1">1.0× custom rate</option>
+            <option value="2">2.0× custom rate</option>
+            <option value="3">3.0× custom rate</option>
+          </select>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateOvertime()">Calculate overtime pay</button>
+
+        <p class="mini-note">
+          This calculator focuses on normal overtime pay. Rest day and public holiday work may involve additional rules.
+        </p>
+      </div>
+
+      <div class="results">
+        <div class="main-result">
+          <small>Estimated overtime pay</small>
+          <div class="take-home" id="overtimePay">S$204</div>
+          <div class="sub-result" id="overtimeSummary">Hourly basic rate: S$13.64 · OT rate: S$20.45 per hour</div>
+        </div>
+
+        <div class="result-cards">
+          <div class="result-card">
+            <span>Hourly basic rate</span>
+            <strong id="hourlyRate">S$13.64</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Overtime hourly rate</span>
+            <strong id="overtimeRate">S$20.45</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Coverage check</span>
+            <strong id="coverageStatus">Likely covered</strong>
+          </div>
+        </div>
+
+        <div class="breakdown">
+          <h3>Overtime breakdown</h3>
+
+          <div class="row">
+            <span>Monthly basic salary entered</span>
+            <strong id="salaryResult">S$2,600</strong>
+          </div>
+
+          <div class="row">
+            <span>Salary used for OT calculation</span>
+            <strong id="salaryUsed">S$2,600</strong>
+          </div>
+
+          <div class="row">
+            <span>Weekly hours used</span>
+            <strong id="weeklyHoursResult">44 hours</strong>
+          </div>
+
+          <div class="row">
+            <span>Hourly basic rate</span>
+            <strong id="hourlyRateBreakdown">S$13.64</strong>
+          </div>
+
+          <div class="row">
+            <span>Overtime multiplier</span>
+            <strong id="multiplierResult">1.5×</strong>
+          </div>
+
+          <div class="row">
+            <span>Overtime hours</span>
+            <strong id="hoursResult">10 hours</strong>
+          </div>
+
+          <div class="row">
+            <span>Estimated overtime pay</span>
+            <strong class="positive" id="finalOvertimePay">S$204</strong>
+          </div>
+        </div>
+
+        <div class="note-box" id="calculationNote">
+          This estimate uses the monthly-rated employee hourly basic rate formula and 1.5× overtime rate.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="content-section">
+      <h2 class="section-title">How this Singapore overtime calculator works</h2>
+      <p class="section-desc">
+        Singapore overtime pay is generally calculated using the hourly basic rate of pay multiplied by
+        1.5 and the number of overtime hours worked. This calculator is designed for monthly-rated employees.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Calculate hourly basic rate</h3>
+          <p>
+            For a monthly-rated employee, hourly basic rate is estimated as:
+            (12 × monthly basic salary) ÷ (52 × weekly working hours).
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>2. Apply overtime multiplier</h3>
+          <p>
+            Standard overtime pay is usually at least 1.5 times the hourly basic rate of pay.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>3. Multiply by OT hours</h3>
+          <p>
+            Overtime pay is estimated by multiplying the overtime hourly rate by the number of overtime hours worked.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Singapore overtime formula</h2>
+      <p class="section-desc">
+        The basic overtime formula used by this calculator is:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Formula</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Hourly basic rate</td>
+              <td>(12 × monthly basic salary) ÷ (52 × 44)</td>
+              <td>S$2,600 salary = about S$13.64 per hour</td>
+            </tr>
+
+            <tr>
+              <td>Overtime hourly rate</td>
+              <td>Hourly basic rate × 1.5</td>
+              <td>S$13.64 × 1.5 = about S$20.45 per hour</td>
+            </tr>
+
+            <tr>
+              <td>Overtime pay</td>
+              <td>Overtime hourly rate × overtime hours</td>
+              <td>10 hours × S$20.45 = about S$204.55</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        Basic rate of pay generally excludes overtime payments, bonus payments, AWS and certain allowances.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Who can usually claim overtime pay?</h2>
+      <p class="section-desc">
+        Overtime claim eligibility depends on whether the employee is covered under the relevant part of the Employment Act.
+        This calculator includes a simple coverage check based on common MOM salary thresholds.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Employee Type</th>
+              <th>Common Salary Threshold</th>
+              <th>Calculator Treatment</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Non-workman</td>
+              <td>Monthly basic salary of S$2,600 or less</td>
+              <td>Shown as likely covered if salary is within threshold</td>
+            </tr>
+
+            <tr>
+              <td>Workman</td>
+              <td>Monthly basic salary of S$4,500 or less</td>
+              <td>Shown as likely covered if salary is within threshold</td>
+            </tr>
+
+            <tr>
+              <td>Custom / company policy</td>
+              <td>Depends on contract or company policy</td>
+              <td>Calculator provides a general estimate only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Overtime examples in Singapore</h2>
+      <p class="section-desc">
+        These examples assume a monthly-rated employee using 44 weekly working hours and 1.5× overtime rate.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Monthly Basic Salary</th>
+              <th>Hourly Basic Rate</th>
+              <th>OT Rate</th>
+              <th>10 Hours OT</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>S$1,800</td>
+              <td>S$9.44</td>
+              <td>S$14.16</td>
+              <td>S$142</td>
+            </tr>
+
+            <tr>
+              <td>S$2,000</td>
+              <td>S$10.49</td>
+              <td>S$15.73</td>
+              <td>S$157</td>
+            </tr>
+
+            <tr>
+              <td>S$2,600</td>
+              <td>S$13.64</td>
+              <td>S$20.45</td>
+              <td>S$205</td>
+            </tr>
+
+            <tr>
+              <td>S$3,000</td>
+              <td>S$15.73</td>
+              <td>S$23.60</td>
+              <td>S$236</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        If the employee is not legally covered for overtime pay, the actual payment may depend on employment contract or company policy.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Overtime, rest days and public holidays</h2>
+      <p class="section-desc">
+        Overtime pay is different from rest day pay or public holiday pay. If you work on a rest day or public holiday,
+        the calculation may involve additional rest day or public holiday pay on top of overtime for extra hours.
+      </p>
+
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <h3>Normal overtime</h3>
+          <p>
+            Work beyond contractual hours on a normal working day is usually treated as overtime hours.
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <h3>Rest day work</h3>
+          <p>
+            Work on a rest day may involve rest day pay rules. Extra hours beyond normal daily hours may also be overtime.
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <h3>Public holiday work</h3>
+          <p>
+            Public holiday work may involve public holiday pay or time off, depending on the employment arrangement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="authority-box">
+        <h2 class="section-title">Official sources to check</h2>
+        <p class="section-desc">
+          This calculator provides estimates only. For official overtime rules, always check MOM directly.
+        </p>
+
+        <div class="authority-list">
+          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days" target="_blank" rel="noopener">
+            <strong>MOM Overtime Rules</strong>
+            <span>Hours of work, overtime and rest day guidance</span>
+          </a>
+
+          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/calculate-overtime-pay" target="_blank" rel="noopener">
+            <strong>MOM OT Calculator</strong>
+            <span>Official overtime pay calculator reference</span>
+          </a>
+
+          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/monthly-and-daily-salary" target="_blank" rel="noopener">
+            <strong>Basic Rate of Pay</strong>
+            <span>Monthly and daily salary calculation guidance</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore calculators</h2>
+      <p class="section-desc">
+        Use these calculators together to estimate salary, CPF, tax and payroll amounts.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="index.html">
+          <h3>Salary Calculator</h3>
+          <p>Estimate monthly take-home pay after CPF and income tax.</p>
+        </a>
+
+        <a class="related-card" href="cpf-calculator.html">
+          <h3>CPF Calculator</h3>
+          <p>Estimate employee and employer CPF contributions.</p>
+        </a>
+
+        <a class="related-card" href="payslip-generator.html">
+          <h3>Payslip Generator</h3>
+          <p>Create a simple printable Singapore salary slip.</p>
+        </a>
+
+        <a class="related-card" href="bonus-calculator.html">
+          <h3>Bonus Calculator</h3>
+          <p>Estimate bonus after CPF and tax impact.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="calculators.html">View All Calculators →</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore salary guides</h2>
+      <p class="section-desc">
+        Learn more about working hours, salary, CPF and public holidays in Singapore.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="overtime-guide.html">
+          <h3>Overtime Guide</h3>
+          <p>Understand overtime pay, working hours and common OT rules.</p>
+        </a>
+
+        <a class="related-card" href="public-holiday-guide.html">
+          <h3>Public Holiday Guide</h3>
+          <p>View public holiday dates and holiday pay basics.</p>
+        </a>
+
+        <a class="related-card" href="cpf-contribution-rates-guide.html">
+          <h3>CPF Contribution Rates Guide</h3>
+          <p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
+        </a>
+
+        <a class="related-card" href="payslip-guide.html">
+          <h3>Payslip Guide</h3>
+          <p>Learn what a payslip should include and how to read salary details.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="guides.html">View All Guides →</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How is overtime pay calculated in Singapore?</summary>
+        <p>
+          Overtime pay is generally calculated as hourly basic rate of pay multiplied by 1.5,
+          then multiplied by the number of overtime hours worked.
+        </p>
+      </details>
+
+      <details>
+        <summary>What is the hourly basic rate for a monthly-rated employee?</summary>
+        <p>
+          For a monthly-rated employee, the hourly basic rate is commonly calculated as
+          (12 × monthly basic salary) divided by (52 × 44).
+        </p>
+      </details>
+
+      <details>
+        <summary>Who can claim overtime pay in Singapore?</summary>
+        <p>
+          Overtime claim eligibility depends on coverage under the Employment Act.
+          Common thresholds include non-workmen earning monthly basic salary of S$2,600 or less,
+          and workmen earning monthly basic salary of S$4,500 or less.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is overtime always paid at 1.5 times?</summary>
+        <p>
+          For eligible overtime work, the standard rate is at least 1.5 times the hourly basic rate of pay.
+          Some employers may provide better terms under contract or company policy.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does basic salary include allowances for overtime calculation?</summary>
+        <p>
+          Basic rate of pay usually excludes overtime payments, bonuses, AWS and certain allowances.
+          Check MOM guidance or your employment contract for specific treatment.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is rest day work the same as overtime?</summary>
+        <p>
+          Not exactly. Rest day work may have separate rest day pay rules. Extra hours beyond normal daily hours
+          on a rest day may also be treated as overtime.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I use this calculator for public holiday work?</summary>
+        <p>
+          This calculator is mainly for normal overtime. Public holiday work may involve public holiday pay
+          or time off in addition to overtime for extra hours.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this overtime calculator official?</summary>
+        <p>
+          No. This calculator provides estimates only. For official overtime rules and calculations,
+          check MOM directly.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SG Salary Tools. This calculator provides estimates only and is not official MOM, payroll or legal advice.
+  </footer>
+
+  <script>
+    function money(value) {
+      return "S$" + Number(value).toLocaleString("en-SG", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function moneyRound(value) {
+      return "S$" + Math.round(value).toLocaleString("en-SG");
+    }
+
+    function calculateOvertime() {
+      const monthlySalary = Number(document.getElementById("monthlySalary").value) || 0;
+      const employeeType = document.getElementById("employeeType").value;
+      const weeklyHours = Number(document.getElementById("weeklyHours").value) || 44;
+      const overtimeHours = Number(document.getElementById("overtimeHours").value) || 0;
+      const multiplier = Number(document.getElementById("multiplier").value) || 1.5;
+
+      let salaryCap = monthlySalary;
+      let coverageText = "Custom";
+      let note = "";
+
+      if (employeeType === "nonworkman") {
+        salaryCap = Math.min(monthlySalary, 2600);
+        coverageText = monthlySalary <= 2600 ? "Likely covered" : "Above threshold";
+      } else if (employeeType === "workman") {
+        salaryCap = Math.min(monthlySalary, 4500);
+        coverageText = monthlySalary <= 4500 ? "Likely covered" : "Above threshold";
+      } else {
+        salaryCap = monthlySalary;
+        coverageText = "Policy estimate";
+      }
+
+      const hourlyRate = weeklyHours > 0 ? (12 * salaryCap) / (52 * weeklyHours) : 0;
+      const overtimeRate = hourlyRate * multiplier;
+      const overtimePay = overtimeRate * overtimeHours;
+
+      document.getElementById("overtimePay").textContent = moneyRound(overtimePay);
+      document.getElementById("overtimeSummary").textContent =
+        "Hourly basic rate: " + money(hourlyRate) + " · OT rate: " + money(overtimeRate) + " per hour";
+
+      document.getElementById("hourlyRate").textContent = money(hourlyRate);
+      document.getElementById("overtimeRate").textContent = money(overtimeRate);
+      document.getElementById("coverageStatus").textContent = coverageText;
+
+      document.getElementById("salaryResult").textContent = moneyRound(monthlySalary);
+      document.getElementById("salaryUsed").textContent = moneyRound(salaryCap);
+      document.getElementById("weeklyHoursResult").textContent = weeklyHours + " hours";
+      document.getElementById("hourlyRateBreakdown").textContent = money(hourlyRate);
+      document.getElementById("multiplierResult").textContent = multiplier + "×";
+      document.getElementById("hoursResult").textContent = overtimeHours + " hours";
+      document.getElementById("finalOvertimePay").textContent = moneyRound(overtimePay);
+
+      if (employeeType === "nonworkman" && monthlySalary > 2600) {
+        note = "Your monthly basic salary is above the common non-workman overtime threshold. This calculator caps the salary used for OT calculation at S$2,600 for illustration. Actual entitlement may depend on Employment Act coverage, contract or company policy.";
+      } else if (employeeType === "workman" && monthlySalary > 4500) {
+        note = "Your monthly basic salary is above the common workman overtime threshold. This calculator caps the salary used for OT calculation at S$4,500 for illustration. Actual entitlement may depend on Employment Act coverage, contract or company policy.";
+      } else if (employeeType === "custom") {
+        note = "Custom mode does not apply statutory coverage thresholds. It provides a company policy estimate based on the salary and multiplier you entered.";
+      } else {
+        note = "This estimate uses the monthly-rated employee hourly basic rate formula and 1.5× overtime rate.";
+      }
+
+      document.getElementById("calculationNote").textContent = note;
+    }
+
+    calculateOvertime();
+  </script>
+</body>
+</html>
