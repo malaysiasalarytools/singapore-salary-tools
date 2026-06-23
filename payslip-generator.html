@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Singapore Payslip Generator 2026 | Free Salary Slip Generator</title>
+
+  <link rel="canonical" href="https://sgsalarytools.com/payslip-generator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Singapore Payslip Generator 2026. Create a simple salary slip with basic salary, CPF, allowances, deductions and net pay." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6f1;
+      color: #10231a;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e3eadf;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+      color: #24241f;
+      white-space: nowrap;
+    }
+
+    .brand-text strong span {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #74776f;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      color: #5d635b;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #edf5e9;
+      color: #173f2b;
+    }
+
+    .nav-links a.active {
+      background: #22231f;
+      color: #ffffff;
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
+        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
+      border-bottom: 1px solid #e3eadf;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 22px 24px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      background: #dfeee4;
+      color: #2f7d63;
+      border: 1px solid #bfd9c8;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin: 0 auto 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6.5vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      font-weight: 500;
+      color: #25251f;
+    }
+
+    h1 em {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.75;
+      color: #6f7169;
+      max-width: 780px;
+      margin: 0 auto 26px;
+      font-weight: 650;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 860px;
+    }
+
+    .quick-stats span {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid #dfe9db;
+      color: #2f5f3a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
+    }
+
+    .generator-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 10px;
+    }
+
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #e1e7dc;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      color: #25251f;
+    }
+
+    .panel-desc {
+      margin: 0 0 24px;
+      color: #6f7169;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .field { margin-bottom: 16px; }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 900;
+      color: #233b2d;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid #d9e2d4;
+      border-radius: 16px;
+      padding: 14px 15px;
+      font-size: 15px;
+      background: #fffdfa;
+      color: #10231a;
+      outline: none;
+      font-weight: 750;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2f7d63;
+      box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.14);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .calculate-btn,
+    .print-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 18px;
+      padding: 17px;
+      font-weight: 950;
+      font-size: 16px;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(47, 125, 99, 0.24);
+    }
+
+    .print-btn {
+      background: #22231f;
+      margin-top: 12px;
+    }
+
+    .mini-note {
+      color: #6f7169;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 650;
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-top: 14px;
+    }
+
+    .preview-wrap {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
+    }
+
+    .preview-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      border-bottom: 2px solid #edf2ea;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .preview-head h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      color: #25251f;
+      letter-spacing: -1.2px;
+    }
+
+    .preview-head p {
+      margin: 6px 0 0;
+      color: #647168;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+
+    .badge {
+      background: #edf5e9;
+      color: #173f2b;
+      border: 1px solid #dfe9db;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+
+    .payslip-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .info-box span {
+      display: block;
+      color: #6d7b70;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .info-box strong {
+      color: #10231a;
+      font-size: 17px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5ece1;
+      border-radius: 22px;
+      margin-top: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 15px 18px;
+      border-bottom: 1px solid #edf2ea;
+    }
+
+    th {
+      background: #f7faf5;
+      color: #173f2b;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    td {
+      color: #425346;
+      font-weight: 650;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .amount {
+      text-align: right;
+      font-weight: 900;
+      color: #10231a;
+    }
+
+    .total-row td {
+      background: #f7faf5;
+      font-weight: 950;
+      color: #10231a;
+    }
+
+    .net-pay {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 24px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .net-pay span {
+      display: block;
+      color: #d9eee0;
+      font-weight: 850;
+      margin-bottom: 6px;
+    }
+
+    .net-pay strong {
+      font-size: 34px;
+      letter-spacing: -1px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: #647168;
+      line-height: 1.6;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 70px;
+    }
+
+    .content-section {
+      margin-top: 44px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 25px;
+      letter-spacing: -0.6px;
+      color: #10231a;
+    }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: -6px 0 22px;
+    }
+
+    .info-grid,
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-card,
+    .related-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
+    }
+
+    .info-card h3,
+    .related-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .info-card p,
+    .related-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .view-all a {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 800;
+      border: 1px solid #dfe9db;
+    }
+
+    .faq {
+      margin-top: 44px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: #173f2b;
+    }
+
+    details p {
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    footer {
+      text-align: center;
+      color: #77837a;
+      font-size: 14px;
+      padding: 28px;
+      border-top: 1px solid #e4eadf;
+      background: white;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        min-width: 138px;
+        gap: 7px;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
+      }
+
+      .brand-text strong { font-size: 13px; }
+
+      .brand-text small {
+        font-size: 5.5px;
+        letter-spacing: 1.1px;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        gap: 6px;
+        overflow-x: auto;
+      }
+
+      .nav-links a {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 36px 20px 22px;
+      }
+
+      h1 {
+        font-size: 46px;
+        line-height: 0.98;
+        letter-spacing: -2.4px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .quick-stats {
+        justify-content: flex-start;
+      }
+
+      .generator-section {
+        padding: 24px 16px 8px;
+      }
+
+      .generator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
+      .preview-wrap {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .mini-grid,
+      .payslip-info,
+      .info-grid,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-head,
+      .net-pay {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content {
+        padding: 26px 16px 60px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .topbar,
+      .hero-wrap,
+      .panel,
+      .content,
+      footer {
+        display: none !important;
+      }
+
+      .generator-section {
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .generator-grid {
+        display: block;
+      }
+
+      .preview-wrap {
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
+        <img src="logo-icon.png" alt="SG Salary Tools">
+
+        <span class="brand-text">
+          <strong>SG Salary<span>Tools</span></strong>
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="eyebrow">Singapore Payslip Generator 2026</div>
+
+      <h1>Create a simple <em>Singapore payslip</em></h1>
+
+      <p>
+        Generate a clean salary slip with basic salary, allowances, bonus, CPF deductions,
+        other deductions and net pay. Useful for small businesses, freelancers and salary record keeping.
+      </p>
+
+      <div class="quick-stats">
+        <span>Free Payslip Template</span>
+        <span>CPF Deduction Field</span>
+        <span>Printable Salary Slip</span>
+        <span>No Sign-Up Needed</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="generator-section">
+    <div class="generator-grid">
+      <div class="panel">
+        <h2>Payslip inputs</h2>
+        <p class="panel-desc">
+          Fill in the details below. The payslip preview updates instantly.
+        </p>
+
+        <div class="field">
+          <label for="companyName">Company name</label>
+          <input id="companyName" type="text" value="ABC Pte. Ltd." oninput="generatePayslip()" />
+        </div>
+
+        <div class="field">
+          <label for="employeeName">Employee name</label>
+          <input id="employeeName" type="text" value="Tan Wei Ming" oninput="generatePayslip()" />
+        </div>
+
+        <div class="mini-grid">
+          <div class="field">
+            <label for="employeeId">Employee ID</label>
+            <input id="employeeId" type="text" value="EMP001" oninput="generatePayslip()" />
+          </div>
+
+          <div class="field">
+            <label for="payMonth">Pay month</label>
+            <input id="payMonth" type="month" value="2026-01" oninput="generatePayslip()" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="position">Position / Department</label>
+          <input id="position" type="text" value="Accounts Executive" oninput="generatePayslip()" />
+        </div>
+
+        <div class="mini-grid">
+          <div class="field">
+            <label for="basicSalary">Basic salary</label>
+            <input id="basicSalary" type="number" value="5000" min="0" step="100" oninput="generatePayslip()" />
+          </div>
+
+          <div class="field">
+            <label for="allowance">Allowance</label>
+            <input id="allowance" type="number" value="200" min="0" step="50" oninput="generatePayslip()" />
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="field">
+            <label for="bonus">Bonus / commission</label>
+            <input id="bonus" type="number" value="0" min="0" step="100" oninput="generatePayslip()" />
+          </div>
+
+          <div class="field">
+            <label for="overtime">Overtime pay</label>
+            <input id="overtime" type="number" value="0" min="0" step="50" oninput="generatePayslip()" />
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="field">
+            <label for="employeeCpf">Employee CPF</label>
+            <input id="employeeCpf" type="number" value="1000" min="0" step="50" oninput="generatePayslip()" />
+          </div>
+
+          <div class="field">
+            <label for="employerCpf">Employer CPF</label>
+            <input id="employerCpf" type="number" value="850" min="0" step="50" oninput="generatePayslip()" />
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="field">
+            <label for="otherDeduction">Other deduction</label>
+            <input id="otherDeduction" type="number" value="0" min="0" step="50" oninput="generatePayslip()" />
+          </div>
+
+          <div class="field">
+            <label for="paymentDate">Payment date</label>
+            <input id="paymentDate" type="date" value="2026-01-31" oninput="generatePayslip()" />
+          </div>
+        </div>
+
+        <button class="calculate-btn" onclick="generatePayslip()">Generate payslip</button>
+        <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+        <p class="mini-note">
+          This is a simple payslip generator for record keeping and salary presentation.
+          It is not an official payroll system and does not submit information to CPF Board or IRAS.
+        </p>
+      </div>
+
+      <div class="preview-wrap" id="payslipPreview">
+        <div class="preview-head">
+          <div>
+            <h2>Payslip</h2>
+            <p id="previewCompany">ABC Pte. Ltd.</p>
+          </div>
+          <div class="badge" id="previewMonth">January 2026</div>
+        </div>
+
+        <div class="payslip-info">
+          <div class="info-box">
+            <span>Employee Name</span>
+            <strong id="previewEmployee">Tan Wei Ming</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Employee ID</span>
+            <strong id="previewEmployeeId">EMP001</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Position / Department</span>
+            <strong id="previewPosition">Accounts Executive</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Payment Date</span>
+            <strong id="previewPaymentDate">31 Jan 2026</strong>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Earnings</th>
+                <th class="amount">Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Basic Salary</td>
+                <td class="amount" id="previewBasic">S$5,000</td>
+              </tr>
+
+              <tr>
+                <td>Allowance</td>
+                <td class="amount" id="previewAllowance">S$200</td>
+              </tr>
+
+              <tr>
+                <td>Bonus / Commission</td>
+                <td class="amount" id="previewBonus">S$0</td>
+              </tr>
+
+              <tr>
+                <td>Overtime Pay</td>
+                <td class="amount" id="previewOvertime">S$0</td>
+              </tr>
+
+              <tr class="total-row">
+                <td>Gross Pay</td>
+                <td class="amount" id="previewGross">S$5,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Deductions</th>
+                <th class="amount">Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Employee CPF</td>
+                <td class="amount" id="previewEmployeeCpf">S$1,000</td>
+              </tr>
+
+              <tr>
+                <td>Other Deduction</td>
+                <td class="amount" id="previewOtherDeduction">S$0</td>
+              </tr>
+
+              <tr class="total-row">
+                <td>Total Deductions</td>
+                <td class="amount" id="previewTotalDeduction">S$1,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="net-pay">
+          <div>
+            <span>Net Pay</span>
+            <strong id="previewNetPay">S$4,200</strong>
+          </div>
+
+          <div>
+            <span>Employer CPF</span>
+            <strong id="previewEmployerCpf">S$850</strong>
+          </div>
+        </div>
+
+        <p class="footer-note">
+          This payslip is generated for reference only. Employers should ensure payslips comply with applicable employment,
+          CPF and payroll record requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="content-section">
+      <h2 class="section-title">How this Singapore payslip generator works</h2>
+      <p class="section-desc">
+        Enter employee details, salary items and deductions. The generator calculates gross pay,
+        total deductions and net pay, then creates a printable payslip preview.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Enter salary details</h3>
+          <p>Add basic salary, allowances, bonus, overtime pay and other earnings.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>2. Enter deductions</h3>
+          <p>Add employee CPF and other deductions to estimate the final net pay.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>3. Print or save</h3>
+          <p>Use the print button to print the payslip or save it as a PDF from your browser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What should a Singapore payslip include?</h2>
+      <p class="section-desc">
+        A simple payslip should clearly show employee details, pay period, earnings, deductions and net salary.
+        Employers may need to keep proper salary records depending on the employment arrangement.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Payslip Item</th>
+              <th>Purpose</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Employee details</td>
+              <td>Identifies the employee receiving the salary.</td>
+              <td>Name, employee ID, position</td>
+            </tr>
+
+            <tr>
+              <td>Pay period</td>
+              <td>Shows which month or period the salary relates to.</td>
+              <td>January 2026</td>
+            </tr>
+
+            <tr>
+              <td>Earnings</td>
+              <td>Shows salary components before deductions.</td>
+              <td>Basic salary, allowance, bonus, overtime</td>
+            </tr>
+
+            <tr>
+              <td>Deductions</td>
+              <td>Shows amounts deducted from gross pay.</td>
+              <td>Employee CPF, other deductions</td>
+            </tr>
+
+            <tr>
+              <td>Net pay</td>
+              <td>Shows the final amount payable to the employee.</td>
+              <td>Gross pay minus deductions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore calculators</h2>
+      <p class="section-desc">
+        Use these calculators together to estimate salary, CPF, tax and bonus.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="index.html">
+          <h3>Salary Calculator</h3>
+          <p>Estimate monthly take-home pay after CPF and income tax.</p>
+        </a>
+
+        <a class="related-card" href="cpf-calculator.html">
+          <h3>CPF Calculator</h3>
+          <p>Estimate employee and employer CPF contributions.</p>
+        </a>
+
+        <a class="related-card" href="income-tax-calculator.html">
+          <h3>Income Tax Calculator</h3>
+          <p>Estimate Singapore personal income tax payable.</p>
+        </a>
+
+        <a class="related-card" href="bonus-calculator.html">
+          <h3>Bonus Calculator</h3>
+          <p>Estimate bonus after CPF and tax impact.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="calculators.html">View All Calculators →</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore salary guides</h2>
+      <p class="section-desc">
+        Learn more about payslips, CPF, income tax and salary planning.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="payslip-guide.html">
+          <h3>Payslip Guide</h3>
+          <p>Understand what a payslip should include and how to read salary details.</p>
+        </a>
+
+        <a class="related-card" href="cpf-contribution-rates-guide.html">
+          <h3>CPF Contribution Rates Guide</h3>
+          <p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
+        </a>
+
+        <a class="related-card" href="income-tax-guide.html">
+          <h3>Income Tax Guide</h3>
+          <p>Learn how Singapore income tax works for employees.</p>
+        </a>
+
+        <a class="related-card" href="bonus-guide.html">
+          <h3>Bonus Guide</h3>
+          <p>Understand AWS, 13th month bonus and performance bonus.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="guides.html">View All Guides →</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is a payslip?</summary>
+        <p>
+          A payslip is a salary document that shows an employee’s earnings, deductions and net pay for a pay period.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I use this payslip generator for Singapore employees?</summary>
+        <p>
+          Yes. You can use it to create a simple Singapore-style payslip for reference, salary records or internal use.
+          Employers should still ensure their payroll documents comply with applicable rules.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does this generator calculate CPF automatically?</summary>
+        <p>
+          No. This generator lets you enter employee CPF and employer CPF manually. Use the CPF Calculator if you want to estimate CPF first.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I save the payslip as PDF?</summary>
+        <p>
+          Yes. Click Print / Save as PDF, then choose Save as PDF from your browser’s print options.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this an official payslip?</summary>
+        <p>
+          No. This is a free payslip generator for simple salary presentation only. It is not an official government payroll system.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SG Salary Tools. This payslip generator provides estimates and templates only and is not official payroll advice.
+  </footer>
+
+  <script>
+    function money(value) {
+      return "S$" + Math.round(value).toLocaleString("en-SG");
+    }
+
+    function formatMonth(value) {
+      if (!value) return "-";
+
+      const date = new Date(value + "-01T00:00:00");
+      return date.toLocaleDateString("en-SG", {
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    function formatDate(value) {
+      if (!value) return "-";
+
+      const date = new Date(value + "T00:00:00");
+      return date.toLocaleDateString("en-SG", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+    }
+
+    function safeText(id, fallback) {
+      const value = document.getElementById(id).value.trim();
+      return value || fallback;
+    }
+
+    function numberValue(id) {
+      return Number(document.getElementById(id).value) || 0;
+    }
+
+    function generatePayslip() {
+      const companyName = safeText("companyName", "Company Name");
+      const employeeName = safeText("employeeName", "Employee Name");
+      const employeeId = safeText("employeeId", "-");
+      const position = safeText("position", "-");
+      const payMonth = document.getElementById("payMonth").value;
+      const paymentDate = document.getElementById("paymentDate").value;
+
+      const basicSalary = numberValue("basicSalary");
+      const allowance = numberValue("allowance");
+      const bonus = numberValue("bonus");
+      const overtime = numberValue("overtime");
+      const employeeCpf = numberValue("employeeCpf");
+      const employerCpf = numberValue("employerCpf");
+      const otherDeduction = numberValue("otherDeduction");
+
+      const grossPay = basicSalary + allowance + bonus + overtime;
+      const totalDeduction = employeeCpf + otherDeduction;
+      const netPay = grossPay - totalDeduction;
+
+      document.getElementById("previewCompany").textContent = companyName;
+      document.getElementById("previewEmployee").textContent = employeeName;
+      document.getElementById("previewEmployeeId").textContent = employeeId;
+      document.getElementById("previewPosition").textContent = position;
+      document.getElementById("previewMonth").textContent = formatMonth(payMonth);
+      document.getElementById("previewPaymentDate").textContent = formatDate(paymentDate);
+
+      document.getElementById("previewBasic").textContent = money(basicSalary);
+      document.getElementById("previewAllowance").textContent = money(allowance);
+      document.getElementById("previewBonus").textContent = money(bonus);
+      document.getElementById("previewOvertime").textContent = money(overtime);
+      document.getElementById("previewGross").textContent = money(grossPay);
+
+      document.getElementById("previewEmployeeCpf").textContent = money(employeeCpf);
+      document.getElementById("previewOtherDeduction").textContent = money(otherDeduction);
+      document.getElementById("previewTotalDeduction").textContent = money(totalDeduction);
+
+      document.getElementById("previewNetPay").textContent = money(netPay);
+      document.getElementById("previewEmployerCpf").textContent = money(employerCpf);
+    }
+
+    generatePayslip();
+  </script>
+</body>
+</html>
