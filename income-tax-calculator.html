@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://sgsalarytools.com/income-tax-calculator.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Singapore Income Tax Calculator 2026. Estimate resident and non-resident personal income tax, chargeable income and effective tax rate." />
+  <meta name="description" content="Free Singapore Income Tax Calculator 2026. Estimate resident and non-resident personal income tax, chargeable income, tax relief cap and effective tax rate." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
 
@@ -169,7 +169,7 @@
       font-size: 19px;
       line-height: 1.75;
       color: #6f7169;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 26px;
       font-weight: 650;
     }
@@ -180,7 +180,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 760px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -519,6 +519,7 @@
     td {
       color: #425346;
       font-weight: 650;
+      line-height: 1.55;
     }
 
     tr:last-child td { border-bottom: 0; }
@@ -740,13 +741,13 @@
 
       <p>
         Calculate estimated personal income tax in Singapore based on annual income,
-        tax residency, CPF deduction and tax reliefs. Useful for salary planning, bonus planning and IRAS tax estimation.
+        tax residency, CPF deduction and tax reliefs. YA 2026 generally relates to income earned in 2025.
       </p>
 
       <div class="quick-stats">
         <span>Resident Tax Rates</span>
         <span>Non-Resident Option</span>
-        <span>Chargeable Income</span>
+        <span>S$80,000 Relief Cap</span>
         <span>Effective Tax Rate</span>
       </div>
     </div>
@@ -762,12 +763,12 @@
 
         <div class="field">
           <label for="annualIncome">Annual employment income</label>
-          <input id="annualIncome" type="number" value="60000" min="0" step="100" />
+          <input id="annualIncome" type="number" value="60000" min="0" step="100" oninput="calculateTax()" />
         </div>
 
         <div class="field">
           <label for="bonus">Additional bonus / other employment income</label>
-          <input id="bonus" type="number" value="0" min="0" step="100" />
+          <input id="bonus" type="number" value="0" min="0" step="100" oninput="calculateTax()" />
         </div>
 
         <div class="field">
@@ -781,21 +782,25 @@
 
         <div class="field" id="cpfField">
           <label for="cpf">Annual employee CPF deduction</label>
-          <input id="cpf" type="number" value="12000" min="0" step="100" />
+          <input id="cpf" type="number" value="12000" min="0" step="100" oninput="calculateTax()" />
         </div>
 
         <p class="mini-note" id="cpfReminder">
-          CPF is auto-estimated from annual employment income using a simplified 20% employee CPF assumption and monthly Ordinary Wage ceiling. Use manual mode if you know your exact annual CPF.
+          CPF is auto-estimated using a simplified 20% employee CPF assumption and the monthly Ordinary Wage ceiling. It does not calculate the Additional Wage ceiling for bonuses.
         </p>
 
         <div class="field">
-          <label for="relief">Estimated tax reliefs</label>
-          <input id="relief" type="number" value="0" min="0" step="100" />
+          <label for="relief">Estimated personal tax reliefs</label>
+          <input id="relief" type="number" value="0" min="0" step="100" oninput="calculateTax()" />
         </div>
+
+        <p class="mini-note">
+          Personal tax reliefs are capped at S$80,000. Non-residents generally cannot claim personal reliefs in this simplified calculator.
+        </p>
 
         <div class="field">
           <label for="resident">Tax residency</label>
-          <select id="resident">
+          <select id="resident" onchange="calculateTax()">
             <option value="resident">Tax resident</option>
             <option value="nonresident">Non-resident employment income</option>
           </select>
@@ -842,7 +847,7 @@
           </div>
 
           <div class="row">
-            <span>Less: tax reliefs</span>
+            <span>Less: tax reliefs applied</span>
             <strong class="negative" id="reliefDeduction">-S$0</strong>
           </div>
 
@@ -885,7 +890,7 @@
 
         <div class="info-card">
           <h3>2. Deduct CPF and reliefs</h3>
-          <p>CPF deductions and tax reliefs may reduce your estimated chargeable income. Auto CPF is only an estimate.</p>
+          <p>CPF deductions and tax reliefs may reduce your estimated chargeable income. Personal reliefs are capped at S$80,000.</p>
         </div>
 
         <div class="info-card">
@@ -896,10 +901,122 @@
     </section>
 
     <section class="content-section">
-      <h2 class="section-title">Singapore resident income tax rate examples</h2>
+      <h2 class="section-title">Singapore resident income tax rates</h2>
       <p class="section-desc">
-        Singapore tax residents are taxed progressively. These examples are based on chargeable income,
-        not gross salary. Your gross salary can be higher after CPF deductions and tax reliefs.
+        Singapore tax residents are taxed progressively on chargeable income. The table below shows the resident tax brackets used by this calculator.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Chargeable Income</th>
+              <th>Tax Rate</th>
+              <th>Tax on This Bracket</th>
+              <th>Tax on Income Up To This Level</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>First S$20,000</td>
+              <td>0%</td>
+              <td>S$0</td>
+              <td>S$0</td>
+            </tr>
+
+            <tr>
+              <td>Next S$10,000</td>
+              <td>2%</td>
+              <td>S$200</td>
+              <td>S$200</td>
+            </tr>
+
+            <tr>
+              <td>Next S$10,000</td>
+              <td>3.5%</td>
+              <td>S$350</td>
+              <td>S$550</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>7%</td>
+              <td>S$2,800</td>
+              <td>S$3,350</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>11.5%</td>
+              <td>S$4,600</td>
+              <td>S$7,950</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>15%</td>
+              <td>S$6,000</td>
+              <td>S$13,950</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>18%</td>
+              <td>S$7,200</td>
+              <td>S$21,150</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>19%</td>
+              <td>S$7,600</td>
+              <td>S$28,750</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>19.5%</td>
+              <td>S$7,800</td>
+              <td>S$36,550</td>
+            </tr>
+
+            <tr>
+              <td>Next S$40,000</td>
+              <td>20%</td>
+              <td>S$8,000</td>
+              <td>S$44,550</td>
+            </tr>
+
+            <tr>
+              <td>Next S$180,000</td>
+              <td>22%</td>
+              <td>S$39,600</td>
+              <td>S$84,150</td>
+            </tr>
+
+            <tr>
+              <td>Next S$500,000</td>
+              <td>23%</td>
+              <td>S$115,000</td>
+              <td>S$199,150</td>
+            </tr>
+
+            <tr>
+              <td>Above S$1,000,000</td>
+              <td>24%</td>
+              <td>On amount above S$1,000,000</td>
+              <td>Depends on income level</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Singapore resident income tax examples</h2>
+      <p class="section-desc">
+        These examples are based on chargeable income, not gross salary. Your gross salary can be higher after CPF deductions and tax reliefs.
       </p>
 
       <div class="table-wrap">
@@ -918,35 +1035,35 @@
               <td>S$20,000</td>
               <td>S$0</td>
               <td>0.0%</td>
-              <td>First S$20,000 is taxed at 0% for residents</td>
+              <td>First S$20,000 is taxed at 0% for residents.</td>
             </tr>
 
             <tr>
               <td>S$40,000</td>
               <td>S$550</td>
               <td>1.4%</td>
-              <td>Common lower-middle income tax estimate</td>
+              <td>Common lower-middle income tax estimate.</td>
             </tr>
 
             <tr>
               <td>S$60,000</td>
               <td>S$1,950</td>
               <td>3.3%</td>
-              <td>Useful for mid-income salary planning</td>
+              <td>Useful for mid-income salary planning.</td>
             </tr>
 
             <tr>
               <td>S$80,000</td>
               <td>S$3,350</td>
               <td>4.2%</td>
-              <td>Tax increases as income enters higher brackets</td>
+              <td>Tax increases as income enters higher brackets.</td>
             </tr>
 
             <tr>
               <td>S$120,000</td>
               <td>S$7,950</td>
               <td>6.6%</td>
-              <td>Bonus and relief planning becomes more important</td>
+              <td>Bonus and relief planning becomes more important.</td>
             </tr>
           </tbody>
         </table>
@@ -977,10 +1094,9 @@
         </div>
 
         <div class="scenario-card">
-          <h3>Tax relief planning</h3>
+          <h3>Bonus and tax</h3>
           <p>
-            Tax reliefs can reduce chargeable income. Common examples may include earned income relief,
-            CPF relief and other personal reliefs where applicable.
+            Employment bonus is generally included in taxable employment income. CPF treatment for bonus can be different because Additional Wage rules may apply.
           </p>
         </div>
       </div>
@@ -1005,9 +1121,9 @@
             <span>Check whether you are treated as a tax resident</span>
           </a>
 
-          <a class="authority-item" href="https://www.iras.gov.sg/taxes/individual-income-tax/individual-income-tax-rates" target="_blank" rel="noopener">
-            <strong>Individual Income Tax</strong>
-            <span>Official IRAS individual income tax information</span>
+          <a class="authority-item" href="https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs" target="_blank" rel="noopener">
+            <strong>Tax Reliefs</strong>
+            <span>Official IRAS tax relief and S$80,000 relief cap information</span>
           </a>
         </div>
       </div>
@@ -1068,10 +1184,10 @@
           <p>Understand how tax affects your final net salary.</p>
         </a>
 
-<a class="related-card" href="cpf-contribution-rates-guide.html">
-  <h3>CPF Contribution Rates Guide</h3>
-  <p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
-</a>
+        <a class="related-card" href="cpf-contribution-rates-guide.html">
+          <h3>CPF Contribution Rates Guide</h3>
+          <p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
+        </a>
       </div>
 
       <div class="view-all">
@@ -1094,6 +1210,22 @@
         <summary>What is chargeable income?</summary>
         <p>
           Chargeable income is the amount used to calculate tax after deducting allowable deductions and reliefs from taxable income.
+        </p>
+      </details>
+
+      <details>
+        <summary>What is the personal tax relief cap in Singapore?</summary>
+        <p>
+          Personal tax reliefs are capped at S$80,000. If the relief amount entered is above S$80,000,
+          this calculator will apply only S$80,000 for tax estimation.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does bonus count as taxable income in Singapore?</summary>
+        <p>
+          Employment bonus is generally included as taxable employment income. This calculator lets you enter bonus separately
+          so you can estimate the tax impact of additional employment income.
         </p>
       </details>
 
@@ -1169,6 +1301,7 @@
       const monthlyIncome = totalIncome / 12;
       const owCeiling = 8000;
       const cpfSubjectMonthly = Math.min(monthlyIncome, owCeiling);
+
       return Math.round(cpfSubjectMonthly * 0.20 * 12);
     }
 
@@ -1192,7 +1325,7 @@
         cpfField.style.display = "none";
         cpfInput.disabled = true;
         cpfReminder.textContent =
-          "CPF is auto-estimated from annual employment income using a simplified 20% employee CPF assumption and monthly Ordinary Wage ceiling. Use manual mode if you know your exact annual CPF.";
+          "CPF is auto-estimated using a simplified 20% employee CPF assumption and the monthly Ordinary Wage ceiling. It does not calculate the Additional Wage ceiling for bonuses.";
       }
 
       calculateTax();
@@ -1249,7 +1382,8 @@
         cpf = 0;
       }
 
-      const reliefForCalculation = resident === "nonresident" ? 0 : relief;
+      const reliefCapped = Math.min(relief, 80000);
+      const reliefForCalculation = resident === "nonresident" ? 0 : reliefCapped;
       const chargeableIncome = Math.max(0, totalIncome - cpf - reliefForCalculation);
 
       let taxPayable;
@@ -1286,11 +1420,16 @@
       const note = document.getElementById("calculationNote");
 
       if (resident === "resident") {
-        note.textContent =
-          "Tax resident income is estimated using Singapore progressive resident tax rates. CPF deduction may be auto-estimated or manually entered. Actual IRAS assessment may differ depending on reliefs, rebates and deductions.";
+        if (relief > 80000) {
+          note.textContent =
+            "Tax resident income is estimated using Singapore progressive resident tax rates. Your tax relief input is above S$80,000, so this calculator applies the S$80,000 personal relief cap. CPF is simplified and may differ from your actual IRAS assessment.";
+        } else {
+          note.textContent =
+            "Tax resident income is estimated using Singapore progressive resident tax rates. CPF deduction may be auto-estimated or manually entered. Actual IRAS assessment may differ depending on reliefs, rebates and deductions.";
+        }
       } else {
         note.textContent =
-          "Non-resident employment income is estimated at 15% of employment income or progressive resident rates, whichever gives a higher tax amount. Personal reliefs are not applied in this simplified non-resident estimate.";
+          "Non-resident employment income is estimated at 15% of employment income or progressive resident rates, whichever gives a higher tax amount. Personal reliefs are not applied in this simplified non-resident estimate. CPF may not apply unless you are a Singapore Citizen or PR.";
       }
     }
 
