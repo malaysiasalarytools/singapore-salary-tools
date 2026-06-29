@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>Singapore Salary Calculator 2026 | Take Home Pay After CPF & Tax</title>
+  <title>Singapore Salary Calculator 2026 | CPF, Income Tax & Take Home Pay</title>
 
   <link rel="canonical" href="https://sgsalarytools.com/">
   <link rel="icon" type="image/png" href="favicon.png">
   
-  <meta name="description" content="Free Singapore Salary Calculator 2026. Estimate your monthly take-home pay after CPF contribution and income tax in Singapore." />
+  <meta name="description" content="Free Singapore Salary Calculator 2026. Estimate your take-home pay after CPF contribution and income tax in Singapore." />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -59,12 +59,12 @@
       min-width: 210px;
     }
 
-    .brand img{
-      width:48px;
-      height:48px;
-      margin-right:12px;
-      flex-shrink:0;
-      display:block;
+    .brand img {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      display: block;
     }
     
     .brand-text strong {
@@ -201,14 +201,6 @@
       font-size: 13px;
       font-weight: 900;
       box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
-    }
-
-    .hero-card {
-      display: none;
-    }
-
-    .hero-actions {
-      display: none;
     }
 
     .calculator-section {
@@ -577,6 +569,21 @@
       line-height: 1.4;
     }
 
+    .center-link {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .pill-link {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 800;
+      border: 1px solid #dfe9db;
+    }
+
     .faq {
       margin-top: 44px;
     }
@@ -821,7 +828,7 @@
 
         <div class="field">
           <label for="resident">Tax residency</label>
-          <select id="resident">
+          <select id="resident" onchange="handleResidencyChange()">
             <option value="resident">Tax resident</option>
             <option value="nonresident">Non-resident employment income</option>
           </select>
@@ -895,7 +902,7 @@
 
         <div class="note-box" id="calculationNote">
           CPF is estimated using Singapore Citizen / PR third year onwards rates and the Ordinary Wage ceiling of S$8,000.
-          Income tax is simplified and may differ from your actual IRAS assessment.
+          This simple estimate does not fully calculate CPF Additional Wage ceiling, special CPF rules, tax rebates or employer payroll adjustments.
         </div>
       </div>
     </div>
@@ -1021,23 +1028,23 @@
     <section class="content-section">
       <h2 class="section-title">Who should use this calculator?</h2>
       <p class="section-desc">
-        This calculator is useful for anyone who wants a fast estimate of salary after CPF and tax in Singapore.
+        Use this calculator when you want a fast estimate of salary after CPF and tax in Singapore.
       </p>
 
       <div class="use-grid">
         <div class="use-card">
           <h3>Employees</h3>
-          <p>Check how much salary you may actually receive after CPF and estimated tax.</p>
+          <p>Check how much salary you may receive after CPF and estimated tax.</p>
         </div>
 
         <div class="use-card">
           <h3>Job Seekers</h3>
-          <p>Compare job offers and understand your estimated take-home pay before accepting a role.</p>
+          <p>Compare job offers and understand your estimated take-home pay.</p>
         </div>
 
         <div class="use-card">
           <h3>HR & Employers</h3>
-          <p>Explain salary packages, CPF contributions and rough net pay to employees or candidates.</p>
+          <p>Explain salary packages, CPF contributions and rough net pay clearly.</p>
         </div>
       </div>
     </section>
@@ -1045,24 +1052,23 @@
     <section class="content-section">
       <h2 class="section-title">Why trust SG Salary Tools?</h2>
       <p class="section-desc">
-        This calculator is designed for simple salary planning. It is not an official government calculator,
-        but it follows common CPF and tax assumptions for quick estimates.
+        This calculator is not an official government calculator, but it is built around common Singapore CPF and tax assumptions for quick salary planning.
       </p>
 
       <div class="trust-grid">
         <div class="trust-card">
-          <h3>Simple breakdown</h3>
-          <p>See gross salary, employee CPF, employer CPF, estimated tax and take-home pay clearly.</p>
+          <h3>Clear breakdown</h3>
+          <p>See gross salary, employee CPF, employer CPF, estimated tax and take-home pay in one place.</p>
         </div>
 
         <div class="trust-card">
-          <h3>Built for Singapore</h3>
-          <p>Designed around Singapore CPF, salary and tax planning needs.</p>
+          <h3>Singapore focused</h3>
+          <p>Designed around Singapore salary, CPF and income tax planning needs.</p>
         </div>
 
         <div class="trust-card">
           <h3>Free to use</h3>
-          <p>No account is needed. You can calculate salary instantly and compare different income levels.</p>
+          <p>No account is needed. You can calculate and compare different salaries instantly.</p>
         </div>
       </div>
     </section>
@@ -1125,64 +1131,44 @@
           <p>Estimate annual leave entitlement for Singapore employment planning.</p>
         </a>
       </div>
+
+      <div class="center-link">
+        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      </div>
     </section>
 
-<div style="text-align:center;margin-top:24px;">
-  <a href="calculators.html"
-     style="
-     display:inline-block;
-     padding:14px 24px;
-     border-radius:999px;
-     background:#edf5e9;
-     color:#173f2b;
-     font-weight:800;
-     border:1px solid #dfe9db;">
-     View All Calculators →
-  </a>
-</div>
-
     <section class="content-section">
-  <h2 class="section-title">Related Singapore salary guides</h2>
-  <p class="section-desc">
-    Learn the key CPF, tax and employment rules behind your salary calculation.
-  </p>
+      <h2 class="section-title">Related Singapore salary guides</h2>
+      <p class="section-desc">
+        Learn the key CPF, tax and employment rules behind your salary calculation.
+      </p>
 
-  <div class="related-grid">
-<a class="related-card" href="cpf-contribution-rates-guide.html">
-  <h3>CPF Contribution Rates Guide</h3>
-  <p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
-</a>
+      <div class="related-grid">
+        <a class="related-card" href="cpf-contribution-rates-guide.html">
+          <h3>CPF Contribution Rates Guide</h3>
+          <p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
+        </a>
 
-    <a class="related-card" href="income-tax-guide.html">
-      <h3>Income Tax Guide</h3>
-      <p>Learn how Singapore income tax works for employees and tax residents.</p>
-    </a>
+        <a class="related-card" href="income-tax-guide.html">
+          <h3>Income Tax Guide</h3>
+          <p>Learn how Singapore income tax works for employees and tax residents.</p>
+        </a>
 
-    <a class="related-card" href="salary-after-tax-guide.html">
-      <h3>Salary After Tax Guide</h3>
-      <p>Understand how CPF and income tax affect your final take-home salary.</p>
-    </a>
+        <a class="related-card" href="salary-after-tax-guide.html">
+          <h3>Salary After Tax Guide</h3>
+          <p>Understand how CPF and income tax affect your final take-home salary.</p>
+        </a>
 
-    <a class="related-card" href="annual-leave-guide.html">
-      <h3>Annual Leave Guide</h3>
-      <p>Learn basic annual leave entitlement and employment rules in Singapore.</p>
-    </a>
-  </div>
-</section>
+        <a class="related-card" href="annual-leave-guide.html">
+          <h3>Annual Leave Guide</h3>
+          <p>Learn basic annual leave entitlement and employment rules in Singapore.</p>
+        </a>
+      </div>
 
-    <div style="text-align:center;margin-top:24px;">
-  <a href="guides.html"
-     style="
-     display:inline-block;
-     padding:14px 24px;
-     border-radius:999px;
-     background:#edf5e9;
-     color:#173f2b;
-     font-weight:800;
-     border:1px solid #dfe9db;">
-     View All Guides →
-  </a>
-</div>
+      <div class="center-link">
+        <a class="pill-link" href="guides.html">View All Guides →</a>
+      </div>
+    </section>
     
     <section class="faq">
       <h2 class="section-title">Frequently Asked Questions</h2>
@@ -1196,10 +1182,17 @@
       </details>
 
       <details>
-        <summary>Does this calculator include CPF contributions?</summary>
+        <summary>How much CPF do employees contribute in Singapore?</summary>
         <p>
-          Yes. It estimates both employee CPF deductions and employer CPF contributions for eligible Singapore Citizens and PRs.
-          You can also choose the no CPF option if CPF does not apply to your employment situation.
+          CPF contribution rates vary by age. Employees aged 55 and below generally contribute up to 20% of eligible Ordinary Wages.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is CPF calculated on the full salary?</summary>
+        <p>
+          CPF contributions are subject to CPF wage ceilings. This calculator uses the Ordinary Wage ceiling for monthly salary estimates,
+          but it does not fully calculate CPF Additional Wage ceiling on bonuses.
         </p>
       </details>
 
@@ -1212,9 +1205,17 @@
       </details>
 
       <details>
-        <summary>How much CPF do employees contribute in Singapore?</summary>
+        <summary>Is income tax deducted monthly in Singapore?</summary>
         <p>
-          CPF contribution rates vary by age. Employees aged 55 and below generally contribute up to 20% of eligible wages.
+          Singapore income tax is usually assessed annually. This calculator converts estimated annual tax into a monthly figure for planning.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does this calculator include CPF contributions?</summary>
+        <p>
+          Yes. It estimates both employee CPF deductions and employer CPF contributions for eligible Singapore Citizens and PRs.
+          You can also choose the no CPF option if CPF does not apply to your employment situation.
         </p>
       </details>
 
@@ -1227,17 +1228,10 @@
       </details>
 
       <details>
-        <summary>Is CPF calculated on the full salary?</summary>
+        <summary>Can foreigners use this salary calculator?</summary>
         <p>
-          CPF contributions are subject to CPF wage ceilings. If your salary exceeds the Ordinary Wage ceiling,
-          CPF will only be calculated up to the applicable limit.
-        </p>
-      </details>
-
-      <details>
-        <summary>Is income tax deducted monthly in Singapore?</summary>
-        <p>
-          Singapore income tax is usually assessed annually. This calculator converts estimated annual tax into a monthly figure for planning.
+          Yes. Foreigners can use the no CPF option to estimate salary without CPF deduction.
+          Tax treatment may still depend on tax residency and your employment arrangement.
         </p>
       </details>
 
@@ -1250,17 +1244,10 @@
       </details>
 
       <details>
-        <summary>Can foreigners use this salary calculator?</summary>
-        <p>
-          Yes. Foreigners can use the no CPF option to estimate salary without CPF deduction.
-          Tax treatment may still depend on tax residency and your employment arrangement.
-        </p>
-      </details>
-
-      <details>
         <summary>How accurate is this Singapore Salary Calculator?</summary>
         <p>
-          It provides an estimate only. Actual results may vary depending on CPF eligibility, tax reliefs, deductions, bonuses and employment arrangements.
+          It provides an estimate only. Actual results may vary depending on CPF eligibility, tax reliefs, deductions, bonuses,
+          CPF Additional Wage ceiling, tax rebates and employer payroll arrangements.
         </p>
       </details>
     </section>
@@ -1318,13 +1305,31 @@
       return tax;
     }
 
+    function handleResidencyChange() {
+      const resident = document.getElementById("resident").value;
+      const reliefInput = document.getElementById("relief");
+
+      if (resident === "nonresident") {
+        reliefInput.value = 0;
+        reliefInput.disabled = true;
+        reliefInput.style.opacity = "0.55";
+      } else {
+        reliefInput.disabled = false;
+        reliefInput.style.opacity = "1";
+      }
+
+      calculateSalary();
+    }
+
     function calculateSalary() {
       const salary = Number(document.getElementById("salary").value) || 0;
       const bonus = Number(document.getElementById("bonus").value) || 0;
       const cpfEligibility = document.getElementById("cpfEligibility").value;
       const age = document.getElementById("age").value;
       const resident = document.getElementById("resident").value;
-      const relief = Number(document.getElementById("relief").value) || 0;
+      const reliefInput = Number(document.getElementById("relief").value) || 0;
+
+      const relief = resident === "resident" ? reliefInput : 0;
 
       const cpfCeiling = 8000;
       const cpfSalary = Math.min(salary, cpfCeiling);
@@ -1347,7 +1352,7 @@
       if (resident === "resident") {
         annualTax = residentTax(chargeableIncome);
       } else {
-        const progressiveTax = residentTax(chargeableIncome);
+        const progressiveTax = residentTax(annualGross);
         const nonResidentTax = annualGross * 0.15;
         annualTax = Math.max(progressiveTax, nonResidentTax);
       }
@@ -1370,16 +1375,22 @@
 
       const note = document.getElementById("calculationNote");
 
-      if (cpfEligibility === "cpf") {
+      if (cpfEligibility === "cpf" && resident === "resident") {
         note.textContent =
-          "CPF is estimated using Singapore Citizen / PR third year onwards rates and the Ordinary Wage ceiling of S$8,000. Income tax is simplified and may differ from your actual IRAS assessment.";
+          "CPF is estimated using Singapore Citizen / PR third year onwards rates and the Ordinary Wage ceiling of S$8,000. This simple estimate does not fully calculate CPF Additional Wage ceiling on bonuses, special CPF rules, tax rebates or employer payroll adjustments.";
+      } else if (cpfEligibility === "cpf" && resident === "nonresident") {
+        note.textContent =
+          "CPF is estimated using Singapore Citizen / PR third year onwards rates and the Ordinary Wage ceiling of S$8,000. For non-resident employment income, personal reliefs are ignored in this simplified estimate and tax is estimated at 15% or resident progressive rates, whichever is higher.";
+      } else if (cpfEligibility === "noCpf" && resident === "resident") {
+        note.textContent =
+          "CPF is set to S$0 because the foreigner / no CPF option is selected. Income tax is estimated using resident progressive rates after your estimated reliefs. Actual tax may differ from your IRAS assessment.";
       } else {
         note.textContent =
-          "CPF is set to S$0 because the foreigner / no CPF option is selected. Income tax is still estimated based on your selected tax residency and may differ from your actual IRAS assessment.";
+          "CPF is set to S$0 because the foreigner / no CPF option is selected. For non-resident employment income, personal reliefs are ignored in this simplified estimate and tax is estimated at 15% or resident progressive rates, whichever is higher.";
       }
     }
 
-    calculateSalary();
+    handleResidencyChange();
   </script>
 </body>
 </html>
