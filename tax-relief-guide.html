@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>Singapore Tax Relief Guide 2026 | Personal Reliefs, CPF Relief & Chargeable Income</title>
+  <title>Singapore Tax Relief Guide 2026 | What to Enter in Salary Calculator</title>
 
   <link rel="canonical" href="https://sgsalarytools.com/tax-relief-guide.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Singapore Tax Relief Guide 2026. Learn common personal income tax reliefs such as CPF Relief, Earned Income Relief, Parent Relief, Spouse Relief, Child Relief and SRS Relief." />
+  <meta name="description" content="Simple Singapore Tax Relief Guide 2026. Learn CPF Relief, Earned Income Relief, family reliefs and what to enter in a Singapore salary calculator." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -97,7 +97,9 @@
       scrollbar-width: none;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
 
     .nav-links a {
       padding: 13px 18px;
@@ -106,7 +108,7 @@
       color: #5d635b;
       font-weight: 850;
       white-space: nowrap;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -117,7 +119,6 @@
     .nav-links a.active {
       background: #22231f;
       color: #ffffff;
-      box-shadow: none;
     }
 
     .hero-wrap {
@@ -130,7 +131,7 @@
     .hero {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 54px 22px 34px;
+      padding: 50px 22px 34px;
       text-align: center;
     }
 
@@ -148,14 +149,13 @@
       letter-spacing: 1.8px;
       text-transform: uppercase;
       margin-bottom: 24px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
     h1 {
-      max-width: 900px;
+      max-width: 820px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 72px);
       line-height: 0.98;
       letter-spacing: -3px;
       font-weight: 500;
@@ -171,7 +171,7 @@
       font-size: 19px;
       line-height: 1.75;
       color: #6f7169;
-      max-width: 780px;
+      max-width: 760px;
       margin: 0 auto 26px;
       font-weight: 650;
     }
@@ -182,7 +182,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 760px;
     }
 
     .quick-stats span {
@@ -199,7 +199,7 @@
     .content {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 38px 22px 70px;
+      padding: 34px 22px 70px;
     }
 
     .content-section {
@@ -208,29 +208,44 @@
 
     .section-title {
       margin: 0 0 18px;
-      font-size: 29px;
-      letter-spacing: -0.8px;
+      font-size: 28px;
+      letter-spacing: -0.7px;
       color: #10231a;
     }
 
     .section-desc {
       color: #647168;
       line-height: 1.7;
-      max-width: 860px;
+      max-width: 820px;
       margin: -6px 0 22px;
       font-weight: 600;
     }
 
-    .guide-card {
-      background: white;
-      border: 1px solid #e5ece1;
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.14);
     }
 
-    .summary-grid,
-    .relief-grid,
+    .highlight-box h2 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      font-size: 17px;
+    }
+
+    .simple-grid,
     .related-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -242,8 +257,7 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .summary-card,
-    .relief-card,
+    .simple-card,
     .related-card {
       background: white;
       border: 1px solid #e5ece1;
@@ -252,16 +266,14 @@
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .summary-card h3,
-    .relief-card h3,
+    .simple-card h3,
     .related-card h3 {
       margin: 0 0 10px;
       font-size: 19px;
       color: #10231a;
     }
 
-    .summary-card p,
-    .relief-card p,
+    .simple-card p,
     .related-card p {
       margin: 0;
       color: #647168;
@@ -289,7 +301,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 760px;
+      min-width: 700px;
     }
 
     th,
@@ -328,51 +340,27 @@
       font-weight: 600;
     }
 
-    .formula-box {
-      background: linear-gradient(135deg, #2f7d63, #173f2b);
-      color: white;
+    .answer-box {
+      background: white;
+      border: 1px solid #e5ece1;
       border-radius: 28px;
       padding: 28px;
-      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.14);
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
-    .formula-box h2 {
-      margin: 0 0 12px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      font-weight: 500;
-      letter-spacing: -1.2px;
-    }
-
-    .formula-box p {
-      margin: 0;
-      color: #d9eee0;
-      line-height: 1.7;
-      font-weight: 650;
-      font-size: 17px;
-    }
-
-    .steps {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .step {
-      background: #ffffff;
-      border: 1px solid #e5ece1;
-      border-radius: 22px;
-      padding: 22px;
-      color: #425346;
-      line-height: 1.65;
-      font-weight: 650;
-    }
-
-    .step strong {
-      display: block;
+    .answer-box strong {
       color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 17px;
+    }
+
+    .answer-box p {
+      color: #647168;
+      line-height: 1.7;
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+
+    .answer-box p:last-child {
+      margin-bottom: 0;
     }
 
     .center-link {
@@ -471,8 +459,7 @@
       }
 
       .hero {
-        padding: 38px 20px 26px;
-        text-align: center;
+        padding: 36px 20px 26px;
       }
 
       .eyebrow {
@@ -504,17 +491,16 @@
       }
 
       .content {
-        padding: 28px 16px 60px;
+        padding: 26px 16px 60px;
       }
 
-      .summary-grid,
-      .relief-grid,
+      .simple-grid,
       .related-grid {
         grid-template-columns: 1fr;
       }
 
-      .guide-card,
-      .formula-box {
+      .highlight-box,
+      .answer-box {
         border-radius: 24px;
         padding: 24px;
       }
@@ -555,57 +541,55 @@
 
   <section class="hero-wrap">
     <div class="hero">
-      <div class="eyebrow">Singapore income tax guide</div>
+      <div class="eyebrow">Singapore Tax Relief 2026</div>
 
-      <h1>Singapore <em>Tax Relief</em> Guide</h1>
+      <h1>What tax relief should you <em>enter?</em></h1>
 
       <p>
-        Learn how tax reliefs reduce your chargeable income, what common reliefs employees may claim,
-        and what to enter in the estimated annual tax relief field of our Singapore salary calculator.
+        A simple guide for employees using the Singapore Salary Calculator.
+        Learn the common reliefs and what amount to enter if you are not sure.
       </p>
 
       <div class="quick-stats">
         <span>CPF Relief</span>
         <span>Earned Income Relief</span>
-        <span>Parent & Spouse Relief</span>
-        <span>SRS Relief</span>
+        <span>Family Reliefs</span>
+        <span>S$80,000 Relief Cap</span>
       </div>
     </div>
   </section>
 
   <main class="content">
     <section class="content-section">
-      <div class="formula-box">
-        <h2>How tax relief affects your tax</h2>
+      <div class="highlight-box">
+        <h2>Simple answer</h2>
         <p>
-          Singapore income tax is usually calculated on chargeable income. In simple terms:
-          annual income minus allowable deductions and personal reliefs equals chargeable income.
-          Lower chargeable income usually means lower tax payable.
+          If you are not sure about your tax reliefs, enter S$0 for a conservative estimate.
+          If you want a more realistic estimate, you can start with your estimated annual employee CPF plus Earned Income Relief.
         </p>
       </div>
     </section>
 
     <section class="content-section">
-      <h2 class="section-title">What are tax reliefs in Singapore?</h2>
+      <h2 class="section-title">What is tax relief?</h2>
       <p class="section-desc">
-        Tax reliefs are deductions allowed to eligible individuals. They do not directly reduce your tax dollar-for-dollar.
-        Instead, they reduce the amount of income that is taxed.
+        Tax relief reduces your chargeable income. It does not reduce your tax payable directly.
       </p>
 
-      <div class="summary-grid">
-        <div class="summary-card">
-          <h3>Reliefs reduce income</h3>
-          <p>A S$1,000 relief reduces your chargeable income by S$1,000. The actual tax saving depends on your tax bracket.</p>
+      <div class="simple-grid">
+        <div class="simple-card">
+          <h3>Annual income</h3>
+          <p>Your salary, bonus and other taxable income for the year.</p>
         </div>
 
-        <div class="summary-card">
-          <h3>Eligibility matters</h3>
-          <p>Some reliefs apply automatically, while others depend on your family situation, CPF contribution, SRS contribution or expenses.</p>
+        <div class="simple-card">
+          <h3>Less: tax reliefs</h3>
+          <p>Examples include CPF Relief, Earned Income Relief and family-related reliefs.</p>
         </div>
 
-        <div class="summary-card">
-          <h3>There is a relief cap</h3>
-          <p>Total personal income tax reliefs are generally capped at S$80,000 per Year of Assessment.</p>
+        <div class="simple-card">
+          <h3>Chargeable income</h3>
+          <p>This is the amount used to estimate your Singapore income tax.</p>
         </div>
       </div>
     </section>
@@ -613,67 +597,147 @@
     <section class="content-section">
       <h2 class="section-title">Common Singapore tax reliefs</h2>
       <p class="section-desc">
-        These are common reliefs that employees may see when planning Singapore personal income tax.
-        Always check your actual IRAS tax assessment for the final approved amount.
+        These are the main reliefs most employees should understand first.
       </p>
 
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Tax Relief</th>
-              <th>Common Amount / Basis</th>
-              <th>Who It May Apply To</th>
+              <th>Relief</th>
+              <th>Simple Meaning</th>
+              <th>Common Use</th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td>Earned Income Relief</td>
-              <td>Commonly S$1,000 for individuals below 55, with higher amounts for older taxpayers.</td>
-              <td>Tax residents who have earned income from employment, trade, business, profession or vocation.</td>
+              <td>CPF Relief</td>
+              <td>Relief based on qualifying employee CPF contributions.</td>
+              <td>Most Singapore Citizen and PR employees who contribute CPF.</td>
             </tr>
 
             <tr>
-              <td>CPF Relief</td>
-              <td>Based on compulsory employee CPF contributions and certain approved voluntary CPF contributions.</td>
-              <td>Singapore Citizens and PRs who make qualifying CPF contributions.</td>
+              <td>Earned Income Relief</td>
+              <td>Basic relief for individuals with earned income.</td>
+              <td>Commonly S$1,000 for employees below 55.</td>
             </tr>
 
             <tr>
               <td>Spouse Relief</td>
-              <td>Commonly S$2,000 if qualifying conditions are met.</td>
-              <td>Taxpayers supporting a spouse with income not exceeding the relevant threshold.</td>
+              <td>Relief for supporting a spouse who meets the conditions.</td>
+              <td>Only if your spouse qualifies under IRAS rules.</td>
             </tr>
 
             <tr>
               <td>Parent Relief</td>
-              <td>Amount depends on whether the dependant lives with you and whether the dependant is handicapped.</td>
-              <td>Taxpayers supporting parents, grandparents, parents-in-law or grandparents-in-law who meet the conditions.</td>
+              <td>Relief for supporting qualifying parents or grandparents.</td>
+              <td>Only if the dependant meets the conditions.</td>
             </tr>
 
             <tr>
               <td>Qualifying Child Relief</td>
-              <td>Commonly S$4,000 per qualifying child.</td>
-              <td>Parents supporting a child who meets the qualifying conditions.</td>
-            </tr>
-
-            <tr>
-              <td>Working Mother’s Child Relief</td>
-              <td>Based on a percentage of the mother’s earned income, subject to limits.</td>
-              <td>Working mothers who are Singapore tax residents and meet the qualifying conditions.</td>
-            </tr>
-
-            <tr>
-              <td>Course Fees Relief</td>
-              <td>Relief may be available for qualifying course fees, subject to a cap.</td>
-              <td>Individuals who paid for approved courses related to their employment, trade or professional development.</td>
+              <td>Relief for supporting a qualifying child.</td>
+              <td>Common for parents with eligible children.</td>
             </tr>
 
             <tr>
               <td>SRS Relief</td>
-              <td>Based on qualifying Supplementary Retirement Scheme contributions, subject to annual contribution caps.</td>
-              <td>Individuals who contribute to an SRS account for retirement planning.</td>
+              <td>Relief for qualifying SRS contributions.</td>
+              <td>Useful for people who contribute to Supplementary Retirement Scheme.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note-box" style="margin-top:18px;">
+        Singapore has a total personal income tax relief cap of S$80,000 per Year of Assessment.
+        For most normal employees, the main reliefs to think about first are CPF Relief and Earned Income Relief.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What should I enter in the salary calculator?</h2>
+      <p class="section-desc">
+        Use this simple approach if you only want a practical estimate.
+      </p>
+
+      <div class="answer-box">
+        <p>
+          <strong>If you are not sure:</strong><br>
+          Enter <strong>S$0</strong>. This gives a conservative tax estimate.
+        </p>
+
+        <p>
+          <strong>If you are a Singapore Citizen or PR employee:</strong><br>
+          You can estimate your relief as <strong>annual employee CPF + Earned Income Relief</strong>.
+        </p>
+
+        <p>
+          <strong>Simple example:</strong><br>
+          Monthly employee CPF S$1,000 × 12 months = S$12,000 CPF Relief.
+          Add S$1,000 Earned Income Relief. Estimated annual relief = <strong>S$13,000</strong>.
+        </p>
+
+        <p>
+          <strong>If you have family reliefs:</strong><br>
+          Add spouse, parent or child reliefs only if you are sure you meet the conditions.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Resident vs non-resident</h2>
+      <p class="section-desc">
+        Tax reliefs are mainly relevant for Singapore tax residents.
+      </p>
+
+      <div class="note-box">
+        If you choose “Non-resident employment income” in the salary calculator,
+        the tax relief field is disabled and set to S$0. This is because non-resident employment income is usually taxed differently,
+        and personal reliefs are generally not used in the same simple way.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Quick examples</h2>
+      <p class="section-desc">
+        These examples are simplified for salary planning only.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Possible Relief Estimate</th>
+              <th>What to Enter</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Not sure about reliefs</td>
+              <td>Use conservative estimate</td>
+              <td>S$0</td>
+            </tr>
+
+            <tr>
+              <td>Employee CPF is S$800 per month</td>
+              <td>S$800 × 12 + S$1,000 Earned Income Relief</td>
+              <td>About S$10,600</td>
+            </tr>
+
+            <tr>
+              <td>Employee CPF is S$1,000 per month</td>
+              <td>S$1,000 × 12 + S$1,000 Earned Income Relief</td>
+              <td>About S$13,000</td>
+            </tr>
+
+            <tr>
+              <td>Foreigner / no CPF / non-resident</td>
+              <td>Personal reliefs may not apply in this simple estimate</td>
+              <td>S$0</td>
             </tr>
           </tbody>
         </table>
@@ -681,146 +745,9 @@
     </section>
 
     <section class="content-section">
-      <h2 class="section-title">How to estimate your annual tax relief</h2>
-      <p class="section-desc">
-        If you are using the salary calculator and are not sure what number to enter, start with reliefs you are confident about.
-      </p>
-
-      <div class="steps">
-        <div class="step">
-          <strong>Step 1: Start with CPF Relief</strong>
-          For most Singapore Citizen or PR employees, compulsory employee CPF contributions are usually an important tax relief.
-          If your salary calculator already deducts employee CPF, you can use your annual employee CPF as a rough starting point.
-        </div>
-
-        <div class="step">
-          <strong>Step 2: Add Earned Income Relief</strong>
-          If you are a Singapore tax resident with employment income, you may generally include Earned Income Relief based on your age group.
-        </div>
-
-        <div class="step">
-          <strong>Step 3: Add family-related reliefs only if eligible</strong>
-          Include spouse, parent, child or working mother reliefs only if you meet the conditions. Do not add them just because you support family expenses casually.
-        </div>
-
-        <div class="step">
-          <strong>Step 4: Keep the estimate conservative</strong>
-          If unsure, enter a lower amount or S$0. This avoids underestimating your annual tax payable.
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Simple example</h2>
-      <p class="section-desc">
-        This example shows how reliefs affect chargeable income. The exact tax payable still depends on Singapore resident tax rates.
-      </p>
-
-      <div class="guide-card">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Example Amount</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Annual employment income</td>
-                <td>S$60,000</td>
-              </tr>
-
-              <tr>
-                <td>Less: estimated employee CPF Relief</td>
-                <td>S$12,000</td>
-              </tr>
-
-              <tr>
-                <td>Less: Earned Income Relief</td>
-                <td>S$1,000</td>
-              </tr>
-
-              <tr>
-                <td>Estimated chargeable income</td>
-                <td>S$47,000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="note-box" style="margin-top:18px;">
-          In this example, the taxpayer does not pay tax on the full S$60,000. The tax is estimated on the chargeable income after reliefs.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Tax reliefs you should not blindly include</h2>
-      <p class="section-desc">
-        Some reliefs are commonly misunderstood. Only include them if you meet the qualifying conditions.
-      </p>
-
-      <div class="relief-grid">
-        <div class="relief-card">
-          <h3>Parent Relief</h3>
-          <p>You usually need to support the dependant and meet income, relationship and residency conditions.</p>
-        </div>
-
-        <div class="relief-card">
-          <h3>Spouse Relief</h3>
-          <p>This does not apply to every married taxpayer. Your spouse must meet the relevant income and support conditions.</p>
-        </div>
-
-        <div class="relief-card">
-          <h3>Course Fees Relief</h3>
-          <p>Not every course qualifies. Personal interest courses may not be claimable.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Resident vs non-resident tax relief</h2>
-      <p class="section-desc">
-        Singapore tax reliefs are generally relevant for tax residents. Non-resident employment income is commonly taxed differently,
-        and personal reliefs are usually not applied in the same way.
-      </p>
-
-      <div class="note-box">
-        If you choose “Non-resident employment income” in our salary calculator, the estimated annual tax relief field is disabled and set to S$0.
-        This keeps the estimate cleaner for non-resident tax treatment.
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Official sources to check</h2>
-      <p class="section-desc">
-        Tax relief conditions can depend on your exact situation. For official confirmation, always refer to IRAS.
-      </p>
-
-      <div class="relief-grid">
-        <a class="relief-card" href="https://www.iras.gov.sg/" target="_blank" rel="noopener">
-          <h3>IRAS</h3>
-          <p>Check official Singapore individual income tax and personal relief rules.</p>
-        </a>
-
-        <a class="relief-card" href="https://www.cpf.gov.sg/" target="_blank" rel="noopener">
-          <h3>CPF Board</h3>
-          <p>Check CPF contribution rules that may affect CPF Relief.</p>
-        </a>
-
-        <a class="relief-card" href="income-tax-calculator.html">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate your Singapore income tax after annual income and reliefs.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="content-section">
       <h2 class="section-title">Related Singapore calculators</h2>
       <p class="section-desc">
-        Use these calculators together with this guide to estimate your salary, CPF and tax.
+        Use these calculators to estimate CPF, tax and take-home pay.
       </p>
 
       <div class="related-grid">
@@ -836,12 +763,12 @@
 
         <a class="related-card" href="income-tax-calculator.html">
           <h3>Income Tax Calculator</h3>
-          <p>Estimate resident income tax based on chargeable income.</p>
+          <p>Estimate Singapore income tax from chargeable income.</p>
         </a>
 
         <a class="related-card" href="annual-leave-calculator.html">
           <h3>Annual Leave Calculator</h3>
-          <p>Estimate annual leave entitlement for Singapore employees.</p>
+          <p>Estimate annual leave entitlement in Singapore.</p>
         </a>
       </div>
 
@@ -851,30 +778,30 @@
     </section>
 
     <section class="content-section">
-      <h2 class="section-title">Related Singapore salary guides</h2>
+      <h2 class="section-title">Related Singapore guides</h2>
       <p class="section-desc">
-        Learn more about CPF, tax and salary planning in Singapore.
+        Learn more about Singapore salary, CPF and income tax.
       </p>
 
       <div class="related-grid">
         <a class="related-card" href="income-tax-guide.html">
           <h3>Income Tax Guide</h3>
-          <p>Understand Singapore income tax for employees and tax residents.</p>
+          <p>Understand how Singapore income tax works.</p>
         </a>
 
         <a class="related-card" href="cpf-contribution-rates-guide.html">
           <h3>CPF Contribution Rates Guide</h3>
-          <p>Learn employee CPF rates, employer CPF rates and wage ceilings.</p>
+          <p>Learn CPF rates and wage ceilings.</p>
         </a>
 
         <a class="related-card" href="salary-after-tax-guide.html">
           <h3>Salary After Tax Guide</h3>
-          <p>Understand how CPF and income tax affect your net salary.</p>
+          <p>Understand salary after CPF and tax.</p>
         </a>
 
         <a class="related-card" href="annual-leave-guide.html">
           <h3>Annual Leave Guide</h3>
-          <p>Learn basic annual leave rules for Singapore employment.</p>
+          <p>Learn annual leave rules in Singapore.</p>
         </a>
       </div>
 
@@ -887,51 +814,44 @@
       <h2 class="section-title">Frequently Asked Questions</h2>
 
       <details>
-        <summary>What is tax relief in Singapore?</summary>
+        <summary>What is the easiest tax relief amount to enter?</summary>
         <p>
-          Tax relief is an amount that reduces your chargeable income. It does not directly reduce your tax payable dollar-for-dollar.
+          If you are not sure, enter S$0. If you want a simple estimate, use annual employee CPF plus Earned Income Relief.
         </p>
       </details>
 
       <details>
-        <summary>Should I enter S$0 if I am not sure about my tax reliefs?</summary>
+        <summary>Is CPF Relief automatic?</summary>
         <p>
-          Yes, S$0 is a conservative estimate. Your estimated tax may be higher, but it reduces the risk of underestimating tax payable.
+          CPF Relief is usually based on qualifying CPF contributions. For normal employees, compulsory employee CPF is commonly included in tax relief planning.
         </p>
       </details>
 
       <details>
-        <summary>Is CPF Relief the same as employee CPF contribution?</summary>
+        <summary>What is Earned Income Relief?</summary>
         <p>
-          CPF Relief is generally related to qualifying CPF contributions. For employees, compulsory employee CPF contribution is commonly a key part of relief planning.
+          Earned Income Relief is a basic relief for individuals who earn income from employment, business, trade, profession or vocation.
         </p>
       </details>
 
       <details>
-        <summary>Do foreigners get Singapore tax reliefs?</summary>
+        <summary>Can I include parent, spouse or child relief?</summary>
         <p>
-          It depends on tax residency and the type of relief. Non-resident employment income is usually treated differently, and personal reliefs may not apply in the same way.
+          Only include these reliefs if you meet the qualifying conditions. If unsure, leave them out for a conservative estimate.
         </p>
       </details>
 
       <details>
-        <summary>What is the S$80,000 personal relief cap?</summary>
+        <summary>Do non-residents get personal tax reliefs?</summary>
         <p>
-          Singapore generally caps total personal income tax reliefs at S$80,000 per Year of Assessment. If your total reliefs exceed the cap, the excess may not reduce your chargeable income.
+          Non-resident employment income is usually taxed differently, so this calculator sets tax relief to S$0 for non-resident employment income.
         </p>
       </details>
 
       <details>
-        <summary>Can tax relief reduce my income tax to zero?</summary>
+        <summary>Where should I check the official amount?</summary>
         <p>
-          Yes, if your chargeable income after reliefs is low enough, your estimated income tax may be zero.
-        </p>
-      </details>
-
-      <details>
-        <summary>Where can I confirm my actual tax relief amount?</summary>
-        <p>
-          You should check your IRAS tax filing details, Notice of Assessment and official IRAS guidance for your final approved tax relief amount.
+          You should check IRAS for official personal income tax relief rules and your actual Notice of Assessment.
         </p>
       </details>
     </section>
