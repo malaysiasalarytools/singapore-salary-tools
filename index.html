@@ -407,6 +407,61 @@
       font-weight: 900;
     }
 
+
+    .relief-help {
+      margin-top: 10px;
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 18px;
+      padding: 16px;
+      color: #5f6d62;
+      line-height: 1.55;
+      font-size: 13.5px;
+    }
+
+    .relief-help strong {
+      display: block;
+      color: #173f2b;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .relief-help p {
+      margin: 0 0 10px;
+    }
+
+    .relief-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .relief-list li {
+      background: #ffffff;
+      border: 1px solid #dfe9db;
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: #2f5f3a;
+      font-weight: 850;
+      font-size: 12px;
+    }
+
+    .relief-help a {
+      display: inline-flex;
+      align-items: center;
+      color: #173f2b;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .relief-help.is-disabled {
+      opacity: 0.58;
+    }
+
     .note-box {
       background: #f7faf5;
       border: 1px solid #e3eddf;
@@ -837,6 +892,19 @@
         <div class="field">
           <label for="relief">Estimated annual tax reliefs</label>
           <input id="relief" type="number" value="0" min="0" step="100" />
+
+          <div class="relief-help" id="reliefHelp">
+            <strong>Not sure what to enter?</strong>
+            <p>
+              If you are unsure about your annual tax reliefs, leave it as S$0 for a conservative estimate.
+            </p>
+            <ul class="relief-list">
+              <li>CPF Relief</li>
+              <li>Earned Income Relief</li>
+              <li>Family Reliefs</li>
+            </ul>
+            <a href="tax-relief-guide.html">Read Singapore Tax Relief Guide →</a>
+          </div>
         </div>
 
         <button class="calculate-btn" onclick="calculateSalary()">Calculate take-home pay</button>
@@ -1308,14 +1376,17 @@
     function handleResidencyChange() {
       const resident = document.getElementById("resident").value;
       const reliefInput = document.getElementById("relief");
+      const reliefHelp = document.getElementById("reliefHelp");
 
       if (resident === "nonresident") {
         reliefInput.value = 0;
         reliefInput.disabled = true;
         reliefInput.style.opacity = "0.55";
+        reliefHelp.classList.add("is-disabled");
       } else {
         reliefInput.disabled = false;
         reliefInput.style.opacity = "1";
+        reliefHelp.classList.remove("is-disabled");
       }
 
       calculateSalary();
