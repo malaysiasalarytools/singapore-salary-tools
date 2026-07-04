@@ -9,9 +9,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Singapore Hourly Rate Guide 2026. Learn how to convert monthly salary to hourly rate, estimate hourly pay, overtime hourly rate, daily rate and salary comparison in Singapore." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow">
 
   <style>
     * { box-sizing: border-box; }
@@ -104,6 +103,7 @@
       color: #5d635b;
       font-weight: 850;
       white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -114,6 +114,7 @@
     .nav-links a.active {
       background: #22231f;
       color: #ffffff;
+      box-shadow: none;
     }
 
     .hero-wrap {
@@ -132,6 +133,7 @@
 
     .eyebrow {
       display: inline-flex;
+      align-items: center;
       justify-content: center;
       padding: 10px 22px;
       background: #dfeee4;
@@ -143,13 +145,14 @@
       letter-spacing: 1.8px;
       text-transform: uppercase;
       margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
     h1 {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 74px);
       line-height: 0.96;
       letter-spacing: -3px;
       font-weight: 500;
@@ -176,7 +179,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -200,104 +203,96 @@
 
     .section-title {
       margin: 0 0 18px;
-      font-size: 25px;
-      letter-spacing: -0.6px;
+      font-size: 28px;
+      letter-spacing: -0.8px;
       color: #10231a;
     }
 
     .section-desc {
       color: #647168;
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 860px;
       margin: -6px 0 22px;
+      font-weight: 600;
     }
 
-    .guide-layout {
+    .intro-grid,
+    .info-grid,
+    .related-grid,
+    .example-grid,
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
     }
 
-    .article-card,
-    .side-card,
+    .related-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .intro-card,
     .info-card,
     .related-card,
-    .authority-box {
+    .example-card,
+    .trust-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
+      padding: 24px;
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .article-card { padding: 30px; }
+    .intro-card h3,
+    .info-card h3,
+    .related-card h3,
+    .example-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
 
-    .article-card h2 {
-      margin: 0 0 14px;
+    .intro-card p,
+    .info-card p,
+    .related-card p,
+    .example-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+      margin-top: 24px;
+    }
+
+    .highlight-box h2 {
+      margin: 0 0 12px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 500;
       letter-spacing: -1.2px;
-      color: #25251f;
     }
 
-    .article-card h3 {
-      margin: 30px 0 10px;
-      font-size: 22px;
-      color: #173f2b;
-      letter-spacing: -0.4px;
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      max-width: 900px;
     }
-
-    .article-card p,
-    .article-card li {
-      color: #536157;
-      line-height: 1.75;
-      font-weight: 620;
-      font-size: 16px;
-    }
-
-    .article-card ul { padding-left: 22px; }
-
-    .highlight-box {
-      background: #f7faf5;
-      border: 1px solid #e3eddf;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 22px 0;
-      color: #5f6d62;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .side-card {
-      padding: 22px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      color: #173f2b;
-    }
-
-    .side-card a {
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #edf2ea;
-      color: #5d635b;
-      font-weight: 850;
-      font-size: 14px;
-    }
-
-    .side-card a:last-child { border-bottom: 0; }
 
     .table-wrap {
       overflow-x: auto;
@@ -305,13 +300,13 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
-      margin: 22px 0;
+      margin-top: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 680px;
+      min-width: 760px;
     }
 
     th,
@@ -319,6 +314,7 @@
       text-align: left;
       padding: 17px 20px;
       border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
     }
 
     th {
@@ -336,49 +332,78 @@
 
     tr:last-child td { border-bottom: 0; }
 
-    .info-grid,
-    .related-grid,
-    .authority-list {
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-top: 18px;
+      font-weight: 600;
+    }
+
+    .cta-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr auto;
       gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      margin-top: 26px;
     }
 
-    .related-grid { grid-template-columns: repeat(4, 1fr); }
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.6px;
+    }
 
-    .info-card,
-    .related-card,
-    .authority-box {
-      padding: 24px;
+    .cta-box p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: #ffffff;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(47, 125, 99, 0.20);
+    }
+
+    .btn-light {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 850;
+      border: 1px solid #dfe9db;
     }
 
     .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
       border-radius: 28px;
       padding: 26px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
-    .info-card h3,
-    .related-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-    }
-
-    .info-card p,
-    .related-card p {
-      margin: 0;
-      color: #647168;
-      line-height: 1.65;
-    }
-
-    .related-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
     }
 
     .authority-item {
@@ -390,6 +415,12 @@
       font-weight: 900;
       color: #173f2b;
       display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.09);
     }
 
     .authority-item span {
@@ -399,21 +430,6 @@
       font-size: 13px;
       font-weight: 700;
       line-height: 1.4;
-    }
-
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
     }
 
     .faq { margin-top: 44px; }
@@ -435,6 +451,7 @@
     details p {
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
     footer {
@@ -449,10 +466,14 @@
     @media (max-width: 900px) {
       .nav {
         padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 12px;
       }
 
       .brand {
+        margin-bottom: 0;
         flex-shrink: 0;
         min-width: 138px;
         gap: 7px;
@@ -478,6 +499,8 @@
         justify-content: flex-start;
         gap: 6px;
         overflow-x: auto;
+        padding-bottom: 0;
+        margin-left: 0;
       }
 
       .nav-links a {
@@ -485,7 +508,17 @@
         font-size: 13px;
       }
 
-      .hero { padding: 36px 20px 28px; }
+      .hero {
+        padding: 36px 20px 28px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
 
       h1 {
         font-size: 46px;
@@ -496,24 +529,46 @@
       .hero p {
         font-size: 18px;
         line-height: 1.65;
+        margin-bottom: 22px;
       }
 
-      .quick-stats { justify-content: flex-start; }
+      .quick-stats {
+        justify-content: flex-start;
+      }
 
-      .content { padding: 26px 16px 60px; }
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
 
-      .guide-layout { grid-template-columns: 1fr; }
+      .content {
+        padding: 26px 16px 60px;
+      }
 
-      .side-card { position: static; }
-
-      .article-card { padding: 24px; }
-
-      .article-card h2 { font-size: 32px; }
-
+      .intro-grid,
       .info-grid,
       .related-grid,
+      .example-grid,
+      .trust-grid,
       .authority-list {
         grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .highlight-box {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .highlight-box h2 {
+        font-size: 30px;
       }
     }
 
@@ -522,6 +577,28 @@
       .hero p { font-size: 17px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Singapore Hourly Rate Guide 2026",
+    "description": "Guide to converting monthly salary to hourly rate, daily rate, overtime hourly rate and salary comparison in Singapore.",
+    "author": {
+      "@type": "Organization",
+      "name": "SG Salary Tools"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SG Salary Tools",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sgsalarytools.com/logo-icon.png"
+      }
+    },
+    "mainEntityOfPage": "https://sgsalarytools.com/hourly-rate-guide.html"
+  }
+  </script>
 </head>
 
 <body>
@@ -566,261 +643,345 @@
   </section>
 
   <main class="content">
-    <div class="guide-layout">
-      <article class="article-card">
-        <section id="overview">
-          <h2>What is hourly rate?</h2>
+    <section class="content-section">
+      <div class="highlight-box">
+        <h2>Quick answer</h2>
+        <p>
+          Hourly rate is the amount you earn for one hour of work. A common Singapore estimate is
+          12 × monthly basic salary ÷ 52 ÷ weekly working hours. If you use 44 hours per week,
+          a S$4,000 monthly salary is about S$20.98 per hour.
+        </p>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">What is hourly rate?</h2>
+      <p class="section-desc">
+        Hourly rate is the amount of pay earned for one hour of work. It is useful for comparing monthly salary,
+        part-time jobs, freelance work, overtime pay and different work schedules.
+      </p>
+
+      <div class="intro-grid">
+        <div class="intro-card">
+          <h3>For job comparison</h3>
           <p>
-            Hourly rate is the amount of pay earned for one hour of work. It is useful for comparing monthly salary,
-            part-time jobs, freelance work, overtime pay and different work schedules.
+            Hourly rate helps you compare jobs more fairly when monthly salary and working hours are different.
           </p>
+        </div>
 
+        <div class="intro-card">
+          <h3>For overtime</h3>
           <p>
-            In Singapore, many full-time employees are paid a fixed monthly salary. However, converting monthly salary
-            into an hourly rate helps you understand the real value of your time and whether a job offer is attractive
-            compared with another role.
+            Overtime pay is usually based on hourly basic rate multiplied by the applicable overtime rate.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Simple idea:</strong>
-            Hourly rate helps you compare jobs more fairly because two people with the same monthly salary may work
-            different hours.
-          </div>
-        </section>
-
-        <section id="formula">
-          <h3>How to calculate hourly rate from monthly salary</h3>
-
+        <div class="intro-card">
+          <h3>For part-time work</h3>
           <p>
-            A common practical estimate is to divide monthly salary by the average number of working hours in a month.
-            For Singapore salary and overtime planning, a common reference is based on 44 hours per week.
+            Part-time employees can estimate monthly pay by multiplying hourly rate by actual hours worked.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="highlight-box">
-            <strong>Common hourly rate formula:</strong>
-            Hourly rate = 12 × monthly basic salary ÷ 52 ÷ weekly working hours
-          </div>
+    <section class="content-section">
+      <h2 class="section-title">How to calculate hourly rate from monthly salary</h2>
+      <p class="section-desc">
+        A common practical estimate is to divide monthly salary by the average number of working hours in a month.
+        For Singapore salary and overtime planning, a common reference is based on 44 hours per week.
+      </p>
 
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Formula</th>
+              <th>Use</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>12 × monthly basic salary ÷ 52 ÷ weekly working hours</td>
+              <td>General hourly rate estimate from monthly salary.</td>
+              <td>Use 44 weekly hours for a common Singapore reference.</td>
+            </tr>
+
+            <tr>
+              <td>12 × monthly basic salary ÷ 52 ÷ 44</td>
+              <td>Common estimate based on a 44-hour work week.</td>
+              <td>S$4,000 monthly salary gives about S$20.98 per hour.</td>
+            </tr>
+
+            <tr>
+              <td>Hourly basic rate × 1.5 × overtime hours</td>
+              <td>Estimated overtime pay where OT rules apply.</td>
+              <td>S$15 × 1.5 × 10 hours = S$225.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        Use basic salary for overtime-style calculation. Use annual total compensation if you want to compare the full
+        value of two job offers including bonus, allowances and benefits.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Hourly rate examples in Singapore</h2>
+      <p class="section-desc">
+        The examples below use a 44-hour work week as a simple reference point. Actual working hours, benefits and company
+        policy may change the effective value of a job offer.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Monthly Salary</th>
+              <th>Estimated Hourly Rate</th>
+              <th>Estimated Daily Rate</th>
+              <th>Common Use</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>S$2,000</td>
+              <td>About S$10.49 / hour</td>
+              <td>About S$92.31 / day</td>
+              <td>Entry-level or part-time comparison.</td>
+            </tr>
+
+            <tr>
+              <td>S$3,000</td>
+              <td>About S$15.73 / hour</td>
+              <td>About S$138.46 / day</td>
+              <td>Junior full-time salary planning.</td>
+            </tr>
+
+            <tr>
+              <td>S$4,000</td>
+              <td>About S$20.98 / hour</td>
+              <td>About S$184.62 / day</td>
+              <td>Job offer comparison.</td>
+            </tr>
+
+            <tr>
+              <td>S$5,000</td>
+              <td>About S$26.22 / hour</td>
+              <td>About S$230.77 / day</td>
+              <td>Mid-level salary planning.</td>
+            </tr>
+
+            <tr>
+              <td>S$6,000</td>
+              <td>About S$31.47 / hour</td>
+              <td>About S$276.92 / day</td>
+              <td>Professional salary comparison.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Basic salary vs gross salary for hourly rate</h2>
+      <p class="section-desc">
+        Basic salary is your fixed salary before allowances, bonus, overtime and deductions. Gross salary may include
+        basic salary plus allowances, commissions, bonus or other payments.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Basic salary</h3>
           <p>
-            If you use 44 hours per week, this means:
+            Best for overtime-style hourly basic rate calculation and salary rules that refer to basic pay.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Example formula:</strong>
-            Hourly rate = 12 × monthly basic salary ÷ 52 ÷ 44
-          </div>
-
+        <div class="info-card">
+          <h3>Gross salary</h3>
           <p>
-            For example, if your monthly basic salary is S$4,000, the estimated hourly rate is:
-            12 × S$4,000 ÷ 52 ÷ 44 = about S$20.98 per hour.
+            Useful for understanding total monthly income before CPF, tax and other deductions.
           </p>
-        </section>
+        </div>
 
-        <section id="examples">
-          <h3>Hourly rate examples in Singapore</h3>
-
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Monthly Salary</th>
-                  <th>Estimated Hourly Rate</th>
-                  <th>Estimated Daily Rate</th>
-                  <th>Common Use</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>S$2,000</td>
-                  <td>About S$10.49 / hour</td>
-                  <td>About S$92.31 / day</td>
-                  <td>Entry-level or part-time comparison</td>
-                </tr>
-
-                <tr>
-                  <td>S$3,000</td>
-                  <td>About S$15.73 / hour</td>
-                  <td>About S$138.46 / day</td>
-                  <td>Junior full-time salary planning</td>
-                </tr>
-
-                <tr>
-                  <td>S$4,000</td>
-                  <td>About S$20.98 / hour</td>
-                  <td>About S$184.62 / day</td>
-                  <td>Job offer comparison</td>
-                </tr>
-
-                <tr>
-                  <td>S$5,000</td>
-                  <td>About S$26.22 / hour</td>
-                  <td>About S$230.77 / day</td>
-                  <td>Mid-level salary planning</td>
-                </tr>
-
-                <tr>
-                  <td>S$6,000</td>
-                  <td>About S$31.47 / hour</td>
-                  <td>About S$276.92 / day</td>
-                  <td>Professional salary comparison</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="basic-vs-gross">
-          <h3>Basic salary vs gross salary for hourly rate</h3>
-
+        <div class="info-card">
+          <h3>Total compensation</h3>
           <p>
-            Basic salary is your fixed salary before allowances, bonus, overtime and deductions. Gross salary may include
-            basic salary plus allowances, commissions, bonus or other payments.
+            Useful when comparing jobs with bonus, allowances, CPF, leave, insurance and other benefits.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">How to estimate daily rate</h2>
+      <p class="section-desc">
+        Daily rate is useful for unpaid leave, salary proration, short employment periods and job comparison. The best
+        method depends on whether you are calculating salary proration, no-pay leave or a general comparison.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Formula</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Calendar day method</td>
+              <td>Monthly salary ÷ number of days in the month</td>
+              <td>Simple salary proration by calendar days.</td>
+            </tr>
+
+            <tr>
+              <td>Working day method</td>
+              <td>Monthly salary ÷ working days in the month</td>
+              <td>Internal HR or payroll policy comparison.</td>
+            </tr>
+
+            <tr>
+              <td>Annual method</td>
+              <td>Monthly salary × 12 ÷ 260</td>
+              <td>Rough annual working day estimate.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        Different companies may use different proration policies, so employees should check their employment contract
+        or HR policy when calculating exact final salary or no-pay leave deduction.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Hourly rate and overtime pay</h2>
+      <p class="section-desc">
+        Hourly rate is important for overtime calculation. For employees who are entitled to overtime pay, overtime is
+        generally calculated using hourly basic rate multiplied by the overtime rate.
+      </p>
+
+      <div class="highlight-box">
+        <h2>Overtime formula</h2>
+        <p>
+          Overtime pay = hourly basic rate × 1.5 × overtime hours. For example, if your hourly basic rate is S$15 and
+          you work 10 overtime hours, estimated overtime pay is S$225.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Hourly rate for part-time employees</h2>
+      <p class="section-desc">
+        For part-time employees, hourly rate is usually stated directly in the employment arrangement. If you work
+        irregular hours, hourly rate makes it easier to calculate monthly pay based on actual hours worked.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <h3>Part-time pay</h3>
           <p>
-            For overtime-related calculation, hourly basic rate is usually based on basic salary instead of total gross
-            salary. For personal job comparison, you may also calculate an effective hourly rate using total annual
-            compensation.
+            If your hourly rate is S$12 and you work 80 hours in a month, your gross pay is S$960.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Practical tip:</strong>
-            Use basic salary for overtime-style calculation. Use annual total compensation if you want to compare the
-            full value of two job offers.
-          </div>
-        </section>
-
-        <section id="daily-rate">
-          <h3>How to estimate daily rate</h3>
-
+        <div class="example-card">
+          <h3>CPF and tax</h3>
           <p>
-            Daily rate is useful for unpaid leave, salary proration, short employment periods and job comparison. A
-            simple estimate is to divide monthly salary by the average number of working days or calendar days, depending
-            on the purpose.
+            CPF and tax treatment may still matter depending on your status, pay and employment arrangement.
           </p>
+        </div>
 
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Method</th>
-                  <th>Formula</th>
-                  <th>Best For</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Calendar day method</td>
-                  <td>Monthly salary ÷ number of days in the month</td>
-                  <td>Simple salary proration by calendar days</td>
-                </tr>
-
-                <tr>
-                  <td>Working day method</td>
-                  <td>Monthly salary ÷ working days in the month</td>
-                  <td>Internal HR or payroll policy comparison</td>
-                </tr>
-
-                <tr>
-                  <td>Annual method</td>
-                  <td>Monthly salary × 12 ÷ 260</td>
-                  <td>Rough annual working day estimate</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
+        <div class="example-card">
+          <h3>Irregular hours</h3>
           <p>
-            Different companies may use different proration policies, so employees should check their employment contract
-            or HR policy when calculating exact final salary or no-pay leave deduction.
+            Hourly rate helps when your monthly pay changes based on actual hours worked.
           </p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="overtime">
-          <h3>Hourly rate and overtime pay</h3>
+    <section class="content-section">
+      <h2 class="section-title">Hourly rate for freelance or contract work</h2>
+      <p class="section-desc">
+        Freelancers and contract workers should not compare hourly rate with employee salary directly without considering
+        CPF, leave, medical benefits, insurance, unpaid time, admin work and business costs.
+      </p>
 
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>No paid leave</h3>
           <p>
-            Hourly rate is important for overtime calculation. For employees who are entitled to overtime pay, overtime
-            is generally calculated using hourly basic rate multiplied by the overtime rate.
+            Freelancers may not receive paid annual leave, sick leave or public holiday pay.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Overtime pay formula:</strong>
-            Overtime pay = hourly basic rate × 1.5 × overtime hours
-          </div>
-
+        <div class="info-card">
+          <h3>No employer benefits</h3>
           <p>
-            For example, if your hourly basic rate is S$15 and you work 10 overtime hours, estimated overtime pay is
-            S$15 × 1.5 × 10 = S$225.
+            Freelancers may not receive employer CPF, insurance, bonus or employee benefits.
           </p>
-        </section>
+        </div>
 
-        <section id="part-time">
-          <h3>Hourly rate for part-time employees</h3>
-
+        <div class="info-card">
+          <h3>Business costs</h3>
           <p>
-            For part-time employees, hourly rate is usually stated directly in the employment arrangement. If you work
-            irregular hours, hourly rate makes it easier to calculate monthly pay based on actual hours worked.
+            Freelance hourly rate should cover admin time, software, tax planning and unpaid downtime.
           </p>
+        </div>
+      </div>
 
+      <div class="cta-box">
+        <div>
+          <h2>Want to calculate your hourly rate?</h2>
           <p>
-            Example: If your hourly rate is S$12 and you work 80 hours in a month, your gross pay is S$960 before CPF,
-            tax or other deductions, if applicable.
+            Use our Singapore hourly rate calculator to convert monthly salary into hourly and daily rate estimates.
           </p>
-        </section>
+        </div>
 
-        <section id="freelance">
-          <h3>Hourly rate for freelance or contract work</h3>
+        <a class="btn" href="hourly-rate-calculator.html">Use Hourly Rate Calculator</a>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Common hourly rate mistakes</h2>
+      <p class="section-desc">
+        These are common mistakes employees make when comparing salary, hourly pay and job offers.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Ignoring working hours</h3>
           <p>
-            Freelancers and contract workers should not compare hourly rate with employee salary directly without
-            considering CPF, leave, medical benefits, insurance, unpaid time, admin work and business costs.
+            A higher monthly salary may be less attractive if the working hours are much longer.
           </p>
+        </div>
 
+        <div class="trust-card">
+          <h3>Using gross salary for OT</h3>
           <p>
-            A freelancer may need to charge a higher hourly rate than an employee because they may not receive paid
-            annual leave, CPF employer contribution, paid sick leave, bonus or other employment benefits.
+            Overtime is usually based on hourly basic rate, not full gross salary with all allowances.
           </p>
-        </section>
+        </div>
 
-        <section id="mistakes">
-          <h3>Common hourly rate mistakes</h3>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Ignoring working hours</h3>
-              <p>A higher monthly salary may be less attractive if the working hours are much longer.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Using gross salary for OT</h3>
-              <p>Overtime is usually based on hourly basic rate, not full gross salary with all allowances.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Forgetting benefits</h3>
-              <p>Freelance hourly rate should be compared after considering leave, CPF and benefits.</p>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <aside class="side-card">
-        <h3>On this page</h3>
-        <a href="#overview">What is hourly rate?</a>
-        <a href="#formula">Hourly rate formula</a>
-        <a href="#examples">Salary examples</a>
-        <a href="#basic-vs-gross">Basic vs gross salary</a>
-        <a href="#daily-rate">Daily rate</a>
-        <a href="#overtime">Overtime rate</a>
-        <a href="#part-time">Part-time pay</a>
-        <a href="#freelance">Freelance rate</a>
-        <a href="#faq">FAQ</a>
-      </aside>
-    </div>
+        <div class="trust-card">
+          <h3>Forgetting benefits</h3>
+          <p>
+            Freelance hourly rate should be compared after considering leave, CPF and benefits.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section">
       <div class="authority-box">
@@ -876,8 +1037,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="calculators.html">View All Calculators →</a>
       </div>
     </section>
 
@@ -909,8 +1070,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="guides.html">View All Guides →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="guides.html">View All Guides →</a>
       </div>
     </section>
 
