@@ -9,18 +9,12 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Singapore Notice Period Guide 2026. Learn how resignation notice period works, how to count notice days, salary in lieu of notice, annual leave during notice and final salary rules." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -29,10 +23,7 @@
       color: #10231a;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .topbar {
       background: rgba(255, 255, 255, 0.94);
@@ -103,9 +94,7 @@
       scrollbar-width: none;
     }
 
-    .nav-links::-webkit-scrollbar {
-      display: none;
-    }
+    .nav-links::-webkit-scrollbar { display: none; }
 
     .nav-links a {
       padding: 13px 18px;
@@ -160,10 +149,10 @@
     }
 
     h1 {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 74px);
       line-height: 0.96;
       letter-spacing: -3px;
       font-weight: 500;
@@ -190,7 +179,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -210,115 +199,101 @@
       padding: 34px 22px 70px;
     }
 
-    .content-section {
-      margin-top: 44px;
-    }
+    .content-section { margin-top: 44px; }
 
     .section-title {
       margin: 0 0 18px;
-      font-size: 25px;
-      letter-spacing: -0.6px;
+      font-size: 28px;
+      letter-spacing: -0.8px;
       color: #10231a;
     }
 
     .section-desc {
       color: #647168;
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 860px;
       margin: -6px 0 22px;
+      font-weight: 600;
     }
 
-    .guide-layout {
+    .intro-grid,
+    .info-grid,
+    .related-grid,
+    .example-grid,
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
     }
 
-    .article-card,
-    .side-card,
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .intro-card,
     .info-card,
-    .related-card {
+    .related-card,
+    .example-card,
+    .trust-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
+      padding: 24px;
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .article-card {
-      padding: 30px;
+    .intro-card h3,
+    .info-card h3,
+    .related-card h3,
+    .example-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
     }
 
-    .article-card h2 {
-      margin: 0 0 14px;
+    .intro-card p,
+    .info-card p,
+    .related-card p,
+    .example-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+      margin-top: 24px;
+    }
+
+    .highlight-box h2 {
+      margin: 0 0 12px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 500;
       letter-spacing: -1.2px;
-      color: #25251f;
     }
 
-    .article-card h3 {
-      margin: 30px 0 10px;
-      font-size: 22px;
-      color: #173f2b;
-      letter-spacing: -0.4px;
-    }
-
-    .article-card p,
-    .article-card li {
-      color: #536157;
-      line-height: 1.75;
-      font-weight: 620;
-      font-size: 16px;
-    }
-
-    .article-card ul,
-    .article-card ol {
-      padding-left: 22px;
-    }
-
-    .highlight-box {
-      background: #f7faf5;
-      border: 1px solid #e3eddf;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 22px 0;
-      color: #5f6d62;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .side-card {
-      padding: 22px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      color: #173f2b;
-    }
-
-    .side-card a {
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #edf2ea;
-      color: #5d635b;
-      font-weight: 850;
-      font-size: 14px;
-    }
-
-    .side-card a:last-child {
-      border-bottom: 0;
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      max-width: 900px;
     }
 
     .table-wrap {
@@ -327,13 +302,13 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
-      margin: 22px 0;
+      margin-top: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 680px;
+      min-width: 760px;
     }
 
     th,
@@ -341,6 +316,7 @@
       text-align: left;
       padding: 17px 20px;
       border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
     }
 
     th {
@@ -356,47 +332,65 @@
       line-height: 1.55;
     }
 
-    tr:last-child td {
-      border-bottom: 0;
+    tr:last-child td { border-bottom: 0; }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-top: 18px;
+      font-weight: 600;
     }
 
-    .info-grid,
-    .related-grid {
+    .cta-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr auto;
       gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      margin-top: 26px;
     }
 
-    .related-grid {
-      grid-template-columns: repeat(4, 1fr);
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.6px;
     }
 
-    .info-card,
-    .related-card {
-      padding: 24px;
-    }
-
-    .info-card h3,
-    .related-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-    }
-
-    .info-card p,
-    .related-card p {
+    .cta-box p {
       margin: 0;
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
-    .related-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: #ffffff;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(47, 125, 99, 0.20);
     }
 
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    .btn-light {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 850;
+      border: 1px solid #dfe9db;
     }
 
     .authority-box {
@@ -440,24 +434,7 @@
       line-height: 1.4;
     }
 
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
-    }
-
-    .faq {
-      margin-top: 44px;
-    }
+    .faq { margin-top: 44px; }
 
     details {
       background: white;
@@ -476,6 +453,7 @@
     details p {
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
     footer {
@@ -509,9 +487,7 @@
         margin-right: 5px;
       }
 
-      .brand-text strong {
-        font-size: 13px;
-      }
+      .brand-text strong { font-size: 13px; }
 
       .brand-text small {
         font-size: 5.5px;
@@ -571,37 +547,36 @@
         padding: 26px 16px 60px;
       }
 
-      .guide-layout {
+      .intro-grid,
+      .info-grid,
+      .related-grid,
+      .example-grid,
+      .trust-grid,
+      .authority-list {
         grid-template-columns: 1fr;
       }
 
-      .side-card {
-        position: static;
+      .cta-box {
+        grid-template-columns: 1fr;
       }
 
-      .article-card {
+      .btn {
+        text-align: center;
+      }
+
+      .highlight-box {
+        border-radius: 26px;
         padding: 24px;
       }
 
-      .article-card h2 {
-        font-size: 32px;
-      }
-
-      .info-grid,
-      .related-grid,
-      .authority-list {
-        grid-template-columns: 1fr;
+      .highlight-box h2 {
+        font-size: 30px;
       }
     }
 
     @media (max-width: 430px) {
-      h1 {
-        font-size: 41px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
+      h1 { font-size: 41px; }
+      .hero p { font-size: 17px; }
     }
   </style>
 
@@ -670,234 +645,390 @@
   </section>
 
   <main class="content">
-    <div class="guide-layout">
-      <article class="article-card">
-        <section id="overview">
-          <h2>What is notice period in Singapore?</h2>
+    <section class="content-section">
+      <div class="highlight-box">
+        <h2>Quick answer</h2>
+        <p>
+          In Singapore, your notice period is usually based on your employment contract. If your contract does not state
+          a notice period, the required notice depends on your length of service. Notice period normally includes the day
+          notice is given, weekends, rest days and public holidays.
+        </p>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">What is notice period in Singapore?</h2>
+      <p class="section-desc">
+        Notice period is the period between the date you give resignation notice and your final day of employment.
+        It matters because it affects your last working day, final salary, annual leave planning, CPF contribution
+        during employment and when you can start your next job.
+      </p>
+
+      <div class="intro-grid">
+        <div class="intro-card">
+          <h3>For resignation</h3>
           <p>
-            Notice period is the period between the date you give resignation notice and your final day of employment.
-            In Singapore, the notice period is usually stated in your employment contract. When you resign, you normally
-            either serve the notice period or pay salary in lieu of notice if you want to leave earlier.
+            Employees usually need to serve the required notice period after submitting resignation.
           </p>
+        </div>
 
+        <div class="intro-card">
+          <h3>For final salary</h3>
           <p>
-            Notice period matters because it affects your last working day, final salary, annual leave planning, CPF
-            contribution during employment and when you can start your next job.
+            Your final pay may include salary earned during notice, approved allowances and unused annual leave.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Simple rule:</strong>
-            Check your employment contract first. If your contract clearly states the notice period, that contractual
-            notice period usually applies.
-          </div>
-        </section>
-
-        <section id="contract">
-          <h3>1. If your employment contract states a notice period</h3>
-
+        <div class="intro-card">
+          <h3>For early release</h3>
           <p>
-            If your contract says the notice period is 1 month, 2 weeks, 3 months or another period, you should follow
-            the contract. The notice period should generally be the same for both employer and employee.
+            If you leave earlier than required, salary in lieu of notice may apply unless both parties agree otherwise.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">If your employment contract states a notice period</h2>
+      <p class="section-desc">
+        If your contract says the notice period is 1 month, 2 weeks, 3 months or another period, you should follow the
+        contract. The notice period should generally be the same for both employer and employee.
+      </p>
+
+      <div class="note-box">
+        Simple rule: Check your employment contract, offer letter, HR policy or staff handbook first. If your contract
+        clearly states the notice period, that contractual notice period usually applies.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">If your contract does not state a notice period</h2>
+      <p class="section-desc">
+        If your employment contract does not specify the required notice period, the notice period depends on your
+        length of service.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Length of Service</th>
+              <th>Minimum Notice Period</th>
+              <th>Simple Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Less than 26 weeks</td>
+              <td>1 day</td>
+              <td>If you resign today with 1 day notice, your last day may be today because the notice day is included.</td>
+            </tr>
+
+            <tr>
+              <td>26 weeks to less than 2 years</td>
+              <td>1 week</td>
+              <td>You normally serve 1 week before your employment ends.</td>
+            </tr>
+
+            <tr>
+              <td>2 years to less than 5 years</td>
+              <td>2 weeks</td>
+              <td>You normally serve 2 weeks before your employment ends.</td>
+            </tr>
+
+            <tr>
+              <td>5 years or more</td>
+              <td>4 weeks</td>
+              <td>You normally serve 4 weeks before your employment ends.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        This table is useful when the contract is silent. Many employees still have a specific notice period in their
+        employment agreement, offer letter, HR policy or staff handbook.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">How to count notice period in Singapore</h2>
+      <p class="section-desc">
+        The notice period includes the day when notice is given. It also includes rest days, non-working days and public
+        holidays. This means the notice period is normally counted by calendar days, not only working days, unless your
+        contract has a different specific arrangement.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <h3>1 month notice</h3>
           <p>
-            For example, if your contract says you must give 1 month notice, you usually need to work through that
-            notice period unless your employer agrees to waive it or you pay salary in lieu of notice.
+            If you resign on 15 July with 1 month notice, your last day is usually 14 August.
           </p>
-        </section>
+        </div>
 
-        <section id="no-contract">
-          <h3>2. If your contract does not state a notice period</h3>
-
+        <div class="example-card">
+          <h3>Weekends included</h3>
           <p>
-            If your employment contract does not specify the required notice period, the notice period depends on your
-            length of service.
+            Weekends, public holidays and rest days inside the notice period are generally counted.
           </p>
+        </div>
 
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Length of Service</th>
-                  <th>Minimum Notice Period</th>
-                  <th>Simple Example</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Less than 26 weeks</td>
-                  <td>1 day</td>
-                  <td>If you resign today with 1 day notice, your last day may be today because the notice day is included.</td>
-                </tr>
-
-                <tr>
-                  <td>26 weeks to less than 2 years</td>
-                  <td>1 week</td>
-                  <td>You normally serve 1 week before your employment ends.</td>
-                </tr>
-
-                <tr>
-                  <td>2 years to less than 5 years</td>
-                  <td>2 weeks</td>
-                  <td>You normally serve 2 weeks before your employment ends.</td>
-                </tr>
-
-                <tr>
-                  <td>5 years or more</td>
-                  <td>4 weeks</td>
-                  <td>You normally serve 4 weeks before your employment ends.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
+        <div class="example-card">
+          <h3>Contract matters</h3>
           <p>
-            This table is useful when the contract is silent, but many employees still have a specific notice period in
-            their employment agreement, offer letter, HR policy or staff handbook.
+            Check whether your employment contract has a special rule on counting notice days.
           </p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="count">
-          <h3>3. How to count notice period in Singapore</h3>
+    <section class="content-section">
+      <h2 class="section-title">What is salary in lieu of notice?</h2>
+      <p class="section-desc">
+        Salary in lieu of notice means money paid instead of serving the required notice period. If you resign without
+        serving the full notice, you may need to pay your employer the salary you would have earned during the unserved
+        notice period.
+      </p>
 
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>What It Means</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Employee leaves immediately</td>
+              <td>The employee does not serve the full required notice.</td>
+              <td>Employee may need to pay salary in lieu for the unserved notice period.</td>
+            </tr>
+
+            <tr>
+              <td>Employer releases employee early</td>
+              <td>The employer does not require the employee to work through the full notice.</td>
+              <td>Treatment may depend on whether notice is waived or salary in lieu is payable.</td>
+            </tr>
+
+            <tr>
+              <td>Mutual agreement</td>
+              <td>Both employer and employee agree on an earlier last day.</td>
+              <td>The final treatment should be clearly recorded in writing.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        Example: If your salary is S$4,000 per month and you are required to give 1 month notice, leaving immediately
+        may require salary in lieu of notice of about S$4,000, subject to the exact employment terms and calculation method.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Is CPF payable during notice period?</h2>
+      <p class="section-desc">
+        If you are still employed and earning salary during your notice period, CPF contributions generally apply for
+        CPF-eligible employees. However, CPF contribution is generally not required on salary in lieu of notice.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Salary during notice</h3>
           <p>
-            The notice period includes the day when notice is given. It also includes rest days, non-working days and
-            public holidays. This means the notice period is normally counted by calendar days, not only working days,
-            unless your contract has a different specific arrangement.
+            If you are still employed and earning salary, CPF generally applies for CPF-eligible employees.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Example:</strong>
-            If you resign on 15 July with 1 month notice, your last day is usually 14 August. Weekends and public
-            holidays inside the notice period are still counted.
-          </div>
-        </section>
-
-        <section id="salary-in-lieu">
-          <h3>4. What is salary in lieu of notice?</h3>
-
+        <div class="info-card">
+          <h3>Salary in lieu</h3>
           <p>
-            Salary in lieu of notice means money paid instead of serving the required notice period. If you resign
-            without serving the full notice, you may need to pay your employer the salary you would have earned during
-            the unserved notice period.
+            CPF is generally not required on salary in lieu of notice because it is compensation instead of salary earned.
           </p>
+        </div>
 
+        <div class="info-card">
+          <h3>Final CPF check</h3>
           <p>
-            For example, if your salary is S$4,000 per month and you are required to give 1 month notice, leaving
-            immediately may require salary in lieu of notice of about S$4,000, subject to the exact employment terms and
-            calculation method.
+            Separate actual salary earned during employment from compensation paid instead of serving notice.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Can you take annual leave during notice period?</h2>
+      <p class="section-desc">
+        You may clear annual leave during your notice period if your employer approves it. If you take approved annual
+        leave during notice, you are still treated as an employee until the end of the notice period and you are usually
+        paid for the full notice period.
+      </p>
+
+      <div class="highlight-box">
+        <h2>Do not confuse these two</h2>
+        <p>
+          Taking approved annual leave during notice means you remain employed until the original last day.
+          Offsetting notice with annual leave means your last day is brought forward by agreement.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Annual leave offset vs taking leave during notice</h2>
+      <p class="section-desc">
+        Offsetting notice period with annual leave is different from taking approved annual leave during notice. The final
+        result can affect your last day of employment and final salary.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Employment Status</th>
+              <th>Final Salary Effect</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Taking approved annual leave during notice</td>
+              <td>You remain employed until the original last day.</td>
+              <td>You are usually paid for the full notice period.</td>
+            </tr>
+
+            <tr>
+              <td>Using annual leave to offset notice</td>
+              <td>Your last day may be brought forward by agreement.</td>
+              <td>The leave used for offset will usually not be paid separately.</td>
+            </tr>
+
+            <tr>
+              <td>Unused annual leave after resignation</td>
+              <td>Employment ends on the final agreed last day.</td>
+              <td>Unused leave may be paid out if applicable.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What happens if you take sick leave during notice period?</h2>
+      <p class="section-desc">
+        If you are covered by the Employment Act and take paid or unpaid sick leave during the notice period, the sick
+        leave is generally treated as part of the notice period. Your employer should not extend the notice period or
+        claim short notice from you just because you were on sick leave.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Final salary after resignation</h2>
+      <p class="section-desc">
+        Your final salary may include your salary up to the last day of employment, approved allowances, overtime if
+        applicable, and payment for unused annual leave if your employment is not terminated due to misconduct.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Salary up to last day</h3>
           <p>
-            The same idea can also apply when an employer ends employment without requiring the employee to serve the
-            notice period.
+            Check salary earned up to your final employment date, including any approved salary adjustments.
           </p>
-        </section>
+        </div>
 
-        <section id="cpf">
-          <h3>5. Is CPF payable during notice period?</h3>
-
+        <div class="trust-card">
+          <h3>Unused annual leave</h3>
           <p>
-            If you are still employed and earning salary during your notice period, CPF contributions generally apply
-            for CPF-eligible employees. However, CPF contribution is generally not required on salary in lieu of notice.
+            Check whether unused annual leave should be paid out based on your final salary and employment situation.
           </p>
+        </div>
 
+        <div class="trust-card">
+          <h3>CPF and deductions</h3>
           <p>
-            This is why it is important to separate salary earned during employment from compensation paid instead of
-            serving notice.
+            Check CPF, salary advances, unpaid leave, claims, allowances and other payroll deductions.
           </p>
-        </section>
+        </div>
+      </div>
 
-        <section id="annual-leave">
-          <h3>6. Can you take annual leave during notice period?</h3>
-
+      <div class="cta-box">
+        <div>
+          <h2>Want to estimate salary after CPF?</h2>
           <p>
-            You may clear annual leave during your notice period if your employer approves it. If you take approved
-            annual leave during notice, you are still treated as an employee until the end of the notice period and you
-            are usually paid for the full notice period.
+            Use our Singapore salary calculator to estimate take-home pay after CPF and income tax.
           </p>
+        </div>
 
+        <a class="btn" href="index.html">Use Salary Calculator</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Checklist before resigning</h2>
+      <p class="section-desc">
+        Before resigning, it is useful to check your notice period, expected last day, annual leave balance and final pay
+        items so there are fewer surprises after you submit your resignation.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Check your contract</h3>
           <p>
-            Offsetting notice period with annual leave is different. If your employer agrees to let you use annual leave
-            to offset the remaining notice period, your last day of employment may be brought forward and the annual
-            leave used for offset will usually not be paid separately.
+            Confirm your required notice period and whether your company has special resignation procedures.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Do not confuse these two:</strong>
-            Taking approved annual leave during notice means you remain employed until the original last day. Offsetting
-            notice with annual leave means your last day is brought forward by agreement.
-          </div>
-        </section>
-
-        <section id="sick-leave">
-          <h3>7. What happens if you take sick leave during notice period?</h3>
-
+        <div class="info-card">
+          <h3>Check your last day</h3>
           <p>
-            If you are covered by the Employment Act and take paid or unpaid sick leave during the notice period, the
-            sick leave is generally treated as part of the notice period. Your employer should not extend the notice
-            period or claim short notice from you just because you were on sick leave.
+            Count notice by calendar days unless your contract says otherwise, and ask HR to confirm in writing.
           </p>
-        </section>
+        </div>
 
-        <section id="final-salary">
-          <h3>8. Final salary after resignation</h3>
-
+        <div class="info-card">
+          <h3>Check your leave balance</h3>
           <p>
-            Your final salary may include your salary up to the last day of employment, approved allowances, overtime if
-            applicable, and payment for unused annual leave if your employment is not terminated due to misconduct.
+            Confirm whether you will clear leave, offset notice, or receive payment for unused annual leave.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Common mistakes employees make</h2>
+      <p class="section-desc">
+        These are common resignation and notice period mistakes that can affect your last day, final salary or employer relationship.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Counting working days only</h3>
           <p>
-            Before resigning, it is useful to check:
+            Notice period usually includes weekends, public holidays and non-working days.
           </p>
+        </div>
 
-          <ul>
-            <li>Your required notice period</li>
-            <li>Your expected last day of employment</li>
-            <li>Whether you plan to serve notice or pay salary in lieu</li>
-            <li>Whether you have unused annual leave</li>
-            <li>Whether your employer approves annual leave during notice</li>
-            <li>Whether CPF applies to salary earned during the notice period</li>
-          </ul>
-        </section>
+        <div class="trust-card">
+          <h3>Assuming leave offsets notice</h3>
+          <p>
+            Annual leave offset normally requires employer agreement. Do not assume it is automatic.
+          </p>
+        </div>
 
-        <section id="mistakes">
-          <h3>Common mistakes employees make</h3>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Counting working days only</h3>
-              <p>Notice period usually includes weekends, public holidays and non-working days.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Assuming leave automatically offsets notice</h3>
-              <p>Annual leave offset normally requires employer agreement.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Leaving before notice ends</h3>
-              <p>If you leave early without agreement, salary in lieu of notice may apply.</p>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <aside class="side-card">
-        <h3>On this page</h3>
-        <a href="#overview">What is notice period?</a>
-        <a href="#contract">Contract notice period</a>
-        <a href="#no-contract">No notice in contract</a>
-        <a href="#count">How to count notice</a>
-        <a href="#salary-in-lieu">Salary in lieu</a>
-        <a href="#annual-leave">Annual leave during notice</a>
-        <a href="#final-salary">Final salary</a>
-        <a href="#faq">FAQ</a>
-      </aside>
-    </div>
+        <div class="trust-card">
+          <h3>Leaving before notice ends</h3>
+          <p>
+            If you leave early without agreement, salary in lieu of notice may apply.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section">
       <div class="authority-box">
@@ -954,8 +1085,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="calculators.html">View All Calculators →</a>
       </div>
     </section>
 
@@ -987,8 +1118,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="guides.html">View All Guides →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="guides.html">View All Guides →</a>
       </div>
     </section>
 
@@ -998,16 +1129,16 @@
       <details>
         <summary>How long is the notice period in Singapore?</summary>
         <p>
-          The notice period is usually stated in your employment contract. If the contract does not state a notice
-          period, the required notice depends on your length of service.
+          The notice period is usually stated in your employment contract. If the contract does not state a notice period,
+          the required notice depends on your length of service.
         </p>
       </details>
 
       <details>
         <summary>Can I resign immediately in Singapore?</summary>
         <p>
-          You may be able to leave immediately if your employer agrees to waive the notice period. Otherwise, you may
-          need to pay salary in lieu of notice for the unserved notice period.
+          You may be able to leave immediately if your employer agrees to waive the notice period. Otherwise, you may need
+          to pay salary in lieu of notice for the unserved notice period.
         </p>
       </details>
 
