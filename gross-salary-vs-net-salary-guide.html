@@ -9,13 +9,17 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Gross Salary vs Net Salary Singapore 2026. Learn the difference between gross salary, basic salary, net salary, take-home pay, CPF deductions, tax and allowances." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow">
 
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -24,7 +28,10 @@
       color: #10231a;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .topbar {
       background: rgba(255, 255, 255, 0.94);
@@ -95,7 +102,9 @@
       scrollbar-width: none;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
 
     .nav-links a {
       padding: 13px 18px;
@@ -104,6 +113,7 @@
       color: #5d635b;
       font-weight: 850;
       white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -114,6 +124,7 @@
     .nav-links a.active {
       background: #22231f;
       color: #ffffff;
+      box-shadow: none;
     }
 
     .hero-wrap {
@@ -132,6 +143,7 @@
 
     .eyebrow {
       display: inline-flex;
+      align-items: center;
       justify-content: center;
       padding: 10px 22px;
       background: #dfeee4;
@@ -143,13 +155,14 @@
       letter-spacing: 1.8px;
       text-transform: uppercase;
       margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
     h1 {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 74px);
       line-height: 0.96;
       letter-spacing: -3px;
       font-weight: 500;
@@ -176,7 +189,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -196,108 +209,104 @@
       padding: 34px 22px 70px;
     }
 
-    .content-section { margin-top: 44px; }
+    .content-section {
+      margin-top: 44px;
+    }
 
     .section-title {
       margin: 0 0 18px;
-      font-size: 25px;
-      letter-spacing: -0.6px;
+      font-size: 28px;
+      letter-spacing: -0.8px;
       color: #10231a;
     }
 
     .section-desc {
       color: #647168;
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 860px;
       margin: -6px 0 22px;
+      font-weight: 600;
     }
 
-    .guide-layout {
+    .intro-grid,
+    .info-grid,
+    .related-grid,
+    .example-grid,
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
     }
 
-    .article-card,
-    .side-card,
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .intro-card,
     .info-card,
     .related-card,
-    .authority-box {
+    .example-card,
+    .trust-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
+      padding: 24px;
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .article-card { padding: 30px; }
+    .intro-card h3,
+    .info-card h3,
+    .related-card h3,
+    .example-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
 
-    .article-card h2 {
-      margin: 0 0 14px;
+    .intro-card p,
+    .info-card p,
+    .related-card p,
+    .example-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+      margin-top: 24px;
+    }
+
+    .highlight-box h2 {
+      margin: 0 0 12px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 500;
       letter-spacing: -1.2px;
-      color: #25251f;
     }
 
-    .article-card h3 {
-      margin: 30px 0 10px;
-      font-size: 22px;
-      color: #173f2b;
-      letter-spacing: -0.4px;
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      max-width: 900px;
     }
-
-    .article-card p,
-    .article-card li {
-      color: #536157;
-      line-height: 1.75;
-      font-weight: 620;
-      font-size: 16px;
-    }
-
-    .article-card ul { padding-left: 22px; }
-
-    .highlight-box {
-      background: #f7faf5;
-      border: 1px solid #e3eddf;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 22px 0;
-      color: #5f6d62;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .side-card {
-      padding: 22px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      color: #173f2b;
-    }
-
-    .side-card a {
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #edf2ea;
-      color: #5d635b;
-      font-weight: 850;
-      font-size: 14px;
-    }
-
-    .side-card a:last-child { border-bottom: 0; }
 
     .table-wrap {
       overflow-x: auto;
@@ -305,13 +314,13 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
-      margin: 22px 0;
+      margin-top: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 680px;
+      min-width: 760px;
     }
 
     th,
@@ -319,6 +328,7 @@
       text-align: left;
       padding: 17px 20px;
       border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
     }
 
     th {
@@ -334,51 +344,82 @@
       line-height: 1.55;
     }
 
-    tr:last-child td { border-bottom: 0; }
+    tr:last-child td {
+      border-bottom: 0;
+    }
 
-    .info-grid,
-    .related-grid,
-    .authority-list {
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-top: 18px;
+      font-weight: 600;
+    }
+
+    .cta-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr auto;
       gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      margin-top: 26px;
     }
 
-    .related-grid { grid-template-columns: repeat(4, 1fr); }
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.6px;
+    }
 
-    .info-card,
-    .related-card,
-    .authority-box {
-      padding: 24px;
+    .cta-box p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: #ffffff;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(47, 125, 99, 0.20);
+    }
+
+    .btn-light {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 850;
+      border: 1px solid #dfe9db;
     }
 
     .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
       border-radius: 28px;
       padding: 26px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
-    .info-card h3,
-    .related-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-    }
-
-    .info-card p,
-    .related-card p {
-      margin: 0;
-      color: #647168;
-      line-height: 1.65;
-    }
-
-    .related-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
     }
 
     .authority-item {
@@ -390,6 +431,12 @@
       font-weight: 900;
       color: #173f2b;
       display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.09);
     }
 
     .authority-item span {
@@ -401,22 +448,9 @@
       line-height: 1.4;
     }
 
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
+    .faq {
+      margin-top: 44px;
     }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
-    }
-
-    .faq { margin-top: 44px; }
 
     details {
       background: white;
@@ -435,6 +469,7 @@
     details p {
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
     footer {
@@ -449,10 +484,14 @@
     @media (max-width: 900px) {
       .nav {
         padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 12px;
       }
 
       .brand {
+        margin-bottom: 0;
         flex-shrink: 0;
         min-width: 138px;
         gap: 7px;
@@ -464,7 +503,9 @@
         margin-right: 5px;
       }
 
-      .brand-text strong { font-size: 13px; }
+      .brand-text strong {
+        font-size: 13px;
+      }
 
       .brand-text small {
         font-size: 5.5px;
@@ -478,6 +519,8 @@
         justify-content: flex-start;
         gap: 6px;
         overflow-x: auto;
+        padding-bottom: 0;
+        margin-left: 0;
       }
 
       .nav-links a {
@@ -485,7 +528,17 @@
         font-size: 13px;
       }
 
-      .hero { padding: 36px 20px 28px; }
+      .hero {
+        padding: 36px 20px 28px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
 
       h1 {
         font-size: 46px;
@@ -496,32 +549,81 @@
       .hero p {
         font-size: 18px;
         line-height: 1.65;
+        margin-bottom: 22px;
       }
 
-      .quick-stats { justify-content: flex-start; }
+      .quick-stats {
+        justify-content: flex-start;
+      }
 
-      .content { padding: 26px 16px 60px; }
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
 
-      .guide-layout { grid-template-columns: 1fr; }
+      .content {
+        padding: 26px 16px 60px;
+      }
 
-      .side-card { position: static; }
-
-      .article-card { padding: 24px; }
-
-      .article-card h2 { font-size: 32px; }
-
+      .intro-grid,
       .info-grid,
       .related-grid,
+      .example-grid,
+      .trust-grid,
       .authority-list {
         grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .highlight-box {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .highlight-box h2 {
+        font-size: 30px;
       }
     }
 
     @media (max-width: 430px) {
-      h1 { font-size: 41px; }
-      .hero p { font-size: 17px; }
+      h1 {
+        font-size: 41px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gross Salary vs Net Salary Singapore 2026",
+    "description": "Guide to gross salary, basic salary, net salary, take-home pay, CPF deductions, tax, allowances and salary comparison in Singapore.",
+    "author": {
+      "@type": "Organization",
+      "name": "SG Salary Tools"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SG Salary Tools",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sgsalarytools.com/logo-icon.png"
+      }
+    },
+    "mainEntityOfPage": "https://sgsalarytools.com/gross-salary-vs-net-salary-guide.html"
+  }
+  </script>
 </head>
 
 <body>
@@ -566,284 +668,347 @@
   </section>
 
   <main class="content">
-    <div class="guide-layout">
-      <article class="article-card">
-        <section id="overview">
-          <h2>What is the difference between gross salary and net salary?</h2>
+    <section class="content-section">
+      <div class="highlight-box">
+        <h2>Quick answer</h2>
+        <p>
+          Gross salary is your salary before deductions. Net salary is the amount after deductions such as employee CPF,
+          unpaid leave deduction, salary advance recovery or other authorised deductions. Take-home pay usually means
+          the final cash amount credited into your bank account.
+        </p>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">What is the difference between gross salary and net salary?</h2>
+      <p class="section-desc">
+        Gross salary is useful for comparing job offers and salary packages. Net salary is more useful for monthly
+        budgeting because it shows how much cash you actually receive after salary deductions.
+      </p>
+
+      <div class="intro-grid">
+        <div class="intro-card">
+          <h3>Gross salary</h3>
           <p>
-            Gross salary is your salary before deductions. Net salary is the final amount you receive after deductions
-            such as employee CPF contribution, unpaid leave deduction, salary advance recovery or other authorised
-            deductions.
+            Salary before deductions. It may include basic salary and fixed allowances depending on how the employer defines it.
           </p>
+        </div>
 
+        <div class="intro-card">
+          <h3>Net salary</h3>
           <p>
-            In Singapore, employees often compare salary using gross monthly salary, but the amount that matters for
-            monthly budgeting is usually net salary or take-home pay.
+            Salary after deductions such as employee CPF, unpaid leave, salary advances or other authorised deductions.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Simple rule:</strong>
-            Gross salary is before deductions. Net salary is after deductions. Take-home pay usually means the cash
-            amount you receive in your bank account.
-          </div>
-        </section>
-
-        <section id="definitions">
-          <h3>Gross salary, basic salary and net salary explained</h3>
-
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Term</th>
-                  <th>Meaning</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Basic salary</td>
-                  <td>Your fixed salary before allowances, bonus, overtime and deductions.</td>
-                  <td>S$4,000 basic salary</td>
-                </tr>
-
-                <tr>
-                  <td>Gross salary</td>
-                  <td>Total salary before deductions, often including basic salary and fixed allowances.</td>
-                  <td>S$4,000 basic + S$200 allowance = S$4,200 gross</td>
-                </tr>
-
-                <tr>
-                  <td>Net salary</td>
-                  <td>Salary after deductions such as employee CPF and other authorised deductions.</td>
-                  <td>S$4,200 gross − S$840 CPF = S$3,360 net</td>
-                </tr>
-
-                <tr>
-                  <td>Take-home pay</td>
-                  <td>The practical amount you receive after salary deductions.</td>
-                  <td>Amount credited into your bank account</td>
-                </tr>
-
-                <tr>
-                  <td>Annual compensation</td>
-                  <td>Total annual value including salary, bonus, AWS and benefits.</td>
-                  <td>12 months salary + bonus + AWS</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="formula">
-          <h3>Gross salary to net salary formula</h3>
-
+        <div class="intro-card">
+          <h3>Take-home pay</h3>
           <p>
-            A simple way to estimate net salary is to start with gross salary and deduct employee CPF and other salary
-            deductions.
+            The practical amount you receive in your bank account after salary deductions.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="highlight-box">
-            <strong>Simple net salary formula:</strong>
-            Net salary = Gross salary − employee CPF − other deductions
-          </div>
+    <section class="content-section">
+      <h2 class="section-title">Gross salary, basic salary and net salary explained</h2>
+      <p class="section-desc">
+        These salary terms are related but not always the same. Understanding the difference helps you read payslips,
+        compare job offers and estimate monthly cash flow more accurately.
+      </p>
 
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Meaning</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Basic salary</td>
+              <td>Your fixed salary before allowances, bonus, overtime and deductions.</td>
+              <td>S$4,000 basic salary.</td>
+            </tr>
+
+            <tr>
+              <td>Gross salary</td>
+              <td>Total salary before deductions, often including basic salary and fixed allowances.</td>
+              <td>S$4,000 basic + S$200 allowance = S$4,200 gross.</td>
+            </tr>
+
+            <tr>
+              <td>Net salary</td>
+              <td>Salary after deductions such as employee CPF and other authorised deductions.</td>
+              <td>S$4,200 gross − S$840 CPF = S$3,360 net.</td>
+            </tr>
+
+            <tr>
+              <td>Take-home pay</td>
+              <td>The practical amount you receive after salary deductions.</td>
+              <td>Amount credited into your bank account.</td>
+            </tr>
+
+            <tr>
+              <td>Annual compensation</td>
+              <td>Total annual value including salary, bonus, AWS and benefits.</td>
+              <td>12 months salary + bonus + AWS.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Gross salary to net salary formula</h2>
+      <p class="section-desc">
+        A simple way to estimate net salary is to start with gross salary and deduct employee CPF and other salary
+        deductions.
+      </p>
+
+      <div class="highlight-box">
+        <h2>Simple net salary formula</h2>
+        <p>
+          Net salary = Gross salary − employee CPF − other deductions.
+        </p>
+      </div>
+
+      <div class="note-box">
+        For Singapore Citizens and Permanent Residents who contribute CPF, employee CPF is usually one of the biggest
+        deductions from gross salary. For foreigners who do not contribute CPF, the difference between gross and net
+        salary may be smaller unless there are other deductions.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">How CPF affects net salary</h2>
+      <p class="section-desc">
+        CPF is a major reason why gross salary and net salary are different in Singapore. Employee CPF is deducted from
+        your salary before your net pay is credited to your bank account.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Employee CPF</h3>
           <p>
-            For Singapore Citizens and Permanent Residents who contribute CPF, employee CPF is usually one of the biggest
-            deductions from gross salary. For foreigners who do not contribute CPF, the difference between gross and net
-            salary may be smaller, unless there are other deductions.
+            Employee CPF is deducted from gross salary and reduces your monthly cash take-home pay.
           </p>
-        </section>
+        </div>
 
-        <section id="cpf">
-          <h3>How CPF affects net salary</h3>
-
+        <div class="info-card">
+          <h3>Employer CPF</h3>
           <p>
-            CPF is a major reason why gross salary and net salary are different in Singapore. Employee CPF is deducted
-            from your salary before your net pay is credited to your bank account.
+            Employer CPF is paid separately by your employer and does not reduce your monthly cash salary.
           </p>
+        </div>
 
+        <div class="info-card">
+          <h3>CPF wage ceilings</h3>
           <p>
-            Employer CPF is different. It is paid separately by your employer and does not reduce your monthly cash
-            salary. This means your payslip may show both employee CPF and employer CPF, but only employee CPF is
-            deducted from your gross salary.
+            CPF calculations may be affected by wage ceiling rules, age and CPF eligibility.
           </p>
+        </div>
+      </div>
 
-          <div class="highlight-box">
-            <strong>Example:</strong>
-            If your gross salary is S$5,000 and employee CPF is S$1,000, your estimated net pay before tax and other
-            deductions is about S$4,000.
-          </div>
-        </section>
-
-        <section id="tax">
-          <h3>Does income tax reduce monthly net salary?</h3>
-
+      <div class="cta-box">
+        <div>
+          <h2>Want to estimate salary after CPF?</h2>
           <p>
-            Singapore personal income tax is generally assessed annually. For many employees, income tax is not deducted
-            from monthly salary in the same way CPF is deducted. Instead, tax is assessed by IRAS based on annual income,
-            tax residency and reliefs.
+            Use our Singapore salary calculator to estimate take-home pay after CPF and income tax.
           </p>
+        </div>
 
+        <a class="btn" href="index.html">Use Salary Calculator</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Does income tax reduce monthly net salary?</h2>
+      <p class="section-desc">
+        Singapore personal income tax is generally assessed annually. For many employees, income tax is not deducted from
+        monthly salary in the same way CPF is deducted. Instead, tax is assessed by IRAS based on annual income, tax
+        residency and reliefs.
+      </p>
+
+      <div class="note-box">
+        Planning tip: Take-home salary for monthly cash flow and annual income tax are connected, but they are not
+        always deducted at the same time. Employees may still need to set aside money for annual tax.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Gross salary vs net salary examples</h2>
+      <p class="section-desc">
+        These examples assume a Singapore Citizen or PR aged 55 and below, using a simple 20% employee CPF estimate
+        before tax and other deductions.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Gross Monthly Salary</th>
+              <th>Estimated Employee CPF</th>
+              <th>Estimated Net Salary Before Tax</th>
+              <th>Common Search</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>S$3,000</td>
+              <td>S$600</td>
+              <td>S$2,400</td>
+              <td>S$3,000 gross to net salary.</td>
+            </tr>
+
+            <tr>
+              <td>S$4,000</td>
+              <td>S$800</td>
+              <td>S$3,200</td>
+              <td>S$4,000 salary after CPF.</td>
+            </tr>
+
+            <tr>
+              <td>S$5,000</td>
+              <td>S$1,000</td>
+              <td>S$4,000</td>
+              <td>S$5,000 take-home pay.</td>
+            </tr>
+
+            <tr>
+              <td>S$6,000</td>
+              <td>S$1,200</td>
+              <td>S$4,800</td>
+              <td>S$6,000 salary after CPF.</td>
+            </tr>
+
+            <tr>
+              <td>S$8,000</td>
+              <td>S$1,600</td>
+              <td>S$6,400</td>
+              <td>CPF wage ceiling planning.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        Actual net salary can differ depending on age, CPF eligibility, CPF wage ceilings, allowances, no-pay leave,
+        bonus, tax residency and employer payroll treatment.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Are allowances part of gross salary?</h2>
+      <p class="section-desc">
+        Some allowances may be included in gross salary, especially fixed monthly allowances such as transport allowance,
+        meal allowance or shift allowance. However, not every allowance is treated the same for CPF, tax or payroll
+        purposes.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <h3>Fixed allowance</h3>
           <p>
-            However, income tax still matters for personal budgeting. Even if your monthly net salary looks higher, you
-            may need to set aside money for your annual tax bill.
+            A regular monthly allowance may form part of gross salary depending on the employment package.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Planning tip:</strong>
-            Take-home salary for monthly cash flow and annual income tax are connected, but they are not always deducted
-            at the same time.
-          </div>
-        </section>
-
-        <section id="examples">
-          <h3>Gross salary vs net salary examples</h3>
-
+        <div class="example-card">
+          <h3>Reimbursement</h3>
           <p>
-            These examples assume a Singapore Citizen or PR aged 55 and below, using a simple 20% employee CPF estimate
-            before tax and other deductions.
+            Reimbursement may not be the same as salary because it repays business expenses incurred by the employee.
           </p>
+        </div>
 
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Gross Monthly Salary</th>
-                  <th>Estimated Employee CPF</th>
-                  <th>Estimated Net Salary Before Tax</th>
-                  <th>Common Search</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>S$3,000</td>
-                  <td>S$600</td>
-                  <td>S$2,400</td>
-                  <td>S$3,000 gross to net salary</td>
-                </tr>
-
-                <tr>
-                  <td>S$4,000</td>
-                  <td>S$800</td>
-                  <td>S$3,200</td>
-                  <td>S$4,000 salary after CPF</td>
-                </tr>
-
-                <tr>
-                  <td>S$5,000</td>
-                  <td>S$1,000</td>
-                  <td>S$4,000</td>
-                  <td>S$5,000 take-home pay</td>
-                </tr>
-
-                <tr>
-                  <td>S$6,000</td>
-                  <td>S$1,200</td>
-                  <td>S$4,800</td>
-                  <td>S$6,000 salary after CPF</td>
-                </tr>
-
-                <tr>
-                  <td>S$8,000</td>
-                  <td>S$1,600</td>
-                  <td>S$6,400</td>
-                  <td>CPF wage ceiling planning</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
+        <div class="example-card">
+          <h3>Offer comparison</h3>
           <p>
-            Actual net salary can differ depending on age, CPF eligibility, CPF wage ceilings, allowances, no-pay leave,
-            bonus, tax residency and employer payroll treatment.
+            Check whether the job offer states basic salary only or gross salary including allowances.
           </p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="allowances">
-          <h3>Are allowances part of gross salary?</h3>
+    <section class="content-section">
+      <h2 class="section-title">Does bonus affect gross salary or net salary?</h2>
+      <p class="section-desc">
+        Bonus is additional employment income paid on top of normal salary. It may affect annual gross income, CPF
+        contributions and income tax. Bonus may also change your effective annual net income even if your monthly net
+        salary stays the same.
+      </p>
 
+      <div class="note-box">
+        For Singapore Citizens and PRs, CPF may apply to bonus subject to Additional Wage ceiling rules. Bonus is also
+        generally taxable as employment income.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Gross vs net salary for foreigners in Singapore</h2>
+      <p class="section-desc">
+        Many foreign employees in Singapore do not contribute CPF. This means their monthly net salary may be closer to
+        gross salary, unless there are other deductions such as unpaid leave, salary advance recovery or employee
+        benefits deductions.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>No employee CPF</h3>
           <p>
-            Some allowances may be included in gross salary, especially fixed monthly allowances such as transport
-            allowance, meal allowance or shift allowance. However, not every allowance is treated the same for CPF, tax
-            or payroll purposes.
+            Foreign employees who are not Singapore Citizens or PRs generally do not make CPF contributions.
           </p>
+        </div>
 
+        <div class="info-card">
+          <h3>Tax still matters</h3>
           <p>
-            When comparing salary packages, check whether the offer states basic salary only or gross salary including
-            allowances. A higher gross salary may not always mean a higher basic salary.
+            Foreigners still need to consider income tax, tax residency and annual tax filing or clearance.
           </p>
-        </section>
+        </div>
 
-        <section id="bonus">
-          <h3>Does bonus affect gross salary or net salary?</h3>
-
+        <div class="info-card">
+          <h3>Living cost planning</h3>
           <p>
-            Bonus is additional employment income paid on top of normal salary. It may affect annual gross income, CPF
-            contributions and income tax. Bonus may also change your effective annual net income even if your monthly net
-            salary stays the same.
+            Rent, insurance, medical costs and other expenses should still be considered when planning take-home income.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Common salary comparison mistakes</h2>
+      <p class="section-desc">
+        These are common mistakes employees make when comparing job offers, payslips or monthly cash flow.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Comparing gross only</h3>
           <p>
-            For Singapore Citizens and PRs, CPF may apply to bonus subject to Additional Wage ceiling rules. Bonus is
-            also generally taxable as employment income.
+            Gross salary does not show how much cash you actually receive after deductions.
           </p>
-        </section>
+        </div>
 
-        <section id="foreigners">
-          <h3>Gross vs net salary for foreigners in Singapore</h3>
-
+        <div class="trust-card">
+          <h3>Ignoring CPF</h3>
           <p>
-            Many foreign employees in Singapore do not contribute CPF. This means their monthly net salary may be closer
-            to gross salary, unless there are other deductions such as unpaid leave, salary advance recovery or employee
-            benefits deductions.
+            Employee CPF can significantly reduce monthly cash salary for eligible employees.
           </p>
+        </div>
 
+        <div class="trust-card">
+          <h3>Forgetting annual tax</h3>
           <p>
-            However, foreigners still need to consider income tax, tax residency, employment pass costs, rent, insurance,
-            medical costs and other living expenses when planning take-home income.
+            Income tax may not be deducted monthly, but it still affects annual take-home income.
           </p>
-        </section>
-
-        <section id="mistakes">
-          <h3>Common salary comparison mistakes</h3>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Comparing gross only</h3>
-              <p>Gross salary does not show how much cash you actually receive after deductions.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Ignoring CPF</h3>
-              <p>Employee CPF can significantly reduce monthly cash salary for eligible employees.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Forgetting annual tax</h3>
-              <p>Income tax may not be deducted monthly, but it still affects annual take-home income.</p>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <aside class="side-card">
-        <h3>On this page</h3>
-        <a href="#overview">Gross vs net salary</a>
-        <a href="#definitions">Salary terms</a>
-        <a href="#formula">Net salary formula</a>
-        <a href="#cpf">CPF impact</a>
-        <a href="#tax">Income tax</a>
-        <a href="#examples">Salary examples</a>
-        <a href="#allowances">Allowances</a>
-        <a href="#bonus">Bonus impact</a>
-        <a href="#foreigners">Foreigners</a>
-        <a href="#faq">FAQ</a>
-      </aside>
-    </div>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section">
       <div class="authority-box">
@@ -899,8 +1064,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="calculators.html">View All Calculators →</a>
       </div>
     </section>
 
@@ -932,8 +1097,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="guides.html">View All Guides →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="guides.html">View All Guides →</a>
       </div>
     </section>
 
