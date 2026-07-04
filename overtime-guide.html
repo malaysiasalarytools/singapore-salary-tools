@@ -9,9 +9,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Singapore Overtime Guide 2026. Learn who is entitled to overtime pay, how OT is calculated, 1.5x hourly rate, monthly OT limits, rest day work and CPF on overtime." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow">
 
   <style>
     * { box-sizing: border-box; }
@@ -115,6 +114,7 @@
     .nav-links a.active {
       background: #22231f;
       color: #ffffff;
+      box-shadow: none;
     }
 
     .hero-wrap {
@@ -133,6 +133,7 @@
 
     .eyebrow {
       display: inline-flex;
+      align-items: center;
       justify-content: center;
       padding: 10px 22px;
       background: #dfeee4;
@@ -144,13 +145,14 @@
       letter-spacing: 1.8px;
       text-transform: uppercase;
       margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
     h1 {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 74px);
       line-height: 0.96;
       letter-spacing: -3px;
       font-weight: 500;
@@ -177,7 +179,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -201,104 +203,98 @@
 
     .section-title {
       margin: 0 0 18px;
-      font-size: 25px;
-      letter-spacing: -0.6px;
+      font-size: 28px;
+      letter-spacing: -0.8px;
       color: #10231a;
     }
 
     .section-desc {
       color: #647168;
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 860px;
       margin: -6px 0 22px;
+      font-weight: 600;
     }
 
-    .guide-layout {
+    .intro-grid,
+    .info-grid,
+    .related-grid,
+    .example-grid,
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
     }
 
-    .article-card,
-    .side-card,
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .intro-card,
     .info-card,
     .related-card,
-    .authority-box {
+    .example-card,
+    .trust-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
+      padding: 24px;
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .article-card { padding: 30px; }
+    .intro-card h3,
+    .info-card h3,
+    .related-card h3,
+    .example-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
 
-    .article-card h2 {
-      margin: 0 0 14px;
+    .intro-card p,
+    .info-card p,
+    .related-card p,
+    .example-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+      margin-top: 24px;
+    }
+
+    .highlight-box h2 {
+      margin: 0 0 12px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 500;
       letter-spacing: -1.2px;
-      color: #25251f;
     }
 
-    .article-card h3 {
-      margin: 30px 0 10px;
-      font-size: 22px;
-      color: #173f2b;
-      letter-spacing: -0.4px;
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      max-width: 900px;
     }
-
-    .article-card p,
-    .article-card li {
-      color: #536157;
-      line-height: 1.75;
-      font-weight: 620;
-      font-size: 16px;
-    }
-
-    .article-card ul { padding-left: 22px; }
-
-    .highlight-box {
-      background: #f7faf5;
-      border: 1px solid #e3eddf;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 22px 0;
-      color: #5f6d62;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .side-card {
-      padding: 22px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      color: #173f2b;
-    }
-
-    .side-card a {
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #edf2ea;
-      color: #5d635b;
-      font-weight: 850;
-      font-size: 14px;
-    }
-
-    .side-card a:last-child { border-bottom: 0; }
 
     .table-wrap {
       overflow-x: auto;
@@ -306,13 +302,13 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
-      margin: 22px 0;
+      margin-top: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 680px;
+      min-width: 760px;
     }
 
     th,
@@ -320,6 +316,7 @@
       text-align: left;
       padding: 17px 20px;
       border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
     }
 
     th {
@@ -337,49 +334,78 @@
 
     tr:last-child td { border-bottom: 0; }
 
-    .info-grid,
-    .related-grid,
-    .authority-list {
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-top: 18px;
+      font-weight: 600;
+    }
+
+    .cta-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr auto;
       gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      margin-top: 26px;
     }
 
-    .related-grid { grid-template-columns: repeat(4, 1fr); }
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.6px;
+    }
 
-    .info-card,
-    .related-card,
-    .authority-box {
-      padding: 24px;
+    .cta-box p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: #ffffff;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(47, 125, 99, 0.20);
+    }
+
+    .btn-light {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 850;
+      border: 1px solid #dfe9db;
     }
 
     .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
       border-radius: 28px;
       padding: 26px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
-    .info-card h3,
-    .related-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-    }
-
-    .info-card p,
-    .related-card p {
-      margin: 0;
-      color: #647168;
-      line-height: 1.65;
-    }
-
-    .related-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
     }
 
     .authority-item {
@@ -408,21 +434,6 @@
       line-height: 1.4;
     }
 
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
-    }
-
     .faq { margin-top: 44px; }
 
     details {
@@ -442,6 +453,7 @@
     details p {
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
     footer {
@@ -456,6 +468,7 @@
     @media (max-width: 900px) {
       .nav {
         padding: 10px 18px;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
@@ -497,7 +510,17 @@
         font-size: 13px;
       }
 
-      .hero { padding: 36px 20px 28px; }
+      .hero {
+        padding: 36px 20px 28px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
 
       h1 {
         font-size: 46px;
@@ -508,24 +531,46 @@
       .hero p {
         font-size: 18px;
         line-height: 1.65;
+        margin-bottom: 22px;
       }
 
-      .quick-stats { justify-content: flex-start; }
+      .quick-stats {
+        justify-content: flex-start;
+      }
 
-      .content { padding: 26px 16px 60px; }
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
 
-      .guide-layout { grid-template-columns: 1fr; }
+      .content {
+        padding: 26px 16px 60px;
+      }
 
-      .side-card { position: static; }
-
-      .article-card { padding: 24px; }
-
-      .article-card h2 { font-size: 32px; }
-
+      .intro-grid,
       .info-grid,
       .related-grid,
+      .example-grid,
+      .trust-grid,
       .authority-list {
         grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .highlight-box {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .highlight-box h2 {
+        font-size: 30px;
       }
     }
 
@@ -534,6 +579,28 @@
       .hero p { font-size: 17px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Singapore Overtime Guide 2026",
+    "description": "Singapore overtime guide covering OT pay, 1.5x rate, hourly basic rate, overtime limits, rest day work, CPF and tax treatment.",
+    "author": {
+      "@type": "Organization",
+      "name": "SG Salary Tools"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SG Salary Tools",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sgsalarytools.com/logo-icon.png"
+      }
+    },
+    "mainEntityOfPage": "https://sgsalarytools.com/overtime-guide.html"
+  }
+  </script>
 </head>
 
 <body>
@@ -578,227 +645,348 @@
   </section>
 
   <main class="content">
-    <div class="guide-layout">
-      <article class="article-card">
-        <section id="overview">
-          <h2>What is overtime in Singapore?</h2>
+    <section class="content-section">
+      <div class="highlight-box">
+        <h2>Quick answer</h2>
+        <p>
+          Overtime pay in Singapore is generally calculated at at least 1.5 times the hourly basic rate of pay.
+          Overtime entitlement mainly applies to employees covered under Part 4 of the Employment Act, and monthly
+          overtime is generally capped at 72 hours unless an exemption applies.
+        </p>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">What is overtime in Singapore?</h2>
+      <p class="section-desc">
+        Overtime means work done beyond your normal contractual working hours, excluding rest and meal breaks.
+        In Singapore, overtime pay rules mainly apply to employees covered under Part 4 of the Employment Act.
+      </p>
+
+      <div class="intro-grid">
+        <div class="intro-card">
+          <h3>Beyond normal hours</h3>
           <p>
-            Overtime means work done beyond your normal contractual working hours, excluding rest and meal breaks.
-            In Singapore, overtime pay rules mainly apply to employees covered under Part 4 of the Employment Act.
+            Overtime is usually work performed after your normal daily or weekly working hours.
           </p>
+        </div>
 
+        <div class="intro-card">
+          <h3>Not for every employee</h3>
           <p>
-            If you are not covered under Part 4, your working hours, overtime arrangement and extra pay will usually
-            depend on your employment contract, company policy or separate agreement with your employer.
+            Managers, executives and higher-paid employees may depend on contract or company policy instead.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Simple rule:</strong>
-            Overtime pay is not automatically available to every employee. First check whether you are covered under
-            Part 4 of the Employment Act and whether your salary falls within the overtime entitlement limits.
-          </div>
-        </section>
-
-        <section id="who">
-          <h3>Who is entitled to overtime pay?</h3>
-
+        <div class="intro-card">
+          <h3>Shown on payslip</h3>
           <p>
-            Under MOM guidance, overtime pay can generally be claimed by non-workmen earning a monthly basic salary of
-            S$2,600 or less, and workmen earning a monthly basic salary of S$4,500 or less. Managers and executives are
-            generally not covered under Part 4.
+            If overtime applies, overtime hours and overtime pay should be clearly reflected in payroll records.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Employee Type</th>
-                  <th>Monthly Basic Salary Limit</th>
-                  <th>Overtime Entitlement</th>
-                </tr>
-              </thead>
+    <section class="content-section">
+      <h2 class="section-title">Who is entitled to overtime pay?</h2>
+      <p class="section-desc">
+        Overtime pay can generally be claimed by non-workmen earning a monthly basic salary of S$2,600 or less,
+        and workmen earning a monthly basic salary of S$4,500 or less. Managers and executives are generally not
+        covered under Part 4.
+      </p>
 
-              <tbody>
-                <tr>
-                  <td>Non-workman</td>
-                  <td>S$2,600 or less</td>
-                  <td>May claim overtime pay if covered under Part 4.</td>
-                </tr>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Employee Type</th>
+              <th>Monthly Basic Salary Limit</th>
+              <th>Overtime Entitlement</th>
+            </tr>
+          </thead>
 
-                <tr>
-                  <td>Workman</td>
-                  <td>S$4,500 or less</td>
-                  <td>May claim overtime pay if covered under Part 4.</td>
-                </tr>
+          <tbody>
+            <tr>
+              <td>Non-workman</td>
+              <td>S$2,600 or less</td>
+              <td>May claim overtime pay if covered under Part 4.</td>
+            </tr>
 
-                <tr>
-                  <td>Manager / Executive</td>
-                  <td>Not covered under Part 4</td>
-                  <td>Usually depends on employment contract or company policy.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+            <tr>
+              <td>Workman</td>
+              <td>S$4,500 or less</td>
+              <td>May claim overtime pay if covered under Part 4.</td>
+            </tr>
 
-        <section id="normal-hours">
-          <h3>Normal working hours before overtime starts</h3>
+            <tr>
+              <td>Manager / Executive</td>
+              <td>Not covered under Part 4</td>
+              <td>Usually depends on employment contract or company policy.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+      <div class="note-box">
+        Simple rule: Overtime pay is not automatically available to every employee. First check whether you are covered
+        under Part 4 of the Employment Act and whether your salary falls within the overtime entitlement limits.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Normal working hours before overtime starts</h2>
+      <p class="section-desc">
+        Overtime is generally work beyond normal hours of work. For common work arrangements, contractual working hours
+        are usually up to 9 hours per day or 44 hours per week if you work 5 days or less a week. If you work more than
+        5 days a week, it is usually up to 8 hours per day or 44 hours per week.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>5 days or less</h3>
           <p>
-            Overtime is generally work beyond normal hours of work. For common work arrangements, contractual working
-            hours are usually up to 9 hours per day or 44 hours per week if you work 5 days or less a week. If you work
-            more than 5 days a week, it is usually up to 8 hours per day or 44 hours per week.
+            Normal working hours are commonly up to 9 hours per day or 44 hours per week.
           </p>
+        </div>
 
+        <div class="info-card">
+          <h3>More than 5 days</h3>
           <p>
-            Breaks and meal periods are generally not counted as hours of work. This means overtime should be based on
-            actual working time, not the full time you are physically at the workplace.
+            Normal working hours are commonly up to 8 hours per day or 44 hours per week.
           </p>
-        </section>
+        </div>
 
-        <section id="formula">
-          <h3>How to calculate overtime pay</h3>
-
+        <div class="info-card">
+          <h3>Breaks excluded</h3>
           <p>
-            The basic overtime formula is:
+            Rest and meal breaks are generally not counted as hours of work.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="highlight-box">
-            <strong>Overtime pay formula:</strong>
-            Hourly basic rate of pay × 1.5 × number of overtime hours
-          </div>
+    <section class="content-section">
+      <h2 class="section-title">How to calculate overtime pay</h2>
+      <p class="section-desc">
+        The basic overtime formula uses the employee’s hourly basic rate of pay, multiplied by 1.5 and the number
+        of overtime hours worked.
+      </p>
 
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Formula</th>
+              <th>How It Works</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>OT pay</td>
+              <td>Hourly basic rate of pay × 1.5 × number of overtime hours.</td>
+              <td>S$13.60 × 1.5 × 10 hours = S$204.</td>
+            </tr>
+
+            <tr>
+              <td>Hourly basic rate</td>
+              <td>12 × monthly basic salary ÷ 52 ÷ 44.</td>
+              <td>S$2,600 salary gives about S$13.60 per hour.</td>
+            </tr>
+
+            <tr>
+              <td>Basic salary focus</td>
+              <td>Overtime is based on hourly basic rate, not necessarily full gross salary.</td>
+              <td>Allowances may not always be included in the basic rate.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box">
+        <h2>Overtime pay formula</h2>
+        <p>
+          Hourly basic rate of pay × 1.5 × number of overtime hours.
+          For a monthly-rated employee, hourly basic rate is commonly calculated as 12 × monthly basic salary ÷ 52 ÷ 44.
+        </p>
+      </div>
+
+      <div class="cta-box">
+        <div>
+          <h2>Want to estimate your overtime pay?</h2>
           <p>
-            For a monthly-rated employee, the hourly basic rate of pay is commonly calculated as:
+            Use our overtime calculator to estimate overtime pay using monthly salary, hourly rate and OT hours.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Hourly basic rate formula:</strong>
-            12 × monthly basic salary ÷ 52 ÷ 44
-          </div>
+        <a class="btn" href="overtime-calculator.html">Use Overtime Calculator</a>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">When should overtime pay be paid?</h2>
+      <p class="section-desc">
+        Overtime pay should be paid within 14 days after the last day of the salary period. For example, if the overtime
+        was worked in January, the overtime payment should generally be made within 14 days after the end of the January
+        salary period.
+      </p>
+
+      <div class="note-box">
+        Overtime details should also be reflected clearly in the employee’s payslip if overtime applies.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Maximum overtime hours in Singapore</h2>
+      <p class="section-desc">
+        Employees generally cannot work more than 12 hours a day. There are limited exceptional situations where longer
+        hours may be allowed, such as urgent work, accidents or essential work.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <h3>12 hours per day</h3>
           <p>
-            For example, if your monthly basic salary is S$2,600, your hourly basic rate is about S$13.60.
-            If you work 10 overtime hours, estimated overtime pay is S$13.60 × 1.5 × 10 = S$204.
+            Employees generally should not work more than 12 hours a day, unless limited exceptions apply.
           </p>
-        </section>
+        </div>
 
-        <section id="payment">
-          <h3>When should overtime pay be paid?</h3>
-
+        <div class="example-card">
+          <h3>72 hours per month</h3>
           <p>
-            Overtime pay should be paid within 14 days after the last day of the salary period. For example, if the
-            overtime was worked in January, the overtime payment should generally be made within 14 days after the end
-            of the January salary period.
+            Monthly overtime is generally capped at 72 hours unless the employer obtains an exemption.
           </p>
+        </div>
 
+        <div class="example-card">
+          <h3>Rest day and public holiday</h3>
           <p>
-            Overtime details should also be reflected clearly in the employee’s payslip if overtime applies.
+            Rest day or public holiday work may have separate pay treatment and may not always count the same way.
           </p>
-        </section>
+        </div>
+      </div>
 
-        <section id="limit">
-          <h3>Maximum overtime hours in Singapore</h3>
+      <div class="note-box">
+        Work on a rest day or public holiday is generally not counted into the 72-hour overtime limit, except for extra
+        hours worked beyond the usual daily working hours on those days.
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Overtime on rest days and public holidays</h2>
+      <p class="section-desc">
+        Work on a rest day or public holiday may involve separate pay rules. If you work beyond your normal daily working
+        hours on a rest day or public holiday, the extra hours may be treated as overtime on top of rest day or public
+        holiday pay.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>What To Check</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Normal overtime</td>
+              <td>Hours worked beyond normal daily or weekly working hours.</td>
+              <td>Usually uses the 1.5x overtime formula for eligible employees.</td>
+            </tr>
+
+            <tr>
+              <td>Rest day work</td>
+              <td>Whether the employee worked on an assigned rest day.</td>
+              <td>Rest day work may have separate salary treatment.</td>
+            </tr>
+
+            <tr>
+              <td>Public holiday work</td>
+              <td>Whether the work was on a gazetted public holiday.</td>
+              <td>Public holiday pay rules may apply before overtime is considered.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Is CPF payable on overtime pay?</h2>
+      <p class="section-desc">
+        Overtime pay is generally treated as wages for CPF purposes if the employee is CPF-eligible. This means employee
+        CPF and employer CPF may apply, subject to CPF wage ceiling rules and the exact nature of the payment.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>CPF-eligible employees</h3>
           <p>
-            Employees generally cannot work more than 12 hours a day. There are limited exceptional situations where
-            longer hours may be allowed, such as urgent work, accidents or essential work.
+            Singapore Citizens and PRs may have CPF contributions on overtime pay if it is treated as wages.
           </p>
+        </div>
 
+        <div class="info-card">
+          <h3>Wage ceiling rules</h3>
           <p>
-            Monthly overtime is generally capped at 72 hours. Employers who require employees to exceed this monthly
-            overtime limit need to apply for an overtime exemption.
+            CPF treatment may depend on whether the payment is Ordinary Wages or Additional Wages.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Important:</strong>
-            Work on a rest day or public holiday is generally not counted into the 72-hour overtime limit, except for
-            extra hours worked beyond the usual daily working hours on those days.
-          </div>
-        </section>
-
-        <section id="rest-day">
-          <h3>Overtime on rest days and public holidays</h3>
-
+        <div class="info-card">
+          <h3>Payroll accuracy</h3>
           <p>
-            Work on a rest day or public holiday may involve separate pay rules. If you work beyond your normal daily
-            working hours on a rest day or public holiday, the extra hours may be treated as overtime on top of rest day
-            or public holiday pay.
+            Employers should check CPF Board guidance for accurate payroll classification.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Is overtime pay taxable?</h2>
+      <p class="section-desc">
+        Overtime pay is generally employment income. It can increase your annual taxable income and may affect your final
+        income tax depending on your total income, tax residency and tax reliefs.
+      </p>
+
+      <div class="note-box">
+        For practical planning, employees can include overtime pay when estimating annual income, especially if overtime
+        is regular every month.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Common overtime mistakes</h2>
+      <p class="section-desc">
+        These are common overtime mistakes employees and employers should check before relying on an overtime calculation.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Using gross salary wrongly</h3>
           <p>
-            A simple way to understand it is that rest day or public holiday work is not always the same as normal
-            overtime. The calculation may include rest day pay or public holiday pay, plus overtime pay for hours beyond
-            normal daily working hours.
+            Overtime is based on hourly basic rate, not necessarily full gross salary with allowances.
           </p>
-        </section>
+        </div>
 
-        <section id="cpf">
-          <h3>Is CPF payable on overtime pay?</h3>
-
+        <div class="trust-card">
+          <h3>Counting meal breaks as OT</h3>
           <p>
-            Overtime pay is generally treated as wages for CPF purposes if the employee is CPF-eligible. This means
-            employee CPF and employer CPF may apply, subject to CPF wage ceiling rules and the exact nature of the
-            payment.
+            Rest and meal breaks are generally excluded from working hours.
           </p>
+        </div>
 
+        <div class="trust-card">
+          <h3>Assuming all staff get OT</h3>
           <p>
-            For payroll accuracy, employers should check CPF Board guidance because CPF treatment depends on whether the
-            payment is classified as Ordinary Wages or Additional Wages.
+            Managers, executives and higher-paid employees may depend on contract terms instead.
           </p>
-        </section>
-
-        <section id="tax">
-          <h3>Is overtime pay taxable?</h3>
-
-          <p>
-            Overtime pay is generally employment income. It can increase your annual taxable income and may affect your
-            final income tax depending on your total income, tax residency and tax reliefs.
-          </p>
-
-          <p>
-            For practical planning, employees can include overtime pay when estimating annual income, especially if
-            overtime is regular every month.
-          </p>
-        </section>
-
-        <section id="mistakes">
-          <h3>Common overtime mistakes</h3>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Using gross salary wrongly</h3>
-              <p>Overtime is based on hourly basic rate, not necessarily full gross salary with allowances.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Counting meal breaks as OT</h3>
-              <p>Rest and meal breaks are generally excluded from working hours.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Assuming all staff get OT</h3>
-              <p>Managers, executives and higher-paid employees may depend on contract terms instead.</p>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <aside class="side-card">
-        <h3>On this page</h3>
-        <a href="#overview">What is overtime?</a>
-        <a href="#who">Who is entitled?</a>
-        <a href="#normal-hours">Normal hours</a>
-        <a href="#formula">OT formula</a>
-        <a href="#payment">When OT is paid</a>
-        <a href="#limit">OT limits</a>
-        <a href="#rest-day">Rest day OT</a>
-        <a href="#cpf">CPF on overtime</a>
-        <a href="#tax">Tax on overtime</a>
-        <a href="#faq">FAQ</a>
-      </aside>
-    </div>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section">
       <div class="authority-box">
@@ -854,8 +1042,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="calculators.html">View All Calculators →</a>
       </div>
     </section>
 
@@ -887,8 +1075,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="guides.html">View All Guides →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="guides.html">View All Guides →</a>
       </div>
     </section>
 
@@ -935,8 +1123,7 @@
       <details>
         <summary>Is CPF payable on overtime pay?</summary>
         <p>
-          CPF may apply to overtime pay for CPF-eligible employees, subject to CPF wage ceiling rules and payroll
-          classification.
+          CPF may apply to overtime pay for CPF-eligible employees, subject to CPF wage ceiling rules and payroll classification.
         </p>
       </details>
 
@@ -964,8 +1151,7 @@
       <details>
         <summary>Is this overtime guide official advice?</summary>
         <p>
-          No. This guide is for general salary planning only. Check MOM, CPF Board, IRAS or your employment contract for
-          official treatment.
+          No. This guide is for general salary planning only. Check MOM, CPF Board, IRAS or your employment contract for official treatment.
         </p>
       </details>
     </section>
