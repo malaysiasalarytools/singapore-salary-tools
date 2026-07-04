@@ -9,13 +9,17 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Singapore IR8A Guide 2026. Learn what Form IR8A is, who needs it, how AIS works, what employment income is reported, and how IR8A affects employee income tax filing." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow">
 
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -24,7 +28,10 @@
       color: #10231a;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .topbar {
       background: rgba(255, 255, 255, 0.94);
@@ -95,7 +102,9 @@
       scrollbar-width: none;
     }
 
-    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
 
     .nav-links a {
       padding: 13px 18px;
@@ -104,6 +113,7 @@
       color: #5d635b;
       font-weight: 850;
       white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -114,6 +124,7 @@
     .nav-links a.active {
       background: #22231f;
       color: #ffffff;
+      box-shadow: none;
     }
 
     .hero-wrap {
@@ -132,6 +143,7 @@
 
     .eyebrow {
       display: inline-flex;
+      align-items: center;
       justify-content: center;
       padding: 10px 22px;
       background: #dfeee4;
@@ -143,13 +155,14 @@
       letter-spacing: 1.8px;
       text-transform: uppercase;
       margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
     h1 {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 74px);
       line-height: 0.96;
       letter-spacing: -3px;
       font-weight: 500;
@@ -176,7 +189,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -200,66 +213,99 @@
       margin-top: 44px;
     }
 
-    .article-card,
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 28px;
+      letter-spacing: -0.8px;
+      color: #10231a;
+    }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.75;
+      max-width: 860px;
+      margin: -6px 0 22px;
+      font-weight: 600;
+    }
+
+    .intro-grid,
+    .info-grid,
+    .related-grid,
+    .example-grid,
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .intro-card,
     .info-card,
     .related-card,
-    .authority-box {
+    .example-card,
+    .trust-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
+      padding: 24px;
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .article-card {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 34px;
+    .intro-card h3,
+    .info-card h3,
+    .related-card h3,
+    .example-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
     }
 
-    .article-card h2 {
-      margin: 0 0 14px;
+    .intro-card p,
+    .info-card p,
+    .related-card p,
+    .example-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+      margin-top: 24px;
+    }
+
+    .highlight-box h2 {
+      margin: 0 0 12px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 500;
       letter-spacing: -1.2px;
-      color: #25251f;
     }
 
-    .article-card h3 {
-      margin: 30px 0 10px;
-      font-size: 22px;
-      color: #173f2b;
-      letter-spacing: -0.4px;
-    }
-
-    .article-card p,
-    .article-card li {
-      color: #536157;
-      line-height: 1.75;
-      font-weight: 620;
-      font-size: 16px;
-    }
-
-    .article-card ul {
-      padding-left: 22px;
-    }
-
-    .highlight-box {
-      background: #f7faf5;
-      border: 1px solid #e3eddf;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 22px 0;
-      color: #5f6d62;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 16px;
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      max-width: 900px;
     }
 
     .table-wrap {
@@ -268,13 +314,13 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
-      margin: 22px 0;
+      margin-top: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 640px;
+      min-width: 760px;
     }
 
     th,
@@ -282,6 +328,7 @@
       text-align: left;
       padding: 17px 20px;
       border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
     }
 
     th {
@@ -297,66 +344,82 @@
       line-height: 1.55;
     }
 
-    tr:last-child td { border-bottom: 0; }
-
-    .section-title {
-      margin: 0 0 18px;
-      font-size: 25px;
-      letter-spacing: -0.6px;
-      color: #10231a;
+    tr:last-child td {
+      border-bottom: 0;
     }
 
-    .section-desc {
-      color: #647168;
-      line-height: 1.7;
-      max-width: 860px;
-      margin: -6px 0 22px;
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-top: 18px;
+      font-weight: 600;
     }
 
-    .info-grid,
-    .related-grid,
-    .authority-list {
+    .cta-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
       display: grid;
+      grid-template-columns: 1fr auto;
       gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      margin-top: 26px;
     }
 
-    .info-grid {
-      grid-template-columns: repeat(3, 1fr);
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.6px;
     }
 
-    .related-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .authority-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .info-card,
-    .related-card {
-      padding: 24px;
-    }
-
-    .info-card h3,
-    .related-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-    }
-
-    .info-card p,
-    .related-card p {
+    .cta-box p {
       margin: 0;
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: #ffffff;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(47, 125, 99, 0.20);
+    }
+
+    .btn-light {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 850;
+      border: 1px solid #dfe9db;
     }
 
     .authority-box {
-      max-width: 980px;
-      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e5ece1;
       border-radius: 28px;
-      padding: 30px;
+      padding: 26px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
     }
 
     .authority-item {
@@ -368,6 +431,12 @@
       font-weight: 900;
       color: #173f2b;
       display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.09);
     }
 
     .authority-item span {
@@ -379,33 +448,8 @@
       line-height: 1.4;
     }
 
-    .related-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
-    }
-
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
-    }
-
     .faq {
-      max-width: 980px;
-      margin: 44px auto 0;
+      margin-top: 44px;
     }
 
     details {
@@ -425,6 +469,7 @@
     details p {
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
     footer {
@@ -439,10 +484,14 @@
     @media (max-width: 900px) {
       .nav {
         padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 12px;
       }
 
       .brand {
+        margin-bottom: 0;
         flex-shrink: 0;
         min-width: 138px;
         gap: 7px;
@@ -454,7 +503,9 @@
         margin-right: 5px;
       }
 
-      .brand-text strong { font-size: 13px; }
+      .brand-text strong {
+        font-size: 13px;
+      }
 
       .brand-text small {
         font-size: 5.5px;
@@ -468,6 +519,8 @@
         justify-content: flex-start;
         gap: 6px;
         overflow-x: auto;
+        padding-bottom: 0;
+        margin-left: 0;
       }
 
       .nav-links a {
@@ -477,6 +530,14 @@
 
       .hero {
         padding: 36px 20px 28px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
       }
 
       h1 {
@@ -488,42 +549,77 @@
       .hero p {
         font-size: 18px;
         line-height: 1.65;
+        margin-bottom: 22px;
       }
 
       .quick-stats {
-        justify-content: center;
+        justify-content: flex-start;
+      }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
       }
 
       .content {
         padding: 26px 16px 60px;
       }
 
-      .article-card {
-        padding: 24px;
-      }
-
-      .article-card h2 {
-        font-size: 32px;
-      }
-
+      .intro-grid,
       .info-grid,
       .related-grid,
+      .example-grid,
+      .trust-grid,
       .authority-list {
         grid-template-columns: 1fr;
       }
 
-      .authority-box {
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .highlight-box {
+        border-radius: 26px;
         padding: 24px;
+      }
+
+      .highlight-box h2 {
+        font-size: 30px;
       }
     }
 
     @media (max-width: 430px) {
-      h1 { font-size: 41px; }
-      .hero p { font-size: 17px; }
-      .article-card { padding: 22px; }
-      .content { padding-left: 14px; padding-right: 14px; }
+      h1 {
+        font-size: 41px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Singapore IR8A Guide 2026",
+    "description": "Singapore IR8A guide covering employment income, AIS, Form IR8A, Appendix 8A, Appendix 8B, IR8S and employee tax filing checks.",
+    "author": {
+      "@type": "Organization",
+      "name": "SG Salary Tools"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SG Salary Tools"
+    },
+    "mainEntityOfPage": "https://sgsalarytools.com/ir8a-guide.html"
+  }
+  </script>
 </head>
 
 <body>
@@ -551,275 +647,392 @@
     <div class="hero">
       <div class="eyebrow">Singapore tax filing guide 2026</div>
 
-      <h1>Singapore <em>IR8A guide</em> for employees and employers</h1>
+      <h1>Singapore <em>IR8A Guide</em> for employees and employers</h1>
 
       <p>
-        Learn what Form IR8A is, what employment income is reported, how AIS works,
-        and how IR8A affects employee income tax filing in Singapore.
+        Learn what Form IR8A is, how AIS works, what employment income is reported,
+        and what employees should check before filing Singapore income tax.
       </p>
 
       <div class="quick-stats">
-        <span>Employment Income</span>
+        <span>Form IR8A</span>
         <span>AIS Submission</span>
-        <span>Tax Filing</span>
-        <span>CPF & Benefits</span>
+        <span>Employment Income</span>
+        <span>Tax Filing Checks</span>
       </div>
     </div>
   </section>
 
   <main class="content">
-    <article class="article-card">
-      <section id="overview">
-        <h2>What is Form IR8A?</h2>
-
+    <section class="content-section">
+      <div class="highlight-box">
+        <h2>Quick answer</h2>
         <p>
-          Form IR8A is a Singapore employment income form prepared by employers. It reports an employee’s income for
-          the year, such as salary, bonus, allowances, benefits and other employment-related payments.
+          Form IR8A is the employment income form used in Singapore to report salary, bonus,
+          allowances, benefits and other employment income. If an employer is under AIS,
+          the employment income information is submitted directly to IRAS and may be pre-filled
+          when the employee files income tax.
         </p>
+      </div>
+    </section>
 
-        <p>
-          Employees usually use IR8A information when checking their annual income tax filing. Employers may submit the
-          employment income information directly to IRAS under the Auto-Inclusion Scheme, also known as AIS.
-        </p>
+    <section class="content-section">
+      <h2 class="section-title">What is Form IR8A?</h2>
+      <p class="section-desc">
+        Form IR8A is a Singapore employment income form prepared by employers. It reports an employee’s
+        income for the year, such as salary, bonus, allowances, director’s fees, benefits and other
+        employment-related payments.
+      </p>
 
-        <div class="highlight-box">
-          <strong>Simple rule:</strong>
-          IR8A is about employment income reporting. It helps IRAS and employees understand how much employment income
-          was earned during the year.
+      <div class="intro-grid">
+        <div class="intro-card">
+          <h3>For employees</h3>
+          <p>
+            IR8A helps employees check their annual employment income before filing Singapore personal income tax.
+          </p>
         </div>
-      </section>
 
-      <section id="who-needs">
-        <h3>Who needs Form IR8A?</h3>
-
-        <p>
-          Employers generally prepare IR8A information for employees who received employment income during the year.
-          This can include full-time employees, part-time employees, directors and other employees who received taxable
-          employment income.
-        </p>
-
-        <p>
-          If the employer is under AIS, the employer submits the employment income details electronically to IRAS.
-          Employees can usually view pre-filled income information when filing their personal income tax return.
-        </p>
-      </section>
-
-      <section id="ais">
-        <h3>What is AIS?</h3>
-
-        <p>
-          AIS means Auto-Inclusion Scheme. Under AIS, employers submit employees’ employment income information
-          directly to IRAS. This means the income details are automatically included in the employee’s tax assessment
-          system.
-        </p>
-
-        <p>
-          For employees, AIS can make tax filing easier because employment income may already be pre-filled. However,
-          employees should still check that the income details are correct before submitting their tax return.
-        </p>
-
-        <div class="highlight-box">
-          <strong>Important:</strong>
-          Even if your employer submits under AIS, you should still review your tax filing carefully. Pre-filled does
-          not mean you should ignore errors.
+        <div class="intro-card">
+          <h3>For employers</h3>
+          <p>
+            Employers use IR8A information to report employee income to IRAS, especially if they are under AIS.
+          </p>
         </div>
-      </section>
 
-      <section id="items">
-        <h3>What income is shown in IR8A?</h3>
-
-        <p>
-          IR8A can include different types of employment income. The exact items depend on what the employee received
-          during the year.
-        </p>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>IR8A Item</th>
-                <th>What It Means</th>
-                <th>Example</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Salary</td>
-                <td>Regular employment salary earned during the year.</td>
-                <td>Monthly salary from January to December</td>
-              </tr>
-
-              <tr>
-                <td>Bonus</td>
-                <td>Bonus, AWS, performance bonus or other incentive payments.</td>
-                <td>13th month payment or annual bonus</td>
-              </tr>
-
-              <tr>
-                <td>Allowances</td>
-                <td>Employment allowances paid to the employee.</td>
-                <td>Transport allowance, meal allowance or fixed allowance</td>
-              </tr>
-
-              <tr>
-                <td>Director’s fees</td>
-                <td>Fees paid to company directors.</td>
-                <td>Director fee approved and paid</td>
-              </tr>
-
-              <tr>
-                <td>Benefits-in-kind</td>
-                <td>Taxable non-cash benefits provided by the employer.</td>
-                <td>Housing benefit, car benefit or other staff benefits</td>
-              </tr>
-
-              <tr>
-                <td>Employee CPF</td>
-                <td>Employee CPF contributions relevant to tax relief reporting.</td>
-                <td>Employee CPF deducted from salary</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="intro-card">
+          <h3>For tax filing</h3>
+          <p>
+            IR8A information may be used to pre-fill employment income in the employee’s tax filing system.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="related-forms">
-        <h3>IR8A, IR8S, Appendix 8A and Appendix 8B</h3>
+    <section class="content-section">
+      <h2 class="section-title">Who needs Form IR8A?</h2>
+      <p class="section-desc">
+        Employers generally prepare IR8A information for employees who received employment income during the year.
+        This can include full-time employees, part-time employees, directors and employees who received taxable
+        employment income.
+      </p>
 
-        <p>
-          IR8A is the main employment income form, but some employees may have additional forms depending on their
-          employment benefits or CPF situation.
-        </p>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Form</th>
-                <th>Purpose</th>
-                <th>Common Situation</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Form IR8A</td>
-                <td>Reports employment income for the year.</td>
-                <td>Salary, bonus, allowances and employment income.</td>
-              </tr>
-
-              <tr>
-                <td>Form IR8S</td>
-                <td>Reports excess or voluntary CPF contributions where applicable.</td>
-                <td>Additional CPF-related reporting situations.</td>
-              </tr>
-
-              <tr>
-                <td>Appendix 8A</td>
-                <td>Reports benefits-in-kind.</td>
-                <td>Housing, car or other taxable employee benefits.</td>
-              </tr>
-
-              <tr>
-                <td>Appendix 8B</td>
-                <td>Reports gains or profits from employee share options or share ownership plans.</td>
-                <td>Stock options, share plans or employee equity benefits.</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Full-time employees</h3>
+          <p>
+            Regular employees who receive salary, bonus or allowances may have employment income reported in IR8A.
+          </p>
         </div>
-      </section>
 
-      <section id="employee">
-        <h3>What employees should check</h3>
-
-        <p>
-          Employees should compare IR8A income with payslips, CPF records, bonus letters and bank payments. This helps
-          identify missing bonus, wrong salary period, incorrect allowance classification or CPF reporting errors.
-        </p>
-
-        <ul>
-          <li>Check your total salary for the year.</li>
-          <li>Check whether bonus and AWS are included correctly.</li>
-          <li>Check allowances and benefits-in-kind.</li>
-          <li>Check CPF-related information.</li>
-          <li>Check whether your employer submitted under AIS.</li>
-          <li>Check your IRAS pre-filled income before filing.</li>
-        </ul>
-      </section>
-
-      <section id="employer">
-        <h3>What employers should prepare</h3>
-
-        <p>
-          Employers should keep accurate payroll records throughout the year so IR8A information can be prepared
-          correctly. Payroll errors can affect employees’ tax filing and may create follow-up questions from employees
-          or IRAS.
-        </p>
-
-        <p>
-          Useful records include monthly payroll summaries, payslips, CPF contribution records, bonus approvals,
-          director fee approvals, benefit records and staff movement records.
-        </p>
-      </section>
-
-      <section id="deadline">
-        <h3>When is IR8A submitted?</h3>
-
-        <p>
-          Employers under AIS generally submit employment income information to IRAS after the year ends and before the
-          tax filing season. Employees should check the latest IRAS deadline each year because filing dates and
-          administrative requirements may change.
-        </p>
-
-        <p>
-          For salary planning content, it is safer to tell users to confirm the latest AIS and IR8A deadline directly
-          with IRAS instead of relying only on an old saved date.
-        </p>
-      </section>
-
-      <section id="cpf-tax">
-        <h3>How IR8A connects with CPF and tax</h3>
-
-        <p>
-          IR8A is for income tax reporting, while CPF contribution is reported and paid under CPF rules. However, both
-          are connected because salary, bonus and CPF contributions affect an employee’s tax position.
-        </p>
-
-        <p>
-          Employee CPF may be relevant for CPF relief, while bonus and allowances may increase taxable employment
-          income. This is why employees should compare payslip, CPF and IR8A information together.
-        </p>
-      </section>
-
-      <section id="mistakes">
-        <h3>Common IR8A mistakes</h3>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Forgetting bonus</h3>
-            <p>Bonus, AWS and incentives should be reviewed carefully when checking annual income.</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Ignoring benefits</h3>
-            <p>Benefits-in-kind may need separate reporting through Appendix 8A.</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Not checking AIS data</h3>
-            <p>Employees should still review pre-filled income before submitting tax filing.</p>
-          </div>
+        <div class="info-card">
+          <h3>Part-time employees</h3>
+          <p>
+            Part-time employees may also be included if they received reportable employment income during the year.
+          </p>
         </div>
-      </section>
-    </article>
+
+        <div class="info-card">
+          <h3>Directors</h3>
+          <p>
+            Director’s fees and employment-related payments may need to be reported depending on the situation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What is AIS?</h2>
+      <p class="section-desc">
+        AIS means Auto-Inclusion Scheme. Under AIS, employers submit employees’ employment income information
+        directly to IRAS. This can make tax filing easier because the employee’s income may already be pre-filled.
+      </p>
+
+      <div class="highlight-box">
+        <h2>Important reminder</h2>
+        <p>
+          Pre-filled does not mean automatically correct. Employees should still review salary, bonus,
+          allowances, CPF-related information and benefits before submitting their income tax return.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What income is shown in IR8A?</h2>
+      <p class="section-desc">
+        IR8A can include different types of employment income. The exact items depend on what the employee received
+        during the year.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>IR8A Item</th>
+              <th>What It Means</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Salary</td>
+              <td>Regular employment salary earned during the year.</td>
+              <td>Monthly salary from January to December.</td>
+            </tr>
+
+            <tr>
+              <td>Bonus</td>
+              <td>Bonus, AWS, performance bonus or other incentive payments.</td>
+              <td>13th month payment or annual performance bonus.</td>
+            </tr>
+
+            <tr>
+              <td>Allowances</td>
+              <td>Employment allowances paid to the employee.</td>
+              <td>Transport allowance, meal allowance or fixed allowance.</td>
+            </tr>
+
+            <tr>
+              <td>Director’s fees</td>
+              <td>Fees paid to company directors.</td>
+              <td>Director fee approved and paid during the year.</td>
+            </tr>
+
+            <tr>
+              <td>Benefits-in-kind</td>
+              <td>Taxable non-cash benefits provided by the employer.</td>
+              <td>Housing benefit, car benefit or other staff benefits.</td>
+            </tr>
+
+            <tr>
+              <td>Employee CPF</td>
+              <td>Employee CPF contributions relevant to tax relief reporting.</td>
+              <td>Employee CPF deducted from salary.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">IR8A, IR8S, Appendix 8A and Appendix 8B</h2>
+      <p class="section-desc">
+        IR8A is the main employment income form, but some employees may have additional forms depending on CPF,
+        benefits or employee share plan situations.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Form</th>
+              <th>Purpose</th>
+              <th>Common Situation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Form IR8A</td>
+              <td>Reports employment income for the year.</td>
+              <td>Salary, bonus, allowances and employment income.</td>
+            </tr>
+
+            <tr>
+              <td>Form IR8S</td>
+              <td>Reports CPF-related situations where applicable.</td>
+              <td>Excess or voluntary CPF contribution situations.</td>
+            </tr>
+
+            <tr>
+              <td>Appendix 8A</td>
+              <td>Reports benefits-in-kind.</td>
+              <td>Housing, car or other taxable employee benefits.</td>
+            </tr>
+
+            <tr>
+              <td>Appendix 8B</td>
+              <td>Reports gains or profits from employee share options or share ownership plans.</td>
+              <td>Stock options, share plans or employee equity benefits.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        Note: Not every employee will have IR8S, Appendix 8A or Appendix 8B. These forms depend on the employee’s
+        CPF, benefit and share plan situation.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What employees should check</h2>
+      <p class="section-desc">
+        Employees should compare IR8A information with payslips, CPF records, bonus letters and bank payments.
+        This helps identify missing bonus, wrong salary period, incorrect allowance classification or CPF reporting errors.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <h3>Salary and bonus</h3>
+          <p>
+            Check whether your total annual salary, AWS, bonus and incentives are included correctly.
+          </p>
+        </div>
+
+        <div class="example-card">
+          <h3>Allowances and benefits</h3>
+          <p>
+            Check transport allowance, meal allowance, housing benefit, car benefit or other staff benefits.
+          </p>
+        </div>
+
+        <div class="example-card">
+          <h3>CPF and tax filing</h3>
+          <p>
+            Compare your CPF records and IRAS pre-filled income before submitting your tax return.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <div>
+          <h2>Want to estimate your income tax?</h2>
+          <p>
+            Use our Singapore income tax calculator to estimate annual tax based on income, residency and relief.
+          </p>
+        </div>
+
+        <a class="btn" href="income-tax-calculator.html">Use Income Tax Calculator</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">What employers should prepare</h2>
+      <p class="section-desc">
+        Employers should keep accurate payroll records throughout the year so IR8A information can be prepared correctly.
+        Payroll errors can affect employees’ tax filing and may create follow-up questions from employees or IRAS.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Payroll records</h3>
+          <p>
+            Keep monthly payroll summaries, payslips, employee movement records and payroll adjustment details.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>CPF records</h3>
+          <p>
+            Keep CPF contribution records so employees can compare CPF details with salary and tax filing information.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Bonus and benefits</h3>
+          <p>
+            Keep bonus approvals, director fee approvals, benefit records and supporting documents.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">When is IR8A submitted?</h2>
+      <p class="section-desc">
+        Employers under AIS generally submit employment income information to IRAS after the year ends and before
+        the tax filing season. Employees should check the latest IRAS deadline each year because filing dates and
+        administrative requirements may change.
+      </p>
+
+      <div class="note-box">
+        For salary planning content, it is safer to confirm the latest AIS and IR8A deadline directly with IRAS
+        instead of relying only on an old saved date.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">How IR8A connects with CPF and tax</h2>
+      <p class="section-desc">
+        IR8A is for income tax reporting, while CPF contribution is reported and paid under CPF rules. However,
+        both are connected because salary, bonus and CPF contributions affect an employee’s tax position.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Connected To</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Salary</td>
+              <td>Income tax and CPF</td>
+              <td>Salary affects both employment income reporting and CPF contribution planning.</td>
+            </tr>
+
+            <tr>
+              <td>Bonus</td>
+              <td>Income tax, CPF and annual income</td>
+              <td>Bonus may increase annual taxable income and may also affect CPF treatment.</td>
+            </tr>
+
+            <tr>
+              <td>Employee CPF</td>
+              <td>CPF relief and tax filing</td>
+              <td>Employee CPF may be relevant when checking CPF relief and tax filing details.</td>
+            </tr>
+
+            <tr>
+              <td>Benefits-in-kind</td>
+              <td>Taxable employment benefits</td>
+              <td>Certain non-cash benefits may need separate reporting through Appendix 8A.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Common IR8A mistakes</h2>
+      <p class="section-desc">
+        These are common areas employees and employers should review before relying on IR8A or AIS information.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Forgetting bonus</h3>
+          <p>
+            Bonus, AWS and incentives should be reviewed carefully when checking annual employment income.
+          </p>
+        </div>
+
+        <div class="trust-card">
+          <h3>Ignoring benefits</h3>
+          <p>
+            Benefits-in-kind may need separate reporting through Appendix 8A if they are taxable.
+          </p>
+        </div>
+
+        <div class="trust-card">
+          <h3>Not checking AIS data</h3>
+          <p>
+            Employees should still review pre-filled income before submitting their tax filing.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section">
       <div class="authority-box">
         <h2 class="section-title">Official sources to check</h2>
         <p class="section-desc">
-          For official IR8A, AIS and employment income reporting rules, check IRAS directly.
+          For official IR8A, AIS and employment income reporting rules, always check IRAS directly.
         </p>
 
         <div class="authority-list">
@@ -869,21 +1082,21 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="calculators.html">View All Calculators →</a>
       </div>
     </section>
 
     <section class="content-section">
       <h2 class="section-title">Related Singapore salary guides</h2>
       <p class="section-desc">
-        Learn more about tax filing, salary, payslip and CPF in Singapore.
+        Learn more about Singapore tax filing, salary, payslip and CPF.
       </p>
 
       <div class="related-grid">
         <a class="related-card" href="income-tax-guide.html">
           <h3>Income Tax Guide</h3>
-          <p>Learn how Singapore income tax works for employees.</p>
+          <p>Learn how Singapore income tax works for employees and tax residents.</p>
         </a>
 
         <a class="related-card" href="tax-resident-guide.html">
@@ -902,12 +1115,12 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="guides.html">View All Guides →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="guides.html">View All Guides →</a>
       </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section class="faq">
       <h2 class="section-title">Frequently Asked Questions</h2>
 
       <details>
@@ -920,8 +1133,7 @@
       <details>
         <summary>Is IR8A for employees or employers?</summary>
         <p>
-          Employers prepare or submit IR8A information. Employees use the information to check employment income when
-          filing income tax.
+          Employers prepare or submit IR8A information. Employees use the information to check employment income when filing income tax.
         </p>
       </details>
 
@@ -935,8 +1147,8 @@
       <details>
         <summary>Do employees need to submit IR8A themselves?</summary>
         <p>
-          If the employer submits through AIS, the employee’s employment income is usually pre-filled in the tax filing
-          system. Employees should still check the details carefully.
+          If the employer submits through AIS, the employee’s employment income is usually pre-filled in the tax filing system.
+          Employees should still check the details carefully.
         </p>
       </details>
 
@@ -950,8 +1162,7 @@
       <details>
         <summary>What is Appendix 8A?</summary>
         <p>
-          Appendix 8A is used for reporting benefits-in-kind, such as certain housing, car or other taxable employee
-          benefits.
+          Appendix 8A is used for reporting benefits-in-kind, such as certain housing, car or other taxable employee benefits.
         </p>
       </details>
 
@@ -979,8 +1190,7 @@
       <details>
         <summary>Is this IR8A guide official tax advice?</summary>
         <p>
-          No. This guide is for general salary and tax planning only. Check IRAS or a qualified tax adviser for official
-          treatment.
+          No. This guide is for general salary and tax planning only. Check IRAS or a qualified tax adviser for official treatment.
         </p>
       </details>
     </section>
