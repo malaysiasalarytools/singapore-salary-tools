@@ -9,13 +9,11 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta name="description" content="Singapore Payslip Guide 2026. Learn what an itemised payslip should include, when employers must issue payslips, CPF deductions, salary breakdown, overtime, allowances and net pay." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow">
 
   <style>
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -25,10 +23,7 @@
       color: #10231a;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .topbar {
       background: rgba(255, 255, 255, 0.94);
@@ -154,10 +149,10 @@
     }
 
     h1 {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto 20px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.2vw, 72px);
+      font-size: clamp(42px, 6.4vw, 74px);
       line-height: 0.96;
       letter-spacing: -3px;
       font-weight: 500;
@@ -184,7 +179,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 0 auto;
-      max-width: 820px;
+      max-width: 860px;
     }
 
     .quick-stats span {
@@ -204,115 +199,99 @@
       padding: 34px 22px 70px;
     }
 
-    .content-section {
-      margin-top: 44px;
-    }
+    .content-section { margin-top: 44px; }
 
     .section-title {
       margin: 0 0 18px;
-      font-size: 25px;
-      letter-spacing: -0.6px;
+      font-size: 28px;
+      letter-spacing: -0.8px;
       color: #10231a;
     }
 
     .section-desc {
       color: #647168;
-      line-height: 1.7;
+      line-height: 1.75;
       max-width: 860px;
       margin: -6px 0 22px;
+      font-weight: 600;
     }
 
-    .guide-layout {
+    .intro-grid,
+    .info-grid,
+    .related-grid,
+    .example-grid,
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
     }
 
-    .article-card,
-    .side-card,
+    .related-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .intro-card,
     .info-card,
     .related-card,
-    .authority-box {
+    .example-card,
+    .trust-card {
       background: white;
       border: 1px solid #e5ece1;
       border-radius: 24px;
+      padding: 24px;
       box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
     }
 
-    .article-card {
-      padding: 30px;
+    .intro-card h3,
+    .info-card h3,
+    .related-card h3,
+    .example-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
     }
 
-    .article-card h2 {
-      margin: 0 0 14px;
+    .intro-card p,
+    .info-card p,
+    .related-card p,
+    .example-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+      margin-top: 24px;
+    }
+
+    .highlight-box h2 {
+      margin: 0 0 12px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 34px;
       font-weight: 500;
       letter-spacing: -1.2px;
-      color: #25251f;
     }
 
-    .article-card h3 {
-      margin: 30px 0 10px;
-      font-size: 22px;
-      color: #173f2b;
-      letter-spacing: -0.4px;
-    }
-
-    .article-card p,
-    .article-card li {
-      color: #536157;
-      line-height: 1.75;
-      font-weight: 620;
-      font-size: 16px;
-    }
-
-    .article-card ul {
-      padding-left: 22px;
-    }
-
-    .highlight-box {
-      background: #f7faf5;
-      border: 1px solid #e3eddf;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 22px 0;
-      color: #5f6d62;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .highlight-box strong {
-      display: block;
-      color: #173f2b;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .side-card {
-      padding: 22px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      color: #173f2b;
-    }
-
-    .side-card a {
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid #edf2ea;
-      color: #5d635b;
-      font-weight: 850;
-      font-size: 14px;
-    }
-
-    .side-card a:last-child {
-      border-bottom: 0;
+    .highlight-box p {
+      margin: 0;
+      color: #d9eee0;
+      line-height: 1.7;
+      font-weight: 650;
+      max-width: 900px;
     }
 
     .table-wrap {
@@ -321,13 +300,13 @@
       border: 1px solid #e5ece1;
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
-      margin: 22px 0;
+      margin-top: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 680px;
+      min-width: 760px;
     }
 
     th,
@@ -335,6 +314,7 @@
       text-align: left;
       padding: 17px 20px;
       border-bottom: 1px solid #edf2ea;
+      vertical-align: top;
     }
 
     th {
@@ -350,55 +330,80 @@
       line-height: 1.55;
     }
 
-    tr:last-child td {
-      border-bottom: 0;
+    tr:last-child td { border-bottom: 0; }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-top: 18px;
+      font-weight: 600;
     }
 
-    .info-grid,
-    .related-grid,
-    .authority-list {
+    .cta-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr auto;
       gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      margin-top: 26px;
     }
 
-    .related-grid {
-      grid-template-columns: repeat(4, 1fr);
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -0.6px;
     }
 
-    .info-card,
-    .related-card,
+    .cta-box p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: #ffffff;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(47, 125, 99, 0.20);
+    }
+
+    .btn-light {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 850;
+      border: 1px solid #dfe9db;
+    }
+
     .authority-box {
-      padding: 24px;
-    }
-
-    .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
       border-radius: 28px;
       padding: 26px;
       box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
     }
 
-    .info-card h3,
-    .related-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-    }
-
-    .info-card p,
-    .related-card p {
-      margin: 0;
-      color: #647168;
-      line-height: 1.65;
-    }
-
-    .related-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
     }
 
     .authority-item {
@@ -427,24 +432,7 @@
       line-height: 1.4;
     }
 
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
-    }
-
-    .faq {
-      margin-top: 44px;
-    }
+    .faq { margin-top: 44px; }
 
     details {
       background: white;
@@ -463,6 +451,7 @@
     details p {
       color: #647168;
       line-height: 1.65;
+      font-weight: 600;
     }
 
     footer {
@@ -477,6 +466,7 @@
     @media (max-width: 900px) {
       .nav {
         padding: 10px 18px;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
@@ -495,9 +485,7 @@
         margin-right: 5px;
       }
 
-      .brand-text strong {
-        font-size: 13px;
-      }
+      .brand-text strong { font-size: 13px; }
 
       .brand-text small {
         font-size: 5.5px;
@@ -522,6 +510,14 @@
 
       .hero {
         padding: 36px 20px 28px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
       }
 
       h1 {
@@ -533,49 +529,65 @@
       .hero p {
         font-size: 18px;
         line-height: 1.65;
+        margin-bottom: 22px;
       }
 
-      .quick-stats {
-        justify-content: flex-start;
+      .quick-stats { justify-content: flex-start; }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
       }
 
-      .content {
-        padding: 26px 16px 60px;
-      }
+      .content { padding: 26px 16px 60px; }
 
-      .guide-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .side-card {
-        position: static;
-      }
-
-      .article-card {
-        padding: 24px;
-      }
-
-      .article-card h2 {
-        font-size: 32px;
-      }
-
+      .intro-grid,
       .info-grid,
       .related-grid,
+      .example-grid,
+      .trust-grid,
       .authority-list {
         grid-template-columns: 1fr;
       }
+
+      .cta-box { grid-template-columns: 1fr; }
+      .btn { text-align: center; }
+
+      .highlight-box {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .highlight-box h2 { font-size: 30px; }
     }
 
     @media (max-width: 430px) {
-      h1 {
-        font-size: 41px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
+      h1 { font-size: 41px; }
+      .hero p { font-size: 17px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Singapore Payslip Guide 2026",
+    "description": "Singapore itemised payslip guide covering salary breakdown, CPF deductions, allowances, overtime, deductions and net pay.",
+    "author": {
+      "@type": "Organization",
+      "name": "SG Salary Tools"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SG Salary Tools",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sgsalarytools.com/logo-icon.png"
+      }
+    },
+    "mainEntityOfPage": "https://sgsalarytools.com/payslip-guide.html"
+  }
+  </script>
 </head>
 
 <body>
@@ -620,256 +632,377 @@
   </section>
 
   <main class="content">
-    <div class="guide-layout">
-      <article class="article-card">
-        <section id="overview">
-          <h2>What is an itemised payslip?</h2>
+    <section class="content-section">
+      <div class="highlight-box">
+        <h2>Quick answer</h2>
+        <p>
+          An itemised payslip is a salary statement that explains how your pay is calculated for a salary period.
+          It should show relevant salary items such as basic salary, allowances, additional payments, deductions,
+          overtime details if applicable, and the final net salary paid.
+        </p>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">What is an itemised payslip?</h2>
+      <p class="section-desc">
+        An itemised payslip is a salary statement that shows how your pay is calculated for a salary period.
+        It helps employees understand their basic salary, allowances, overtime pay, CPF deduction, other deductions
+        and final net salary paid.
+      </p>
+
+      <div class="intro-grid">
+        <div class="intro-card">
+          <h3>For employees</h3>
           <p>
-            An itemised payslip is a salary statement that shows how your pay is calculated for a salary period.
-            It helps employees understand their basic salary, allowances, overtime pay, CPF deduction, other deductions
-            and final net salary paid.
+            A payslip helps employees check salary, deductions, CPF and net pay clearly every pay period.
           </p>
+        </div>
 
+        <div class="intro-card">
+          <h3>For employers</h3>
           <p>
-            In Singapore, employers must issue itemised payslips to employees covered by the Employment Act.
-            A payslip can be given in soft copy or hard copy, including handwritten format, as long as the required
-            information is clearly shown.
+            A payslip creates a clear payroll record and helps reduce salary disputes or confusion.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Simple rule:</strong>
-            Your payslip should explain how your salary is calculated, not just show one final payment amount.
-          </div>
-        </section>
-
-        <section id="when">
-          <h3>When should employers issue payslips?</h3>
-
+        <div class="intro-card">
+          <h3>For proof of income</h3>
           <p>
-            Employers should give the itemised payslip together with salary payment. If this is not possible, the payslip
-            should be given within three working days after payment.
+            Payslips may be useful for loans, rental applications, job applications, tax filing and CPF checks.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">When should employers issue payslips?</h2>
+      <p class="section-desc">
+        Employers should give the itemised payslip together with salary payment. If this is not possible, the payslip
+        should be given within three working days after payment.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Normal salary payment</h3>
           <p>
-            If employment is terminated or dismissed, the payslip should be given together with the outstanding salary.
-            This helps the employee check final pay, unused leave, deductions and other salary items before leaving.
+            The payslip should usually be given together with the salary payment for that salary period.
           </p>
-        </section>
+        </div>
 
-        <section id="items">
-          <h3>What should a Singapore payslip include?</h3>
-
+        <div class="info-card">
+          <h3>If not possible</h3>
           <p>
-            A payslip should include the applicable salary details for the relevant salary period. If an item does not
-            apply, it does not need to appear. For example, if you did not work overtime, overtime hours and overtime pay
-            may not be shown.
+            If the payslip cannot be given together with salary, it should be given within three working days after payment.
           </p>
+        </div>
 
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Payslip Item</th>
-                  <th>What It Means</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Employer and employee name</td>
-                  <td>Identifies the company and employee receiving salary.</td>
-                  <td>ABC Pte Ltd / Tan Wei Ming</td>
-                </tr>
-
-                <tr>
-                  <td>Date of payment</td>
-                  <td>The date salary is paid to the employee.</td>
-                  <td>31 January 2026</td>
-                </tr>
-
-                <tr>
-                  <td>Salary period</td>
-                  <td>The start and end date of the salary period.</td>
-                  <td>1 January 2026 to 31 January 2026</td>
-                </tr>
-
-                <tr>
-                  <td>Basic salary</td>
-                  <td>Your fixed salary before allowances, deductions and CPF.</td>
-                  <td>S$4,000</td>
-                </tr>
-
-                <tr>
-                  <td>Allowances</td>
-                  <td>Fixed or ad-hoc allowances paid for the salary period.</td>
-                  <td>Transport allowance S$150</td>
-                </tr>
-
-                <tr>
-                  <td>Additional payments</td>
-                  <td>Other payments such as bonus, rest day pay or public holiday pay.</td>
-                  <td>Bonus S$1,000</td>
-                </tr>
-
-                <tr>
-                  <td>Deductions</td>
-                  <td>Fixed or ad-hoc deductions from salary.</td>
-                  <td>Employee CPF / no-pay leave deduction</td>
-                </tr>
-
-                <tr>
-                  <td>Overtime details</td>
-                  <td>Overtime hours, overtime pay and overtime payment period if applicable.</td>
-                  <td>8 overtime hours / S$180 overtime pay</td>
-                </tr>
-
-                <tr>
-                  <td>Net salary paid</td>
-                  <td>The final salary amount paid after additions and deductions.</td>
-                  <td>S$3,350</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="cpf">
-          <h3>How CPF appears on a payslip</h3>
-
+        <div class="info-card">
+          <h3>Final salary</h3>
           <p>
-            For Singapore Citizens and Singapore Permanent Residents who are eligible for CPF, the payslip usually shows
-            the employee CPF deduction. This is deducted from your gross salary before you receive your net pay.
+            If employment ends, the payslip should be given together with the outstanding salary.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">What should a Singapore payslip include?</h2>
+      <p class="section-desc">
+        A payslip should include the applicable salary details for the relevant salary period. If an item does not apply,
+        it does not need to appear. For example, if you did not work overtime, overtime hours and overtime pay may not be shown.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Payslip Item</th>
+              <th>What It Means</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Employer and employee name</td>
+              <td>Identifies the company and employee receiving salary.</td>
+              <td>ABC Pte Ltd / Tan Wei Ming</td>
+            </tr>
+
+            <tr>
+              <td>Date of payment</td>
+              <td>The date salary is paid to the employee.</td>
+              <td>31 January 2026</td>
+            </tr>
+
+            <tr>
+              <td>Salary period</td>
+              <td>The start and end date of the salary period.</td>
+              <td>1 January 2026 to 31 January 2026</td>
+            </tr>
+
+            <tr>
+              <td>Basic salary</td>
+              <td>Your fixed salary before allowances, deductions and CPF.</td>
+              <td>S$4,000</td>
+            </tr>
+
+            <tr>
+              <td>Allowances</td>
+              <td>Fixed or ad-hoc allowances paid for the salary period.</td>
+              <td>Transport allowance S$150</td>
+            </tr>
+
+            <tr>
+              <td>Additional payments</td>
+              <td>Other payments such as bonus, rest day pay or public holiday pay.</td>
+              <td>Bonus S$1,000</td>
+            </tr>
+
+            <tr>
+              <td>Deductions</td>
+              <td>Fixed or ad-hoc deductions from salary.</td>
+              <td>Employee CPF / no-pay leave deduction</td>
+            </tr>
+
+            <tr>
+              <td>Overtime details</td>
+              <td>Overtime hours, overtime pay and overtime payment period if applicable.</td>
+              <td>8 overtime hours / S$180 overtime pay</td>
+            </tr>
+
+            <tr>
+              <td>Net salary paid</td>
+              <td>The final salary amount paid after additions and deductions.</td>
+              <td>S$3,350</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">How CPF appears on a payslip</h2>
+      <p class="section-desc">
+        For Singapore Citizens and Singapore Permanent Residents who are eligible for CPF, the payslip usually shows
+        the employee CPF deduction. This is deducted from your gross salary before you receive your net pay.
+      </p>
+
+      <div class="highlight-box">
+        <h2>CPF reminder</h2>
+        <p>
+          Employer CPF is paid separately by the employer and does not reduce your take-home salary. Some payslips may show
+          employer CPF for information, but the main deduction affecting your cash salary is employee CPF.
+        </p>
+      </div>
+
+      <div class="note-box">
+        Example: If your gross salary is S$5,000 and employee CPF is S$1,000, your salary before tax and other deductions may be S$4,000.
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Allowances, claims and reimbursements</h2>
+      <p class="section-desc">
+        Allowances are payments given on top of basic salary. Common examples include transport allowance, meal allowance,
+        shift allowance, phone allowance or fixed monthly allowance. Reimbursements are usually repayments for expenses you
+        paid on behalf of the company, such as business travel or client entertainment claims.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <h3>Allowances</h3>
           <p>
-            Employer CPF is paid separately by the employer and does not reduce your take-home salary. Some payslips may
-            show employer CPF for information, but the main deduction affecting your cash salary is employee CPF.
+            Transport, meal, shift, phone or fixed monthly allowances may be shown as salary additions.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Example:</strong>
-            If your gross salary is S$5,000 and employee CPF is S$1,000, your salary before tax and other deductions may
-            be S$4,000.
-          </div>
-        </section>
-
-        <section id="allowances">
-          <h3>Allowances, claims and reimbursements</h3>
-
+        <div class="example-card">
+          <h3>Claims</h3>
           <p>
-            Allowances are payments given on top of basic salary. Common examples include transport allowance, meal
-            allowance, shift allowance, phone allowance or fixed monthly allowance.
+            Claims may include business-related expenses submitted under company policy.
           </p>
+        </div>
 
+        <div class="example-card">
+          <h3>Reimbursements</h3>
           <p>
-            Reimbursements are usually repayments for expenses you paid on behalf of the company, such as business travel
-            or client entertainment claims. Depending on company practice, reimbursements may be shown separately from
-            salary items.
+            Reimbursements may be shown separately from salary items depending on company practice.
           </p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="deductions">
-          <h3>Common salary deductions</h3>
+    <section class="content-section">
+      <h2 class="section-title">Common salary deductions</h2>
+      <p class="section-desc">
+        Deductions reduce your salary. Some deductions are regular, such as employee CPF. Others may happen only in certain
+        months, such as no-pay leave, absence from work, salary advance recovery or approved deductions.
+      </p>
 
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Deduction Type</th>
+              <th>What It Means</th>
+              <th>Common Situation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Employee CPF</td>
+              <td>CPF deducted from gross salary for CPF-eligible employees.</td>
+              <td>Regular monthly CPF deduction.</td>
+            </tr>
+
+            <tr>
+              <td>No-pay leave</td>
+              <td>Salary deducted for approved unpaid leave.</td>
+              <td>Employee takes unpaid leave during the salary period.</td>
+            </tr>
+
+            <tr>
+              <td>Unpaid absence</td>
+              <td>Deduction for absence from work without paid leave coverage.</td>
+              <td>Absent without sufficient paid leave.</td>
+            </tr>
+
+            <tr>
+              <td>Salary advance recovery</td>
+              <td>Deduction to recover salary paid in advance.</td>
+              <td>Employee received a salary advance earlier.</td>
+            </tr>
+
+            <tr>
+              <td>Other authorised deductions</td>
+              <td>Other deductions allowed under company policy or agreement.</td>
+              <td>Approved deductions or company-specific payroll items.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Overtime pay on payslip</h2>
+      <p class="section-desc">
+        If overtime applies to you, the payslip should show overtime hours worked, overtime pay and the overtime payment
+        period if it is different from the normal salary period.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Overtime hours</h3>
           <p>
-            Deductions reduce your salary. Some deductions are regular, such as employee CPF. Others may happen only in
-            certain months, such as no-pay leave, absence from work, salary advance recovery or approved deductions.
+            Check whether the number of overtime hours shown matches your work records.
           </p>
+        </div>
 
+        <div class="info-card">
+          <h3>Overtime rate</h3>
           <p>
-            A good payslip should make deductions clear so employees can understand why net pay is lower than expected.
+            Check whether overtime pay is calculated using the correct rate and pay period.
           </p>
+        </div>
 
-          <ul>
-            <li>Employee CPF contribution</li>
-            <li>No-pay leave deduction</li>
-            <li>Unpaid absence deduction</li>
-            <li>Salary advance recovery</li>
-            <li>Other authorised deductions</li>
-          </ul>
-        </section>
-
-        <section id="overtime">
-          <h3>Overtime pay on payslip</h3>
-
+        <div class="info-card">
+          <h3>Payment period</h3>
           <p>
-            If overtime applies to you, the payslip should show overtime hours worked, overtime pay and the overtime
-            payment period if it is different from the normal salary period.
+            If overtime is paid later, the payslip should make the payment period clear.
           </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">Gross pay vs net pay</h2>
+      <p class="section-desc">
+        Gross pay is your salary before deductions. Net pay is the final amount paid to your bank account after employee
+        CPF and other deductions. When people talk about “take-home pay”, they usually mean net pay.
+      </p>
+
+      <div class="highlight-box">
+        <h2>Simple formula</h2>
+        <p>
+          Net pay = Basic salary + allowances + additional payments − employee CPF − other deductions.
+        </p>
+      </div>
+
+      <div class="cta-box">
+        <div>
+          <h2>Want to estimate your take-home pay?</h2>
           <p>
-            This is especially important for employees who are paid monthly but still entitled to overtime under the
-            relevant employment rules. The payslip helps both employee and employer keep a clear record of overtime pay.
+            Use our Singapore salary calculator to estimate take-home pay after CPF and income tax.
           </p>
-        </section>
+        </div>
 
-        <section id="netpay">
-          <h3>Gross pay vs net pay</h3>
+        <a class="btn" href="index.html">Use Salary Calculator</a>
+      </div>
+    </section>
 
+    <section class="content-section">
+      <h2 class="section-title">How long should payslip records be kept?</h2>
+      <p class="section-desc">
+        Employers should keep records of payslips issued. For current employees, the latest two years of records should be kept.
+        For ex-employees, the last two years of records should be kept for one year after the employee leaves employment.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Current employees</h3>
           <p>
-            Gross pay is your salary before deductions. Net pay is the final amount paid to your bank account after
-            employee CPF and other deductions. When people talk about “take-home pay”, they usually mean net pay.
+            Employers should keep the latest two years of payslip records for current employees.
           </p>
+        </div>
 
-          <div class="highlight-box">
-            <strong>Simple formula:</strong>
-            Net pay = Basic salary + allowances + additional payments − CPF − other deductions
-          </div>
-        </section>
-
-        <section id="records">
-          <h3>How long should payslip records be kept?</h3>
-
+        <div class="trust-card">
+          <h3>Ex-employees</h3>
           <p>
-            Employers should keep records of payslips issued. For current employees, the latest two years of records
-            should be kept. For ex-employees, the last two years of records should be kept for one year after the
-            employee leaves employment.
+            Employers should keep the last two years of records for one year after the employee leaves.
           </p>
+        </div>
 
+        <div class="trust-card">
+          <h3>Employee copy</h3>
           <p>
-            Employees should also keep their payslips because they may be useful for income proof, loan applications,
-            tax filing, CPF checking, job applications and salary disputes.
+            Employees should keep their payslips for CPF, tax, loan, job and dispute records.
           </p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="mistakes">
-          <h3>Common payslip mistakes to check</h3>
+    <section class="content-section">
+      <h2 class="section-title">Common payslip mistakes to check</h2>
+      <p class="section-desc">
+        These are common payslip areas employees should review when their take-home pay looks different from expected.
+      </p>
 
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>CPF not matching salary</h3>
-              <p>Check whether employee CPF is calculated correctly based on your salary and eligibility.</p>
-            </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>CPF not matching salary</h3>
+          <p>
+            Check whether employee CPF is calculated correctly based on your salary and eligibility.
+          </p>
+        </div>
 
-            <div class="info-card">
-              <h3>Unclear deductions</h3>
-              <p>Deductions should be explained clearly, especially no-pay leave or absence deductions.</p>
-            </div>
+        <div class="trust-card">
+          <h3>Unclear deductions</h3>
+          <p>
+            Deductions should be explained clearly, especially no-pay leave or absence deductions.
+          </p>
+        </div>
 
-            <div class="info-card">
-              <h3>Missing overtime</h3>
-              <p>If overtime applies, check whether overtime hours and overtime pay are shown correctly.</p>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <aside class="side-card">
-        <h3>On this page</h3>
-        <a href="#overview">What is a payslip?</a>
-        <a href="#when">When payslips are issued</a>
-        <a href="#items">Payslip items</a>
-        <a href="#cpf">CPF on payslip</a>
-        <a href="#allowances">Allowances</a>
-        <a href="#deductions">Deductions</a>
-        <a href="#overtime">Overtime</a>
-        <a href="#netpay">Gross vs net pay</a>
-        <a href="#records">Payslip records</a>
-        <a href="#faq">FAQ</a>
-      </aside>
-    </div>
+        <div class="trust-card">
+          <h3>Missing overtime</h3>
+          <p>
+            If overtime applies, check whether overtime hours and overtime pay are shown correctly.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section">
       <div class="authority-box">
@@ -925,8 +1058,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="calculators.html">View All Calculators →</a>
       </div>
     </section>
 
@@ -958,8 +1091,8 @@
         </a>
       </div>
 
-      <div class="center-link">
-        <a class="pill-link" href="guides.html">View All Guides →</a>
+      <div style="text-align:center;margin-top:24px;">
+        <a class="btn-light" href="guides.html">View All Guides →</a>
       </div>
     </section>
 
@@ -1031,16 +1164,14 @@
       <details>
         <summary>Should I keep my payslips?</summary>
         <p>
-          Yes. Payslips are useful for checking salary, CPF, tax, loan applications, job applications and employment
-          disputes.
+          Yes. Payslips are useful for checking salary, CPF, tax, loan applications, job applications and employment disputes.
         </p>
       </details>
 
       <details>
         <summary>Is this payslip guide official advice?</summary>
         <p>
-          No. This guide is for general salary planning only. Check MOM, CPF Board, IRAS or your employer’s HR policy for
-          official treatment.
+          No. This guide is for general salary planning only. Check MOM, CPF Board, IRAS or your employer’s HR policy for official treatment.
         </p>
       </details>
     </section>
