@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Singapore Salary Increment Calculator 2026 | Pay Raise Calculator</title>
+
+  <link rel="canonical" href="https://sgsalarytools.com/salary-increment-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Singapore Salary Increment Calculator 2026. Calculate salary increase amount, increment percentage, new monthly salary and annual salary difference." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6f1;
+      color: #10231a;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      background: #10231a;
+      color: #fff;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 11px;
+      color: #b8d8c2;
+      font-weight: 600;
+      letter-spacing: .4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    nav a {
+      color: #e8f5ec;
+      opacity: .9;
+    }
+
+    nav a:hover { opacity: 1; }
+
+    .hero {
+      background:
+        radial-gradient(circle at top left, rgba(198, 255, 217, .35), transparent 35%),
+        linear-gradient(135deg, #163d2a, #0f241a);
+      color: #fff;
+      padding: 64px 20px;
+    }
+
+    .hero-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #b9e8c8;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #d7eadc;
+      font-size: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-tags span {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #edf8f0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 60px;
+    }
+
+    .section {
+      background: #fff;
+      border: 1px solid #dfe8dd;
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 28px rgba(16, 35, 26, .06);
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      margin: 0 0 12px;
+      color: #10231a;
+    }
+
+    .muted { color: #5d6f64; }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      margin: 14px 0 7px;
+      color: #183528;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid #cbd8cf;
+      font-size: 15px;
+      background: #fbfdfb;
+      color: #10231a;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 14px;
+      background: #1f7a45;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover { background: #176437; }
+
+    .result-card {
+      background: linear-gradient(135deg, #133b29, #0e2419);
+      color: #fff;
+      border-radius: 20px;
+      padding: 24px;
+      min-height: 100%;
+    }
+
+    .result-card h2 {
+      color: #fff;
+      font-size: 26px;
+    }
+
+    .big-result {
+      font-size: 36px;
+      font-weight: 900;
+      margin: 14px 0 4px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.13);
+    }
+
+    .result-line span:first-child { color: #bfe6ca; }
+
+    .result-line span:last-child {
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .note {
+      background: #eef7f0;
+      border-left: 5px solid #1f7a45;
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: #244432;
+      margin-top: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .info-card {
+      background: #f7faf6;
+      border: 1px solid #dfe8dd;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .info-card strong {
+      display: block;
+      color: #10231a;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+      font-size: 15px;
+    }
+
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid #e2ebe4;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eaf4ed;
+      color: #10231a;
+      font-weight: 900;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .related-card {
+      background: #f7faf6;
+      border: 1px solid #dfe8dd;
+      border-radius: 18px;
+      padding: 18px;
+      transition: .2s ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: #1f7a45;
+    }
+
+    .related-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #10231a;
+    }
+
+    .related-card span {
+      color: #5d6f64;
+      font-size: 14px;
+    }
+
+    .view-all {
+      display: inline-block;
+      margin-top: 18px;
+      color: #1f7a45;
+      font-weight: 900;
+    }
+
+    details {
+      border-top: 1px solid #e2ebe4;
+      padding: 16px 0;
+    }
+
+    details:first-of-type { border-top: 0; }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: #10231a;
+    }
+
+    details p {
+      color: #5d6f64;
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: #10231a;
+      color: #d8eadf;
+      text-align: center;
+      padding: 26px 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .calculator-grid,
+      .grid-3,
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section { padding: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="logo-icon.png" alt="SG Salary Tools logo">
+        <span>
+          SG Salary Tools
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="eyebrow">Singapore pay raise calculator</div>
+      <h1>Calculate your salary increment</h1>
+      <p>
+        Estimate your new monthly salary, increment amount, percentage increase,
+        annual salary difference and before-versus-after pay comparison.
+      </p>
+
+      <div class="hero-tags">
+        <span>Pay Raise Calculator</span>
+        <span>Increment Percentage</span>
+        <span>New Monthly Salary</span>
+        <span>Annual Salary Difference</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="calculator-grid">
+        <div>
+          <h2>Salary increment inputs</h2>
+          <p class="muted">
+            Enter your current salary and either the increment percentage or new salary.
+            The calculator will estimate your pay raise amount and annual salary difference.
+          </p>
+
+          <label for="currentSalary">Current monthly salary</label>
+          <input type="number" id="currentSalary" value="4000" min="0" step="0.01">
+
+          <label for="calculationMode">Calculation mode</label>
+          <select id="calculationMode">
+            <option value="percentage" selected>I know the increment percentage</option>
+            <option value="amount">I know the increment amount</option>
+            <option value="newSalary">I know the new salary</option>
+          </select>
+
+          <label for="incrementValue" id="incrementLabel">Increment percentage (%)</label>
+          <input type="number" id="incrementValue" value="5" min="0" step="0.01">
+
+          <label for="months">Months per year</label>
+          <select id="months">
+            <option value="12" selected>12 months</option>
+            <option value="13">13 months, including AWS / 13th month</option>
+          </select>
+
+          <button onclick="calculateIncrement()">Calculate Salary Increment</button>
+
+          <div class="note">
+            This calculator shows gross salary increase only. CPF, income tax, bonus,
+            allowances and take-home pay changes are not deducted in this result.
+          </div>
+        </div>
+
+        <div class="result-card">
+          <h2>Your estimated result</h2>
+          <p>Estimated new monthly salary</p>
+
+          <div class="big-result" id="newSalaryResult">S$0.00</div>
+
+          <div class="result-line">
+            <span>Current salary</span>
+            <span id="currentSalaryResult">-</span>
+          </div>
+
+          <div class="result-line">
+            <span>Monthly increment</span>
+            <span id="monthlyIncreaseResult">-</span>
+          </div>
+
+          <div class="result-line">
+            <span>Increment percentage</span>
+            <span id="percentageResult">-</span>
+          </div>
+
+          <div class="result-line">
+            <span>Current annual salary</span>
+            <span id="currentAnnualResult">-</span>
+          </div>
+
+          <div class="result-line">
+            <span>New annual salary</span>
+            <span id="newAnnualResult">-</span>
+          </div>
+
+          <div class="result-line">
+            <span>Annual increase</span>
+            <span id="annualIncreaseResult">-</span>
+          </div>
+
+          <p class="muted" style="color:#cfe6d5; margin-top:16px;">
+            For take-home pay after CPF and tax, use the Singapore Salary Calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How this salary increment calculator works</h2>
+      <p>
+        This calculator helps you compare your current salary with your revised salary after
+        a pay raise. You can calculate based on increment percentage, increment amount or
+        new monthly salary.
+      </p>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <strong>1. Enter current salary</strong>
+          <p>Use your current fixed monthly salary before CPF, tax or other deductions.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>2. Choose calculation mode</strong>
+          <p>Calculate using percentage increase, dollar increase or your new salary amount.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>3. Compare annual pay</strong>
+          <p>See your monthly and annual salary difference before and after the increment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Salary increment formulas</h2>
+      <p>
+        Salary increment can be calculated in different ways depending on what information you already know.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>What you know</th>
+            <th>Formula</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Increment percentage</td>
+            <td>New salary = Current salary × (1 + increment %)</td>
+            <td>S$4,000 with 5% increment = S$4,200</td>
+          </tr>
+          <tr>
+            <td>Increment amount</td>
+            <td>New salary = Current salary + increment amount</td>
+            <td>S$4,000 + S$300 = S$4,300</td>
+          </tr>
+          <tr>
+            <td>New salary</td>
+            <td>Increment % = Increase ÷ Current salary × 100</td>
+            <td>S$4,000 to S$4,500 = 12.5% increase</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        Salary increment percentage is usually calculated based on fixed monthly salary,
+        not total annual compensation with bonus, commission or variable allowances.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Salary increment examples</h2>
+      <p>
+        These examples show how different increment percentages affect monthly and annual salary.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Current salary</th>
+            <th>Increment</th>
+            <th>New salary</th>
+            <th>Annual increase, 12 months</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S$3,000</td>
+            <td>3%</td>
+            <td>S$3,090</td>
+            <td>S$1,080</td>
+          </tr>
+          <tr>
+            <td>S$4,000</td>
+            <td>5%</td>
+            <td>S$4,200</td>
+            <td>S$2,400</td>
+          </tr>
+          <tr>
+            <td>S$5,000</td>
+            <td>8%</td>
+            <td>S$5,400</td>
+            <td>S$4,800</td>
+          </tr>
+          <tr>
+            <td>S$6,000</td>
+            <td>10%</td>
+            <td>S$6,600</td>
+            <td>S$7,200</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>What to consider before accepting a salary increment</h2>
+      <p>
+        A salary increase is useful, but the amount you actually receive in your bank account
+        may be lower after CPF, tax and other payroll deductions.
+      </p>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <strong>CPF impact</strong>
+          <p>Higher salary may increase employee CPF contribution, depending on CPF wage ceilings and eligibility.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>Income tax impact</strong>
+          <p>A higher annual income may increase estimated annual tax payable.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>Total package</strong>
+          <p>Compare basic salary, AWS, bonus, allowance, commission and benefits, not just monthly salary.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Increment percentage vs increment amount</h2>
+      <p>
+        Percentage increment helps compare raises across different salary levels, while dollar
+        amount shows the actual increase you will receive each month.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Best for</th>
+            <th>What it shows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Percentage increase</td>
+            <td>Comparing pay raise rates</td>
+            <td>Whether the raise is 3%, 5%, 10% or more.</td>
+          </tr>
+          <tr>
+            <td>Monthly amount increase</td>
+            <td>Cash flow planning</td>
+            <td>How much extra salary you get each month before deductions.</td>
+          </tr>
+          <tr>
+            <td>Annual salary increase</td>
+            <td>Career and income planning</td>
+            <td>How much more you earn over a full year.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Related Singapore calculators</h2>
+      <p class="muted">Use these tools to estimate take-home pay, CPF and annual salary impact.</p>
+
+      <div class="related-grid">
+        <a class="related-card" href="index.html">
+          <strong>Salary Calculator</strong>
+          <span>Estimate monthly take-home pay after CPF and income tax.</span>
+        </a>
+
+        <a class="related-card" href="cpf-calculator.html">
+          <strong>CPF Calculator</strong>
+          <span>Calculate employee and employer CPF contributions.</span>
+        </a>
+
+        <a class="related-card" href="income-tax-calculator.html">
+          <strong>Income Tax Calculator</strong>
+          <span>Estimate Singapore personal income tax after reliefs.</span>
+        </a>
+
+        <a class="related-card" href="bonus-calculator.html">
+          <strong>Bonus Calculator</strong>
+          <span>Estimate bonus, CPF impact and annual pay difference.</span>
+        </a>
+      </div>
+
+      <a class="view-all" href="calculators.html">View All Calculators →</a>
+    </section>
+
+    <section class="section">
+      <h2>Related Singapore salary guides</h2>
+      <p class="muted">Learn more about salary, CPF, tax and payroll planning in Singapore.</p>
+
+      <div class="related-grid">
+        <a class="related-card" href="cpf-contribution-rates-guide.html">
+          <strong>CPF Contribution Rates Guide</strong>
+          <span>Learn how CPF contributions work by age and wage type.</span>
+        </a>
+
+        <a class="related-card" href="income-tax-guide.html">
+          <strong>Income Tax Guide</strong>
+          <span>Understand Singapore personal income tax basics.</span>
+        </a>
+
+        <a class="related-card" href="payslip-guide.html">
+          <strong>Payslip Guide</strong>
+          <span>Understand payslip items, salary deductions and monthly payroll details.</span>
+        </a>
+
+        <a class="related-card" href="employment-contract-guide.html">
+          <strong>Employment Contract Guide</strong>
+          <span>Understand salary clauses, benefits and employment terms.</span>
+        </a>
+      </div>
+
+      <a class="view-all" href="guides.html">View All Guides →</a>
+    </section>
+
+    <section class="section">
+      <h2>Frequently Asked Questions</h2>
+
+      <details open>
+        <summary>How do I calculate salary increment percentage?</summary>
+        <p>
+          Salary increment percentage is calculated as: increment amount divided by current salary,
+          multiplied by 100. For example, if your salary increases from S$4,000 to S$4,400,
+          the increment is S$400, or 10%.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I calculate my new salary after increment?</summary>
+        <p>
+          If you know the increment percentage, multiply your current salary by 1 plus the increment
+          percentage. For example, S$4,000 with a 5% increment becomes S$4,200.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is salary increment calculated before or after CPF?</summary>
+        <p>
+          Salary increment is usually discussed based on gross monthly salary before employee CPF,
+          tax and other deductions.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does a salary increment increase CPF contribution?</summary>
+        <p>
+          It may increase CPF contribution if the employee is CPF-eligible and the salary increase
+          affects the wage amount subject to CPF. CPF wage ceilings may also affect the final amount.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does salary increment increase income tax?</summary>
+        <p>
+          A higher annual income may increase income tax payable, depending on total chargeable income,
+          tax residency and available tax reliefs.
+        </p>
+      </details>
+
+      <details>
+        <summary>Should I calculate increment based on monthly or annual salary?</summary>
+        <p>
+          Most salary increments are calculated based on monthly basic salary. However, for career
+          planning, it is useful to compare the annual increase as well.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is AWS included in salary increment?</summary>
+        <p>
+          AWS or 13th month pay is usually a separate salary component. This calculator lets you view
+          annual salary on a 12-month or 13-month basis for comparison.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this salary increment calculator official?</summary>
+        <p>
+          No. SG Salary Tools provides general planning calculators only. For exact payroll treatment,
+          check your employment contract, HR policy or seek professional advice.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SG Salary Tools. This calculator provides general information only and is not official CPF, IRAS, MOM, payroll or legal advice.
+  </footer>
+
+  <script>
+    function money(amount) {
+      return "S$" + amount.toLocaleString("en-SG", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function updateIncrementLabel() {
+      const mode = document.getElementById("calculationMode").value;
+      const label = document.getElementById("incrementLabel");
+      const input = document.getElementById("incrementValue");
+
+      if (mode === "percentage") {
+        label.textContent = "Increment percentage (%)";
+        input.value = "5";
+      }
+
+      if (mode === "amount") {
+        label.textContent = "Monthly increment amount";
+        input.value = "300";
+      }
+
+      if (mode === "newSalary") {
+        label.textContent = "New monthly salary";
+        input.value = "4500";
+      }
+    }
+
+    function calculateIncrement() {
+      const currentSalary = Number(document.getElementById("currentSalary").value || 0);
+      const mode = document.getElementById("calculationMode").value;
+      const incrementValue = Number(document.getElementById("incrementValue").value || 0);
+      const months = Number(document.getElementById("months").value || 12);
+
+      if (!currentSalary || currentSalary <= 0) {
+        alert("Please enter a valid current monthly salary.");
+        return;
+      }
+
+      if (incrementValue < 0) {
+        alert("Increment value cannot be negative.");
+        return;
+      }
+
+      let newSalary = 0;
+      let monthlyIncrease = 0;
+      let percentageIncrease = 0;
+
+      if (mode === "percentage") {
+        percentageIncrease = incrementValue;
+        monthlyIncrease = currentSalary * (percentageIncrease / 100);
+        newSalary = currentSalary + monthlyIncrease;
+      }
+
+      if (mode === "amount") {
+        monthlyIncrease = incrementValue;
+        newSalary = currentSalary + monthlyIncrease;
+        percentageIncrease = (monthlyIncrease / currentSalary) * 100;
+      }
+
+      if (mode === "newSalary") {
+        newSalary = incrementValue;
+        monthlyIncrease = newSalary - currentSalary;
+        percentageIncrease = (monthlyIncrease / currentSalary) * 100;
+      }
+
+      const currentAnnual = currentSalary * months;
+      const newAnnual = newSalary * months;
+      const annualIncrease = newAnnual - currentAnnual;
+
+      document.getElementById("newSalaryResult").textContent = money(newSalary);
+      document.getElementById("currentSalaryResult").textContent = money(currentSalary);
+      document.getElementById("monthlyIncreaseResult").textContent = money(monthlyIncrease);
+      document.getElementById("percentageResult").textContent = percentageIncrease.toFixed(2) + "%";
+      document.getElementById("currentAnnualResult").textContent = money(currentAnnual);
+      document.getElementById("newAnnualResult").textContent = money(newAnnual);
+      document.getElementById("annualIncreaseResult").textContent = money(annualIncrease);
+    }
+
+    document.getElementById("calculationMode").addEventListener("change", function () {
+      updateIncrementLabel();
+      calculateIncrement();
+    });
+
+    window.addEventListener("DOMContentLoaded", function () {
+      updateIncrementLabel();
+      calculateIncrement();
+    });
+  </script>
+</body>
+</html>
