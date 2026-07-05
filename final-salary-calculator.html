@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Final Salary Calculator Singapore 2026 | Resignation Pay & Leave Encashment</title>
+  <link rel="canonical" href="https://sgsalarytools.com/final-salary-calculator.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Free Singapore Final Salary Calculator 2026. Estimate final month salary, prorated pay, unpaid leave deduction and annual leave encashment when resigning or leaving a job." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6f1;
+      color: #10231a;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e3eadf;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.4px;
+      color: #24241f;
+      white-space: nowrap;
+    }
+
+    .brand-text strong span {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #74776f;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      color: #5d635b;
+      font-weight: 850;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #edf5e9;
+      color: #173f2b;
+    }
+
+    .nav-links a.active {
+      background: #22231f;
+      color: #ffffff;
+    }
+
+    .hero-wrap {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
+        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
+      border-bottom: 1px solid #e3eadf;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 22px 26px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      background: #dfeee4;
+      color: #2f7d63;
+      border: 1px solid #bfd9c8;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 6.8vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+      font-weight: 500;
+      color: #25251f;
+    }
+
+    h1 em {
+      color: #2f7d63;
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.75;
+      color: #6f7169;
+      max-width: 790px;
+      margin: 0 auto 26px;
+      font-weight: 650;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 820px;
+    }
+
+    .quick-stats span {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid #dfe9db;
+      color: #2f5f3a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
+    }
+
+    .calculator-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 10px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #e1e7dc;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.10);
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -1.2px;
+      color: #25251f;
+    }
+
+    .panel-desc {
+      margin: 0 0 24px;
+      color: #6f7169;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .field { margin-bottom: 18px; }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 900;
+      color: #233b2d;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid #d9e2d4;
+      border-radius: 16px;
+      padding: 15px 16px;
+      font-size: 16px;
+      background: #fffdfa;
+      color: #10231a;
+      outline: none;
+      font-weight: 750;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2f7d63;
+      box-shadow: 0 0 0 4px rgba(47, 125, 99, 0.14);
+    }
+
+    .calculate-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 18px;
+      padding: 17px;
+      font-weight: 950;
+      font-size: 16px;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(47, 125, 99, 0.24);
+    }
+
+    .results {
+      display: grid;
+      gap: 18px;
+    }
+
+    .main-result {
+      background: linear-gradient(135deg, #2f7d63, #173f2b);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.16);
+    }
+
+    .main-result::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+
+    .main-result small {
+      display: block;
+      color: #d9eee0;
+      font-weight: 850;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .take-home {
+      font-size: 50px;
+      font-weight: 950;
+      letter-spacing: -1.8px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sub-result {
+      color: #d9eee0;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.06);
+    }
+
+    .result-card span {
+      display: block;
+      color: #6d7b70;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .result-card strong {
+      font-size: 24px;
+      color: #10231a;
+    }
+
+    .breakdown {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.05);
+    }
+
+    .breakdown h3,
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 25px;
+      letter-spacing: -0.6px;
+      color: #10231a;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf2ea;
+      color: #425346;
+    }
+
+    .row:last-child { border-bottom: 0; }
+
+    .row strong {
+      color: #10231a;
+      text-align: right;
+    }
+
+    .positive {
+      color: #2d6b3f;
+      font-weight: 900;
+    }
+
+    .negative {
+      color: #b45f3c;
+      font-weight: 900;
+    }
+
+    .note-box {
+      background: #f7faf5;
+      border: 1px solid #e3eddf;
+      border-radius: 20px;
+      padding: 18px;
+      color: #5f6d62;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 70px;
+    }
+
+    .content-section { margin-top: 44px; }
+
+    .section-desc {
+      color: #647168;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: -6px 0 22px;
+    }
+
+    .info-grid,
+    .related-grid,
+    .scenario-grid,
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .related-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .info-card,
+    .related-card,
+    .scenario-card,
+    .trust-card {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
+    }
+
+    .info-card h3,
+    .related-card h3,
+    .scenario-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .info-card p,
+    .related-card p,
+    .scenario-card p,
+    .trust-card p {
+      margin: 0;
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    .related-card,
+    .scenario-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .related-card:hover,
+    .scenario-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 17px 20px;
+      border-bottom: 1px solid #edf2ea;
+    }
+
+    th {
+      background: #f7faf5;
+      color: #173f2b;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    td {
+      color: #425346;
+      font-weight: 650;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .authority-box {
+      background: #ffffff;
+      border: 1px solid #e5ece1;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 18px 50px rgba(25, 60, 37, 0.06);
+    }
+
+    .authority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .authority-item {
+      background: #f7faf5;
+      border: 1px solid #e1eadc;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+      font-weight: 900;
+      color: #173f2b;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .authority-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(25, 60, 37, 0.09);
+    }
+
+    .authority-item span {
+      display: block;
+      margin-top: 6px;
+      color: #647168;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .view-all a {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #edf5e9;
+      color: #173f2b;
+      font-weight: 800;
+      border: 1px solid #dfe9db;
+    }
+
+    .faq { margin-top: 44px; }
+
+    details {
+      background: white;
+      border: 1px solid #e5ece1;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: #173f2b;
+    }
+
+    details p {
+      color: #647168;
+      line-height: 1.65;
+    }
+
+    footer {
+      text-align: center;
+      color: #77837a;
+      font-size: 14px;
+      padding: 28px;
+      border-top: 1px solid #e4eadf;
+      background: white;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        min-width: 138px;
+        gap: 7px;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        margin-right: 5px;
+      }
+
+      .brand-text strong { font-size: 13px; }
+
+      .brand-text small {
+        font-size: 5.5px;
+        letter-spacing: 1.1px;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 0;
+        margin-left: 0;
+      }
+
+      .nav-links a {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 36px 20px 22px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1.3px;
+        padding: 9px 18px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 0.98;
+        letter-spacing: -2.4px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+      }
+
+      .quick-stats { justify-content: flex-start; }
+
+      .quick-stats span {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      .calculator-section { padding: 24px 16px 8px; }
+
+      .calculator-grid { grid-template-columns: 1fr; }
+
+      .panel {
+        border-radius: 26px;
+        padding: 24px;
+      }
+
+      .panel h2 { font-size: 32px; }
+
+      .take-home { font-size: 42px; }
+
+      .result-cards,
+      .info-grid,
+      .related-grid,
+      .scenario-grid,
+      .trust-grid,
+      .authority-list {
+        grid-template-columns: 1fr;
+      }
+
+      .content { padding: 26px 16px 60px; }
+    }
+
+    @media (max-width: 430px) {
+      h1 { font-size: 43px; }
+      .hero p { font-size: 17px; }
+      .result-card strong { font-size: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
+        <img src="logo-icon.png" alt="SG Salary Tools">
+
+        <span class="brand-text">
+          <strong>SG Salary<span>Tools</span></strong>
+          <small>CPF · TAX · TAKE-HOME PAY</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="eyebrow">Singapore Final Salary Calculator 2026</div>
+
+      <h1>Estimate your <em>final salary</em> when leaving a job</h1>
+
+      <p>
+        Calculate final month salary, salary for days worked, unpaid leave deduction and unused annual leave encashment
+        when resigning or ending employment in Singapore.
+      </p>
+
+      <div class="quick-stats">
+        <span>Final Month Pay</span>
+        <span>Leave Encashment</span>
+        <span>Unpaid Leave Deduction</span>
+        <span>Resignation Salary</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-grid">
+      <div class="panel">
+        <h2>Final salary inputs</h2>
+        <p class="panel-desc">
+          Enter your monthly salary, paid days worked, unpaid leave days and unused annual leave.
+          The calculator estimates your final gross salary before CPF, tax and other deductions.
+        </p>
+
+        <div class="field">
+          <label for="salary">Gross monthly salary</label>
+          <input id="salary" type="number" value="5000" min="0" step="100">
+        </div>
+
+        <div class="field">
+          <label for="method">Daily salary method</label>
+          <select id="method" onchange="updateMethodDays()">
+            <option value="working">Working days in the month</option>
+            <option value="calendar">Calendar days in the month</option>
+            <option value="custom">Custom days / company policy</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="daysInMonth">Days used to calculate daily salary</label>
+          <input id="daysInMonth" type="number" value="22" min="1" step="1">
+        </div>
+
+        <div class="field">
+          <label for="daysWorked">Paid days worked in final month</label>
+          <input id="daysWorked" type="number" value="10" min="0" step="0.5">
+        </div>
+
+        <div class="field">
+          <label for="unpaidLeave">Unpaid leave / absent days</label>
+          <input id="unpaidLeave" type="number" value="0" min="0" step="0.5">
+        </div>
+
+        <div class="field">
+          <label for="unusedLeave">Unused annual leave days to encash</label>
+          <input id="unusedLeave" type="number" value="3" min="0" step="0.5">
+        </div>
+
+        <div class="field">
+          <label for="otherPay">Other pay / allowance</label>
+          <input id="otherPay" type="number" value="0" min="0" step="50">
+        </div>
+
+        <div class="field">
+          <label for="otherDeduction">Other deduction</label>
+          <input id="otherDeduction" type="number" value="0" min="0" step="50">
+        </div>
+
+        <button class="calculate-btn" onclick="calculateFinalSalary()">Calculate Final Salary</button>
+      </div>
+
+      <div class="results">
+        <div class="main-result">
+          <small>Estimated final gross salary</small>
+          <div class="take-home" id="finalSalary">S$2,954.55</div>
+          <div class="sub-result" id="finalSalarySummary">
+            Includes salary for days worked and unused annual leave encashment.
+          </div>
+        </div>
+
+        <div class="result-cards">
+          <div class="result-card">
+            <span>Salary for Days Worked</span>
+            <strong id="salaryForDaysWorked">S$2,272.73</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Leave Encashment</span>
+            <strong id="leaveEncashment">S$681.82</strong>
+          </div>
+
+          <div class="result-card">
+            <span>Total Deduction</span>
+            <strong id="totalDeduction">S$0.00</strong>
+          </div>
+        </div>
+
+        <div class="breakdown">
+          <h3>Final salary breakdown</h3>
+
+          <div class="row">
+            <span>Gross monthly salary</span>
+            <strong id="grossMonthly">S$5,000</strong>
+          </div>
+
+          <div class="row">
+            <span>Days used for daily salary</span>
+            <strong id="daysUsed">22 days</strong>
+          </div>
+
+          <div class="row">
+            <span>Daily salary</span>
+            <strong class="positive" id="dailySalary">S$227.27</strong>
+          </div>
+
+          <div class="row">
+            <span>Paid days worked</span>
+            <strong id="paidDaysRow">10 days</strong>
+          </div>
+
+          <div class="row">
+            <span>Salary for paid days worked</span>
+            <strong id="salaryForPaidDaysRow">S$2,272.73</strong>
+          </div>
+
+          <div class="row">
+            <span>Unused annual leave encashment</span>
+            <strong class="positive" id="leaveEncashmentRow">S$681.82</strong>
+          </div>
+
+          <div class="row">
+            <span>Other pay / allowance</span>
+            <strong class="positive" id="otherPayRow">S$0.00</strong>
+          </div>
+
+          <div class="row">
+            <span>Less: unpaid leave deduction</span>
+            <strong class="negative" id="unpaidLeaveRow">-S$0.00</strong>
+          </div>
+
+          <div class="row">
+            <span>Less: other deduction</span>
+            <strong class="negative" id="otherDeductionRow">-S$0.00</strong>
+          </div>
+
+          <div class="row">
+            <span>Estimated final gross salary</span>
+            <strong class="positive" id="finalSalaryRow">S$2,954.55</strong>
+          </div>
+        </div>
+
+        <div class="note-box" id="calculationNote">
+          This calculator estimates final gross salary before CPF, tax and other payroll adjustments.
+          Actual final salary may depend on your employment contract, company policy and payroll method.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="content-section">
+      <h2 class="section-title">How this final salary calculator works</h2>
+      <p class="section-desc">
+        Final salary is usually affected by how many days you worked in your final month, whether you took unpaid leave,
+        whether unused annual leave is encashed, and whether there are other allowances or deductions.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Calculate daily salary</h3>
+          <p>The calculator divides monthly salary by working days, calendar days or your company’s custom divisor.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>2. Add salary for days worked</h3>
+          <p>Paid days worked are multiplied by daily salary to estimate your prorated final month salary.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>3. Add or deduct adjustments</h3>
+          <p>Unused leave, unpaid leave, allowances and deductions are added to estimate final gross salary.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Final salary formula</h2>
+      <p class="section-desc">
+        A simple final salary estimate can be calculated using daily salary, paid days worked, unused leave and deductions.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Formula</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Daily salary</td>
+              <td>Monthly salary ÷ days used</td>
+              <td>Used to calculate prorated salary and leave encashment</td>
+            </tr>
+
+            <tr>
+              <td>Salary for days worked</td>
+              <td>Daily salary × paid days worked</td>
+              <td>Salary earned for the final month</td>
+            </tr>
+
+            <tr>
+              <td>Leave encashment</td>
+              <td>Daily salary × unused annual leave days</td>
+              <td>Estimated value of unused annual leave paid out</td>
+            </tr>
+
+            <tr>
+              <td>Final salary</td>
+              <td>Salary worked + leave encashment + other pay - deductions</td>
+              <td>Estimated final gross salary before CPF and tax</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Common final salary examples</h2>
+      <p class="section-desc">
+        These examples show how final salary may change depending on paid days worked and unused annual leave.
+      </p>
+
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <h3>S$5,000 salary, 10 days worked</h3>
+          <p>If daily salary is based on 22 working days, salary for 10 days worked is about S$2,272.73.</p>
+        </div>
+
+        <div class="scenario-card">
+          <h3>3 days unused annual leave</h3>
+          <p>Using a daily salary of S$227.27, 3 days of unused leave may be worth about S$681.82.</p>
+        </div>
+
+        <div class="scenario-card">
+          <h3>1 day unpaid leave</h3>
+          <p>One day of unpaid leave may reduce final salary by about one daily salary, depending on company policy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">When to use this calculator</h2>
+      <p class="section-desc">
+        This final salary calculator is useful when you are resigning, serving notice period, leaving mid-month or checking
+        whether your final payslip looks reasonable.
+      </p>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Resignation</h3>
+          <p>Estimate your last month salary after working only part of the month.</p>
+        </div>
+
+        <div class="trust-card">
+          <h3>Unused annual leave</h3>
+          <p>Estimate how much unused annual leave could be worth if it is paid out.</p>
+        </div>
+
+        <div class="trust-card">
+          <h3>Unpaid leave</h3>
+          <p>Estimate deductions if you took unpaid leave before your final employment date.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="authority-box">
+        <h2 class="section-title">Important final salary note</h2>
+        <p class="section-desc">
+          This calculator provides an estimate only. Final salary treatment can depend on your employment contract,
+          notice period, HR policy, leave balance, deductions and payroll cut-off. For official salary payment and
+          termination matters, check MOM guidance or speak with your employer.
+        </p>
+
+        <div class="authority-list">
+          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary" target="_blank" rel="noopener">
+            MOM Salary
+            <span>Salary payment and employment practices</span>
+          </a>
+
+          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/termination-of-employment" target="_blank" rel="noopener">
+            MOM Termination
+            <span>Notice period and final salary matters</span>
+          </a>
+
+          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave/annual-leave" target="_blank" rel="noopener">
+            MOM Annual Leave
+            <span>Annual leave entitlement and leave pay</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore calculators</h2>
+      <p class="section-desc">
+        Use these calculators to estimate salary, leave, notice period and CPF in Singapore.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="notice-period-calculator.html">
+          <h3>Notice Period Calculator</h3>
+          <p>Calculate resignation notice period and estimated last working day.</p>
+        </a>
+
+        <a class="related-card" href="prorated-salary-calculator.html">
+          <h3>Prorated Salary Calculator</h3>
+          <p>Estimate salary when joining or leaving during the month.</p>
+        </a>
+
+        <a class="related-card" href="unpaid-leave-calculator.html">
+          <h3>Unpaid Leave Calculator</h3>
+          <p>Estimate unpaid leave deduction based on salary and leave days.</p>
+        </a>
+
+        <a class="related-card" href="cpf-calculator.html">
+          <h3>CPF Calculator</h3>
+          <p>Estimate employee CPF, employer CPF and salary after CPF.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="calculators.html">View All Calculators →</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">Related Singapore salary guides</h2>
+      <p class="section-desc">
+        Learn the employment rules behind final salary, notice period, annual leave and resignation.
+      </p>
+
+      <div class="related-grid">
+        <a class="related-card" href="notice-period-guide.html">
+          <h3>Notice Period Guide</h3>
+          <p>Understand resignation notice period and final employment date.</p>
+        </a>
+
+        <a class="related-card" href="annual-leave-guide.html">
+          <h3>Annual Leave Guide</h3>
+          <p>Learn how annual leave entitlement works in Singapore.</p>
+        </a>
+
+        <a class="related-card" href="employment-contract-guide.html">
+          <h3>Employment Contract Guide</h3>
+          <p>Understand terms that may affect salary and termination.</p>
+        </a>
+
+        <a class="related-card" href="payslip-guide.html">
+          <h3>Payslip Guide</h3>
+          <p>Learn how to read your final payslip and salary items.</p>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="guides.html">View All Guides →</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How do I calculate final salary in Singapore?</summary>
+        <p>
+          A simple estimate is salary for days worked plus unused annual leave encashment and other pay,
+          minus unpaid leave deduction and other deductions.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is final salary based on working days or calendar days?</summary>
+        <p>
+          It depends on your employment contract and company payroll policy. Some employers use working days,
+          while others may use calendar days or another agreed method.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can unused annual leave be paid out when I resign?</summary>
+        <p>
+          Unused annual leave may be encashed depending on the Employment Act, your employment contract and company policy.
+          You should confirm your leave balance and payout treatment with HR.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does this calculator include CPF?</summary>
+        <p>
+          No. This calculator estimates final gross salary before CPF. Use the CPF Calculator to estimate CPF on salary items.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I use this for resignation salary?</summary>
+        <p>
+          Yes. This calculator is designed for employees who resign, leave mid-month or want to estimate their final payslip.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this final salary calculator official?</summary>
+        <p>
+          No. It is an independent estimate for planning only. For official employment matters, check MOM guidance or your employer’s HR policy.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SG Salary Tools. This calculator provides estimates only and is not official payroll, CPF, tax or employment advice.
+  </footer>
+
+  <script>
+    function money(value) {
+      const amount = Number(value) || 0;
+      return "S$" + amount.toLocaleString("en-SG", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function moneyRounded(value) {
+      const amount = Number(value) || 0;
+      return "S$" + Math.round(amount).toLocaleString("en-SG");
+    }
+
+    function formatDays(value) {
+      const days = Number(value) || 0;
+      return days.toLocaleString("en-SG", {
+        minimumFractionDigits: days % 1 === 0 ? 0 : 1,
+        maximumFractionDigits: 1
+      }) + " days";
+    }
+
+    function updateMethodDays() {
+      const method = document.getElementById("method").value;
+      const daysInput = document.getElementById("daysInMonth");
+
+      if (method === "working") {
+        daysInput.value = 22;
+      } else if (method === "calendar") {
+        daysInput.value = 30;
+      }
+
+      calculateFinalSalary();
+    }
+
+    function calculateFinalSalary() {
+      const salary = Number(document.getElementById("salary").value) || 0;
+      const method = document.getElementById("method").value;
+      const daysInMonth = Number(document.getElementById("daysInMonth").value) || 1;
+      const daysWorked = Number(document.getElementById("daysWorked").value) || 0;
+      const unpaidLeave = Number(document.getElementById("unpaidLeave").value) || 0;
+      const unusedLeave = Number(document.getElementById("unusedLeave").value) || 0;
+      const otherPay = Number(document.getElementById("otherPay").value) || 0;
+      const otherDeduction = Number(document.getElementById("otherDeduction").value) || 0;
+
+      const safeDaysInMonth = Math.max(daysInMonth, 1);
+      const dailySalary = salary / safeDaysInMonth;
+
+      const salaryForDaysWorked = dailySalary * daysWorked;
+      const leaveEncashment = dailySalary * unusedLeave;
+      const unpaidLeaveDeduction = dailySalary * unpaidLeave;
+      const totalDeduction = unpaidLeaveDeduction + otherDeduction;
+
+      const finalSalary = Math.max(0, salaryForDaysWorked + leaveEncashment + otherPay - totalDeduction);
+
+      let methodLabel = "working days";
+      if (method === "calendar") {
+        methodLabel = "calendar days";
+      } else if (method === "custom") {
+        methodLabel = "custom days";
+      }
+
+      document.getElementById("finalSalary").textContent = money(finalSalary);
+      document.getElementById("finalSalarySummary").textContent =
+        "Based on " + formatDays(daysWorked) + " worked, " + formatDays(unusedLeave) +
+        " unused leave and the " + methodLabel + " method.";
+
+      document.getElementById("salaryForDaysWorked").textContent = money(salaryForDaysWorked);
+      document.getElementById("leaveEncashment").textContent = money(leaveEncashment);
+      document.getElementById("totalDeduction").textContent = money(totalDeduction);
+
+      document.getElementById("grossMonthly").textContent = moneyRounded(salary);
+      document.getElementById("daysUsed").textContent = formatDays(safeDaysInMonth);
+      document.getElementById("dailySalary").textContent = money(dailySalary);
+      document.getElementById("paidDaysRow").textContent = formatDays(daysWorked);
+      document.getElementById("salaryForPaidDaysRow").textContent = money(salaryForDaysWorked);
+      document.getElementById("leaveEncashmentRow").textContent = money(leaveEncashment);
+      document.getElementById("otherPayRow").textContent = money(otherPay);
+      document.getElementById("unpaidLeaveRow").textContent = "-" + money(unpaidLeaveDeduction);
+      document.getElementById("otherDeductionRow").textContent = "-" + money(otherDeduction);
+      document.getElementById("finalSalaryRow").textContent = money(finalSalary);
+
+      const note = document.getElementById("calculationNote");
+
+      if (salary <= 0) {
+        note.textContent =
+          "Enter your gross monthly salary to estimate final salary, salary for days worked and unused annual leave encashment.";
+      } else {
+        note.textContent =
+          "This estimate uses the " + methodLabel + " method. Daily salary is calculated as monthly salary divided by " +
+          safeDaysInMonth + " days. Actual final salary may depend on your employment contract, leave balance, notice period and company payroll policy.";
+      }
+    }
+
+    document.getElementById("salary").addEventListener("input", calculateFinalSalary);
+    document.getElementById("daysInMonth").addEventListener("input", calculateFinalSalary);
+    document.getElementById("daysWorked").addEventListener("input", calculateFinalSalary);
+    document.getElementById("unpaidLeave").addEventListener("input", calculateFinalSalary);
+    document.getElementById("unusedLeave").addEventListener("input", calculateFinalSalary);
+    document.getElementById("otherPay").addEventListener("input", calculateFinalSalary);
+    document.getElementById("otherDeduction").addEventListener("input", calculateFinalSalary);
+
+    calculateFinalSalary();
+  </script>
+</body>
+</html>
