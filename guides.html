@@ -1,741 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
-  <title>Singapore Salary Guides 2026 | CPF, Income Tax, Leave & Payroll Guides</title>
+  <title>Singapore Salary Guides 2026 | CPF, Employment, Tax & Salary Guides</title>
 
   <link rel="canonical" href="https://sgsalarytools.com/guides.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta name="description" content="Free Singapore salary guides 2026. Learn about CPF contribution rates, income tax, tax relief, salary after tax, gross salary vs net salary, notice period, bonus, payslip, overtime, hourly rate, tax residency, IR8A, annual leave and public holidays in Singapore." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse Singapore salary guides covering CPF, income tax, employment rights, leave, overtime, notice period, payslips, AWS, bonuses and salary planning.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
 
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --background: #f4f1ea;
+      --card: #fbfaf6;
+      --foreground: #302c26;
+      --muted: #7c766c;
+      --primary: #2f2b25;
+      --primary-foreground: #f6f3ec;
+      --accent: #2f7d5e;
+      --accent-soft: rgba(47,125,94,.10);
+      --accent-border: rgba(47,125,94,.22);
+      --border: #e2ddd2;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(47,43,37,.08);
+    }
 
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
     body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47,125,94,.08), transparent 34%),
+        linear-gradient(135deg, #f4f1ea, #efe9de);
       margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background: #f4f6f1;
-      color: #10231a;
+      padding: 0;
+      color: var(--foreground);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
 
-    .topbar {
-      background: rgba(255, 255, 255, 0.94);
-      border-bottom: 1px solid #e3eadf;
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .top-nav {
+      background: rgba(251,250,246,.84);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
 
-    .nav {
-      max-width: 1180px;
+    .nav-inner {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 14px 22px;
+      padding: 14px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 22px;
+      justify-content: space-between;
+      gap: 25px;
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      min-width: 210px;
+      text-decoration: none;
+      flex-shrink: 0;
     }
 
     .brand img {
-      width: 48px;
-      height: 48px;
-      margin-right: 12px;
-      flex-shrink: 0;
+      width: 220px;
+      height: auto;
       display: block;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px;
-      line-height: 1;
-      letter-spacing: -0.4px;
-      color: #24241f;
-      white-space: nowrap;
-    }
-
-    .brand-text strong span {
-      color: #2f7d63;
-      font-style: italic;
-    }
-
-    .brand-text small {
-      display: block;
-      margin-top: 4px;
-      font-size: 8px;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      color: #74776f;
-      font-weight: 800;
-      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 14px;
-      overflow-x: auto;
-      scrollbar-width: none;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
     }
-
-    .nav-links::-webkit-scrollbar { display: none; }
 
     .nav-links a {
-      padding: 13px 18px;
-      border-radius: 999px;
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
       font-size: 15px;
-      color: #5d635b;
-      font-weight: 850;
+      padding: 10px 14px;
+      border-radius: 999px;
       white-space: nowrap;
-      transition: background 0.2s ease, color 0.2s ease;
+      background: transparent;
     }
 
-    .nav-links a:hover {
-      background: #edf5e9;
-      color: #173f2b;
-    }
-
+    .nav-links a:hover,
     .nav-links a.active {
-      background: #22231f;
-      color: #ffffff;
+      background: var(--primary);
+      color: var(--primary-foreground);
     }
 
-    .hero-wrap {
-      background:
-        radial-gradient(circle at 50% 0%, rgba(47, 125, 99, 0.11), transparent 34%),
-        linear-gradient(180deg, #f4f6f1 0%, #eef2ea 100%);
-      border-bottom: 1px solid #e3eadf;
+    .main-wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 46px 20px 54px;
     }
 
     .hero {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 50px 22px 34px;
       text-align: center;
+      max-width: 900px;
+      margin: 0 auto 28px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 22px;
-      background: #dfeee4;
-      color: #2f7d63;
-      border: 1px solid #bfd9c8;
-      border-radius: 999px;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 1.8px;
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .05em;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
-    h1 {
-      max-width: 840px;
-      margin: 0 auto 20px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(44px, 6.6vw, 76px);
-      line-height: 0.96;
-      letter-spacing: -3px;
-      font-weight: 500;
-      color: #25251f;
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      color: var(--foreground);
     }
 
-    h1 em {
-      color: #2f7d63;
+    .hero h1 em {
+      color: var(--accent);
       font-style: italic;
     }
 
     .hero p {
-      font-size: 19px;
-      line-height: 1.75;
-      color: #6f7169;
       max-width: 760px;
-      margin: 0 auto 26px;
-      font-weight: 650;
+      margin: 18px auto 0;
+      font-size: 17px;
+      color: var(--muted);
     }
 
-    .quick-stats {
+    .quick-nav {
+      max-width: 1000px;
+      margin: 28px auto 34px;
       display: flex;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 0 auto;
-      max-width: 860px;
     }
 
-    .quick-stats span {
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid #dfe9db;
-      color: #2f5f3a;
-      padding: 10px 14px;
+    .quick-nav a {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 10px 15px;
       border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(47,43,37,.05);
+      font-size: 14px;
+    }
+
+    .quick-nav a:hover {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border-color: var(--primary);
+    }
+
+    .category {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin: 24px 0;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+    }
+
+    .category-title h2 {
+      margin: 0 0 8px;
+      font-size: clamp(25px, 4vw, 36px);
+      line-height: 1.15;
+      color: var(--foreground);
+      letter-spacing: -.01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .category-title p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 760px;
+    }
+
+    .count-badge {
+      flex-shrink: 0;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      padding: 8px 13px;
       font-size: 13px;
-      font-weight: 900;
-      box-shadow: 0 8px 22px rgba(25, 60, 37, 0.05);
-    }
-
-    .content {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 34px 22px 70px;
-    }
-
-    .content-section {
-      margin-top: 44px;
-    }
-
-    .section-title {
-      margin: 0 0 18px;
-      font-size: 28px;
-      letter-spacing: -0.7px;
-      color: #10231a;
-    }
-
-    .section-desc {
-      color: #647168;
-      line-height: 1.7;
-      max-width: 820px;
-      margin: -6px 0 22px;
-      font-weight: 600;
-    }
-
-    .guide-grid,
-    .related-grid,
-    .trust-grid {
-      display: grid;
-      gap: 18px;
-      margin-top: 20px;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     .guide-grid {
-      grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
     }
 
-    .related-grid {
-      grid-template-columns: repeat(4, 1fr);
+    .guide-card {
+      display: block;
+      background: #f8f5ef;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--foreground);
+      transition: .18s ease;
+      min-height: 142px;
     }
 
-    .trust-grid {
-      grid-template-columns: repeat(3, 1fr);
+    .guide-card:hover {
+      transform: translateY(-3px);
+      background: var(--white);
+      border-color: var(--accent);
+      box-shadow: 0 14px 32px rgba(47,43,37,.09);
     }
 
-    .guide-card,
-    .related-card,
-    .trust-card {
-      background: white;
-      border: 1px solid #e5ece1;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 30px rgba(25, 60, 37, 0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .guide-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--foreground);
+      line-height: 1.35;
     }
 
-    .guide-card:hover,
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(25, 60, 37, 0.1);
-    }
-
-    .guide-card small {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #2f5f3a;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .guide-card h3,
-    .related-card h3,
-    .trust-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
-      color: #10231a;
-    }
-
-    .guide-card p,
-    .related-card p,
-    .trust-card p {
+    .guide-card p {
       margin: 0;
-      color: #647168;
-      line-height: 1.65;
-      font-weight: 600;
-    }
-
-    .highlight-box {
-      background: linear-gradient(135deg, #2f7d63, #173f2b);
-      color: white;
-      border-radius: 30px;
-      padding: 30px;
-      box-shadow: 0 22px 60px rgba(25, 60, 37, 0.14);
-    }
-
-    .highlight-box h2 {
-      margin: 0 0 12px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      font-weight: 500;
-      letter-spacing: -1.2px;
-    }
-
-    .highlight-box p {
-      margin: 0;
-      color: #d9eee0;
-      line-height: 1.7;
-      font-weight: 650;
-      font-size: 17px;
-    }
-
-    .center-link {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .pill-link {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #edf5e9;
-      color: #173f2b;
-      font-weight: 800;
-      border: 1px solid #dfe9db;
-    }
-
-    .faq {
-      margin-top: 44px;
-    }
-
-    details {
-      background: white;
-      border: 1px solid #e5ece1;
-      border-radius: 18px;
-      padding: 18px 20px;
-      margin-bottom: 12px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 850;
-      color: #173f2b;
-    }
-
-    details p {
-      color: #647168;
-      line-height: 1.65;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      color: #77837a;
+      color: var(--muted);
       font-size: 14px;
-      padding: 28px;
-      border-top: 1px solid #e4eadf;
-      background: white;
+      line-height: 1.5;
     }
 
-    @media (max-width: 900px) {
-      .nav {
-        padding: 10px 18px;
+    .guide-card span {
+      display: inline-block;
+      margin-top: 13px;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    #cpf-payroll,
+    #employment,
+    #tax,
+    #salary-career {
+      scroll-margin-top: 110px;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      .brand {
-        margin-bottom: 0;
-        flex-shrink: 0;
-        min-width: 138px;
-        gap: 7px;
-      }
-
-      .brand img {
-        width: 34px;
-        height: 34px;
-        margin-right: 5px;
-      }
-
-      .brand-text strong {
-        font-size: 13px;
-      }
-
-      .brand-text small {
-        font-size: 5.5px;
-        letter-spacing: 1.1px;
-        margin-top: 3px;
       }
 
       .nav-links {
+        width: auto;
         flex: 1;
         min-width: 0;
         justify-content: flex-start;
-        gap: 6px;
+        padding-bottom: 5px;
         overflow-x: auto;
-        padding-bottom: 0;
-        margin-left: 0;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
       }
 
-      .nav-links a {
-        padding: 9px 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 36px 20px 26px;
-      }
-
-      .eyebrow {
-        font-size: 12px;
-        letter-spacing: 1.3px;
-        padding: 9px 18px;
-        margin-bottom: 22px;
-      }
-
-      h1 {
-        font-size: 46px;
-        line-height: 0.98;
-        letter-spacing: -2.4px;
-      }
-
-      .hero p {
-        font-size: 18px;
-        line-height: 1.65;
-        margin-bottom: 22px;
-      }
-
-      .quick-stats {
-        justify-content: flex-start;
-      }
-
-      .quick-stats span {
-        font-size: 12px;
-        padding: 9px 12px;
-      }
-
-      .content {
-        padding: 26px 16px 60px;
-      }
-
-      .guide-grid,
-      .related-grid,
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .highlight-box {
-        border-radius: 24px;
-        padding: 24px;
+      .nav-links::-webkit-scrollbar {
+        display: none;
       }
     }
 
-    @media (max-width: 430px) {
-      h1 {
-        font-size: 42px;
+    @media (max-width: 700px) {
+      .main-wrapper {
+        padding: 34px 10px 40px;
+      }
+
+      .nav-inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 150px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
       }
 
       .hero p {
-        font-size: 17px;
+        font-size: 15px;
+      }
+
+      .quick-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 0 4px 6px;
+        scrollbar-width: none;
+      }
+
+      .quick-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .quick-nav a {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .category {
+        padding: 20px;
+        margin: 18px 0;
+        border-radius: 16px;
+      }
+
+      .category-header {
+        display: block;
+      }
+
+      .count-badge {
+        display: inline-block;
+        margin-top: 13px;
+      }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-card {
+        min-height: auto;
+      }
+
+      #cpf-payroll,
+      #employment,
+      #tax,
+      #salary-career {
+        scroll-margin-top: 82px;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
 
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
+<header class="top-nav">
+  <div class="nav-inner">
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a class="active" href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Singapore Salary Tools">
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="about.html">About</a>
     </nav>
-  </header>
 
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore Salary Guides 2026</div>
+  </div>
+</header>
 
-      <h1>Singapore salary, <em>CPF & tax</em> guides</h1>
+<main class="main-wrapper">
 
-      <p>
-        Simple guides for employees, job seekers and payroll users in Singapore.
-        Learn CPF, income tax, tax reliefs, salary planning, payslips, overtime, notice period and IR8A in plain English.
-      </p>
+  <section class="hero">
+    <span class="pill">Singapore CPF, employment, tax and salary guides</span>
+    <h1 class="serif">Singapore <em>salary guides</em> 2026</h1>
+    <p>
+      Browse practical guides on CPF contributions, employment rules, personal income tax,
+      salary planning, payslips, bonuses and workplace matters in Singapore.
+    </p>
+  </section>
 
-      <div class="quick-stats">
-        <span>CPF Guides</span>
-        <span>Income Tax Guides</span>
-        <span>Employment Guides</span>
-        <span>Payroll Guides</span>
-        <span>Free & Beginner Friendly</span>
+  <nav class="quick-nav" aria-label="Guide categories">
+    <a href="#cpf-payroll">CPF & Payroll</a>
+    <a href="#employment">Employment</a>
+    <a href="#tax">Tax</a>
+    <a href="#salary-career">Salary & Career</a>
+  </nav>
+
+  <section class="category" id="cpf-payroll">
+    <div class="category-header">
+      <div class="category-title">
+        <h2>CPF & Payroll Guides</h2>
+        <p>Understand CPF contributions, payslips, salary calculations and common payroll matters in Singapore.</p>
       </div>
+      <div class="count-badge">4 guides</div>
+    </div>
+
+    <div class="guide-grid">
+      <a class="guide-card" href="cpf-contribution-rates-guide.html"><h3>CPF Contribution Rates Guide</h3><p>Understand employee and employer CPF contribution rates by age and residency status.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="payslip-guide.html"><h3>Payslip Guide</h3><p>Learn how to read salary, CPF deductions, allowances and net pay.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="hourly-rate-guide.html"><h3>Hourly Rate Guide</h3><p>Learn how monthly salary can be converted into an hourly rate.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="gross-salary-vs-net-salary-guide.html"><h3>Gross Salary vs Net Salary Guide</h3><p>Understand the difference between gross pay, deductions and take-home pay.</p><span>Read guide →</span></a>
     </div>
   </section>
 
-  <main class="content">
-    <section class="content-section">
-      <div class="highlight-box">
-        <h2>Start here</h2>
-        <p>
-          If you are new to Singapore salary planning, start with CPF Contribution Rates Guide,
-          Income Tax Guide, Tax Relief Guide and Gross Salary vs Net Salary Guide. These guides explain
-          the main items that affect your take-home pay.
-        </p>
+  <section class="category" id="employment">
+    <div class="category-header">
+      <div class="category-title">
+        <h2>Employment Guides</h2>
+        <p>Learn about leave entitlement, working hours, notice periods, contracts and workplace rights in Singapore.</p>
       </div>
-    </section>
+      <div class="count-badge">12 guides</div>
+    </div>
 
-    <section class="content-section">
-      <h2 class="section-title">CPF & Tax Guides</h2>
-      <p class="section-desc">
-        Understand CPF contribution, Singapore income tax, tax residency, tax reliefs and IR8A before using the salary calculator.
-      </p>
+    <div class="guide-grid">
+      <a class="guide-card" href="annual-leave-guide.html"><h3>Annual Leave Guide</h3><p>Understand paid annual leave entitlement and eligibility.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="public-holiday-guide.html"><h3>Public Holiday Guide</h3><p>Learn how public holidays affect work, leave and salary.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="sick-leave-guide.html"><h3>Sick Leave Guide</h3><p>Understand paid sick leave, hospitalisation leave and medical certificates.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="childcare-leave-guide.html"><h3>Childcare Leave Guide</h3><p>Learn about childcare leave entitlement for eligible working parents.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="maternity-leave-guide.html"><h3>Maternity Leave Guide</h3><p>Understand maternity leave entitlement and employment protection.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="paternity-leave-guide.html"><h3>Paternity Leave Guide</h3><p>Learn about paternity leave entitlement for eligible fathers.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="overtime-guide.html"><h3>Overtime Guide</h3><p>Understand overtime eligibility, working limits and overtime pay.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="working-hours-guide.html"><h3>Working Hours Guide</h3><p>Learn about normal working hours, breaks and weekly limits.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="rest-day-guide.html"><h3>Rest Day Guide</h3><p>Understand rest day rules and payment for work performed on a rest day.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="notice-period-guide.html"><h3>Notice Period Guide</h3><p>Learn how resignation notice and payment in lieu of notice work.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="probation-guide.html"><h3>Probation Guide</h3><p>Understand probation terms, confirmation and notice requirements.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="employment-contract-guide.html"><h3>Employment Contract Guide</h3><p>Understand important terms commonly found in employment contracts.</p><span>Read guide →</span></a>
+    </div>
+  </section>
 
-      <div class="guide-grid">
-        <a class="guide-card" href="cpf-contribution-rates-guide.html">
-          <small>CPF</small>
-          <h3>CPF Contribution Rates Guide</h3>
-          <p>Understand employee CPF rates, employer CPF rates, CPF wage ceilings and salary examples.</p>
-        </a>
-
-        <a class="guide-card" href="income-tax-guide.html">
-          <small>Tax</small>
-          <h3>Income Tax Guide</h3>
-          <p>Learn how Singapore resident income tax is calculated and how chargeable income works.</p>
-        </a>
-
-        <a class="guide-card" href="tax-relief-guide.html">
-          <small>Tax Relief</small>
-          <h3>Tax Relief Guide</h3>
-          <p>Learn CPF Relief, Earned Income Relief and what to enter in the salary calculator.</p>
-        </a>
-
-        <a class="guide-card" href="tax-resident-guide.html">
-          <small>Tax Resident</small>
-          <h3>Tax Resident Guide</h3>
-          <p>Understand Singapore tax residency, resident tax rates and non-resident tax treatment.</p>
-        </a>
-
-        <a class="guide-card" href="ir8a-guide.html">
-          <small>IR8A</small>
-          <h3>IR8A Guide</h3>
-          <p>Learn what IR8A is, why employers prepare it and how it relates to employment income reporting.</p>
-        </a>
+  <section class="category" id="tax">
+    <div class="category-header">
+      <div class="category-title">
+        <h2>Tax Guides</h2>
+        <p>Understand Singapore personal income tax, tax residency, chargeable income, filing and assessment matters.</p>
       </div>
-    </section>
+      <div class="count-badge">7 guides</div>
+    </div>
 
-    <section class="content-section">
-      <h2 class="section-title">Salary Planning Guides</h2>
-      <p class="section-desc">
-        Useful guides for understanding salary after tax, take-home pay, bonus, payslip, hourly rate and common salary calculations.
-      </p>
+    <div class="guide-grid">
+      <a class="guide-card" href="income-tax-guide.html"><h3>Income Tax Guide</h3><p>Learn how personal income tax works for employees in Singapore.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="tax-resident-guide.html"><h3>Tax Resident Guide</h3><p>Understand Singapore tax residency rules and why residency status matters.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="chargeable-income-guide.html"><h3>Chargeable Income Guide</h3><p>Learn how assessable income, deductions and reliefs determine chargeable income.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="tax-relief-guide.html"><h3>Tax Relief Guide</h3><p>Understand common personal tax reliefs that may reduce taxable income.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="tax-filing-guide.html"><h3>Tax Filing Guide</h3><p>Learn who needs to file an income tax return and how filing usually works.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="notice-of-assessment-guide.html"><h3>Notice of Assessment Guide</h3><p>Understand your tax assessment, payable amount and important deadlines.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="ir8a-guide.html"><h3>IR8A Guide</h3><p>Learn what Form IR8A contains and how employment income is reported.</p><span>Read guide →</span></a>
+    </div>
+  </section>
 
-      <div class="guide-grid">
-        <a class="guide-card" href="salary-after-tax-guide.html">
-          <small>Salary</small>
-          <h3>Salary After Tax Guide</h3>
-          <p>Understand how CPF and income tax affect your final take-home salary in Singapore.</p>
-        </a>
-
-        <a class="guide-card" href="gross-salary-vs-net-salary-guide.html">
-          <small>Salary</small>
-          <h3>Gross Salary vs Net Salary Guide</h3>
-          <p>Understand the difference between gross salary, net salary, CPF deductions and take-home pay.</p>
-        </a>
-
-        <a class="guide-card" href="bonus-guide.html">
-          <small>Bonus</small>
-          <h3>Bonus Guide</h3>
-          <p>Understand how bonus may affect CPF, income tax, annual income and salary planning.</p>
-        </a>
-
-        <a class="guide-card" href="payslip-guide.html">
-          <small>Payslip</small>
-          <h3>Payslip Guide</h3>
-          <p>Learn what a Singapore payslip usually includes, such as basic salary, CPF, allowance and deductions.</p>
-        </a>
-
-        <a class="guide-card" href="hourly-rate-guide.html">
-          <small>Hourly Rate</small>
-          <h3>Hourly Rate Guide</h3>
-          <p>Learn how to estimate hourly rate from monthly salary, weekly hours and working days.</p>
-        </a>
+  <section class="category" id="salary-career">
+    <div class="category-header">
+      <div class="category-title">
+        <h2>Salary & Career Guides</h2>
+        <p>Understand bonuses, AWS and other common salary-related topics in Singapore.</p>
       </div>
-    </section>
+      <div class="count-badge">2 guides</div>
+    </div>
 
-    <section class="content-section">
-      <h2 class="section-title">Employment Guides</h2>
-      <p class="section-desc">
-        Learn basic Singapore employment topics such as annual leave, public holidays, notice period and overtime.
-      </p>
+    <div class="guide-grid">
+      <a class="guide-card" href="bonus-guide.html"><h3>Bonus Guide</h3><p>Understand performance bonuses, variable payments and how bonuses affect total income.</p><span>Read guide →</span></a>
+      <a class="guide-card" href="aws-guide.html"><h3>AWS Guide</h3><p>Learn how the Annual Wage Supplement works and whether it is compulsory.</p><span>Read guide →</span></a>
+    </div>
+  </section>
 
-      <div class="guide-grid">
-        <a class="guide-card" href="annual-leave-guide.html">
-          <small>Leave</small>
-          <h3>Annual Leave Guide</h3>
-          <p>Learn annual leave entitlement, basic leave rules and employment planning in Singapore.</p>
-        </a>
+</main>
 
-        <a class="guide-card" href="public-holiday-guide.html">
-          <small>Public Holiday</small>
-          <h3>Public Holiday Guide</h3>
-          <p>Understand Singapore public holidays and common employee entitlement questions.</p>
-        </a>
+<footer class="footer">
+  <p>© 2026 Singapore Salary Tools</p>
+  <p>
+    <a href="about.html">About Us</a> |
+    <a href="calculators.html">Calculators</a> |
+    <a href="guides.html">Guides</a> |
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
 
-        <a class="guide-card" href="notice-period-guide.html">
-          <small>Notice Period</small>
-          <h3>Notice Period Guide</h3>
-          <p>Understand resignation notice, employment notice period and salary planning before leaving a job.</p>
-        </a>
-
-        <a class="guide-card" href="overtime-guide.html">
-          <small>Overtime</small>
-          <h3>Overtime Guide</h3>
-          <p>Learn how overtime pay is commonly understood and how to estimate overtime for salary planning.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Recommended Singapore calculators</h2>
-      <p class="section-desc">
-        Use these calculators together with the guides to estimate CPF, tax, take-home pay, bonus, overtime and leave.
-      </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <h3>Salary Calculator</h3>
-          <p>Estimate take-home pay after CPF and income tax.</p>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <h3>CPF Calculator</h3>
-          <p>Estimate employee and employer CPF contributions.</p>
-        </a>
-
-        <a class="related-card" href="income-tax-calculator.html">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate Singapore income tax from chargeable income.</p>
-        </a>
-
-        <a class="related-card" href="annual-leave-calculator.html">
-          <h3>Annual Leave Calculator</h3>
-          <p>Estimate annual leave entitlement in Singapore.</p>
-        </a>
-      </div>
-
-      <div class="center-link">
-        <a class="pill-link" href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Why read our Singapore guides?</h2>
-      <p class="section-desc">
-        These guides are designed to explain common salary, payroll, tax and employment topics simply.
-      </p>
-
-      <div class="trust-grid">
-        <div class="trust-card">
-          <h3>Singapore focused</h3>
-          <p>Written around Singapore CPF, tax, salary, payroll and employment planning topics.</p>
-        </div>
-
-        <div class="trust-card">
-          <h3>Easy to understand</h3>
-          <p>Plain English explanations for employees, job seekers, HR users and small business owners.</p>
-        </div>
-
-        <div class="trust-card">
-          <h3>Calculator friendly</h3>
-          <p>Each guide is connected to useful calculators so you can estimate the numbers quickly.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>Are these official Singapore government guides?</summary>
-        <p>
-          No. These guides explain common Singapore salary, CPF, tax, payroll and employment topics in simple language.
-          For official rules, always refer to CPF Board, IRAS and MOM.
-        </p>
-      </details>
-
-      <details>
-        <summary>Who are these guides for?</summary>
-        <p>
-          These guides are for employees, job seekers, payroll users, HR users and anyone who wants to understand salary planning in Singapore.
-        </p>
-      </details>
-
-      <details>
-        <summary>Which guide should I read first?</summary>
-        <p>
-          Start with the CPF Contribution Rates Guide, Income Tax Guide, Tax Relief Guide and Gross Salary vs Net Salary Guide.
-          These explain the main items used in the salary calculator.
-        </p>
-      </details>
-
-      <details>
-        <summary>Should bonus, payslip and overtime be guides or calculators?</summary>
-        <p>
-          They can be both. A guide is useful for SEO and explanation, while a calculator is useful when the user wants to estimate the amount quickly.
-          For better internal linking, you can create both versions and link them together.
-        </p>
-      </details>
-
-      <details>
-        <summary>Are the guides free?</summary>
-        <p>
-          Yes. All guides and calculators on SG Salary Tools are free to use.
-        </p>
-      </details>
-
-      <details>
-        <summary>How often are the guides updated?</summary>
-        <p>
-          The guides are reviewed when major CPF, income tax, payroll or employment rule changes affect salary planning.
-        </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 SG Salary Tools. These guides provide general information only and are not official CPF, payroll, employment or tax advice.
-  </footer>
 </body>
 </html>
