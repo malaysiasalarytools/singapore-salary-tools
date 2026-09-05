@@ -797,7 +797,21 @@
       }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header class="topbar">
 <nav class="nav">
@@ -834,7 +848,7 @@
 </section>
 <section class="calculator-section" id="calculator">
 <div class="calculator-grid">
-<div class="panel">
+<div class="panel sg-live-input-panel">
 <h2>Salary inputs</h2>
 <p class="panel-desc">
           Enter your gross monthly salary and basic profile. This calculator gives an estimate only.
@@ -881,7 +895,6 @@
             </p>
 <ul class="relief-list">
 <li>Earned Income Relief and other eligible non-CPF reliefs</li>
-
 <li>Family Reliefs</li>
 </ul>
 <a href="tax-relief-guide.html">Read Singapore Tax Relief Guide →</a>
@@ -889,7 +902,7 @@
 </div>
 <button class="calculate-btn" onclick="calculateSalary()">Calculate take-home pay</button>
 </div>
-<div class="results">
+<div class="results sg-live-result-panel">
 <div class="main-result">
 <small>Estimated monthly take-home pay</small>
 <div class="take-home" id="takeHome">S$4,000</div>
@@ -1257,5 +1270,35 @@ function money(v){return "S$"+Math.round(v).toLocaleString("en-SG");}
     }
     handleResidencyChange();
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateSalary'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

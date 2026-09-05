@@ -703,7 +703,21 @@
       .result-card strong { font-size: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header class="topbar">
 <nav class="nav">
@@ -740,7 +754,7 @@
 </section>
 <section class="calculator-section" id="calculator">
 <div class="calculator-grid">
-<div class="panel">
+<div class="panel sg-live-input-panel">
 <h2>Hourly rate inputs</h2>
 <p class="panel-desc">
           Enter your monthly salary and working pattern to estimate your hourly and daily rate.
@@ -774,7 +788,7 @@
 </div>
 <button class="calculate-btn" onclick="calculateHourlyRate()">Calculate hourly rate</button>
 </div>
-<div class="results">
+<div class="results sg-live-result-panel">
 <div class="main-result">
 <small>Estimated hourly rate</small>
 <div class="take-home" id="hourlyRate">S$26.22</div>
@@ -1156,5 +1170,35 @@
 
     calculateHourlyRate();
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateHourlyRate'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

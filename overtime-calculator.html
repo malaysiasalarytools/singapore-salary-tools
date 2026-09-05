@@ -708,7 +708,21 @@
       .result-card strong { font-size: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header class="topbar">
 <nav class="nav">
@@ -745,7 +759,7 @@
 </section>
 <section class="calculator-section" id="calculator">
 <div class="calculator-grid">
-<div class="panel">
+<div class="panel sg-live-input-panel">
 <h2>Overtime inputs</h2>
 <p class="panel-desc">
           Enter your monthly basic salary and overtime hours. This calculator gives an estimate only.
@@ -788,7 +802,7 @@
           This calculator focuses on normal overtime pay. Rest day and public holiday work may involve additional rules.
         </p>
 </div>
-<div class="results">
+<div class="results sg-live-result-panel">
 <div class="main-result">
 <small>Estimated overtime pay</small>
 <div class="take-home" id="overtimePay">S$204</div>
@@ -1167,5 +1181,35 @@ function money(v){return "S$"+Number(v).toLocaleString("en-SG",{minimumFractionD
       document.getElementById("overtimePay").textContent=moneyRound(pay);document.getElementById("overtimeSummary").textContent="Hourly basic rate: "+money(hourly)+" · OT rate: "+money(rate)+" per hour";document.getElementById("hourlyRate").textContent=money(hourly);document.getElementById("overtimeRate").textContent=money(rate);document.getElementById("coverageStatus").textContent=coverage;document.getElementById("salaryResult").textContent=moneyRound(salary);document.getElementById("salaryUsed").textContent=moneyRound(salary);document.getElementById("weeklyHoursResult").textContent=(statutory?44:weekly)+" hours";document.getElementById("hourlyRateBreakdown").textContent=money(hourly);document.getElementById("multiplierResult").textContent=mult+"×";document.getElementById("hoursResult").textContent=hours+" hours";document.getElementById("finalOvertimePay").textContent=moneyRound(pay);document.getElementById("calculationNote").textContent=note; }
     calculateOvertime();
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateOvertime'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

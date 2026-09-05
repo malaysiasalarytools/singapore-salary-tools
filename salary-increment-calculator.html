@@ -369,7 +369,21 @@
       .section { padding: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header>
 <div class="nav">
@@ -407,7 +421,7 @@
 <main>
 <section class="section">
 <div class="calculator-grid">
-<div>
+<div class="sg-live-input-panel">
 <h2>Salary increment inputs</h2>
 <p class="muted">
             Enter your current salary and either the increment percentage or new salary.
@@ -434,7 +448,7 @@
             allowances and take-home pay changes are not deducted in this result.
           </div>
 </div>
-<div class="result-card">
+<div class="result-card sg-live-result-panel">
 <h2>Your estimated result</h2>
 <p>Estimated new monthly salary</p>
 <div class="big-result" id="newSalaryResult">S$0.00</div>
@@ -822,5 +836,40 @@
       calculateIncrement();
     });
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateIncrement'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+        const currentSalary = document.getElementById('currentSalary');
+        const incrementValue = document.getElementById('incrementValue');
+        if (!currentSalary || currentSalary.value === '' || Number(currentSalary.value) <= 0) return;
+        if (!incrementValue || incrementValue.value === '' || Number(incrementValue.value) < 0) return;
+        
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

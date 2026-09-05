@@ -694,7 +694,21 @@
       .result-card strong { font-size: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header class="topbar">
 <nav class="nav">
@@ -731,7 +745,7 @@
 </section>
 <section class="calculator-section" id="calculator">
 <div class="calculator-grid">
-<div class="panel">
+<div class="panel sg-live-input-panel">
 <h2>Final salary inputs</h2>
 <p class="panel-desc">
           Enter your monthly salary, paid days worked, unpaid leave days and unused annual leave.
@@ -775,7 +789,7 @@
 </div>
 <button class="calculate-btn" onclick="calculateFinalSalary()">Calculate Final Salary</button>
 </div>
-<div class="results">
+<div class="results sg-live-result-panel">
 <div class="main-result">
 <small>Estimated final gross salary</small>
 <div class="take-home" id="finalSalary">S$2,954.55</div>
@@ -1048,5 +1062,35 @@ function money(v){return "S$"+(+v||0).toLocaleString("en-SG",{minimumFractionDig
     function calculateFinalSalary(){const salary=+document.getElementById("salary").value||0,mv=document.getElementById("salaryMonth").value,schedule=document.getElementById("workSchedule").value,avg=+document.getElementById("avgDaysWeek").value||5,worked=+document.getElementById("daysWorked").value||0,unused=+document.getElementById("unusedLeave").value||0,otherPay=+document.getElementById("otherPay").value||0,otherDed=+document.getElementById("otherDeduction").value||0;if(!mv)return;const [y,m]=mv.split("-").map(Number),ms=new Date(y,m-1,1),me=new Date(y,m,0),totalDays=SG2026.countScheduledDays(ms,me,schedule),incompleteDaily=totalDays?salary/totalDays:0,salaryWorked=incompleteDaily*Math.max(0,worked),grossDaily=SG2026.grossDailyRate(salary,avg),leave=grossDaily*Math.max(0,unused),totalDed=otherDed,final=Math.max(0,salaryWorked+leave+otherPay-totalDed);document.getElementById("finalSalary").textContent=money(final);document.getElementById("finalSalarySummary").textContent="Final-month salary uses MOM's incomplete-month formula; unused annual leave encashment uses the gross daily rate.";document.getElementById("salaryForDaysWorked").textContent=money(salaryWorked);document.getElementById("leaveEncashment").textContent=money(leave);document.getElementById("totalDeduction").textContent=money(totalDed);document.getElementById("grossMonthly").textContent=moneyRounded(salary);document.getElementById("daysUsed").textContent=formatDays(totalDays);document.getElementById("dailySalary").textContent=money(incompleteDaily);document.getElementById("paidDaysRow").textContent=formatDays(worked);document.getElementById("salaryForPaidDaysRow").textContent=money(salaryWorked);document.getElementById("leaveEncashmentRow").textContent=money(leave);document.getElementById("otherPayRow").textContent=money(otherPay);document.getElementById("otherDeductionRow").textContent="-"+money(otherDed);document.getElementById("finalSalaryRow").textContent=money(final);document.getElementById("calculationNote").textContent="For an incomplete final month, monthly gross rate is divided by total scheduled working days in that month and multiplied by days actually worked. Leave encashment uses 12 × monthly gross rate ÷ (52 × average working days per week).";}
     window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),v=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}`;document.getElementById("salaryMonth").value=v;["salary","salaryMonth","workSchedule","avgDaysWeek","daysWorked","unusedLeave","otherPay","otherDeduction"].forEach(id=>document.getElementById(id).addEventListener("input",calculateFinalSalary));calculateFinalSalary();});
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateFinalSalary'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

@@ -375,7 +375,21 @@
       .section { padding: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header>
 <div class="nav">
@@ -413,7 +427,7 @@
 <main>
 <section class="section">
 <div class="calculator-grid">
-<div>
+<div class="sg-live-input-panel">
 <h2>Unpaid leave inputs</h2>
 <p class="muted">
             Enter your monthly gross rate of pay, salary month and no-pay leave days. The calculator estimates
@@ -436,7 +450,7 @@
             For a monthly-rated full-time employee, MOM treats a month with no-pay leave as an incomplete month of work. Choose the work schedule that matches the employee; rotating or irregular rosters should be checked separately.
           </div>
 </div>
-<div class="result-card">
+<div class="result-card sg-live-result-panel">
 <h2>Your estimated result</h2>
 <p>Estimated salary after unpaid leave</p>
 <div class="big-result" id="netSalaryResult">S$0.00</div>
@@ -689,5 +703,35 @@ function money(v){return "S$"+v.toLocaleString("en-SG",{minimumFractionDigits:2,
     function calculateUnpaidLeave(){const salary=+document.getElementById("monthlySalary").value||0,allowance=+document.getElementById("allowance").value||0,other=+document.getElementById("otherDeductions").value||0,unpaid=+document.getElementById("unpaidDays").value||0,mv=document.getElementById("salaryMonth").value,schedule=document.getElementById("workSchedule").value;if(!mv)return;const [y,m]=mv.split("-").map(Number),ms=new Date(y,m-1,1),me=new Date(y,m,0),total=SG2026.countScheduledDays(ms,me,schedule),gross=salary+allowance,daily=total?gross/total:0,ded=daily*unpaid,net=Math.max(0,gross-ded-other);document.getElementById("netSalaryResult").textContent=money(net);document.getElementById("grossSalaryResult").textContent=money(gross);document.getElementById("dailyRateResult").textContent=money(daily);document.getElementById("leaveDeductionResult").textContent="-"+money(ded);document.getElementById("otherDeductionResult").textContent="-"+money(other);document.getElementById("basisResult").textContent="MOM incomplete-month formula · "+schedule;}
     window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),y=t.getFullYear(),m=String(t.getMonth()+1).padStart(2,"0");document.getElementById("salaryMonth").value=`${y}-${m}`;["monthlySalary","salaryMonth","unpaidDays","allowance","otherDeductions","workSchedule"].forEach(id=>document.getElementById(id).addEventListener("input",calculateUnpaidLeave));calculateUnpaidLeave();});
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateUnpaidLeave'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

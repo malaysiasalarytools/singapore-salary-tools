@@ -383,7 +383,21 @@
       .section { padding: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header>
 <div class="nav">
@@ -421,7 +435,7 @@
 <main>
 <section class="section">
 <div class="calculator-grid">
-<div>
+<div class="sg-live-input-panel">
 <h2>Prorated salary inputs</h2>
 <p class="muted">
             Enter your monthly salary, payroll month and employment period within that month.
@@ -444,7 +458,7 @@
             For monthly-rated full-time employees, MOM treats a mid-month start, early departure or no-pay leave as an incomplete month of work. Choose the employee’s normal work schedule. Public holidays that fall on scheduled working days remain in the working-day denominator; verify rotating or irregular rosters separately.
           </div>
 </div>
-<div class="result-card">
+<div class="result-card sg-live-result-panel">
 <h2>Your estimated result</h2>
 <p>Estimated prorated salary</p>
 <div class="big-result" id="proratedSalaryResult">S$0.00</div>
@@ -552,7 +566,6 @@
         should be clear about the payroll method used for partial month salary.
       </p>
 <div class="note">For monthly-rated full-time employees, the statutory incomplete-month calculation uses the total working days in the relevant month. This calculator lets you choose a common fixed weekly schedule so that denominator can be counted correctly.</div>
-
 </section>
 <section class="section">
 <h2>Important notes before using the result</h2>
@@ -713,5 +726,35 @@ function money(v){return "S$"+v.toLocaleString("en-SG",{minimumFractionDigits:2,
     function calculateProratedSalary(){const salary=+document.getElementById("monthlySalary").value||0,mv=document.getElementById("salaryMonth").value,sv=document.getElementById("startDate").value,ev=document.getElementById("endDate").value,unpaid=+document.getElementById("unpaidDays").value||0,schedule=document.getElementById("workSchedule").value;if(!mv||!sv||!ev)return;const [y,m]=mv.split("-").map(Number),start=new Date(sv+"T00:00:00"),end=new Date(ev+"T00:00:00"),ms=new Date(y,m-1,1),me=new Date(y,m,0);if(start>end||start<ms||end>me)return;const total=SG2026.countScheduledDays(ms,me,schedule),worked=Math.max(0,SG2026.countScheduledDays(start,end,schedule)-unpaid),daily=total?salary/total:0,result=SG2026.incompleteMonthPay(salary,total,worked);document.getElementById("proratedSalaryResult").textContent=money(result);document.getElementById("monthlySalaryResult").textContent=money(salary);document.getElementById("dailyRateResult").textContent=money(daily);document.getElementById("payableDaysResult").textContent=worked.toFixed(1);document.getElementById("unpaidDaysResult").textContent=unpaid.toFixed(1);document.getElementById("basisResult").textContent="MOM incomplete-month formula · "+schedule;}
     window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),y=t.getFullYear(),m=String(t.getMonth()+1).padStart(2,"0"),d=getDaysInMonth(y,t.getMonth());document.getElementById("salaryMonth").value=`${y}-${m}`;document.getElementById("startDate").value=`${y}-${m}-01`;document.getElementById("endDate").value=`${y}-${m}-${String(d).padStart(2,"0")}`;["monthlySalary","salaryMonth","startDate","endDate","unpaidDays","workSchedule"].forEach(id=>document.getElementById(id).addEventListener("input",calculateProratedSalary));calculateProratedSalary();});
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateProratedSalary'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

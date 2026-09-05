@@ -683,7 +683,21 @@
       }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header class="topbar">
 <nav class="nav">
@@ -720,7 +734,7 @@
 </section>
 <section class="generator-section">
 <div class="generator-grid">
-<div class="panel">
+<div class="panel sg-live-input-panel">
 <h2>Payslip inputs</h2>
 <p class="panel-desc">
           Fill in the details below. The payslip preview updates instantly.
@@ -794,7 +808,7 @@
           It is not an official payroll system and does not submit information to CPF Board or IRAS.
         </p>
 </div>
-<div class="preview-wrap" id="payslipPreview">
+<div class="preview-wrap sg-live-result-panel" id="payslipPreview">
 <div class="preview-head">
 <div>
 <h2>Payslip</h2>
@@ -1130,5 +1144,35 @@
 
     generatePayslip();
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['generatePayslip'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

@@ -369,7 +369,21 @@
       .section { padding: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header>
 <div class="nav">
@@ -407,7 +421,7 @@
 <main>
 <section class="section">
 <div class="calculator-grid">
-<div>
+<div class="sg-live-input-panel">
 <h2>Tax residency inputs</h2>
 <p class="muted">
             Enter your stay or work period in Singapore. This calculator gives an indicative result
@@ -440,7 +454,7 @@
             concessions and IRAS assessment.
           </div>
 </div>
-<div class="result-card">
+<div class="result-card sg-live-result-panel">
 <h2>Your estimated result</h2>
 <p>Indicative tax residency status</p>
 <div class="big-result" id="statusResult">-</div>
@@ -722,5 +736,35 @@ function countInclusiveDays(a,b){return Math.floor((b-a)/86400000)+1;}
     function calculateTaxResident(){const type=document.getElementById("personType").value,ya=+document.getElementById("assessmentYear").value||0,sv=document.getElementById("startDate").value,ev=document.getElementById("endDate").value,three=document.getElementById("threeYears").value,two=document.getElementById("twoYearConcession").value,pass=document.getElementById("workPassYear").value,income=document.getElementById("incomeType").value;if(!ya||!sv||!ev)return;const s=new Date(sv+"T00:00:00"),e=new Date(ev+"T00:00:00");if(s>e)return;const iy=ya-1,ys=new Date(iy,0,1),ye=new Date(iy,11,31),cs=s<ys?ys:s,ce=e>ye?ye:e,days=cs<=ce?countInclusiveDays(cs,ce):0;let status,treatment,relief,summary;const excluded=income==="director";if(type==="citizen-pr"){status="Likely Tax Resident";treatment="Resident tax rates";relief="May claim reliefs if eligible";summary="Singapore Citizens and PRs who normally reside in Singapore are generally tax residents, subject to individual circumstances.";}else if(three==="yes"){status="Likely Tax Resident";treatment="Resident tax rates may apply";relief="May claim reliefs if eligible";summary="The 3-consecutive-year administrative concession may apply.";}else if(two==="yes"&&!excluded){status="Likely Tax Resident";treatment="Resident rates for both years may apply";relief="May claim reliefs if eligible";summary="The 2-calendar-year concession may apply to foreign employees whose continuous employment/presence straddles 2 years and totals at least 183 days; directors, public entertainers and professionals are excluded.";}else if(days>=183){status="Likely Tax Resident";treatment="Resident tax rates";relief="May claim reliefs if eligible";summary="You have at least 183 days in Singapore in the income year.";}else if(pass==="yes"&&!excluded){status="Provisionally Tax Resident";treatment="Resident rates may apply, subject to review at tax clearance";relief="May claim reliefs if eligible";summary="IRAS generally treats a foreigner with a work pass valid for at least 1 year as tax resident initially, but status is reviewed when employment ceases.";}else if(days>=61){status="Likely Non-Resident";treatment=income==="employment"?"15% or resident rates, whichever is higher":"24% may apply";relief="No personal reliefs";summary="61–182 days generally results in non-resident treatment unless a concession applies.";}else{status="Likely Non-Resident";treatment=income==="employment"?"Possible short-term employment exemption; exceptions apply":"24% may apply";relief="No personal reliefs";summary="60 days or less may qualify for the short-term employment exemption, except for directors, public entertainers, professionals and certain other cases.";}document.getElementById("statusResult").textContent=status;document.getElementById("daysResult").textContent=days+" days";document.getElementById("yearResult").textContent=iy;document.getElementById("taxTreatmentResult").textContent=treatment;document.getElementById("reliefResult").textContent=relief;document.getElementById("summaryResult").textContent=summary;}
     window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),ya=t.getFullYear()+1,iy=ya-1;document.getElementById("assessmentYear").value=ya;document.getElementById("startDate").value=iy+"-01-01";document.getElementById("endDate").value=iy+"-12-31";["personType","assessmentYear","startDate","endDate","threeYears","twoYearConcession","workPassYear","incomeType"].forEach(id=>document.getElementById(id).addEventListener("input",calculateTaxResident));calculateTaxResident();});
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateTaxResident'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>

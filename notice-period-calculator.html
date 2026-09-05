@@ -384,7 +384,21 @@
       .section { padding: 22px; }
     }
   </style>
-</head>
+<style id="sg-live-sticky-ux">
+/* SG Salary Tools UX: keep live results visible on desktop */
+@media (min-width: 900px) {
+  .calculator-grid > :nth-child(2),
+  .generator-grid > :nth-child(2) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    max-height: calc(100vh - 116px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+}
+</style></head>
 <body>
 <header>
 <div class="nav">
@@ -422,7 +436,7 @@
 <main>
 <section class="section">
 <div class="calculator-grid">
-<div>
+<div class="sg-live-input-panel">
 <h2>Notice period inputs</h2>
 <p class="muted">
             Enter your resignation date and notice period. The calculator estimates your last day
@@ -457,7 +471,7 @@
             and official MOM guidance for your specific situation.
           </div>
 </div>
-<div class="result-card">
+<div class="result-card sg-live-result-panel">
 <h2>Your estimated result</h2>
 <p>Estimated last day of employment</p>
 <div class="big-result" id="lastDayResult">-</div>
@@ -867,5 +881,35 @@ function formatDate(d){return d.toLocaleDateString("en-SG",{day:"numeric",month:
     function calculateNotice(){const dv=document.getElementById("noticeDate").value;let n=+document.getElementById("noticeValue").value,u=document.getElementById("noticeUnit").value;const def=document.getElementById("defaultNotice").value,salary=+document.getElementById("monthlySalary").value||0,avg=+document.getElementById("avgDaysWeek").value||5,unserved=+document.getElementById("unservedDays").value||0;if(!dv)return;if(def){const p=def.split("-");n=+p[0];u=p[1];document.getElementById("noticeValue").value=n;document.getElementById("noticeUnit").value=u;}if(!n||n<=0)return;const start=new Date(dv+"T00:00:00"),last=new Date(start);let days=0;if(u==="days"){days=n;last.setDate(start.getDate()+n-1);}else if(u==="weeks"){days=n*7;last.setDate(start.getDate()+days-1);}else{const x=addMonths(start,n);x.setDate(x.getDate()-1);last.setTime(x.getTime());days=Math.floor((last-start)/86400000)+1;}let lieu="-";if(salary>0&&unserved>0)lieu="S$"+(SG2026.grossDailyRate(salary,avg)*unserved).toLocaleString("en-SG",{minimumFractionDigits:2,maximumFractionDigits:2});const pt=n+" "+(n===1?u.replace("s",""):u);document.getElementById("lastDayResult").textContent=formatDate(last);document.getElementById("startDateResult").textContent=formatDate(start);document.getElementById("periodUsedResult").textContent=pt;document.getElementById("calendarDaysResult").textContent=days+" days";document.getElementById("salaryLieuResult").textContent=lieu;}
     window.addEventListener("DOMContentLoaded",()=>{const t=new Date();document.getElementById("noticeDate").value=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`;["noticeDate","noticeValue","noticeUnit","monthlySalary","avgDaysWeek","unservedDays","defaultNotice"].forEach(id=>document.getElementById(id).addEventListener("input",calculateNotice));calculateNotice();});
   </script>
-</body>
+<script id="sg-live-auto-calc">
+(function() {
+  const grid = document.querySelector('.calculator-grid, .generator-grid');
+  if (!grid) return;
+  const inputPanel = grid.querySelector('.sg-live-input-panel');
+  const resultPanel = grid.querySelector('.sg-live-result-panel');
+  const calculate = window['calculateNotice'];
+  if (!inputPanel || !resultPanel || typeof calculate !== 'function') return;
+
+  let timer = null;
+  function updateLiveResult() {
+    
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function() {
+      try {
+        calculate();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          resultPanel.scrollTop = 0;
+        }
+      } catch (e) {
+        console.error('Live calculation update failed:', e);
+      }
+    }, 140);
+  }
+
+  inputPanel.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.addEventListener('input', updateLiveResult);
+    el.addEventListener('change', updateLiveResult);
+  });
+})();
+</script></body>
 </html>
