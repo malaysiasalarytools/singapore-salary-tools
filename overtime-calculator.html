@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Overtime Calculator 2026 | Calculate OT Pay</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/overtime-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Overtime Calculator 2026. Estimate overtime pay using MOM formula, hourly basic rate, monthly salary and overtime hours." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Overtime Calculator 2026 | Calculate OT Pay</title>
+<link href="https://sgsalarytools.com/overtime-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Overtime Calculator 2026. Estimate overtime pay using MOM formula, hourly basic rate, monthly salary and overtime hours." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -712,606 +709,462 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
-
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore Overtime Calculator 2026</div>
-
-      <h1>Calculate your Singapore <em>overtime pay</em></h1>
-
-      <p>
+<header class="topbar">
+<nav class="nav">
+<a aria-label="SG Salary Tools home" class="brand" href="index.html">
+<img alt="SG Salary Tools" src="logo-icon.png"/>
+<span class="brand-text">
+<strong>SG Salary<span>Tools</span></strong>
+<small>CPF · TAX · TAKE-HOME PAY</small>
+</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</div>
+</nav>
+</header>
+<section class="hero-wrap">
+<div class="hero">
+<div class="eyebrow">Singapore Overtime Calculator 2026</div>
+<h1>Calculate your Singapore <em>overtime pay</em></h1>
+<p>
         Estimate overtime pay using the MOM-style formula for monthly-rated employees.
         Enter your monthly basic salary, employee type and overtime hours to calculate OT pay.
       </p>
-
-      <div class="quick-stats">
-        <span>1.5× OT Rate</span>
-        <span>Hourly Basic Rate</span>
-        <span>Monthly-Rated Employee</span>
-        <span>MOM Formula Reference</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="calculator-grid">
-      <div class="panel">
-        <h2>Overtime inputs</h2>
-        <p class="panel-desc">
+<div class="quick-stats">
+<span>1.5× OT Rate</span>
+<span>Hourly Basic Rate</span>
+<span>Monthly-Rated Employee</span>
+<span>MOM Formula Reference</span>
+</div>
+</div>
+</section>
+<section class="calculator-section" id="calculator">
+<div class="calculator-grid">
+<div class="panel">
+<h2>Overtime inputs</h2>
+<p class="panel-desc">
           Enter your monthly basic salary and overtime hours. This calculator gives an estimate only.
         </p>
-
-        <div class="field">
-          <label for="monthlySalary">Monthly basic salary</label>
-          <input id="monthlySalary" type="number" value="2600" min="0" step="100" oninput="calculateOvertime()" />
-        </div>
-
-        <div class="field">
-          <label for="employeeType">Employee type</label>
-          <select id="employeeType" onchange="calculateOvertime()">
-            <option value="nonworkman">Non-workman</option>
-            <option value="workman">Workman</option>
-            <option value="custom">Custom / company policy estimate</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="weeklyHours">Weekly working hours used for hourly rate</label>
-          <input id="weeklyHours" type="number" value="44" min="1" step="1" oninput="calculateOvertime()" />
-        </div>
-
-        <p class="mini-note">
+<div class="field">
+<label for="monthlySalary">Monthly basic salary</label>
+<input id="monthlySalary" min="0" oninput="calculateOvertime()" step="100" type="number" value="2600"/>
+</div>
+<div class="field">
+<label for="employeeType">Employee type</label>
+<select id="employeeType" onchange="calculateOvertime()">
+<option value="nonworkman">Non-workman</option>
+<option value="workman">Workman</option>
+<option value="custom">Custom / company policy estimate</option>
+</select>
+</div>
+<div class="field">
+<label for="weeklyHours">Weekly working hours (custom/company-policy mode only)</label>
+<input id="weeklyHours" min="1" oninput="calculateOvertime()" step="1" type="number" value="44"/>
+</div>
+<p class="mini-note">
           MOM's monthly-rated employee formula commonly uses 44 hours per week:
           (12 × monthly basic salary) ÷ (52 × 44).
         </p>
-
-        <div class="field">
-          <label for="overtimeHours">Overtime hours worked</label>
-          <input id="overtimeHours" type="number" value="10" min="0" step="0.5" oninput="calculateOvertime()" />
-        </div>
-
-        <div class="field">
-          <label for="multiplier">Overtime multiplier</label>
-          <select id="multiplier" onchange="calculateOvertime()">
-            <option value="1.5">1.5× standard overtime rate</option>
-            <option value="1">1.0× custom rate</option>
-            <option value="2">2.0× custom rate</option>
-            <option value="3">3.0× custom rate</option>
-          </select>
-        </div>
-
-        <button class="calculate-btn" onclick="calculateOvertime()">Calculate overtime pay</button>
-
-        <p class="mini-note">
+<div class="field">
+<label for="overtimeHours">Overtime hours worked</label>
+<input id="overtimeHours" min="0" oninput="calculateOvertime()" step="0.5" type="number" value="10"/>
+</div>
+<div class="field">
+<label for="multiplier">Overtime multiplier</label>
+<select id="multiplier" onchange="calculateOvertime()">
+<option value="1.5">1.5× standard overtime rate</option>
+<option value="1">1.0× custom rate</option>
+<option value="2">2.0× custom rate</option>
+<option value="3">3.0× custom rate</option>
+</select>
+</div>
+<button class="calculate-btn" onclick="calculateOvertime()">Calculate overtime pay</button>
+<p class="mini-note">
           This calculator focuses on normal overtime pay. Rest day and public holiday work may involve additional rules.
         </p>
-      </div>
-
-      <div class="results">
-        <div class="main-result">
-          <small>Estimated overtime pay</small>
-          <div class="take-home" id="overtimePay">S$204</div>
-          <div class="sub-result" id="overtimeSummary">Hourly basic rate: S$13.64 · OT rate: S$20.45 per hour</div>
-        </div>
-
-        <div class="result-cards">
-          <div class="result-card">
-            <span>Hourly basic rate</span>
-            <strong id="hourlyRate">S$13.64</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Overtime hourly rate</span>
-            <strong id="overtimeRate">S$20.45</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Coverage check</span>
-            <strong id="coverageStatus">Likely covered</strong>
-          </div>
-        </div>
-
-        <div class="breakdown">
-          <h3>Overtime breakdown</h3>
-
-          <div class="row">
-            <span>Monthly basic salary entered</span>
-            <strong id="salaryResult">S$2,600</strong>
-          </div>
-
-          <div class="row">
-            <span>Salary used for OT calculation</span>
-            <strong id="salaryUsed">S$2,600</strong>
-          </div>
-
-          <div class="row">
-            <span>Weekly hours used</span>
-            <strong id="weeklyHoursResult">44 hours</strong>
-          </div>
-
-          <div class="row">
-            <span>Hourly basic rate</span>
-            <strong id="hourlyRateBreakdown">S$13.64</strong>
-          </div>
-
-          <div class="row">
-            <span>Overtime multiplier</span>
-            <strong id="multiplierResult">1.5×</strong>
-          </div>
-
-          <div class="row">
-            <span>Overtime hours</span>
-            <strong id="hoursResult">10 hours</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated overtime pay</span>
-            <strong class="positive" id="finalOvertimePay">S$204</strong>
-          </div>
-        </div>
-
-        <div class="note-box" id="calculationNote">
+</div>
+<div class="results">
+<div class="main-result">
+<small>Estimated overtime pay</small>
+<div class="take-home" id="overtimePay">S$204</div>
+<div class="sub-result" id="overtimeSummary">Hourly basic rate: S$13.64 · OT rate: S$20.45 per hour</div>
+</div>
+<div class="result-cards">
+<div class="result-card">
+<span>Hourly basic rate</span>
+<strong id="hourlyRate">S$13.64</strong>
+</div>
+<div class="result-card">
+<span>Overtime hourly rate</span>
+<strong id="overtimeRate">S$20.45</strong>
+</div>
+<div class="result-card">
+<span>Coverage check</span>
+<strong id="coverageStatus">Likely covered</strong>
+</div>
+</div>
+<div class="breakdown">
+<h3>Overtime breakdown</h3>
+<div class="row">
+<span>Monthly basic salary entered</span>
+<strong id="salaryResult">S$2,600</strong>
+</div>
+<div class="row">
+<span>Salary used for OT calculation</span>
+<strong id="salaryUsed">S$2,600</strong>
+</div>
+<div class="row">
+<span>Weekly hours used</span>
+<strong id="weeklyHoursResult">44 hours</strong>
+</div>
+<div class="row">
+<span>Hourly basic rate</span>
+<strong id="hourlyRateBreakdown">S$13.64</strong>
+</div>
+<div class="row">
+<span>Overtime multiplier</span>
+<strong id="multiplierResult">1.5×</strong>
+</div>
+<div class="row">
+<span>Overtime hours</span>
+<strong id="hoursResult">10 hours</strong>
+</div>
+<div class="row">
+<span>Estimated overtime pay</span>
+<strong class="positive" id="finalOvertimePay">S$204</strong>
+</div>
+</div>
+<div class="note-box" id="calculationNote">
           This estimate uses the monthly-rated employee hourly basic rate formula and 1.5× overtime rate.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <section class="content-section">
-      <h2 class="section-title">How this Singapore overtime calculator works</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<main class="content">
+<section class="content-section">
+<h2 class="section-title">How this Singapore overtime calculator works</h2>
+<p class="section-desc">
         Singapore overtime pay is generally calculated using the hourly basic rate of pay multiplied by
         1.5 and the number of overtime hours worked. This calculator is designed for monthly-rated employees.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>1. Calculate hourly basic rate</h3>
-          <p>
+<div class="info-grid">
+<div class="info-card">
+<h3>1. Calculate hourly basic rate</h3>
+<p>
             For a monthly-rated employee, hourly basic rate is estimated as:
             (12 × monthly basic salary) ÷ (52 × weekly working hours).
           </p>
-        </div>
-
-        <div class="info-card">
-          <h3>2. Apply overtime multiplier</h3>
-          <p>
+</div>
+<div class="info-card">
+<h3>2. Apply overtime multiplier</h3>
+<p>
             Standard overtime pay is usually at least 1.5 times the hourly basic rate of pay.
           </p>
-        </div>
-
-        <div class="info-card">
-          <h3>3. Multiply by OT hours</h3>
-          <p>
+</div>
+<div class="info-card">
+<h3>3. Multiply by OT hours</h3>
+<p>
             Overtime pay is estimated by multiplying the overtime hourly rate by the number of overtime hours worked.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Singapore overtime formula</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Singapore overtime formula</h2>
+<p class="section-desc">
         The basic overtime formula used by this calculator is:
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Formula</th>
-              <th>Example</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Hourly basic rate</td>
-              <td>(12 × monthly basic salary) ÷ (52 × 44)</td>
-              <td>S$2,600 salary = about S$13.64 per hour</td>
-            </tr>
-
-            <tr>
-              <td>Overtime hourly rate</td>
-              <td>Hourly basic rate × 1.5</td>
-              <td>S$13.64 × 1.5 = about S$20.45 per hour</td>
-            </tr>
-
-            <tr>
-              <td>Overtime pay</td>
-              <td>Overtime hourly rate × overtime hours</td>
-              <td>10 hours × S$20.45 = about S$204.55</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Formula</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hourly basic rate</td>
+<td>(12 × monthly basic salary) ÷ (52 × 44)</td>
+<td>S$2,600 salary = about S$13.64 per hour</td>
+</tr>
+<tr>
+<td>Overtime hourly rate</td>
+<td>Hourly basic rate × 1.5</td>
+<td>S$13.64 × 1.5 = about S$20.45 per hour</td>
+</tr>
+<tr>
+<td>Overtime pay</td>
+<td>Overtime hourly rate × overtime hours</td>
+<td>10 hours × S$20.45 = about S$204.55</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note-box">
         Basic rate of pay generally excludes overtime payments, bonus payments, AWS and certain allowances.
       </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Who can usually claim overtime pay?</h2>
-      <p class="section-desc">
+</section>
+<section class="content-section">
+<h2 class="section-title">Who can usually claim overtime pay?</h2>
+<p class="section-desc">
         Overtime claim eligibility depends on whether the employee is covered under the relevant part of the Employment Act.
         This calculator includes a simple coverage check based on common MOM salary thresholds.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Employee Type</th>
-              <th>Common Salary Threshold</th>
-              <th>Calculator Treatment</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Non-workman</td>
-              <td>Monthly basic salary of S$2,600 or less</td>
-              <td>Shown as likely covered if salary is within threshold</td>
-            </tr>
-
-            <tr>
-              <td>Workman</td>
-              <td>Monthly basic salary of S$4,500 or less</td>
-              <td>Shown as likely covered if salary is within threshold</td>
-            </tr>
-
-            <tr>
-              <td>Custom / company policy</td>
-              <td>Depends on contract or company policy</td>
-              <td>Calculator provides a general estimate only</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Overtime examples in Singapore</h2>
-      <p class="section-desc">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Employee Type</th>
+<th>Common Salary Threshold</th>
+<th>Calculator Treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-workman</td>
+<td>Monthly basic salary of S$2,600 or less</td>
+<td>Shown as likely covered if salary is within threshold</td>
+</tr>
+<tr>
+<td>Workman</td>
+<td>Monthly basic salary of S$4,500 or less</td>
+<td>Shown as likely covered if salary is within threshold</td>
+</tr>
+<tr>
+<td>Custom / company policy</td>
+<td>Depends on contract or company policy</td>
+<td>Calculator provides a general estimate only</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Overtime examples in Singapore</h2>
+<p class="section-desc">
         These examples assume a monthly-rated employee using 44 weekly working hours and 1.5× overtime rate.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Monthly Basic Salary</th>
-              <th>Hourly Basic Rate</th>
-              <th>OT Rate</th>
-              <th>10 Hours OT</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>S$1,800</td>
-              <td>S$9.44</td>
-              <td>S$14.16</td>
-              <td>S$142</td>
-            </tr>
-
-            <tr>
-              <td>S$2,000</td>
-              <td>S$10.49</td>
-              <td>S$15.73</td>
-              <td>S$157</td>
-            </tr>
-
-            <tr>
-              <td>S$2,600</td>
-              <td>S$13.64</td>
-              <td>S$20.45</td>
-              <td>S$205</td>
-            </tr>
-
-            <tr>
-              <td>S$3,000</td>
-              <td>S$15.73</td>
-              <td>S$23.60</td>
-              <td>S$236</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Monthly Basic Salary</th>
+<th>Hourly Basic Rate</th>
+<th>OT Rate</th>
+<th>10 Hours OT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S$1,800</td>
+<td>S$9.44</td>
+<td>S$14.16</td>
+<td>S$142</td>
+</tr>
+<tr>
+<td>S$2,000</td>
+<td>S$10.49</td>
+<td>S$15.73</td>
+<td>S$157</td>
+</tr>
+<tr>
+<td>S$2,600</td>
+<td>S$13.64</td>
+<td>S$20.45</td>
+<td>S$205</td>
+</tr>
+<tr>
+<td>S$3,000</td>
+<td>S$15.73</td>
+<td>S$23.60</td>
+<td>S$236</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note-box">
         If the employee is not legally covered for overtime pay, the actual payment may depend on employment contract or company policy.
       </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Overtime, rest days and public holidays</h2>
-      <p class="section-desc">
+</section>
+<section class="content-section">
+<h2 class="section-title">Overtime, rest days and public holidays</h2>
+<p class="section-desc">
         Overtime pay is different from rest day pay or public holiday pay. If you work on a rest day or public holiday,
         the calculation may involve additional rest day or public holiday pay on top of overtime for extra hours.
       </p>
-
-      <div class="scenario-grid">
-        <div class="scenario-card">
-          <h3>Normal overtime</h3>
-          <p>
+<div class="scenario-grid">
+<div class="scenario-card">
+<h3>Normal overtime</h3>
+<p>
             Work beyond contractual hours on a normal working day is usually treated as overtime hours.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Rest day work</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Rest day work</h3>
+<p>
             Work on a rest day may involve rest day pay rules. Extra hours beyond normal daily hours may also be overtime.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Public holiday work</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Public holiday work</h3>
+<p>
             Public holiday work may involve public holiday pay or time off, depending on the employment arrangement.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="authority-box">
-        <h2 class="section-title">Official sources to check</h2>
-        <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<div class="authority-box">
+<h2 class="section-title">Official sources to check</h2>
+<p class="section-desc">
           This calculator provides estimates only. For official overtime rules, always check MOM directly.
         </p>
-
-        <div class="authority-list">
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days" target="_blank" rel="noopener">
-            <strong>MOM Overtime Rules</strong>
-            <span>Hours of work, overtime and rest day guidance</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/calculate-overtime-pay" target="_blank" rel="noopener">
-            <strong>MOM OT Calculator</strong>
-            <span>Official overtime pay calculator reference</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/monthly-and-daily-salary" target="_blank" rel="noopener">
-            <strong>Basic Rate of Pay</strong>
-            <span>Monthly and daily salary calculation guidance</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore calculators</h2>
-      <p class="section-desc">
+<div class="authority-list">
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days" rel="noopener" target="_blank">
+<strong>MOM Overtime Rules</strong>
+<span>Hours of work, overtime and rest day guidance</span>
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/calculate-overtime-pay" rel="noopener" target="_blank">
+<strong>MOM OT Calculator</strong>
+<span>Official overtime pay calculator reference</span>
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/monthly-and-daily-salary" rel="noopener" target="_blank">
+<strong>Basic Rate of Pay</strong>
+<span>Monthly and daily salary calculation guidance</span>
+</a>
+</div>
+</div>
+</section>
+<section class="section"><h2>Who is covered by statutory overtime rules?</h2><p>Under MOM's current guidance, Part 4 overtime provisions generally cover a non-workman earning a monthly basic salary of S$2,600 or less and a workman earning a monthly basic salary of S$4,500 or less. Overtime is work beyond normal hours, excluding breaks. Employees outside these statutory thresholds should check their contract or company policy rather than assuming the same entitlement.</p></section><section class="section"><h2>Related tools and guides</h2><p><a href="overtime-guide.html">Overtime Guide</a> · <a href="working-hours-guide.html">Working Hours Guide</a> · <a href="rest-day-guide.html">Rest Day Guide</a></p></section><section class="content-section">
+<h2 class="section-title">Related Singapore calculators</h2>
+<p class="section-desc">
         Use these calculators together to estimate salary, CPF, tax and payroll amounts.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <h3>Salary Calculator</h3>
-          <p>Estimate monthly take-home pay after CPF and income tax.</p>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <h3>CPF Calculator</h3>
-          <p>Estimate employee and employer CPF contributions.</p>
-        </a>
-
-        <a class="related-card" href="payslip-generator.html">
-          <h3>Payslip Generator</h3>
-          <p>Create a simple printable Singapore salary slip.</p>
-        </a>
-
-        <a class="related-card" href="bonus-calculator.html">
-          <h3>Bonus Calculator</h3>
-          <p>Estimate bonus after CPF and tax impact.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore salary guides</h2>
-      <p class="section-desc">
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<h3>Salary Calculator</h3>
+<p>Estimate monthly take-home pay after CPF and income tax.</p>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<h3>CPF Calculator</h3>
+<p>Estimate employee and employer CPF contributions.</p>
+</a>
+<a class="related-card" href="payslip-generator.html">
+<h3>Payslip Generator</h3>
+<p>Create a simple printable Singapore salary slip.</p>
+</a>
+<a class="related-card" href="bonus-calculator.html">
+<h3>Bonus Calculator</h3>
+<p>Estimate bonus after CPF and tax impact.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="calculators.html">View All Calculators →</a>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Singapore salary guides</h2>
+<p class="section-desc">
         Learn more about working hours, salary, CPF and public holidays in Singapore.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="overtime-guide.html">
-          <h3>Overtime Guide</h3>
-          <p>Understand overtime pay, working hours and common OT rules.</p>
-        </a>
-
-        <a class="related-card" href="public-holiday-guide.html">
-          <h3>Public Holiday Guide</h3>
-          <p>View public holiday dates and holiday pay basics.</p>
-        </a>
-
-        <a class="related-card" href="cpf-contribution-rates-guide.html">
-          <h3>CPF Contribution Rates Guide</h3>
-          <p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
-        </a>
-
-        <a class="related-card" href="payslip-guide.html">
-          <h3>Payslip Guide</h3>
-          <p>Learn what a payslip should include and how to read salary details.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="guides.html">View All Guides →</a>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>How is overtime pay calculated in Singapore?</summary>
-        <p>
+<div class="related-grid">
+<a class="related-card" href="overtime-guide.html">
+<h3>Overtime Guide</h3>
+<p>Understand overtime pay, working hours and common OT rules.</p>
+</a>
+<a class="related-card" href="public-holiday-guide.html">
+<h3>Public Holiday Guide</h3>
+<p>View public holiday dates and holiday pay basics.</p>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<h3>CPF Contribution Rates Guide</h3>
+<p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
+</a>
+<a class="related-card" href="payslip-guide.html">
+<h3>Payslip Guide</h3>
+<p>Learn what a payslip should include and how to read salary details.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="guides.html">View All Guides →</a>
+</div>
+</section>
+<section class="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<details>
+<summary>How is overtime pay calculated in Singapore?</summary>
+<p>
           Overtime pay is generally calculated as hourly basic rate of pay multiplied by 1.5,
           then multiplied by the number of overtime hours worked.
         </p>
-      </details>
-
-      <details>
-        <summary>What is the hourly basic rate for a monthly-rated employee?</summary>
-        <p>
+</details>
+<details>
+<summary>What is the hourly basic rate for a monthly-rated employee?</summary>
+<p>
           For a monthly-rated employee, the hourly basic rate is commonly calculated as
           (12 × monthly basic salary) divided by (52 × 44).
         </p>
-      </details>
-
-      <details>
-        <summary>Who can claim overtime pay in Singapore?</summary>
-        <p>
+</details>
+<details>
+<summary>Who can claim overtime pay in Singapore?</summary>
+<p>
           Overtime claim eligibility depends on coverage under the Employment Act.
           Common thresholds include non-workmen earning monthly basic salary of S$2,600 or less,
           and workmen earning monthly basic salary of S$4,500 or less.
         </p>
-      </details>
-
-      <details>
-        <summary>Is overtime always paid at 1.5 times?</summary>
-        <p>
+</details>
+<details>
+<summary>Is overtime always paid at 1.5 times?</summary>
+<p>
           For eligible overtime work, the standard rate is at least 1.5 times the hourly basic rate of pay.
           Some employers may provide better terms under contract or company policy.
         </p>
-      </details>
-
-      <details>
-        <summary>Does basic salary include allowances for overtime calculation?</summary>
-        <p>
+</details>
+<details>
+<summary>Does basic salary include allowances for overtime calculation?</summary>
+<p>
           Basic rate of pay usually excludes overtime payments, bonuses, AWS and certain allowances.
           Check MOM guidance or your employment contract for specific treatment.
         </p>
-      </details>
-
-      <details>
-        <summary>Is rest day work the same as overtime?</summary>
-        <p>
+</details>
+<details>
+<summary>Is rest day work the same as overtime?</summary>
+<p>
           Not exactly. Rest day work may have separate rest day pay rules. Extra hours beyond normal daily hours
           on a rest day may also be treated as overtime.
         </p>
-      </details>
-
-      <details>
-        <summary>Can I use this calculator for public holiday work?</summary>
-        <p>
+</details>
+<details>
+<summary>Can I use this calculator for public holiday work?</summary>
+<p>
           This calculator is mainly for normal overtime. Public holiday work may involve public holiday pay
           or time off in addition to overtime for extra hours.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this overtime calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this overtime calculator official?</summary>
+<p>
           No. This calculator provides estimates only. For official overtime rules and calculations,
           check MOM directly.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides estimates only and is not official MOM, payroll or legal advice.
-  </footer>
-
-  <script>
-    function money(value) {
-      return "S$" + Number(value).toLocaleString("en-SG", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-    }
-
-    function moneyRound(value) {
-      return "S$" + Math.round(value).toLocaleString("en-SG");
-    }
-
-    function calculateOvertime() {
-      const monthlySalary = Number(document.getElementById("monthlySalary").value) || 0;
-      const employeeType = document.getElementById("employeeType").value;
-      const weeklyHours = Number(document.getElementById("weeklyHours").value) || 44;
-      const overtimeHours = Number(document.getElementById("overtimeHours").value) || 0;
-      const multiplier = Number(document.getElementById("multiplier").value) || 1.5;
-
-      let salaryCap = monthlySalary;
-      let coverageText = "Custom";
-      let note = "";
-
-      if (employeeType === "nonworkman") {
-        salaryCap = Math.min(monthlySalary, 2600);
-        coverageText = monthlySalary <= 2600 ? "Likely covered" : "Above threshold";
-      } else if (employeeType === "workman") {
-        salaryCap = Math.min(monthlySalary, 4500);
-        coverageText = monthlySalary <= 4500 ? "Likely covered" : "Above threshold";
-      } else {
-        salaryCap = monthlySalary;
-        coverageText = "Policy estimate";
-      }
-
-      const hourlyRate = weeklyHours > 0 ? (12 * salaryCap) / (52 * weeklyHours) : 0;
-      const overtimeRate = hourlyRate * multiplier;
-      const overtimePay = overtimeRate * overtimeHours;
-
-      document.getElementById("overtimePay").textContent = moneyRound(overtimePay);
-      document.getElementById("overtimeSummary").textContent =
-        "Hourly basic rate: " + money(hourlyRate) + " · OT rate: " + money(overtimeRate) + " per hour";
-
-      document.getElementById("hourlyRate").textContent = money(hourlyRate);
-      document.getElementById("overtimeRate").textContent = money(overtimeRate);
-      document.getElementById("coverageStatus").textContent = coverageText;
-
-      document.getElementById("salaryResult").textContent = moneyRound(monthlySalary);
-      document.getElementById("salaryUsed").textContent = moneyRound(salaryCap);
-      document.getElementById("weeklyHoursResult").textContent = weeklyHours + " hours";
-      document.getElementById("hourlyRateBreakdown").textContent = money(hourlyRate);
-      document.getElementById("multiplierResult").textContent = multiplier + "×";
-      document.getElementById("hoursResult").textContent = overtimeHours + " hours";
-      document.getElementById("finalOvertimePay").textContent = moneyRound(overtimePay);
-
-      if (employeeType === "nonworkman" && monthlySalary > 2600) {
-        note = "Your monthly basic salary is above the common non-workman overtime threshold. This calculator caps the salary used for OT calculation at S$2,600 for illustration. Actual entitlement may depend on Employment Act coverage, contract or company policy.";
-      } else if (employeeType === "workman" && monthlySalary > 4500) {
-        note = "Your monthly basic salary is above the common workman overtime threshold. This calculator caps the salary used for OT calculation at S$4,500 for illustration. Actual entitlement may depend on Employment Act coverage, contract or company policy.";
-      } else if (employeeType === "custom") {
-        note = "Custom mode does not apply statutory coverage thresholds. It provides a company policy estimate based on the salary and multiplier you entered.";
-      } else {
-        note = "This estimate uses the monthly-rated employee hourly basic rate formula and 1.5× overtime rate.";
-      }
-
-      document.getElementById("calculationNote").textContent = note;
-    }
-
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function money(v){return "S$"+Number(v).toLocaleString("en-SG",{minimumFractionDigits:2,maximumFractionDigits:2});} function moneyRound(v){return "S$"+Math.round(v).toLocaleString("en-SG");}
+    function calculateOvertime(){const salary=+document.getElementById("monthlySalary").value||0,type=document.getElementById("employeeType").value,weekly=+document.getElementById("weeklyHours").value||44,hours=+document.getElementById("overtimeHours").value||0,mult=+document.getElementById("multiplier").value||1.5; const statutory=type!=="custom"; const divisorHours=statutory?44:weekly; const hourly=divisorHours>0?(12*salary)/(52*divisorHours):0, rate=hourly*mult, pay=rate*hours; let coverage="Policy estimate",note="Custom mode uses the weekly hours and multiplier you entered."; if(type==="nonworkman"){coverage=salary<=2600?"Likely within Part 4 threshold":"Above Part 4 threshold";note=salary<=2600?"Statutory mode uses MOM's monthly-rated hourly basic-rate formula: 12 × monthly basic rate ÷ (52 × 44), then at least 1.5× for overtime.":"Your basic salary is above the S$2,600 Part 4 threshold for non-workmen. The calculator does not cap your salary at S$2,600; statutory OT entitlement may not apply, so check your contract/company policy.";} if(type==="workman"){coverage=salary<=4500?"Likely within Part 4 threshold":"Above Part 4 threshold";note=salary<=4500?"Statutory mode uses MOM's monthly-rated hourly basic-rate formula: 12 × monthly basic rate ÷ (52 × 44), then at least 1.5× for overtime.":"Your basic salary is above the S$4,500 Part 4 threshold for workmen. The calculator does not cap your salary; check contract/company policy if statutory OT entitlement does not apply.";}
+      document.getElementById("overtimePay").textContent=moneyRound(pay);document.getElementById("overtimeSummary").textContent="Hourly basic rate: "+money(hourly)+" · OT rate: "+money(rate)+" per hour";document.getElementById("hourlyRate").textContent=money(hourly);document.getElementById("overtimeRate").textContent=money(rate);document.getElementById("coverageStatus").textContent=coverage;document.getElementById("salaryResult").textContent=moneyRound(salary);document.getElementById("salaryUsed").textContent=moneyRound(salary);document.getElementById("weeklyHoursResult").textContent=(statutory?44:weekly)+" hours";document.getElementById("hourlyRateBreakdown").textContent=money(hourly);document.getElementById("multiplierResult").textContent=mult+"×";document.getElementById("hoursResult").textContent=hours+" hours";document.getElementById("finalOvertimePay").textContent=moneyRound(pay);document.getElementById("calculationNote").textContent=note; }
     calculateOvertime();
   </script>
 </body>

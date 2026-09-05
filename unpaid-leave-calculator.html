@@ -1,19 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Unpaid Leave Calculator 2026 | No-Pay Leave Salary Deduction</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/unpaid-leave-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Unpaid Leave Calculator 2026. Estimate salary deduction for unpaid leave, no-pay leave, unpaid absence or partial month unpaid days." />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Unpaid Leave Calculator 2026 | No-Pay Leave Salary Deduction</title>
+<link href="https://sgsalarytools.com/unpaid-leave-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Unpaid Leave Calculator 2026. Estimate salary deduction for unpaid leave, no-pay leave, unpaid absence or partial month unpaid days." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -380,546 +376,318 @@
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="logo-icon.png" alt="SG Salary Tools logo">
-        <span>
+<header>
+<div class="nav">
+<a class="brand" href="index.html">
+<img alt="SG Salary Tools logo" src="logo-icon.png"/>
+<span>
           SG Salary Tools
           <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-wrap">
-      <div class="eyebrow">Singapore no-pay leave salary calculator</div>
-      <h1>Calculate unpaid leave salary deduction</h1>
-      <p>
+</span>
+</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-wrap">
+<div class="eyebrow">Singapore no-pay leave salary calculator</div>
+<h1>Calculate unpaid leave salary deduction</h1>
+<p>
         Estimate salary deduction for unpaid leave, no-pay leave, unpaid absence or partial month
-        unpaid days in Singapore using calendar days, working days or fixed 26-day basis.
+        unpaid days in Singapore using the MOM incomplete-month formula.
       </p>
-
-      <div class="hero-tags">
-        <span>No-Pay Leave Deduction</span>
-        <span>Unpaid Absence</span>
-        <span>Daily Rate Estimate</span>
-        <span>Final Payable Salary</span>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="section">
-      <div class="calculator-grid">
-        <div>
-          <h2>Unpaid leave inputs</h2>
-          <p class="muted">
-            Enter your monthly salary, unpaid leave days and deduction basis. The calculator estimates
+<div class="hero-tags">
+<span>No-Pay Leave Deduction</span>
+<span>Unpaid Absence</span>
+<span>Daily Rate Estimate</span>
+<span>Final Payable Salary</span>
+</div>
+</div>
+</section>
+<main>
+<section class="section">
+<div class="calculator-grid">
+<div>
+<h2>Unpaid leave inputs</h2>
+<p class="muted">
+            Enter your monthly gross rate of pay, salary month and no-pay leave days. The calculator estimates
             the salary deduction and remaining salary after unpaid leave.
           </p>
-
-          <label for="monthlySalary">Monthly salary</label>
-          <input type="number" id="monthlySalary" value="4000" min="0" step="0.01">
-
-          <label for="salaryMonth">Salary month</label>
-          <input type="month" id="salaryMonth">
-
-          <label for="unpaidDays">Unpaid leave days</label>
-          <input type="number" id="unpaidDays" value="1" min="0" step="0.5">
-
-          <label for="basis">Deduction basis</label>
-          <select id="basis">
-            <option value="calendar" selected>Calendar days in the month</option>
-            <option value="working">Working days only, Monday to Friday</option>
-            <option value="fixed26">Fixed 26-day salary basis</option>
-          </select>
-
-          <label for="allowance">Monthly allowance included? Optional</label>
-          <input type="number" id="allowance" value="0" min="0" step="0.01">
-
-          <label for="otherDeductions">Other salary deductions? Optional</label>
-          <input type="number" id="otherDeductions" value="0" min="0" step="0.01">
-
-          <button onclick="calculateUnpaidLeave()">Calculate Unpaid Leave Deduction</button>
-
-          <div class="note">
-            This calculator gives a general estimate only. Your employer may calculate unpaid leave
-            differently depending on your employment contract, HR policy or payroll practice.
+<label for="monthlySalary">Monthly gross rate of pay (excluding optional allowance entered below)</label>
+<input id="monthlySalary" min="0" step="0.01" type="number" value="4000"/>
+<label for="salaryMonth">Salary month</label>
+<input id="salaryMonth" type="month"/>
+<label for="workSchedule">Work schedule</label>
+<select id="workSchedule"><option value="mon-fri">5-day week (Mon–Fri)</option><option value="mon-sat">6-day week (Mon–Sat)</option><option value="tue-sat">5-day week (Tue–Sat)</option></select>
+<label for="unpaidDays">Unpaid leave days</label>
+<input id="unpaidDays" min="0" step="0.5" type="number" value="1"/>
+<label for="allowance">Eligible monthly allowance included in gross rate? Optional</label>
+<input id="allowance" min="0" step="0.01" type="number" value="0"/>
+<label for="otherDeductions">Other salary deductions? Optional</label>
+<input id="otherDeductions" min="0" step="0.01" type="number" value="0"/>
+<button onclick="calculateUnpaidLeave()">Calculate Unpaid Leave Deduction</button>
+<div class="note">
+            For a monthly-rated full-time employee, MOM treats a month with no-pay leave as an incomplete month of work. Choose the work schedule that matches the employee; rotating or irregular rosters should be checked separately.
           </div>
-        </div>
-
-        <div class="result-card">
-          <h2>Your estimated result</h2>
-          <p>Estimated salary after unpaid leave</p>
-
-          <div class="big-result" id="netSalaryResult">S$0.00</div>
-
-          <div class="result-line">
-            <span>Gross monthly amount</span>
-            <span id="grossSalaryResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Daily rate</span>
-            <span id="dailyRateResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Unpaid leave deduction</span>
-            <span id="leaveDeductionResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Other deductions</span>
-            <span id="otherDeductionResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Basis used</span>
-            <span id="basisResult">-</span>
-          </div>
-
-          <p class="muted" style="color:#cfe6d5; margin-top:16px;">
+</div>
+<div class="result-card">
+<h2>Your estimated result</h2>
+<p>Estimated salary after unpaid leave</p>
+<div class="big-result" id="netSalaryResult">S$0.00</div>
+<div class="result-line">
+<span>Gross monthly amount</span>
+<span id="grossSalaryResult">-</span>
+</div>
+<div class="result-line">
+<span>Daily rate</span>
+<span id="dailyRateResult">-</span>
+</div>
+<div class="result-line">
+<span>Unpaid leave deduction</span>
+<span id="leaveDeductionResult">-</span>
+</div>
+<div class="result-line">
+<span>Other deductions</span>
+<span id="otherDeductionResult">-</span>
+</div>
+<div class="result-line">
+<span>Basis used</span>
+<span id="basisResult">-</span>
+</div>
+<p class="muted" style="color:#cfe6d5; margin-top:16px;">
             CPF, tax, overtime and bonus are not included in this calculator.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>How this unpaid leave calculator works</h2>
-      <p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>How this unpaid leave calculator works</h2>
+<p>
         This calculator estimates how much salary may be deducted when an employee takes unpaid leave,
         no-pay leave or has unpaid absence during the salary month.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>1. Enter salary</strong>
-          <p>Use your monthly basic salary. You may also add fixed monthly allowance if needed.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>2. Enter unpaid days</strong>
-          <p>Input the number of unpaid leave days, including half days if applicable.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>3. Choose deduction basis</strong>
-          <p>Select calendar days, working days or fixed 26-day basis depending on your payroll method.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Unpaid leave deduction formula</h2>
-      <p>
-        The general idea is to calculate a daily rate first, then multiply it by the number of unpaid
-        leave days.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Basis</th>
-            <th>Formula</th>
-            <th>Common use</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Calendar days</td>
-            <td>Monthly salary ÷ calendar days in the month × unpaid leave days</td>
-            <td>Useful when deduction is based on the full calendar month.</td>
-          </tr>
-          <tr>
-            <td>Working days</td>
-            <td>Monthly salary ÷ working days in the month × unpaid leave days</td>
-            <td>Useful when payroll counts only Monday to Friday working days.</td>
-          </tr>
-          <tr>
-            <td>Fixed 26-day basis</td>
-            <td>Monthly salary ÷ 26 × unpaid leave days</td>
-            <td>Commonly used as a simple daily rate salary deduction method.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
-        Different companies may use different payroll formulas. The employment contract, staff handbook
-        or HR policy should be followed for the actual deduction.
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>When is unpaid leave deduction used?</h2>
-      <p>
+<div class="grid-3">
+<div class="info-card">
+<strong>1. Enter salary</strong>
+<p>Use your monthly basic salary. You may also add fixed monthly allowance if needed.</p>
+</div>
+<div class="info-card">
+<strong>2. Enter unpaid days</strong>
+<p>Input the number of unpaid leave days, including half days if applicable.</p>
+</div>
+<div class="info-card">
+<strong>3. Choose work schedule</strong>
+<p>Select the employee’s normal work schedule so the calculator can count the working days in that month.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>MOM no-pay leave calculation</h2>
+<p>A monthly-rated full-time employee who takes no-pay leave has an incomplete month of work. MOM calculates the payable salary using the monthly gross rate of pay divided by the total number of working days in that month, multiplied by days actually worked.</p>
+<div class="formula">Monthly gross rate ÷ total working days in month × days actually worked</div>
+<div class="note">This calculator expresses the same rule as a no-pay leave deduction. Choose the employee's actual work schedule so the monthly working-day count is appropriate.</div></section>
+<section class="section">
+<h2>When is unpaid leave deduction used?</h2>
+<p>
         Unpaid leave deduction is usually used when an employee is not entitled to paid leave for the
         absence period, or when the employee applies for no-pay leave.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>No-pay leave</strong>
-          <p>The employee takes approved leave but the leave is not paid by the employer.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Unpaid absence</strong>
-          <p>The employee is absent without paid leave entitlement or without sufficient leave balance.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Partial month payroll</strong>
-          <p>Unpaid days may reduce the monthly salary payable for that month.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Unpaid leave examples</h2>
-      <p>
-        These examples show how unpaid leave deduction may change depending on the calculation basis.
+<div class="grid-3">
+<div class="info-card">
+<strong>No-pay leave</strong>
+<p>The employee takes approved leave but the leave is not paid by the employer.</p>
+</div>
+<div class="info-card">
+<strong>Unpaid absence</strong>
+<p>The employee is absent without paid leave entitlement or without sufficient leave balance.</p>
+</div>
+<div class="info-card">
+<strong>Partial month payroll</strong>
+<p>Unpaid days may reduce the monthly salary payable for that month.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Unpaid leave examples</h2>
+<p>
+        These examples illustrate the MOM incomplete-month approach. The exact amount changes with the number of scheduled working days in the relevant month.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Scenario</th>
-            <th>Monthly salary</th>
-            <th>Example calculation</th>
-            <th>Estimated deduction</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1 day unpaid leave in July 2026</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 31 × 1 day</td>
-            <td>About S$129.03</td>
-          </tr>
-          <tr>
-            <td>3 days unpaid leave using 26-day basis</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 26 × 3 days</td>
-            <td>About S$461.54</td>
-          </tr>
-          <tr>
-            <td>2 unpaid working days in a 23-working-day month</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 23 × 2 days</td>
-            <td>About S$347.83</td>
-          </tr>
-          <tr>
-            <td>Half-day unpaid leave using 26-day basis</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 26 × 0.5 day</td>
-            <td>About S$76.92</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Calendar days vs working days vs 26 days</h2>
-      <p>
-        The unpaid leave deduction can be different depending on which basis your employer uses.
-        This is why two employees with the same salary and same unpaid leave days may see different
-        deductions under different payroll methods.
-      </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>Calendar days</strong>
-          <p>Divides salary by the number of days in the month, such as 28, 30 or 31 days.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Working days</strong>
-          <p>Divides salary by working days in the month. This calculator counts Monday to Friday.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>26-day basis</strong>
-          <p>Divides salary by 26. This can produce a higher daily deduction than calendar basis.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Important notes before using the result</h2>
-      <p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Monthly salary</th>
+<th>Example calculation</th>
+<th>Estimated deduction</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1 unpaid day in a 23-working-day month</td><td>S$4,000</td><td>S$4,000 ÷ 23 × 1 day</td><td>About S$173.91</td></tr>
+<tr><td>3 unpaid days in a 23-working-day month</td><td>S$4,000</td><td>S$4,000 ÷ 23 × 3 days</td><td>About S$521.74</td></tr>
+<tr><td>2 unpaid days in a 22-working-day month</td><td>S$4,000</td><td>S$4,000 ÷ 22 × 2 days</td><td>About S$363.64</td></tr>
+<tr><td>Half-day unpaid leave in a 23-working-day month</td><td>S$4,000</td><td>S$4,000 ÷ 23 × 0.5 day</td><td>About S$86.96</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>Why the number of working days matters</h2>
+<p>For a monthly-rated full-time employee on no-pay leave, MOM treats the month as an incomplete month of work. The denominator is the total number of working days in that month under the employee’s normal work schedule. Rest days and non-working days are excluded, while public holidays that fall on scheduled working days are included.</p>
+<div class="note">Do not substitute an arbitrary calendar-day or fixed 26-day divisor for the statutory incomplete-month formula.</div>
+</section>
+<section class="section">
+<h2>Important notes before using the result</h2>
+<p>
         This calculator only estimates unpaid leave salary deduction. It does not decide whether unpaid
         leave should be approved, whether CPF applies, or whether other payroll adjustments are needed.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>What to check</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Employment contract</td>
-            <td>Check whether your contract states how no-pay leave or unpaid absence is deducted.</td>
-          </tr>
-          <tr>
-            <td>HR policy</td>
-            <td>Some companies use calendar days, some use working days, and some use 26-day basis.</td>
-          </tr>
-          <tr>
-            <td>CPF</td>
-            <td>CPF is not calculated here. CPF may be based on the actual wages payable after deduction.</td>
-          </tr>
-          <tr>
-            <td>Allowances</td>
-            <td>Some allowances may be deducted together with basic salary, while others may not be affected.</td>
-          </tr>
-          <tr>
-            <td>Public holidays</td>
-            <td>This calculator does not separately remove Singapore public holidays from working days.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore calculators</h2>
-      <p class="muted">Use these tools to estimate salary, leave, CPF and final month payroll amounts.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="prorated-salary-calculator.html">
-          <strong>Prorated Salary Calculator</strong>
-          <span>Estimate partial month salary for joining, resignation or incomplete months.</span>
-        </a>
-
-        <a class="related-card" href="index.html">
-          <strong>Salary Calculator</strong>
-          <span>Estimate monthly take-home pay after CPF and income tax.</span>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <strong>CPF Calculator</strong>
-          <span>Calculate employee and employer CPF contributions.</span>
-        </a>
-
-        <a class="related-card" href="annual-leave-calculator.html">
-          <strong>Annual Leave Calculator</strong>
-          <span>Estimate annual leave entitlement and leave balance.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="calculators.html">View All Calculators →</a>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore salary guides</h2>
-      <p class="muted">Learn more about salary, leave, employment contracts and payroll calculations.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="employment-contract-guide.html">
-          <strong>Employment Contract Guide</strong>
-          <span>Understand salary clauses, leave rules and notice period terms.</span>
-        </a>
-
-        <a class="related-card" href="annual-leave-guide.html">
-          <strong>Annual Leave Guide</strong>
-          <span>Learn how paid annual leave entitlement works in Singapore.</span>
-        </a>
-
-        <a class="related-card" href="payslip-guide.html">
-          <strong>Payslip Guide</strong>
-          <span>Understand payslip items, salary deductions and monthly payroll details.</span>
-        </a>
-
-        <a class="related-card" href="cpf-contribution-rates-guide.html">
-          <strong>CPF Contribution Rates Guide</strong>
-          <span>Learn how CPF contributions work by age and wage type.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="guides.html">View All Guides →</a>
-    </section>
-
-    <section class="section">
-      <h2>Frequently Asked Questions</h2>
-
-      <details open>
-        <summary>What is unpaid leave?</summary>
-        <p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Employment contract</td>
+<td>Check whether your contract states how no-pay leave or unpaid absence is deducted.</td>
+</tr>
+<tr>
+<td>HR policy</td>
+<td>For monthly-rated full-time employees, check the MOM incomplete-month rule and the employee’s actual work schedule; company policy should not override statutory minimum requirements.</td>
+</tr>
+<tr>
+<td>CPF</td>
+<td>CPF is not calculated here. CPF may be based on the actual wages payable after deduction.</td>
+</tr>
+<tr>
+<td>Allowances</td>
+<td>Only include allowances that form part of the MOM monthly gross rate of pay. MOM excludes items such as travel, food and housing allowances, overtime, bonuses and AWS from this gross-rate definition.</td>
+</tr>
+<tr>
+<td>Public holidays</td>
+<td>Public holidays that fall on scheduled working days remain in the working-day count for the MOM incomplete-month formula.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="prorated-salary-calculator.html">Prorated Salary Calculator</a> · <a href="salary-deduction-guide.html">Salary Deduction Guide</a> · <a href="annual-leave-guide.html">Annual Leave Guide</a></p></section><section class="section">
+<h2>Related Singapore calculators</h2>
+<p class="muted">Use these tools to estimate salary, leave, CPF and final month payroll amounts.</p>
+<div class="related-grid">
+<a class="related-card" href="prorated-salary-calculator.html">
+<strong>Prorated Salary Calculator</strong>
+<span>Estimate partial month salary for joining, resignation or incomplete months.</span>
+</a>
+<a class="related-card" href="index.html">
+<strong>Salary Calculator</strong>
+<span>Estimate monthly take-home pay after CPF and income tax.</span>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<strong>CPF Calculator</strong>
+<span>Calculate employee and employer CPF contributions.</span>
+</a>
+<a class="related-card" href="annual-leave-calculator.html">
+<strong>Annual Leave Calculator</strong>
+<span>Estimate annual leave entitlement and leave balance.</span>
+</a>
+</div>
+<a class="view-all" href="calculators.html">View All Calculators →</a>
+</section>
+<section class="section">
+<h2>Related Singapore salary guides</h2>
+<p class="muted">Learn more about salary, leave, employment contracts and payroll calculations.</p>
+<div class="related-grid">
+<a class="related-card" href="employment-contract-guide.html">
+<strong>Employment Contract Guide</strong>
+<span>Understand salary clauses, leave rules and notice period terms.</span>
+</a>
+<a class="related-card" href="annual-leave-guide.html">
+<strong>Annual Leave Guide</strong>
+<span>Learn how paid annual leave entitlement works in Singapore.</span>
+</a>
+<a class="related-card" href="payslip-guide.html">
+<strong>Payslip Guide</strong>
+<span>Understand payslip items, salary deductions and monthly payroll details.</span>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<strong>CPF Contribution Rates Guide</strong>
+<span>Learn how CPF contributions work by age and wage type.</span>
+</a>
+</div>
+<a class="view-all" href="guides.html">View All Guides →</a>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<details open="">
+<summary>What is unpaid leave?</summary>
+<p>
           Unpaid leave, also called no-pay leave, is leave where the employee is not paid for the
           leave period. The salary for the month may be reduced based on the number of unpaid days.
         </p>
-      </details>
-
-      <details>
-        <summary>How do I calculate unpaid leave deduction in Singapore?</summary>
-        <p>
-          A common method is monthly salary divided by the payroll basis, multiplied by the number
-          of unpaid leave days. The basis may be calendar days, working days or a fixed 26-day basis.
+</details>
+<details>
+<summary>How do I calculate unpaid leave deduction in Singapore?</summary>
+<p>
+          For a monthly-rated full-time employee, use the monthly gross rate divided by the total working days in that month, then apply the number of unpaid working days (or equivalently calculate salary for days actually worked).
         </p>
-      </details>
-
-      <details>
-        <summary>Should unpaid leave be deducted based on calendar days or working days?</summary>
-        <p>
-          It depends on your employment contract and company payroll policy. Calendar days, working
-          days and 26-day basis can all give different results.
+</details>
+<details>
+<summary>Should unpaid leave be deducted based on calendar days or working days?</summary>
+<p>
+          For the MOM statutory incomplete-month calculation, use the employee’s working days in the relevant month. A calendar-day or fixed 26-day shortcut should not replace that formula.
         </p>
-      </details>
-
-      <details>
-        <summary>Can unpaid leave be half day?</summary>
-        <p>
+</details>
+<details>
+<summary>Can unpaid leave be half day?</summary>
+<p>
           Yes, if your employer allows half-day unpaid leave. You can enter 0.5 day in this calculator.
         </p>
-      </details>
-
-      <details>
-        <summary>Does unpaid leave affect CPF?</summary>
-        <p>
+</details>
+<details>
+<summary>Does unpaid leave affect CPF?</summary>
+<p>
           This calculator does not calculate CPF. In practice, CPF is usually calculated based on the
           actual wages payable, so unpaid leave may reduce the wage amount used for CPF calculation.
         </p>
-      </details>
-
-      <details>
-        <summary>Does unpaid leave affect annual leave?</summary>
-        <p>
+</details>
+<details>
+<summary>Does unpaid leave affect annual leave?</summary>
+<p>
           It may depend on company policy and the length of unpaid leave. For long periods of unpaid
           leave, employers may have specific rules on leave accrual.
         </p>
-      </details>
-
-      <details>
-        <summary>Is no-pay leave the same as unpaid leave?</summary>
-        <p>
+</details>
+<details>
+<summary>Is no-pay leave the same as unpaid leave?</summary>
+<p>
           In many workplace situations, no-pay leave and unpaid leave mean the same thing: approved
           leave where salary is not paid for the leave period.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this unpaid leave calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this unpaid leave calculator official?</summary>
+<p>
           No. SG Salary Tools provides general planning calculators only. For exact payroll treatment,
           check your employment contract, HR policy or seek professional advice.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides general information only and is not official MOM, CPF, tax, payroll or legal advice.
-  </footer>
-
-  <script>
-    function money(amount) {
-      return "S$" + amount.toLocaleString("en-SG", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-    }
-
-    function getDaysInMonth(year, monthIndex) {
-      return new Date(year, monthIndex + 1, 0).getDate();
-    }
-
-    function countWorkingDaysInMonth(year, monthIndex) {
-      const daysInMonth = getDaysInMonth(year, monthIndex);
-      let count = 0;
-
-      for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(year, monthIndex, day);
-        const weekDay = date.getDay();
-
-        if (weekDay !== 0 && weekDay !== 6) {
-          count++;
-        }
-      }
-
-      return count;
-    }
-
-    function calculateUnpaidLeave() {
-      const monthlySalary = Number(document.getElementById("monthlySalary").value || 0);
-      const salaryMonth = document.getElementById("salaryMonth").value;
-      const unpaidDays = Number(document.getElementById("unpaidDays").value || 0);
-      const basis = document.getElementById("basis").value;
-      const allowance = Number(document.getElementById("allowance").value || 0);
-      const otherDeductions = Number(document.getElementById("otherDeductions").value || 0);
-
-      if (!monthlySalary || monthlySalary <= 0) {
-        alert("Please enter a valid monthly salary.");
-        return;
-      }
-
-      if (!salaryMonth) {
-        alert("Please select the salary month.");
-        return;
-      }
-
-      if (unpaidDays < 0) {
-        alert("Unpaid leave days cannot be negative.");
-        return;
-      }
-
-      const [year, month] = salaryMonth.split("-").map(Number);
-      const monthIndex = month - 1;
-
-      const grossMonthlyAmount = monthlySalary + allowance;
-
-      let denominator = 0;
-      let basisText = "";
-
-      if (basis === "calendar") {
-        denominator = getDaysInMonth(year, monthIndex);
-        basisText = "Calendar days";
-      }
-
-      if (basis === "working") {
-        denominator = countWorkingDaysInMonth(year, monthIndex);
-        basisText = "Working days";
-      }
-
-      if (basis === "fixed26") {
-        denominator = 26;
-        basisText = "Fixed 26-day basis";
-      }
-
-      const dailyRate = grossMonthlyAmount / denominator;
-      const leaveDeduction = dailyRate * unpaidDays;
-      const netSalary = Math.max(grossMonthlyAmount - leaveDeduction - otherDeductions, 0);
-
-      document.getElementById("netSalaryResult").textContent = money(netSalary);
-      document.getElementById("grossSalaryResult").textContent = money(grossMonthlyAmount);
-      document.getElementById("dailyRateResult").textContent = money(dailyRate);
-      document.getElementById("leaveDeductionResult").textContent = money(leaveDeduction);
-      document.getElementById("otherDeductionResult").textContent = money(otherDeductions);
-      document.getElementById("basisResult").textContent = basisText;
-    }
-
-    window.addEventListener("DOMContentLoaded", function () {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-
-      document.getElementById("salaryMonth").value = `${year}-${month}`;
-      calculateUnpaidLeave();
-    });
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function money(v){return "S$"+v.toLocaleString("en-SG",{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function calculateUnpaidLeave(){const salary=+document.getElementById("monthlySalary").value||0,allowance=+document.getElementById("allowance").value||0,other=+document.getElementById("otherDeductions").value||0,unpaid=+document.getElementById("unpaidDays").value||0,mv=document.getElementById("salaryMonth").value,schedule=document.getElementById("workSchedule").value;if(!mv)return;const [y,m]=mv.split("-").map(Number),ms=new Date(y,m-1,1),me=new Date(y,m,0),total=SG2026.countScheduledDays(ms,me,schedule),gross=salary+allowance,daily=total?gross/total:0,ded=daily*unpaid,net=Math.max(0,gross-ded-other);document.getElementById("netSalaryResult").textContent=money(net);document.getElementById("grossSalaryResult").textContent=money(gross);document.getElementById("dailyRateResult").textContent=money(daily);document.getElementById("leaveDeductionResult").textContent="-"+money(ded);document.getElementById("otherDeductionResult").textContent="-"+money(other);document.getElementById("basisResult").textContent="MOM incomplete-month formula · "+schedule;}
+    window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),y=t.getFullYear(),m=String(t.getMonth()+1).padStart(2,"0");document.getElementById("salaryMonth").value=`${y}-${m}`;["monthlySalary","salaryMonth","unpaidDays","allowance","otherDeductions","workSchedule"].forEach(id=>document.getElementById(id).addEventListener("input",calculateUnpaidLeave));calculateUnpaidLeave();});
   </script>
 </body>
 </html>

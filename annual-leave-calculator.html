@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Annual Leave Calculator 2026 | Pro-Rated Leave Entitlement</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/annual-leave-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Annual Leave Calculator 2026. Estimate statutory annual leave entitlement, pro-rated leave, completed months of service and remaining leave." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Annual Leave Calculator 2026 | Pro-Rated Leave Entitlement</title>
+<link href="https://sgsalarytools.com/annual-leave-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Annual Leave Calculator 2026. Estimate statutory annual leave entitlement, pro-rated leave, completed months of service and remaining leave." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -680,502 +677,371 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
-
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore Annual Leave Calculator 2026</div>
-
-      <h1>Calculate your <em>annual leave</em> entitlement</h1>
-
-      <p>
+<header class="topbar">
+<nav class="nav">
+<a aria-label="SG Salary Tools home" class="brand" href="index.html">
+<img alt="SG Salary Tools" src="logo-icon.png"/>
+<span class="brand-text">
+<strong>SG Salary<span>Tools</span></strong>
+<small>CPF · TAX · TAKE-HOME PAY</small>
+</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</div>
+</nav>
+</header>
+<section class="hero-wrap">
+<div class="hero">
+<div class="eyebrow">Singapore Annual Leave Calculator 2026</div>
+<h1>Calculate your <em>annual leave</em> entitlement</h1>
+<p>
         Estimate statutory annual leave entitlement, pro-rated leave and remaining leave balance in Singapore.
         Useful for new hires, resigning employees, HR users and leave planning.
       </p>
-
-      <div class="quick-stats">
-        <span>Pro-Rated Leave</span>
-        <span>Completed Months</span>
-        <span>Leave Taken</span>
-        <span>MOM Formula</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="calculator-grid">
-      <div class="panel">
-        <h2>Leave inputs</h2>
-        <p class="panel-desc">
+<div class="quick-stats">
+<span>Pro-Rated Leave</span>
+<span>Completed Months</span>
+<span>Leave Taken</span>
+<span>MOM Formula</span>
+</div>
+</div>
+</section>
+<section class="calculator-section" id="calculator">
+<div class="calculator-grid">
+<div class="panel">
+<h2>Leave inputs</h2>
+<p class="panel-desc">
           Enter your service period and annual leave entitlement to estimate your leave balance.
         </p>
-
-        <div class="field">
-          <label for="annualEntitlement">Annual leave entitlement per year</label>
-          <input id="annualEntitlement" type="number" value="7" min="0" step="0.5" />
-        </div>
-
-        <div class="field">
-          <label for="completedMonths">Completed months of service this year</label>
-          <input id="completedMonths" type="number" value="12" min="0" max="12" step="1" />
-        </div>
-
-        <div class="field">
-          <label for="leaveTaken">Annual leave already taken</label>
-          <input id="leaveTaken" type="number" value="0" min="0" step="0.5" />
-        </div>
-
-        <div class="field">
-          <label for="unpaidLeaveMonths">Completed months excluded due to unpaid leave</label>
-          <input id="unpaidLeaveMonths" type="number" value="0" min="0" max="12" step="1" />
-        </div>
-
-        <div class="field">
-          <label for="rounding">Rounding method</label>
-          <select id="rounding">
-            <option value="mom">MOM rounding: 0.5 or more rounds up</option>
-            <option value="none">No rounding, show decimal days</option>
-            <option value="up">Always round up</option>
-          </select>
-        </div>
-
-        <button class="calculate-btn" onclick="calculateLeave()">Calculate annual leave</button>
-      </div>
-
-      <div class="results">
-        <div class="main-result">
-          <small>Estimated annual leave entitlement</small>
-          <div class="take-home" id="leaveEntitlement">7 days</div>
-          <div class="sub-result" id="remainingLeave">Estimated remaining leave: 7 days</div>
-        </div>
-
-        <div class="result-cards">
-          <div class="result-card">
-            <span>Completed months used</span>
-            <strong id="monthsUsed">12</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Leave taken</span>
-            <strong id="takenDays">0 days</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Leave balance</span>
-            <strong id="balanceDays">7 days</strong>
-          </div>
-        </div>
-
-        <div class="breakdown">
-          <h3>Leave breakdown</h3>
-
-          <div class="row">
-            <span>Full-year annual entitlement</span>
-            <strong id="fullEntitlement">7 days</strong>
-          </div>
-
-          <div class="row">
-            <span>Completed months of service</span>
-            <strong id="completedMonthsText">12 months</strong>
-          </div>
-
-          <div class="row">
-            <span>Less: unpaid leave months excluded</span>
-            <strong class="negative" id="unpaidMonthsText">-0 months</strong>
-          </div>
-
-          <div class="row">
-            <span>Months used for pro-ration</span>
-            <strong id="eligibleMonthsText">12 months</strong>
-          </div>
-
-          <div class="row">
-            <span>Pro-rated entitlement before rounding</span>
-            <strong id="rawLeave">7 days</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated annual leave entitlement</span>
-            <strong class="positive" id="finalLeave">7 days</strong>
-          </div>
-
-          <div class="row">
-            <span>Remaining leave after leave taken</span>
-            <strong class="positive" id="finalBalance">7 days</strong>
-          </div>
-        </div>
-
-        <div class="note-box" id="calculationNote">
+<div class="field">
+<label for="annualEntitlement">Annual leave entitlement per year</label>
+<input id="annualEntitlement" min="0" step="0.5" type="number" value="7"/>
+</div>
+<div class="field">
+<label for="completedMonths">Completed months of service this year</label>
+<input id="completedMonths" max="12" min="0" step="1" type="number" value="12"/>
+</div>
+<div class="field">
+<label for="leaveTaken">Annual leave already taken</label>
+<input id="leaveTaken" min="0" step="0.5" type="number" value="0"/>
+</div>
+<div class="field">
+<label for="unpaidLeaveMonths">Completed months excluded due to unpaid leave</label>
+<input disabled="" id="unpaidLeaveMonths" max="12" min="0" step="1" type="number" value="0"/><div class="helper">Unpaid leave can affect completed-month service calculations. This calculator does not automatically convert unpaid-leave days into excluded months; check the MOM rule or your employer for an exact adjustment.</div>
+</div>
+<div class="field">
+<label for="rounding">Rounding method</label>
+<select id="rounding">
+<option value="mom">MOM rounding: 0.5 or more rounds up</option>
+<option value="none">No rounding, show decimal days</option>
+<option value="up">Always round up</option>
+</select>
+</div>
+<button class="calculate-btn" onclick="calculateLeave()">Calculate annual leave</button>
+</div>
+<div class="results">
+<div class="main-result">
+<small>Estimated annual leave entitlement</small>
+<div class="take-home" id="leaveEntitlement">7 days</div>
+<div class="sub-result" id="remainingLeave">Estimated remaining leave: 7 days</div>
+</div>
+<div class="result-cards">
+<div class="result-card">
+<span>Completed months used</span>
+<strong id="monthsUsed">12</strong>
+</div>
+<div class="result-card">
+<span>Leave taken</span>
+<strong id="takenDays">0 days</strong>
+</div>
+<div class="result-card">
+<span>Leave balance</span>
+<strong id="balanceDays">7 days</strong>
+</div>
+</div>
+<div class="breakdown">
+<h3>Leave breakdown</h3>
+<div class="row">
+<span>Full-year annual entitlement</span>
+<strong id="fullEntitlement">7 days</strong>
+</div>
+<div class="row">
+<span>Completed months of service</span>
+<strong id="completedMonthsText">12 months</strong>
+</div>
+<div class="row">
+<span>Less: unpaid leave months excluded</span>
+<strong class="negative" id="unpaidMonthsText">-0 months</strong>
+</div>
+<div class="row">
+<span>Months used for pro-ration</span>
+<strong id="eligibleMonthsText">12 months</strong>
+</div>
+<div class="row">
+<span>Pro-rated entitlement before rounding</span>
+<strong id="rawLeave">7 days</strong>
+</div>
+<div class="row">
+<span>Estimated annual leave entitlement</span>
+<strong class="positive" id="finalLeave">7 days</strong>
+</div>
+<div class="row">
+<span>Remaining leave after leave taken</span>
+<strong class="positive" id="finalBalance">7 days</strong>
+</div>
+</div>
+<div class="note-box" id="calculationNote">
           In Singapore, employees covered by the Employment Act are entitled to paid annual leave after working for at least 3 months. Pro-rated annual leave is generally based on completed months of service.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <section class="content-section">
-      <h2 class="section-title">How this annual leave calculator works</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<main class="content">
+<section class="content-section">
+<h2 class="section-title">How this annual leave calculator works</h2>
+<p class="section-desc">
         Singapore annual leave can be estimated by taking the employee’s yearly leave entitlement,
         multiplying it by completed months of service, and then subtracting leave already taken.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>1. Enter yearly entitlement</h3>
-          <p>Use the annual leave stated in the employment contract or the statutory minimum if applicable.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>2. Pro-rate by months</h3>
-          <p>For incomplete years, annual leave is usually pro-rated based on completed months of service.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>3. Deduct leave taken</h3>
-          <p>The calculator subtracts leave already taken to estimate the remaining annual leave balance.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Singapore statutory annual leave examples</h2>
-      <p class="section-desc">
+<div class="info-grid">
+<div class="info-card">
+<h3>1. Enter yearly entitlement</h3>
+<p>Use the annual leave stated in the employment contract or the statutory minimum if applicable.</p>
+</div>
+<div class="info-card">
+<h3>2. Pro-rate by months</h3>
+<p>For incomplete years, annual leave is usually pro-rated based on completed months of service.</p>
+</div>
+<div class="info-card">
+<h3>3. Deduct leave taken</h3>
+<p>The calculator subtracts leave already taken to estimate the remaining annual leave balance.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Singapore statutory annual leave examples</h2>
+<p class="section-desc">
         Under Singapore MOM guidance, annual leave starts from 7 days in the first year and increases by 1 day each year,
         up to 14 days from the 8th year onwards. Pro-rated leave uses completed months of service.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Year of Service</th>
-              <th>Minimum Annual Leave</th>
-              <th>Example Completed Months</th>
-              <th>Estimated Pro-Rated Leave</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>1st year</td>
-              <td>7 days</td>
-              <td>6 months</td>
-              <td>4 days after rounding</td>
-            </tr>
-
-            <tr>
-              <td>2nd year</td>
-              <td>8 days</td>
-              <td>6 months</td>
-              <td>4 days</td>
-            </tr>
-
-            <tr>
-              <td>3rd year</td>
-              <td>9 days</td>
-              <td>8 months</td>
-              <td>6 days</td>
-            </tr>
-
-            <tr>
-              <td>5th year</td>
-              <td>11 days</td>
-              <td>9 months</td>
-              <td>8 days after rounding</td>
-            </tr>
-
-            <tr>
-              <td>8th year onwards</td>
-              <td>14 days</td>
-              <td>12 months</td>
-              <td>14 days</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Common annual leave scenarios</h2>
-      <p class="section-desc">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Year of Service</th>
+<th>Minimum Annual Leave</th>
+<th>Example Completed Months</th>
+<th>Estimated Pro-Rated Leave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st year</td>
+<td>7 days</td>
+<td>6 months</td>
+<td>4 days after rounding</td>
+</tr>
+<tr>
+<td>2nd year</td>
+<td>8 days</td>
+<td>6 months</td>
+<td>4 days</td>
+</tr>
+<tr>
+<td>3rd year</td>
+<td>9 days</td>
+<td>8 months</td>
+<td>6 days</td>
+</tr>
+<tr>
+<td>5th year</td>
+<td>11 days</td>
+<td>9 months</td>
+<td>8 days after rounding</td>
+</tr>
+<tr>
+<td>8th year onwards</td>
+<td>14 days</td>
+<td>12 months</td>
+<td>14 days</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Common annual leave scenarios</h2>
+<p class="section-desc">
         These examples are useful for common leave planning situations in Singapore.
       </p>
-
-      <div class="scenario-grid">
-        <div class="scenario-card">
-          <h3>New employee leave</h3>
-          <p>
+<div class="scenario-grid">
+<div class="scenario-card">
+<h3>New employee leave</h3>
+<p>
             Employees generally become entitled to paid annual leave after working for at least 3 months.
             If the year is incomplete, leave is commonly pro-rated by completed months.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Resignation and notice period</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Resignation and notice period</h3>
+<p>
             If an employee resigns, the notice period is usually included when calculating pro-rated annual leave,
             based on completed months of service.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Unpaid leave impact</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Unpaid leave impact</h3>
+<p>
             Approved unpaid leave may reduce the completed months used for annual leave calculation.
             This calculator lets you exclude unpaid leave months separately.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="authority-box">
-        <h2 class="section-title">Official sources to check</h2>
-        <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<div class="authority-box">
+<h2 class="section-title">Official sources to check</h2>
+<p class="section-desc">
           This calculator provides estimates only. For official annual leave entitlement, pro-rated leave and Employment Act guidance,
           always refer to MOM or your employment contract.
         </p>
-
-        <div class="authority-list">
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave/annual-leave/eligibility-and-entitlement" target="_blank" rel="noopener">
-            <strong>MOM Annual Leave</strong>
-            <span>Official annual leave eligibility and entitlement guidance</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave/annual-leave/calculate-leave-entitlement" target="_blank" rel="noopener">
-            <strong>Calculate Leave Entitlement</strong>
-            <span>Official MOM guidance for pro-rated annual leave</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/employment-act/who-is-covered" target="_blank" rel="noopener">
-            <strong>Employment Act Coverage</strong>
-            <span>Check who is covered under Singapore employment rules</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore calculators</h2>
-      <p class="section-desc">
+<div class="authority-list">
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave/annual-leave/eligibility-and-entitlement" rel="noopener" target="_blank">
+<strong>MOM Annual Leave</strong>
+<span>Official annual leave eligibility and entitlement guidance</span>
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave/annual-leave/calculate-leave-entitlement" rel="noopener" target="_blank">
+<strong>Calculate Leave Entitlement</strong>
+<span>Official MOM guidance for pro-rated annual leave</span>
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/employment-act/who-is-covered" rel="noopener" target="_blank">
+<strong>Employment Act Coverage</strong>
+<span>Check who is covered under Singapore employment rules</span>
+</a>
+</div>
+</div>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="annual-leave-guide.html">Annual Leave Guide</a> · <a href="resignation-guide.html">Resignation Guide</a> · <a href="final-salary-calculator.html">Final Salary Calculator</a></p></section><section class="content-section">
+<h2 class="section-title">Related Singapore calculators</h2>
+<p class="section-desc">
         Explore other Singapore employment and salary calculators.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <h3>Salary Calculator</h3>
-          <p>Estimate monthly take-home pay after CPF and tax.</p>
-        </a>
-
-        <a class="related-card" href="take-home-pay-calculator.html">
-          <h3>Take Home Pay Calculator</h3>
-          <p>Understand your practical monthly net salary.</p>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <h3>CPF Calculator</h3>
-          <p>Estimate employee and employer CPF contributions.</p>
-        </a>
-
-        <a class="related-card" href="income-tax-calculator.html">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate Singapore personal income tax payable.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore employment guides</h2>
-      <p class="section-desc">
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<h3>Salary Calculator</h3>
+<p>Estimate monthly take-home pay after CPF and tax.</p>
+</a>
+<a class="related-card" href="take-home-pay-calculator.html">
+<h3>Take Home Pay Calculator</h3>
+<p>Understand your practical monthly net salary.</p>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<h3>CPF Calculator</h3>
+<p>Estimate employee and employer CPF contributions.</p>
+</a>
+<a class="related-card" href="income-tax-calculator.html">
+<h3>Income Tax Calculator</h3>
+<p>Estimate Singapore personal income tax payable.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="calculators.html">View All Calculators →</a>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Singapore employment guides</h2>
+<p class="section-desc">
         Learn more about leave, salary and employment rules in Singapore.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="annual-leave-guide.html">
-          <h3>Annual Leave Guide</h3>
-          <p>Understand Singapore annual leave entitlement and pro-ration rules.</p>
-        </a>
-
-        <a class="related-card" href="public-holiday-guide.html">
-          <h3>Public Holiday Guide</h3>
-          <p>Learn about public holidays and employment planning in Singapore.</p>
-        </a>
-
-        <a class="related-card" href="salary-after-tax-guide.html">
-          <h3>Salary After Tax Guide</h3>
-          <p>Understand how CPF and tax affect your net salary.</p>
-        </a>
-
-<a class="related-card" href="cpf-contribution-rates-guide.html">
-  <h3>CPF Contribution Rates Guide</h3>
-  <p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
+<div class="related-grid">
+<a class="related-card" href="annual-leave-guide.html">
+<h3>Annual Leave Guide</h3>
+<p>Understand Singapore annual leave entitlement and pro-ration rules.</p>
 </a>
-      </div>
-
-      <div class="view-all">
-        <a href="guides.html">View All Guides →</a>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>How many days of annual leave do employees get in Singapore?</summary>
-        <p>
+<a class="related-card" href="public-holiday-guide.html">
+<h3>Public Holiday Guide</h3>
+<p>Learn about public holidays and employment planning in Singapore.</p>
+</a>
+<a class="related-card" href="gross-salary-vs-net-salary-guide.html">
+<h3>Salary After Tax Guide</h3>
+<p>Understand how CPF and tax affect your net salary.</p>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<h3>CPF Contribution Rates Guide</h3>
+<p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="guides.html">View All Guides →</a>
+</div>
+</section>
+<section class="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<details>
+<summary>How many days of annual leave do employees get in Singapore?</summary>
+<p>
           Employees covered by the Employment Act are entitled to paid annual leave after working for at least 3 months.
           The statutory minimum starts at 7 days in the first year and increases with years of service.
         </p>
-      </details>
-
-      <details>
-        <summary>How is pro-rated annual leave calculated?</summary>
-        <p>
+</details>
+<details>
+<summary>How is pro-rated annual leave calculated?</summary>
+<p>
           Pro-rated annual leave is generally calculated as completed months of service divided by 12,
           multiplied by the annual leave entitlement.
         </p>
-      </details>
-
-      <details>
-        <summary>Do I get annual leave before completing 3 months?</summary>
-        <p>
+</details>
+<details>
+<summary>Do I get annual leave before completing 3 months?</summary>
+<p>
           Under Singapore MOM guidance, paid annual leave entitlement applies after the employee has worked for the employer for at least 3 months.
         </p>
-      </details>
-
-      <details>
-        <summary>How do I calculate remaining annual leave?</summary>
-        <p>
+</details>
+<details>
+<summary>How do I calculate remaining annual leave?</summary>
+<p>
           Remaining annual leave is estimated by taking your annual leave entitlement and subtracting the leave days already taken.
         </p>
-      </details>
-
-      <details>
-        <summary>Is notice period included in annual leave calculation?</summary>
-        <p>
+</details>
+<details>
+<summary>Is notice period included in annual leave calculation?</summary>
+<p>
           If you are serving notice after resignation, the notice period is generally included when calculating pro-rated annual leave.
         </p>
-      </details>
-
-      <details>
-        <summary>Does unpaid leave affect annual leave entitlement?</summary>
-        <p>
+</details>
+<details>
+<summary>Does unpaid leave affect annual leave entitlement?</summary>
+<p>
           Approved unpaid leave may affect annual leave calculation because the employer can pro-rate leave based on completed months actually worked.
         </p>
-      </details>
-
-      <details>
-        <summary>Can my company give more annual leave than the statutory minimum?</summary>
-        <p>
+</details>
+<details>
+<summary>Can my company give more annual leave than the statutory minimum?</summary>
+<p>
           Yes. Employers can provide more annual leave than the statutory minimum through employment contracts or company policy.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this annual leave calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this annual leave calculator official?</summary>
+<p>
           No. This calculator provides estimates only. For official confirmation, refer to MOM or your employment contract.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides estimates only and is not official CPF, payroll or tax advice.
-  </footer>
-
-  <script>
-    function formatDays(value) {
-      const rounded = Math.round(value * 10) / 10;
-      return rounded.toLocaleString("en-SG") + (rounded === 1 ? " day" : " days");
-    }
-
-    function roundLeave(value, method) {
-      if (method === "none") {
-        return Math.round(value * 10) / 10;
-      }
-
-      if (method === "up") {
-        return Math.ceil(value);
-      }
-
-      const whole = Math.floor(value);
-      const fraction = value - whole;
-
-      if (fraction >= 0.5) {
-        return whole + 1;
-      }
-
-      return whole;
-    }
-
-    function calculateLeave() {
-      const annualEntitlement = Number(document.getElementById("annualEntitlement").value) || 0;
-      const completedMonths = Math.min(12, Math.max(0, Number(document.getElementById("completedMonths").value) || 0));
-      const leaveTaken = Number(document.getElementById("leaveTaken").value) || 0;
-      const unpaidLeaveMonths = Math.min(12, Math.max(0, Number(document.getElementById("unpaidLeaveMonths").value) || 0));
-      const rounding = document.getElementById("rounding").value;
-
-      const eligibleMonths = Math.max(0, completedMonths - unpaidLeaveMonths);
-      const rawLeave = (eligibleMonths / 12) * annualEntitlement;
-      const finalLeave = roundLeave(rawLeave, rounding);
-      const balance = finalLeave - leaveTaken;
-
-      document.getElementById("leaveEntitlement").textContent = formatDays(finalLeave);
-      document.getElementById("remainingLeave").textContent = "Estimated remaining leave: " + formatDays(balance);
-
-      document.getElementById("monthsUsed").textContent = eligibleMonths;
-      document.getElementById("takenDays").textContent = formatDays(leaveTaken);
-      document.getElementById("balanceDays").textContent = formatDays(balance);
-
-      document.getElementById("fullEntitlement").textContent = formatDays(annualEntitlement);
-      document.getElementById("completedMonthsText").textContent = completedMonths + (completedMonths === 1 ? " month" : " months");
-      document.getElementById("unpaidMonthsText").textContent = "-" + unpaidLeaveMonths + (unpaidLeaveMonths === 1 ? " month" : " months");
-      document.getElementById("eligibleMonthsText").textContent = eligibleMonths + (eligibleMonths === 1 ? " month" : " months");
-      document.getElementById("rawLeave").textContent = formatDays(rawLeave);
-      document.getElementById("finalLeave").textContent = formatDays(finalLeave);
-      document.getElementById("finalBalance").textContent = formatDays(balance);
-
-      const note = document.getElementById("calculationNote");
-
-      if (completedMonths < 3) {
-        note.textContent =
-          "You entered fewer than 3 completed months of service. Under Singapore MOM guidance, paid annual leave entitlement generally applies after working for at least 3 months.";
-      } else if (balance < 0) {
-        note.textContent =
-          "Your leave taken is higher than the estimated entitlement. This may indicate excess leave, advance leave, unpaid leave adjustment or a company-specific policy.";
-      } else {
-        note.textContent =
-          "This estimate uses completed months of service divided by 12, multiplied by annual leave entitlement. MOM rounding usually rounds fractions below 0.5 down and 0.5 or more up.";
-      }
-    }
-
-    calculateLeave();
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function formatDays(v){const r=Math.round(v*10)/10;return r.toLocaleString("en-SG")+(r===1?" day":" days");} function roundLeave(v,m){if(m==="none")return Math.round(v*10)/10;if(m==="up")return Math.ceil(v);const w=Math.floor(v),f=v-w;return f>=.5?w+1:w;}
+    function calculateLeave(){const annual=+document.getElementById("annualEntitlement").value||0,months=Math.min(12,Math.max(0,+document.getElementById("completedMonths").value||0)),taken=+document.getElementById("leaveTaken").value||0,rounding=document.getElementById("rounding").value,raw=months/12*annual,final=roundLeave(raw,rounding),bal=final-taken;document.getElementById("leaveEntitlement").textContent=formatDays(final);document.getElementById("remainingLeave").textContent="Estimated remaining leave: "+formatDays(bal);document.getElementById("monthsUsed").textContent=months;document.getElementById("takenDays").textContent=formatDays(taken);document.getElementById("balanceDays").textContent=formatDays(bal);document.getElementById("fullEntitlement").textContent=formatDays(annual);document.getElementById("completedMonthsText").textContent=months+(months===1?" month":" months");document.getElementById("unpaidMonthsText").textContent="Manual adjustment";document.getElementById("eligibleMonthsText").textContent=months+(months===1?" month":" months");document.getElementById("rawLeave").textContent=formatDays(raw);document.getElementById("finalLeave").textContent=formatDays(final);document.getElementById("finalBalance").textContent=formatDays(bal);document.getElementById("calculationNote").textContent=months<3?"Paid annual leave entitlement generally applies after at least 3 months of service.":"Uses completed months of service ÷ 12 × annual entitlement. Unpaid-leave days are not automatically converted into excluded months because that requires service-period detail.";}
+    ["annualEntitlement","completedMonths","leaveTaken","rounding"].forEach(id=>document.getElementById(id).addEventListener("input",calculateLeave));calculateLeave();
   </script>
 </body>
 </html>

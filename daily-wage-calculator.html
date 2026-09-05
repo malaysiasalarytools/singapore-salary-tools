@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Daily Wage Calculator Singapore 2026 | Daily Salary & Prorated Pay</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/daily-wage-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Daily Wage Calculator 2026. Estimate daily salary, prorated pay, unpaid leave deduction and salary for days worked based on monthly salary and working days." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Daily Wage Calculator Singapore 2026 | Daily Salary &amp; Prorated Pay</title>
+<link href="https://sgsalarytools.com/daily-wage-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Daily Wage Calculator 2026. Estimate daily salary, prorated pay, unpaid leave deduction and salary for days worked based on monthly salary and working days." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
@@ -704,443 +701,372 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
-
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore Daily Wage Calculator 2026</div>
-
-      <h1>Calculate your <em>daily wage</em> in Singapore</h1>
-
-      <p>
+<header class="topbar">
+<nav class="nav">
+<a aria-label="SG Salary Tools home" class="brand" href="index.html">
+<img alt="SG Salary Tools" src="logo-icon.png"/>
+<span class="brand-text">
+<strong>SG Salary<span>Tools</span></strong>
+<small>CPF · TAX · TAKE-HOME PAY</small>
+</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</div>
+</nav>
+</header>
+<section class="hero-wrap">
+<div class="hero">
+<div class="eyebrow">Singapore Daily Wage Calculator 2026</div>
+<h1>Calculate your <em>daily wage</em> in Singapore</h1>
+<p>
         Estimate daily salary, prorated pay, unpaid leave deduction and salary for days worked.
         Built for employees, HR teams and payroll planning in Singapore.
       </p>
-
-      <div class="quick-stats">
-        <span>Daily Salary</span>
-        <span>Prorated Pay</span>
-        <span>Unpaid Leave Deduction</span>
-        <span>Working Days Method</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="calculator-grid">
-      <div class="panel">
-        <h2>Daily wage inputs</h2>
-        <p class="panel-desc">
+<div class="quick-stats">
+<span>Daily Salary</span>
+<span>Prorated Pay</span>
+<span>Unpaid Leave Deduction</span>
+<span>Working Days Method</span>
+</div>
+</div>
+</section>
+<section class="calculator-section" id="calculator">
+<div class="calculator-grid">
+<div class="panel">
+<h2>Daily wage inputs</h2>
+<p class="panel-desc">
           Enter your monthly salary and the number of days used for payroll calculation.
           You can estimate daily pay using working days, calendar days or a custom divisor.
         </p>
-
-        <div class="field">
-          <label for="salary">Gross monthly salary</label>
-          <input id="salary" type="number" value="5000" min="0" step="100">
-        </div>
-
-        <div class="field">
-          <label for="method">Daily wage method</label>
-          <select id="method" onchange="updateMethodDays()">
-            <option value="working">Working days in the month</option>
-            <option value="calendar">Calendar days in the month</option>
-            <option value="custom">Custom days / company policy</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="daysInMonth">Days used to calculate daily wage</label>
-          <input id="daysInMonth" type="number" value="22" min="1" step="1">
-        </div>
-
-        <div class="field">
-          <label for="daysWorked">Paid days worked</label>
-          <input id="daysWorked" type="number" value="22" min="0" step="0.5">
-        </div>
-
-        <div class="field">
-          <label for="unpaidLeave">Unpaid leave / absent days</label>
-          <input id="unpaidLeave" type="number" value="0" min="0" step="0.5">
-        </div>
-
-        <button class="calculate-btn" onclick="calculateDailyWage()">Calculate Daily Wage</button>
-      </div>
-
-      <div class="results">
-        <div class="main-result">
-          <small>Estimated daily wage</small>
-          <div class="take-home" id="dailyWage">S$227.27</div>
-          <div class="sub-result" id="dailyWageSummary">
+<div class="field">
+<label for="salary">Gross monthly salary</label>
+<input id="salary" min="0" step="100" type="number" value="5000"/>
+</div>
+<div class="field">
+<label for="method">Daily wage method</label>
+<select id="method" onchange="updateMethodDays()">
+<option value="working">Working days in the month</option>
+<option value="calendar">Calendar days in the month</option>
+<option value="custom">Custom days / company policy</option>
+</select>
+</div>
+<div class="field">
+<label for="daysInMonth">Days used to calculate daily wage</label>
+<input id="daysInMonth" min="1" step="1" type="number" value="22"/>
+</div>
+<div class="field">
+<label for="daysWorked">Paid days worked</label>
+<input id="daysWorked" min="0" step="0.5" type="number" value="22"/>
+</div>
+<div class="field">
+<label for="unpaidLeave">Unpaid leave / absent days</label>
+<input id="unpaidLeave" min="0" step="0.5" type="number" value="0"/>
+</div>
+<button class="calculate-btn" onclick="calculateDailyWage()">Calculate Daily Wage</button>
+</div>
+<div class="results">
+<div class="main-result">
+<small>Estimated daily wage</small>
+<div class="take-home" id="dailyWage">S$227.27</div>
+<div class="sub-result" id="dailyWageSummary">
             Based on S$5,000 monthly salary and 22 payroll days.
           </div>
-        </div>
-
-        <div class="result-cards">
-          <div class="result-card">
-            <span>Salary for Days Worked</span>
-            <strong id="salaryForDaysWorked">S$5,000</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Unpaid Leave Deduction</span>
-            <strong id="unpaidLeaveDeduction">S$0</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Estimated Payable Salary</span>
-            <strong id="payableSalary">S$5,000</strong>
-          </div>
-        </div>
-
-        <div class="breakdown">
-          <h3>Daily wage breakdown</h3>
-
-          <div class="row">
-            <span>Gross monthly salary</span>
-            <strong id="grossMonthly">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Days used for calculation</span>
-            <strong id="daysUsed">22 days</strong>
-          </div>
-
-          <div class="row">
-            <span>Daily wage formula</span>
-            <strong id="formulaText">S$5,000 ÷ 22</strong>
-          </div>
-
-          <div class="row">
-            <span>Daily wage</span>
-            <strong class="positive" id="dailyWageRow">S$227.27</strong>
-          </div>
-
-          <div class="row">
-            <span>Paid days worked</span>
-            <strong id="paidDaysRow">22 days</strong>
-          </div>
-
-          <div class="row">
-            <span>Salary for paid days worked</span>
-            <strong id="salaryForPaidDaysRow">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Less: unpaid leave deduction</span>
-            <strong class="negative" id="unpaidLeaveRow">-S$0</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated payable salary</span>
-            <strong class="positive" id="payableSalaryRow">S$5,000</strong>
-          </div>
-        </div>
-
-        <div class="note-box" id="calculationNote">
+</div>
+<div class="result-cards">
+<div class="result-card">
+<span>Salary for Days Worked</span>
+<strong id="salaryForDaysWorked">S$5,000</strong>
+</div>
+<div class="result-card">
+<span>Unpaid Leave Deduction</span>
+<strong id="unpaidLeaveDeduction">S$0</strong>
+</div>
+<div class="result-card">
+<span>Estimated Payable Salary</span>
+<strong id="payableSalary">S$5,000</strong>
+</div>
+</div>
+<div class="breakdown">
+<h3>Daily wage breakdown</h3>
+<div class="row">
+<span>Gross monthly salary</span>
+<strong id="grossMonthly">S$5,000</strong>
+</div>
+<div class="row">
+<span>Days used for calculation</span>
+<strong id="daysUsed">22 days</strong>
+</div>
+<div class="row">
+<span>Daily wage formula</span>
+<strong id="formulaText">S$5,000 ÷ 22</strong>
+</div>
+<div class="row">
+<span>Daily wage</span>
+<strong class="positive" id="dailyWageRow">S$227.27</strong>
+</div>
+<div class="row">
+<span>Paid days worked</span>
+<strong id="paidDaysRow">22 days</strong>
+</div>
+<div class="row">
+<span>Salary for paid days worked</span>
+<strong id="salaryForPaidDaysRow">S$5,000</strong>
+</div>
+<div class="row">
+<span>Less: unpaid leave deduction</span>
+<strong class="negative" id="unpaidLeaveRow">-S$0</strong>
+</div>
+<div class="row">
+<span>Estimated payable salary</span>
+<strong class="positive" id="payableSalaryRow">S$5,000</strong>
+</div>
+</div>
+<div class="note-box" id="calculationNote">
           This calculator gives an estimate only. Daily wage may be calculated differently depending on employment contract,
-          company payroll policy and whether your employer uses working days, calendar days or another agreed method.
+          the purpose of the estimate. For statutory incomplete-month salary or no-pay leave, use the MOM working-day formula in our Prorated Salary or Unpaid Leave Calculator rather than this general converter.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <section class="content-section">
-      <h2 class="section-title">How this daily wage calculator works</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<main class="content">
+<section class="content-section">
+<h2 class="section-title">How this daily wage calculator works</h2>
+<p class="section-desc">
         Daily wage is usually estimated by dividing monthly salary by the number of days used for payroll calculation.
         This may be working days, calendar days or a company-specific divisor. The calculator then estimates salary for
         days worked and unpaid leave deduction.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>1. Enter monthly salary</h3>
-          <p>Use your gross monthly salary before CPF, tax or other payroll deductions.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>2. Choose day basis</h3>
-          <p>Select whether you want to calculate daily wage using working days, calendar days or a custom divisor.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>3. Check prorated pay</h3>
-          <p>See daily wage, salary for days worked, unpaid leave deduction and estimated payable salary.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Daily wage formula</h2>
-      <p class="section-desc">
+<div class="info-grid">
+<div class="info-card">
+<h3>1. Enter monthly salary</h3>
+<p>Use your gross monthly salary before CPF, tax or other payroll deductions.</p>
+</div>
+<div class="info-card">
+<h3>2. Choose day basis</h3>
+<p>Select whether you want to calculate daily wage using working days, calendar days or a custom divisor.</p>
+</div>
+<div class="info-card">
+<h3>3. Check prorated pay</h3>
+<p>See daily wage, salary for days worked, unpaid leave deduction and estimated payable salary.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Daily wage formula</h2>
+<p class="section-desc">
         A simple daily wage formula is monthly salary divided by the number of days used in the calculation.
         The correct divisor depends on the employment contract and payroll policy.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Method</th>
-              <th>Formula</th>
-              <th>Common Use</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Working days method</td>
-              <td>Monthly salary ÷ working days in the month</td>
-              <td>Often used for prorated salary and salary for days worked</td>
-            </tr>
-
-            <tr>
-              <td>Calendar days method</td>
-              <td>Monthly salary ÷ calendar days in the month</td>
-              <td>Sometimes used for monthly salary proration</td>
-            </tr>
-
-            <tr>
-              <td>Custom divisor</td>
-              <td>Monthly salary ÷ company policy days</td>
-              <td>Used when the employment contract or payroll policy states a specific method</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Common daily wage examples</h2>
-      <p class="section-desc">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Formula</th>
+<th>Common Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Working days method</td>
+<td>Monthly salary ÷ working days in the month</td>
+<td>Often used for prorated salary and salary for days worked</td>
+</tr>
+<tr>
+<td>Calendar days method</td>
+<td>Monthly salary ÷ calendar days in the month</td>
+<td>Sometimes used for monthly salary proration</td>
+</tr>
+<tr>
+<td>Custom divisor</td>
+<td>Monthly salary ÷ company policy days</td>
+<td>Used when the employment contract or payroll policy states a specific method</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Common daily wage examples</h2>
+<p class="section-desc">
         These examples show how daily wage changes depending on the number of days used in the calculation.
       </p>
-
-      <div class="scenario-grid">
-        <div class="scenario-card">
-          <h3>S$3,000 salary / 22 days</h3>
-          <p>Daily wage is about S$136.36. If the employee works 10 paid days, estimated salary is about S$1,363.64.</p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>S$5,000 salary / 22 days</h3>
-          <p>Daily wage is about S$227.27. One day of unpaid leave may deduct about S$227.27 before CPF and other adjustments.</p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>S$5,000 salary / 31 days</h3>
-          <p>Daily wage is about S$161.29 if calendar days are used. This is lower than the working days method.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">When to use a daily wage calculator</h2>
-      <p class="section-desc">
+<div class="scenario-grid">
+<div class="scenario-card">
+<h3>S$3,000 salary / 22 days</h3>
+<p>Daily wage is about S$136.36. If the employee works 10 paid days, estimated salary is about S$1,363.64.</p>
+</div>
+<div class="scenario-card">
+<h3>S$5,000 salary / 22 days</h3>
+<p>Daily wage is about S$227.27. One day of unpaid leave may deduct about S$227.27 before CPF and other adjustments.</p>
+</div>
+<div class="scenario-card">
+<h3>S$5,000 salary / 31 days</h3>
+<p>Daily wage is about S$161.29 if calendar days are used. This is lower than the working days method.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">When to use a daily wage calculator</h2>
+<p class="section-desc">
         Daily wage calculation is useful when salary needs to be prorated because the employee did not work the full month,
         joined mid-month, resigned mid-month, took unpaid leave or needs to estimate salary by number of paid days.
       </p>
-
-      <div class="trust-grid">
-        <div class="trust-card">
-          <h3>New joiner salary</h3>
-          <p>Estimate salary when an employee joins after the first day of the month.</p>
-        </div>
-
-        <div class="trust-card">
-          <h3>Final month salary</h3>
-          <p>Estimate prorated pay when an employee resigns and only works part of the month.</p>
-        </div>
-
-        <div class="trust-card">
-          <h3>Unpaid leave</h3>
-          <p>Estimate deduction when an employee takes unpaid leave or is absent without pay.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="authority-box">
-        <h2 class="section-title">Important payroll note</h2>
-        <p class="section-desc">
+<div class="trust-grid">
+<div class="trust-card">
+<h3>New joiner salary</h3>
+<p>Estimate salary when an employee joins after the first day of the month.</p>
+</div>
+<div class="trust-card">
+<h3>Final month salary</h3>
+<p>Estimate prorated pay when an employee resigns and only works part of the month.</p>
+</div>
+<div class="trust-card">
+<h3>Unpaid leave</h3>
+<p>Estimate deduction when an employee takes unpaid leave or is absent without pay.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<div class="authority-box">
+<h2 class="section-title">Important payroll note</h2>
+<p class="section-desc">
           This calculator provides estimates only. In Singapore, salary proration and daily wage calculation may depend on
           the employment contract, HR policy, payroll method and specific facts of employment. For employment rights and
           salary payment rules, you should check official MOM guidance or speak with your employer or HR department.
         </p>
-
-        <div class="authority-list">
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary" target="_blank" rel="noopener">
+<div class="authority-list">
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary" rel="noopener" target="_blank">
             MOM Salary
             <span>Salary payment and employment practices</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave" target="_blank" rel="noopener">
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/leave" rel="noopener" target="_blank">
             MOM Leave
             <span>Leave entitlement and leave practices</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/termination-of-employment" target="_blank" rel="noopener">
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/termination-of-employment" rel="noopener" target="_blank">
             MOM Termination
             <span>Notice period and final salary matters</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore calculators</h2>
-      <p class="section-desc">
+</a>
+</div>
+</div>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="prorated-salary-calculator.html">Prorated Salary Calculator</a> · <a href="hourly-rate-calculator.html">Hourly Rate Calculator</a> · <a href="final-salary-calculator.html">Final Salary Calculator</a></p></section><section class="content-section">
+<h2 class="section-title">Related Singapore calculators</h2>
+<p class="section-desc">
         Use these calculators to estimate salary, leave, CPF and take-home pay in Singapore.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="prorated-salary-calculator.html">
-          <h3>Prorated Salary Calculator</h3>
-          <p>Estimate salary when an employee joins or leaves during the month.</p>
-        </a>
-
-        <a class="related-card" href="unpaid-leave-calculator.html">
-          <h3>Unpaid Leave Calculator</h3>
-          <p>Estimate unpaid leave deduction based on monthly salary and leave days.</p>
-        </a>
-
-        <a class="related-card" href="hourly-rate-calculator.html">
-          <h3>Hourly Rate Calculator</h3>
-          <p>Convert monthly salary into hourly pay based on working hours.</p>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <h3>CPF Calculator</h3>
-          <p>Estimate employee CPF, employer CPF and salary after CPF.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore salary guides</h2>
-      <p class="section-desc">
+<div class="related-grid">
+<a class="related-card" href="prorated-salary-calculator.html">
+<h3>Prorated Salary Calculator</h3>
+<p>Estimate salary when an employee joins or leaves during the month.</p>
+</a>
+<a class="related-card" href="unpaid-leave-calculator.html">
+<h3>Unpaid Leave Calculator</h3>
+<p>Estimate unpaid leave deduction based on monthly salary and leave days.</p>
+</a>
+<a class="related-card" href="hourly-rate-calculator.html">
+<h3>Hourly Rate Calculator</h3>
+<p>Convert monthly salary into hourly pay based on working hours.</p>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<h3>CPF Calculator</h3>
+<p>Estimate employee CPF, employer CPF and salary after CPF.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="calculators.html">View All Calculators →</a>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Singapore salary guides</h2>
+<p class="section-desc">
         Learn the salary and employment rules behind daily wage, prorated salary and leave deductions.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="working-hours-guide.html">
-          <h3>Working Hours Guide</h3>
-          <p>Understand normal working hours and salary planning in Singapore.</p>
-        </a>
-
-        <a class="related-card" href="notice-period-guide.html">
-          <h3>Notice Period Guide</h3>
-          <p>Learn how notice period affects resignation and final salary.</p>
-        </a>
-
-        <a class="related-card" href="annual-leave-guide.html">
-          <h3>Annual Leave Guide</h3>
-          <p>Understand annual leave entitlement and leave pay basics.</p>
-        </a>
-
-        <a class="related-card" href="employment-contract-guide.html">
-          <h3>Employment Contract Guide</h3>
-          <p>Learn what employment terms may affect salary calculation.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="guides.html">View All Guides →</a>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>How do I calculate daily wage in Singapore?</summary>
-        <p>
+<div class="related-grid">
+<a class="related-card" href="working-hours-guide.html">
+<h3>Working Hours Guide</h3>
+<p>Understand normal working hours and salary planning in Singapore.</p>
+</a>
+<a class="related-card" href="notice-period-guide.html">
+<h3>Notice Period Guide</h3>
+<p>Learn how notice period affects resignation and final salary.</p>
+</a>
+<a class="related-card" href="annual-leave-guide.html">
+<h3>Annual Leave Guide</h3>
+<p>Understand annual leave entitlement and leave pay basics.</p>
+</a>
+<a class="related-card" href="employment-contract-guide.html">
+<h3>Employment Contract Guide</h3>
+<p>Learn what employment terms may affect salary calculation.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="guides.html">View All Guides →</a>
+</div>
+</section>
+<section class="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<details>
+<summary>How do I calculate daily wage in Singapore?</summary>
+<p>
           A simple method is to divide monthly salary by the number of days used for payroll calculation.
           For example, S$5,000 divided by 22 working days gives a daily wage of about S$227.27.
         </p>
-      </details>
-
-      <details>
-        <summary>Should daily wage use working days or calendar days?</summary>
-        <p>
+</details>
+<details>
+<summary>Should daily wage use working days or calendar days?</summary>
+<p>
           It depends on the employment contract, company payroll policy and the reason for the calculation.
-          Working days are commonly used for salary for days worked, while calendar days may be used in some proration methods.
+          This page is a general daily-rate converter. For statutory incomplete-month salary or no-pay leave for a monthly-rated full-time employee, MOM uses the working days in the relevant month.
         </p>
-      </details>
-
-      <details>
-        <summary>Can I use this calculator for unpaid leave deduction?</summary>
-        <p>
+</details>
+<details>
+<summary>Can I use this calculator for unpaid leave deduction?</summary>
+<p>
           Yes. Enter your monthly salary, choose the number of days used for calculation and enter unpaid leave days.
           The calculator estimates the unpaid leave deduction based on the daily wage.
         </p>
-      </details>
-
-      <details>
-        <summary>Can I use this for prorated salary?</summary>
-        <p>
+</details>
+<details>
+<summary>Can I use this for prorated salary?</summary>
+<p>
           Yes. This calculator can estimate salary for paid days worked. For a more focused calculation, you can also use the
           Singapore Prorated Salary Calculator.
         </p>
-      </details>
-
-      <details>
-        <summary>Does this calculator include CPF?</summary>
-        <p>
+</details>
+<details>
+<summary>Does this calculator include CPF?</summary>
+<p>
           No. This daily wage calculator focuses on gross daily wage, prorated salary and unpaid leave deduction.
           To estimate CPF, use the Singapore CPF Calculator.
         </p>
-      </details>
-
-      <details>
-        <summary>Is daily wage the same as hourly wage?</summary>
-        <p>
+</details>
+<details>
+<summary>Is daily wage the same as hourly wage?</summary>
+<p>
           No. Daily wage is salary per day. Hourly wage is salary per hour. If you want to estimate hourly pay,
           use the Hourly Rate Calculator.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this daily wage calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this daily wage calculator official?</summary>
+<p>
           No. This is an independent calculator for simple salary planning. For official employment and salary matters,
           refer to MOM guidance or check with your employer.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides estimates only and is not official payroll, CPF, tax or employment advice.
-  </footer>
-
-  <script>
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script>
     function money(value) {
       const amount = Number(value) || 0;
       return "S$" + amount.toLocaleString("en-SG", {

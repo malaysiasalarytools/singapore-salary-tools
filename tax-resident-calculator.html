@@ -1,19 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Tax Resident Calculator 2026 | Tax Residency Status Checker</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/tax-resident-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Tax Resident Calculator 2026. Check whether you may be treated as a Singapore tax resident or non-resident based on days stayed or worked in Singapore." />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Tax Resident Calculator 2026 | Tax Residency Status Checker</title>
+<link href="https://sgsalarytools.com/tax-resident-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Tax Resident Calculator 2026. Check whether you may be treated as a Singapore tax resident or non-resident based on days stayed or worked in Singapore." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -374,518 +370,357 @@
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="logo-icon.png" alt="SG Salary Tools logo">
-        <span>
+<header>
+<div class="nav">
+<a class="brand" href="index.html">
+<img alt="SG Salary Tools logo" src="logo-icon.png"/>
+<span>
           SG Salary Tools
           <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-wrap">
-      <div class="eyebrow">Singapore tax residency calculator</div>
-      <h1>Check your Singapore tax resident status</h1>
-      <p>
+</span>
+</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-wrap">
+<div class="eyebrow">Singapore tax residency calculator</div>
+<h1>Check your Singapore tax resident status</h1>
+<p>
         Estimate whether you may be treated as a Singapore tax resident or non-resident
         based on your stay or work days in Singapore.
       </p>
-
-      <div class="hero-tags">
-        <span>183 Days Rule</span>
-        <span>61 to 182 Days</span>
-        <span>3-Year Rule</span>
-        <span>Resident vs Non-Resident Tax</span>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="section">
-      <div class="calculator-grid">
-        <div>
-          <h2>Tax residency inputs</h2>
-          <p class="muted">
+<div class="hero-tags">
+<span>183 Days Rule</span>
+<span>61 to 182 Days</span>
+<span>3-Year Rule</span>
+<span>Resident vs Non-Resident Tax</span>
+</div>
+</div>
+</section>
+<main>
+<section class="section">
+<div class="calculator-grid">
+<div>
+<h2>Tax residency inputs</h2>
+<p class="muted">
             Enter your stay or work period in Singapore. This calculator gives an indicative result
             based on common IRAS tax residency rules for individuals.
           </p>
-
-          <label for="personType">Who are you?</label>
-          <select id="personType">
-            <option value="foreigner" selected>Foreigner working / staying in Singapore</option>
-            <option value="citizen-pr">Singapore Citizen / Singapore PR</option>
-          </select>
-
-          <label for="assessmentYear">Year of Assessment</label>
-          <input type="number" id="assessmentYear" value="2026" min="2000" max="2100">
-
-          <label for="startDate">Start date in Singapore</label>
-          <input type="date" id="startDate">
-
-          <label for="endDate">End date in Singapore</label>
-          <input type="date" id="endDate">
-
-          <label for="threeYears">Stayed or worked in Singapore for 3 consecutive years?</label>
-          <select id="threeYears">
-            <option value="no" selected>No / Not sure</option>
-            <option value="yes">Yes</option>
-          </select>
-
-          <label for="incomeType">Main income type</label>
-          <select id="incomeType">
-            <option value="employment" selected>Employment income</option>
-            <option value="director">Director's fees / professional / other income</option>
-          </select>
-
-          <button onclick="calculateTaxResident()">Check Tax Residency</button>
-
-          <div class="note">
+<label for="personType">Who are you?</label>
+<select id="personType">
+<option selected="" value="foreigner">Foreigner working / staying in Singapore</option>
+<option value="citizen-pr">Singapore Citizen / Singapore PR</option>
+</select>
+<label for="assessmentYear">Year of Assessment</label>
+<input id="assessmentYear" max="2100" min="2000" type="number" value="2026"/>
+<label for="startDate">Start date in Singapore</label>
+<input id="startDate" type="date"/>
+<label for="endDate">End date in Singapore</label>
+<input id="endDate" type="date"/>
+<label for="twoYearConcession">Employment straddles 2 calendar years with at least 183 continuous days total?</label><select id="twoYearConcession"><option value="no">No / Not sure</option><option value="yes">Yes</option></select><label for="workPassYear">Work pass valid for at least 1 year?</label><select id="workPassYear"><option value="no">No / Not sure</option><option value="yes">Yes</option></select><label for="threeYears">Stayed or worked in Singapore for 3 consecutive years?</label>
+<select id="threeYears">
+<option selected="" value="no">No / Not sure</option>
+<option value="yes">Yes</option>
+</select>
+<label for="incomeType">Main income type</label>
+<select id="incomeType">
+<option selected="" value="employment">Employment income</option>
+<option value="director">Director's fees / professional / other income</option>
+</select>
+<button onclick="calculateTaxResident()">Check Tax Residency</button>
+<div class="note">
             This calculator is for general guidance only. Tax residency can depend on facts,
             concessions and IRAS assessment.
           </div>
-        </div>
-
-        <div class="result-card">
-          <h2>Your estimated result</h2>
-          <p>Indicative tax residency status</p>
-
-          <div class="big-result" id="statusResult">-</div>
-
-          <div class="result-line">
-            <span>Total days counted</span>
-            <span id="daysResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Calendar year checked</span>
-            <span id="yearResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Likely tax treatment</span>
-            <span id="taxTreatmentResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Tax reliefs</span>
-            <span id="reliefResult">-</span>
-          </div>
-
-          <p class="muted" style="color:#cfe6d5; margin-top:16px;" id="summaryResult">
+</div>
+<div class="result-card">
+<h2>Your estimated result</h2>
+<p>Indicative tax residency status</p>
+<div class="big-result" id="statusResult">-</div>
+<div class="result-line">
+<span>Total days counted</span>
+<span id="daysResult">-</span>
+</div>
+<div class="result-line">
+<span>Calendar year checked</span>
+<span id="yearResult">-</span>
+</div>
+<div class="result-line">
+<span>Likely tax treatment</span>
+<span id="taxTreatmentResult">-</span>
+</div>
+<div class="result-line">
+<span>Tax reliefs</span>
+<span id="reliefResult">-</span>
+</div>
+<p class="muted" id="summaryResult" style="color:#cfe6d5; margin-top:16px;">
             Enter your details and click calculate to see the estimated status.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>How this tax resident calculator works</h2>
-      <p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>How this tax resident calculator works</h2>
+<p>
         Singapore tax residency for individuals is generally based on whether you are physically
         present, staying or working in Singapore for a sufficient period in the relevant year.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>1. Enter your dates</strong>
-          <p>Select the first and last date you stayed or worked in Singapore.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>2. Count days</strong>
-          <p>The calculator counts calendar days between your start and end date, inclusive.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>3. Check status</strong>
-          <p>It compares your days with common Singapore tax residency rules.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Singapore tax residency rules at a glance</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Days in Singapore</th>
-            <th>Indicative status</th>
-            <th>General tax treatment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>183 days or more</td>
-            <td>Tax resident</td>
-            <td>Taxed at resident rates. Personal reliefs may be available if conditions are met.</td>
-          </tr>
-          <tr>
-            <td>61 to 182 days</td>
-            <td>Usually non-resident</td>
-            <td>Employment income generally taxed at 15% or resident rates, whichever gives higher tax.</td>
-          </tr>
-          <tr>
-            <td>60 days or less</td>
-            <td>Usually non-resident</td>
-            <td>Employment income may be exempt in some cases, but exceptions apply.</td>
-          </tr>
-          <tr>
-            <td>3 consecutive years</td>
-            <td>May be treated as tax resident for all 3 years</td>
-            <td>Subject to IRAS administrative concession and facts of the case.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
+<div class="grid-3">
+<div class="info-card">
+<strong>1. Enter your dates</strong>
+<p>Select the first and last date you stayed or worked in Singapore.</p>
+</div>
+<div class="info-card">
+<strong>2. Count days</strong>
+<p>The calculator counts calendar days between your start and end date, inclusive.</p>
+</div>
+<div class="info-card">
+<strong>3. Check status</strong>
+<p>It compares your days with common Singapore tax residency rules.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Singapore tax residency rules at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Days in Singapore</th>
+<th>Indicative status</th>
+<th>General tax treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>183 days or more</td>
+<td>Tax resident</td>
+<td>Taxed at resident rates. Personal reliefs may be available if conditions are met.</td>
+</tr>
+<tr>
+<td>61 to 182 days</td>
+<td>Usually non-resident</td>
+<td>Employment income generally taxed at 15% or resident rates, whichever gives higher tax.</td>
+</tr>
+<tr>
+<td>60 days or less</td>
+<td>Usually non-resident</td>
+<td>Employment income may be exempt in some cases, but exceptions apply.</td>
+</tr>
+<tr>
+<td>3 consecutive years</td>
+<td>May be treated as tax resident for all 3 years</td>
+<td>Subject to IRAS administrative concession and facts of the case.</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
         This page simplifies the rules for calculator use. Always check IRAS for official tax treatment.
       </div>
-    </section>
-
-    <section class="section">
-      <h2>Resident vs non-resident tax treatment</h2>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>Tax resident</strong>
-          <p>Generally taxed at progressive resident rates and may claim personal reliefs where eligible.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Non-resident employment income</strong>
-          <p>Generally taxed at 15% or resident rates, whichever results in a higher tax amount.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Other non-resident income</strong>
-          <p>Director’s fees, consultation fees and other income may be taxed at different flat rates.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Tax residency examples</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Scenario</th>
-            <th>Days in Singapore</th>
-            <th>Likely result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Employee works in Singapore for the full year</td>
-            <td>365 days</td>
-            <td>Likely tax resident</td>
-          </tr>
-          <tr>
-            <td>Foreigner works in Singapore from January to July</td>
-            <td>183 days or more</td>
-            <td>Likely tax resident</td>
-          </tr>
-          <tr>
-            <td>Employee works in Singapore for 4 months</td>
-            <td>61 to 182 days</td>
-            <td>Usually non-resident</td>
-          </tr>
-          <tr>
-            <td>Short business stay or short employment</td>
-            <td>60 days or less</td>
-            <td>Usually non-resident, possible exemption for employment income if conditions are met.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Important notes before using the result</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>What to check</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Year of Assessment</td>
-            <td>Singapore tax is assessed by Year of Assessment, based on income earned in the previous calendar year.</td>
-          </tr>
-          <tr>
-            <td>Physical presence</td>
-            <td>Keep records of entry and exit dates, work period and employment contract dates.</td>
-          </tr>
-          <tr>
-            <td>3-year concession</td>
-            <td>If you stay or work in Singapore for 3 consecutive years, special treatment may apply.</td>
-          </tr>
-          <tr>
-            <td>Personal reliefs</td>
-            <td>Non-residents are generally not entitled to personal reliefs.</td>
-          </tr>
-          <tr>
-            <td>Tax clearance</td>
-            <td>Foreign employees leaving Singapore may need tax clearance handled by the employer.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore calculators</h2>
-      <p class="muted">Use these tools to estimate salary, tax and CPF impact.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="income-tax-calculator.html">
-          <strong>Income Tax Calculator</strong>
-          <span>Estimate Singapore personal income tax based on income and reliefs.</span>
-        </a>
-
-        <a class="related-card" href="index.html">
-          <strong>Salary Calculator</strong>
-          <span>Estimate monthly take-home pay after CPF and tax.</span>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <strong>CPF Calculator</strong>
-          <span>Calculate employee and employer CPF contributions.</span>
-        </a>
-
-        <a class="related-card" href="salary-increment-calculator.html">
-          <strong>Salary Increment Calculator</strong>
-          <span>Calculate new salary after a pay raise.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="calculators.html">View All Calculators →</a>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore salary guides</h2>
-      <p class="muted">Learn more about Singapore income tax, CPF and employment income.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="income-tax-guide.html">
-          <strong>Income Tax Guide</strong>
-          <span>Understand Singapore personal income tax basics.</span>
-        </a>
-
-        <a class="related-card" href="tax-relief-guide.html">
-          <strong>Tax Relief Guide</strong>
-          <span>Learn about personal reliefs and deductions.</span>
-        </a>
-
-        <a class="related-card" href="cpf-contribution-rates-guide.html">
-          <strong>CPF Contribution Rates Guide</strong>
-          <span>Learn how CPF rates work by age and wage type.</span>
-        </a>
-
-        <a class="related-card" href="employment-contract-guide.html">
-          <strong>Employment Contract Guide</strong>
-          <span>Understand salary, notice period and employment terms.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="guides.html">View All Guides →</a>
-    </section>
-
-    <section class="section">
-      <h2>Frequently Asked Questions</h2>
-
-      <details open>
-        <summary>Who is a tax resident in Singapore?</summary>
-        <p>
+</section>
+<section class="section">
+<h2>Resident vs non-resident tax treatment</h2>
+<div class="grid-3">
+<div class="info-card">
+<strong>Tax resident</strong>
+<p>Generally taxed at progressive resident rates and may claim personal reliefs where eligible.</p>
+</div>
+<div class="info-card">
+<strong>Non-resident employment income</strong>
+<p>Generally taxed at 15% or resident rates, whichever results in a higher tax amount.</p>
+</div>
+<div class="info-card">
+<strong>Other non-resident income</strong>
+<p>Director’s fees, consultation fees and other income may be taxed at different flat rates.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Tax residency examples</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Days in Singapore</th>
+<th>Likely result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Employee works in Singapore for the full year</td>
+<td>365 days</td>
+<td>Likely tax resident</td>
+</tr>
+<tr>
+<td>Foreigner works in Singapore from January to July</td>
+<td>183 days or more</td>
+<td>Likely tax resident</td>
+</tr>
+<tr>
+<td>Employee works in Singapore for 4 months</td>
+<td>61 to 182 days</td>
+<td>Usually non-resident</td>
+</tr>
+<tr>
+<td>Short business stay or short employment</td>
+<td>60 days or less</td>
+<td>Usually non-resident, possible exemption for employment income if conditions are met.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>Important notes before using the result</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Year of Assessment</td>
+<td>Singapore tax is assessed by Year of Assessment, based on income earned in the previous calendar year.</td>
+</tr>
+<tr>
+<td>Physical presence</td>
+<td>Keep records of entry and exit dates, work period and employment contract dates.</td>
+</tr>
+<tr>
+<td>3-year concession</td>
+<td>If you stay or work in Singapore for 3 consecutive years, special treatment may apply.</td>
+</tr>
+<tr>
+<td>Personal reliefs</td>
+<td>Non-residents are generally not entitled to personal reliefs.</td>
+</tr>
+<tr>
+<td>Tax clearance</td>
+<td>Foreign employees leaving Singapore may need tax clearance handled by the employer.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>Related Singapore calculators</h2>
+<p class="muted">Use these tools to estimate salary, tax and CPF impact.</p>
+<div class="related-grid">
+<a class="related-card" href="income-tax-calculator.html">
+<strong>Income Tax Calculator</strong>
+<span>Estimate Singapore personal income tax based on income and reliefs.</span>
+</a>
+<a class="related-card" href="index.html">
+<strong>Salary Calculator</strong>
+<span>Estimate monthly take-home pay after CPF and tax.</span>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<strong>CPF Calculator</strong>
+<span>Calculate employee and employer CPF contributions.</span>
+</a>
+<a class="related-card" href="salary-increment-calculator.html">
+<strong>Salary Increment Calculator</strong>
+<span>Calculate new salary after a pay raise.</span>
+</a>
+</div>
+<a class="view-all" href="calculators.html">View All Calculators →</a>
+</section>
+<section class="section">
+<h2>Related Singapore salary guides</h2>
+<p class="muted">Learn more about Singapore income tax, CPF and employment income.</p>
+<div class="related-grid">
+<a class="related-card" href="income-tax-guide.html">
+<strong>Income Tax Guide</strong>
+<span>Understand Singapore personal income tax basics.</span>
+</a>
+<a class="related-card" href="tax-relief-guide.html">
+<strong>Tax Relief Guide</strong>
+<span>Learn about personal reliefs and deductions.</span>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<strong>CPF Contribution Rates Guide</strong>
+<span>Learn how CPF rates work by age and wage type.</span>
+</a>
+<a class="related-card" href="employment-contract-guide.html">
+<strong>Employment Contract Guide</strong>
+<span>Understand salary, notice period and employment terms.</span>
+</a>
+</div>
+<a class="view-all" href="guides.html">View All Guides →</a>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<details open="">
+<summary>Who is a tax resident in Singapore?</summary>
+<p>
           An individual is generally treated as a Singapore tax resident if they stay or work in
           Singapore for 183 days or more in the relevant calendar year.
         </p>
-      </details>
-
-      <details>
-        <summary>What happens if I stay in Singapore for 61 to 182 days?</summary>
-        <p>
+</details>
+<details>
+<summary>What happens if I stay in Singapore for 61 to 182 days?</summary>
+<p>
           You are usually treated as a non-resident. Employment income is generally taxed at 15%
           or resident rates, whichever gives a higher tax amount.
         </p>
-      </details>
-
-      <details>
-        <summary>What happens if I stay in Singapore for 60 days or less?</summary>
-        <p>
+</details>
+<details>
+<summary>What happens if I stay in Singapore for 60 days or less?</summary>
+<p>
           You are usually treated as a non-resident. Employment income may be exempt in some cases,
           but exceptions apply, such as directors, public entertainers and professionals.
         </p>
-      </details>
-
-      <details>
-        <summary>Does a tax resident always pay less tax?</summary>
-        <p>
+</details>
+<details>
+<summary>Does a tax resident always pay less tax?</summary>
+<p>
           Not always. Tax residents may claim reliefs if eligible and are taxed at progressive rates.
           The actual tax depends on income level and available reliefs.
         </p>
-      </details>
-
-      <details>
-        <summary>Can a foreigner be a Singapore tax resident?</summary>
-        <p>
+</details>
+<details>
+<summary>Can a foreigner be a Singapore tax resident?</summary>
+<p>
           Yes. A foreigner can be treated as a Singapore tax resident if they meet the tax residency
           conditions, such as staying or working in Singapore for 183 days or more.
         </p>
-      </details>
-
-      <details>
-        <summary>What is the 3-year rule?</summary>
-        <p>
+</details>
+<details>
+<summary>What is the 3-year rule?</summary>
+<p>
           If a foreigner stays or works in Singapore continuously for 3 consecutive years, they may
           be treated as a tax resident for all 3 years under IRAS administrative concession.
         </p>
-      </details>
-
-      <details>
-        <summary>Can non-residents claim tax reliefs?</summary>
-        <p>
+</details>
+<details>
+<summary>Can non-residents claim tax reliefs?</summary>
+<p>
           Non-residents are generally not entitled to personal reliefs.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this tax resident calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this tax resident calculator official?</summary>
+<p>
           No. SG Salary Tools provides general planning calculators only. For official treatment,
           check IRAS or seek professional tax advice.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+<section class="section related-tools"><h2>Related tools and guides</h2><p><a href="tax-resident-guide.html">Tax Resident Guide</a> · <a href="income-tax-calculator.html">Income Tax Calculator</a> · <a href="income-tax-guide.html">Income Tax Guide</a></p></section></main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides general information only and is not official IRAS, CPF, MOM, payroll or legal advice.
-  </footer>
-
-  <script>
-    function formatDate(date) {
-      return date.toLocaleDateString("en-SG", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      });
-    }
-
-    function countInclusiveDays(startDate, endDate) {
-      const oneDay = 1000 * 60 * 60 * 24;
-      return Math.floor((endDate - startDate) / oneDay) + 1;
-    }
-
-    function calculateTaxResident() {
-      const personType = document.getElementById("personType").value;
-      const assessmentYear = Number(document.getElementById("assessmentYear").value || 0);
-      const startDateValue = document.getElementById("startDate").value;
-      const endDateValue = document.getElementById("endDate").value;
-      const threeYears = document.getElementById("threeYears").value;
-      const incomeType = document.getElementById("incomeType").value;
-
-      if (!assessmentYear || assessmentYear < 2000) {
-        alert("Please enter a valid Year of Assessment.");
-        return;
-      }
-
-      if (!startDateValue || !endDateValue) {
-        alert("Please select your start date and end date in Singapore.");
-        return;
-      }
-
-      const startDate = new Date(startDateValue + "T00:00:00");
-      const endDate = new Date(endDateValue + "T00:00:00");
-
-      if (startDate > endDate) {
-        alert("Start date cannot be after end date.");
-        return;
-      }
-
-      const incomeYear = assessmentYear - 1;
-      const yearStart = new Date(incomeYear, 0, 1);
-      const yearEnd = new Date(incomeYear, 11, 31);
-
-      const countedStart = startDate < yearStart ? yearStart : startDate;
-      const countedEnd = endDate > yearEnd ? yearEnd : endDate;
-
-      let daysInIncomeYear = 0;
-
-      if (countedStart <= countedEnd) {
-        daysInIncomeYear = countInclusiveDays(countedStart, countedEnd);
-      }
-
-      let status = "";
-      let treatment = "";
-      let relief = "";
-      let summary = "";
-
-      if (personType === "citizen-pr") {
-        status = "Likely Tax Resident";
-        treatment = "Resident tax rates";
-        relief = "May claim reliefs if eligible";
-        summary = "Singapore Citizens and Singapore PRs are commonly treated as tax residents if they normally reside in Singapore. Check IRAS if you live mainly overseas.";
-      } else if (threeYears === "yes") {
-        status = "Likely Tax Resident";
-        treatment = "Resident tax rates may apply";
-        relief = "May claim reliefs if eligible";
-        summary = "Based on the 3 consecutive years indication, you may be treated as a tax resident under IRAS administrative concession.";
-      } else if (daysInIncomeYear >= 183) {
-        status = "Likely Tax Resident";
-        treatment = "Resident tax rates";
-        relief = "May claim reliefs if eligible";
-        summary = "You have 183 days or more in Singapore for the income year, so you are likely treated as a tax resident.";
-      } else if (daysInIncomeYear >= 61) {
-        status = "Likely Non-Resident";
-        treatment = incomeType === "employment"
-          ? "15% or resident rates, whichever is higher"
-          : "Flat non-resident rate may apply";
-        relief = "No personal reliefs";
-        summary = "You have 61 to 182 days in Singapore for the income year, so you are usually treated as a non-resident.";
-      } else {
-        status = "Likely Non-Resident";
-        treatment = incomeType === "employment"
-          ? "Possible exemption for short employment, exceptions apply"
-          : "Flat non-resident rate may apply";
-        relief = "No personal reliefs";
-        summary = "You have 60 days or less in Singapore for the income year. Employment income may be exempt in some cases, but exceptions apply.";
-      }
-
-      document.getElementById("statusResult").textContent = status;
-      document.getElementById("daysResult").textContent = daysInIncomeYear + " days";
-      document.getElementById("yearResult").textContent = incomeYear;
-      document.getElementById("taxTreatmentResult").textContent = treatment;
-      document.getElementById("reliefResult").textContent = relief;
-      document.getElementById("summaryResult").textContent = summary;
-    }
-
-    window.addEventListener("DOMContentLoaded", function () {
-      const today = new Date();
-      const currentYA = today.getFullYear() + 1;
-      const incomeYear = currentYA - 1;
-
-      document.getElementById("assessmentYear").value = currentYA;
-      document.getElementById("startDate").value = incomeYear + "-01-01";
-      document.getElementById("endDate").value = incomeYear + "-12-31";
-
-      calculateTaxResident();
-    });
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function countInclusiveDays(a,b){return Math.floor((b-a)/86400000)+1;}
+    function calculateTaxResident(){const type=document.getElementById("personType").value,ya=+document.getElementById("assessmentYear").value||0,sv=document.getElementById("startDate").value,ev=document.getElementById("endDate").value,three=document.getElementById("threeYears").value,two=document.getElementById("twoYearConcession").value,pass=document.getElementById("workPassYear").value,income=document.getElementById("incomeType").value;if(!ya||!sv||!ev)return;const s=new Date(sv+"T00:00:00"),e=new Date(ev+"T00:00:00");if(s>e)return;const iy=ya-1,ys=new Date(iy,0,1),ye=new Date(iy,11,31),cs=s<ys?ys:s,ce=e>ye?ye:e,days=cs<=ce?countInclusiveDays(cs,ce):0;let status,treatment,relief,summary;const excluded=income==="director";if(type==="citizen-pr"){status="Likely Tax Resident";treatment="Resident tax rates";relief="May claim reliefs if eligible";summary="Singapore Citizens and PRs who normally reside in Singapore are generally tax residents, subject to individual circumstances.";}else if(three==="yes"){status="Likely Tax Resident";treatment="Resident tax rates may apply";relief="May claim reliefs if eligible";summary="The 3-consecutive-year administrative concession may apply.";}else if(two==="yes"&&!excluded){status="Likely Tax Resident";treatment="Resident rates for both years may apply";relief="May claim reliefs if eligible";summary="The 2-calendar-year concession may apply to foreign employees whose continuous employment/presence straddles 2 years and totals at least 183 days; directors, public entertainers and professionals are excluded.";}else if(days>=183){status="Likely Tax Resident";treatment="Resident tax rates";relief="May claim reliefs if eligible";summary="You have at least 183 days in Singapore in the income year.";}else if(pass==="yes"&&!excluded){status="Provisionally Tax Resident";treatment="Resident rates may apply, subject to review at tax clearance";relief="May claim reliefs if eligible";summary="IRAS generally treats a foreigner with a work pass valid for at least 1 year as tax resident initially, but status is reviewed when employment ceases.";}else if(days>=61){status="Likely Non-Resident";treatment=income==="employment"?"15% or resident rates, whichever is higher":"24% may apply";relief="No personal reliefs";summary="61–182 days generally results in non-resident treatment unless a concession applies.";}else{status="Likely Non-Resident";treatment=income==="employment"?"Possible short-term employment exemption; exceptions apply":"24% may apply";relief="No personal reliefs";summary="60 days or less may qualify for the short-term employment exemption, except for directors, public entertainers, professionals and certain other cases.";}document.getElementById("statusResult").textContent=status;document.getElementById("daysResult").textContent=days+" days";document.getElementById("yearResult").textContent=iy;document.getElementById("taxTreatmentResult").textContent=treatment;document.getElementById("reliefResult").textContent=relief;document.getElementById("summaryResult").textContent=summary;}
+    window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),ya=t.getFullYear()+1,iy=ya-1;document.getElementById("assessmentYear").value=ya;document.getElementById("startDate").value=iy+"-01-01";document.getElementById("endDate").value=iy+"-12-31";["personType","assessmentYear","startDate","endDate","threeYears","twoYearConcession","workPassYear","incomeType"].forEach(id=>document.getElementById(id).addEventListener("input",calculateTaxResident));calculateTaxResident();});
   </script>
 </body>
 </html>

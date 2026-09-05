@@ -1,19 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Notice Period Calculator 2026 | Resignation Last Day Calculator</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/notice-period-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Notice Period Calculator 2026. Estimate your resignation last day, notice period end date, calendar days counted and salary in lieu of notice." />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Notice Period Calculator 2026 | Resignation Last Day Calculator</title>
+<link href="https://sgsalarytools.com/notice-period-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Notice Period Calculator 2026. Estimate your resignation last day, notice period end date, calendar days counted and salary in lieu of notice." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
@@ -389,654 +385,487 @@
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="logo-icon.png" alt="SG Salary Tools logo">
-        <span>
+<header>
+<div class="nav">
+<a class="brand" href="index.html">
+<img alt="SG Salary Tools logo" src="logo-icon.png"/>
+<span>
           SG Salary Tools
           <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-wrap">
-      <div class="eyebrow">Singapore resignation & employment calculator</div>
-      <h1>Calculate your notice period in Singapore</h1>
-      <p>
+</span>
+</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-wrap">
+<div class="eyebrow">Singapore resignation &amp; employment calculator</div>
+<h1>Calculate your notice period in Singapore</h1>
+<p>
         Estimate your resignation last day, notice period end date, calendar days counted
         and salary in lieu of notice. Built for employees, HR checks and job transition planning.
       </p>
-
-      <div class="hero-tags">
-        <span>Resignation Last Day</span>
-        <span>Notice Includes Weekends</span>
-        <span>Public Holidays Counted</span>
-        <span>Salary in Lieu Estimate</span>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="section">
-      <div class="calculator-grid">
-        <div>
-          <h2>Notice period inputs</h2>
-          <p class="muted">
+<div class="hero-tags">
+<span>Resignation Last Day</span>
+<span>Notice Includes Weekends</span>
+<span>Public Holidays Counted</span>
+<span>Salary in Lieu Estimate</span>
+</div>
+</div>
+</section>
+<main>
+<section class="section">
+<div class="calculator-grid">
+<div>
+<h2>Notice period inputs</h2>
+<p class="muted">
             Enter your resignation date and notice period. The calculator estimates your last day
             using calendar days because notice period generally includes the notice date, rest days,
             non-working days and public holidays.
           </p>
-
-          <label for="noticeDate">Resignation date / notice given date</label>
-          <input type="date" id="noticeDate">
-
-          <label for="noticeValue">Notice period</label>
-          <input type="number" id="noticeValue" value="1" min="1">
-
-          <label for="noticeUnit">Notice unit</label>
-          <select id="noticeUnit">
-            <option value="days">Days</option>
-            <option value="weeks">Weeks</option>
-            <option value="months" selected>Months</option>
-          </select>
-
-          <label for="monthlySalary">Monthly salary (optional)</label>
-          <input type="number" id="monthlySalary" placeholder="Example: 4000" min="0" step="0.01">
-
-          <label for="unservedDays">Unserved notice days (optional)</label>
-          <input type="number" id="unservedDays" placeholder="Example: 7" min="0" step="1">
-
-          <label for="defaultNotice">If your contract has no notice period</label>
-          <select id="defaultNotice">
-            <option value="">I have a notice period in my contract</option>
-            <option value="1-days">Less than 26 weeks: 1 day</option>
-            <option value="1-weeks">26 weeks to less than 2 years: 1 week</option>
-            <option value="2-weeks">2 years to less than 5 years: 2 weeks</option>
-            <option value="4-weeks">5 years or more: 4 weeks</option>
-          </select>
-
-          <button onclick="calculateNotice()">Calculate Notice Period</button>
-
-          <div class="note">
+<label for="noticeDate">Resignation date / notice given date</label>
+<input id="noticeDate" type="date"/>
+<label for="noticeValue">Notice period</label>
+<input id="noticeValue" min="1" type="number" value="1"/>
+<label for="noticeUnit">Notice unit</label>
+<select id="noticeUnit">
+<option value="days">Days</option>
+<option value="weeks">Weeks</option>
+<option selected="" value="months">Months</option>
+</select>
+<label for="monthlySalary">Monthly gross rate of pay (optional)</label>
+<input id="monthlySalary" min="0" placeholder="Example: 4000" step="0.01" type="number"/>
+<label for="avgDaysWeek">Average working days per week (for salary in lieu)</label><input id="avgDaysWeek" max="7" min="1" step="0.5" type="number" value="5"/><label for="unservedDays">Unserved notice days (optional)</label>
+<input id="unservedDays" min="0" placeholder="Example: 7" step="1" type="number"/>
+<label for="defaultNotice">If your contract has no notice period</label>
+<select id="defaultNotice">
+<option value="">I have a notice period in my contract</option>
+<option value="1-days">Less than 26 weeks: 1 day</option>
+<option value="1-weeks">26 weeks to less than 2 years: 1 week</option>
+<option value="2-weeks">2 years to less than 5 years: 2 weeks</option>
+<option value="4-weeks">5 years or more: 4 weeks</option>
+</select>
+<button onclick="calculateNotice()">Calculate Notice Period</button>
+<div class="note">
             This calculator is for general planning only. Always check your employment contract
             and official MOM guidance for your specific situation.
           </div>
-        </div>
-
-        <div class="result-card">
-          <h2>Your estimated result</h2>
-          <p>Estimated last day of employment</p>
-
-          <div class="big-result" id="lastDayResult">-</div>
-
-          <div class="result-line">
-            <span>Notice starts on</span>
-            <span id="startDateResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Notice period used</span>
-            <span id="periodUsedResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Calendar days counted</span>
-            <span id="calendarDaysResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Salary in lieu estimate</span>
-            <span id="salaryLieuResult">-</span>
-          </div>
-
-          <p class="muted" style="color:#cfe6d5; margin-top:16px;">
+</div>
+<div class="result-card">
+<h2>Your estimated result</h2>
+<p>Estimated last day of employment</p>
+<div class="big-result" id="lastDayResult">-</div>
+<div class="result-line">
+<span>Notice starts on</span>
+<span id="startDateResult">-</span>
+</div>
+<div class="result-line">
+<span>Notice period used</span>
+<span id="periodUsedResult">-</span>
+</div>
+<div class="result-line">
+<span>Calendar days counted</span>
+<span id="calendarDaysResult">-</span>
+</div>
+<div class="result-line">
+<span>Salary in lieu estimate</span>
+<span id="salaryLieuResult">-</span>
+</div>
+<p class="muted" style="color:#cfe6d5; margin-top:16px;">
             Enter your details and calculate to see your estimated resignation last day.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>How this notice period calculator works</h2>
-      <p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>How this notice period calculator works</h2>
+<p>
         This calculator estimates your last day of employment based on the date you give notice
         and the notice period stated in your employment contract. It is useful when your contract
         says 1 day, 1 week, 2 weeks, 1 month or 2 months notice.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>1. Enter notice date</strong>
-          <p>Select the date you submit your resignation letter or give written resignation notice.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>2. Enter notice period</strong>
-          <p>Use the notice period stated in your employment contract, such as 7 days or 1 month.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>3. Check last day</strong>
-          <p>The calculator estimates your final employment date by counting calendar days.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Singapore notice period rules</h2>
-      <p>
+<div class="grid-3">
+<div class="info-card">
+<strong>1. Enter notice date</strong>
+<p>Select the date you submit your resignation letter or give written resignation notice.</p>
+</div>
+<div class="info-card">
+<strong>2. Enter notice period</strong>
+<p>Use the notice period stated in your employment contract, such as 7 days or 1 month.</p>
+</div>
+<div class="info-card">
+<strong>3. Check last day</strong>
+<p>The calculator estimates your final employment date by counting calendar days.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Singapore notice period rules</h2>
+<p>
         In Singapore, the notice period is usually based on the employment contract. The notice
         period should generally be the same for employer and employee. If a party does not serve
         the required notice, salary in lieu of notice may be payable.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Situation</th>
-            <th>General treatment</th>
-            <th>Practical meaning</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Contract states notice period</td>
-            <td>Follow the employment contract</td>
-            <td>Example: 1 month notice, 2 weeks notice or 7 days notice.</td>
-          </tr>
-          <tr>
-            <td>No notice period in contract</td>
-            <td>Use statutory notice period based on service length</td>
-            <td>The longer the service period, the longer the default notice period may be.</td>
-          </tr>
-          <tr>
-            <td>Cannot serve full notice</td>
-            <td>Salary in lieu of notice may be payable</td>
-            <td>The party ending employment early may need to pay for the unserved notice.</td>
-          </tr>
-          <tr>
-            <td>Notice waived</td>
-            <td>Can be waived by mutual consent</td>
-            <td>Both employer and employee should record the waiver in writing.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>If your contract has no notice period</h2>
-      <p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>General treatment</th>
+<th>Practical meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contract states notice period</td>
+<td>Follow the employment contract</td>
+<td>Example: 1 month notice, 2 weeks notice or 7 days notice.</td>
+</tr>
+<tr>
+<td>No notice period in contract</td>
+<td>Use statutory notice period based on service length</td>
+<td>The longer the service period, the longer the default notice period may be.</td>
+</tr>
+<tr>
+<td>Cannot serve full notice</td>
+<td>Salary in lieu of notice may be payable</td>
+<td>The party ending employment early may need to pay for the unserved notice.</td>
+</tr>
+<tr>
+<td>Notice waived</td>
+<td>Can be waived by mutual consent</td>
+<td>Both employer and employee should record the waiver in writing.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>If your contract has no notice period</h2>
+<p>
         If your employment contract does not specify a notice period, the default notice period
         depends on your length of service.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Length of service</th>
-            <th>Default notice period</th>
-            <th>Calculator input</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Less than 26 weeks</td>
-            <td>1 day</td>
-            <td>Choose “Less than 26 weeks” or enter 1 day.</td>
-          </tr>
-          <tr>
-            <td>26 weeks to less than 2 years</td>
-            <td>1 week</td>
-            <td>Choose “26 weeks to less than 2 years” or enter 1 week.</td>
-          </tr>
-          <tr>
-            <td>2 years to less than 5 years</td>
-            <td>2 weeks</td>
-            <td>Choose “2 years to less than 5 years” or enter 2 weeks.</td>
-          </tr>
-          <tr>
-            <td>5 years or more</td>
-            <td>4 weeks</td>
-            <td>Choose “5 years or more” or enter 4 weeks.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
+<table>
+<thead>
+<tr>
+<th>Length of service</th>
+<th>Default notice period</th>
+<th>Calculator input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Less than 26 weeks</td>
+<td>1 day</td>
+<td>Choose “Less than 26 weeks” or enter 1 day.</td>
+</tr>
+<tr>
+<td>26 weeks to less than 2 years</td>
+<td>1 week</td>
+<td>Choose “26 weeks to less than 2 years” or enter 1 week.</td>
+</tr>
+<tr>
+<td>2 years to less than 5 years</td>
+<td>2 weeks</td>
+<td>Choose “2 years to less than 5 years” or enter 2 weeks.</td>
+</tr>
+<tr>
+<td>5 years or more</td>
+<td>4 weeks</td>
+<td>Choose “5 years or more” or enter 4 weeks.</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
         If your written contract has a valid notice period, your contract notice period usually
         comes first. Use the service length option only when your contract does not state any notice period.
       </div>
-    </section>
-
-    <section class="section">
-      <h2>Does notice period include weekends and public holidays?</h2>
-      <p>
+</section>
+<section class="section">
+<h2>Does notice period include weekends and public holidays?</h2>
+<p>
         Yes. Notice period generally includes the day on which notice is given, public holidays,
         rest days and non-working days. This is why notice period is normally counted by calendar
         dates, not only working days.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>Notice starts today</strong>
-          <p>If you give notice today, today is normally included as part of the notice period.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Weekends included</strong>
-          <p>Saturdays, Sundays, rest days and non-working days are generally counted.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Public holidays included</strong>
-          <p>Public holidays during the notice period generally do not extend your last day.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Notice period examples</h2>
-      <p>
+<div class="grid-3">
+<div class="info-card">
+<strong>Notice starts today</strong>
+<p>If you give notice today, today is normally included as part of the notice period.</p>
+</div>
+<div class="info-card">
+<strong>Weekends included</strong>
+<p>Saturdays, Sundays, rest days and non-working days are generally counted.</p>
+</div>
+<div class="info-card">
+<strong>Public holidays included</strong>
+<p>Public holidays during the notice period generally do not extend your last day.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Notice period examples</h2>
+<p>
         These examples show how the calculator treats common resignation notice periods.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Notice given date</th>
-            <th>Notice period</th>
-            <th>Estimated last day</th>
-            <th>Explanation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>15 July 2026</td>
-            <td>1 month</td>
-            <td>14 August 2026</td>
-            <td>One month notice includes the day notice is given.</td>
-          </tr>
-          <tr>
-            <td>1 March 2026</td>
-            <td>2 weeks</td>
-            <td>14 March 2026</td>
-            <td>Two weeks is counted as 14 calendar days including the notice date.</td>
-          </tr>
-          <tr>
-            <td>10 June 2026</td>
-            <td>7 days</td>
-            <td>16 June 2026</td>
-            <td>Seven days notice means the notice date is counted as day 1.</td>
-          </tr>
-          <tr>
-            <td>31 January 2026</td>
-            <td>1 month</td>
-            <td>28 February 2026</td>
-            <td>Month-end dates may roll to the last valid day of the following month.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Salary in lieu of notice</h2>
-      <p>
+<table>
+<thead>
+<tr>
+<th>Notice given date</th>
+<th>Notice period</th>
+<th>Estimated last day</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15 July 2026</td>
+<td>1 month</td>
+<td>14 August 2026</td>
+<td>One month notice includes the day notice is given.</td>
+</tr>
+<tr>
+<td>1 March 2026</td>
+<td>2 weeks</td>
+<td>14 March 2026</td>
+<td>Two weeks is counted as 14 calendar days including the notice date.</td>
+</tr>
+<tr>
+<td>10 June 2026</td>
+<td>7 days</td>
+<td>16 June 2026</td>
+<td>Seven days notice means the notice date is counted as day 1.</td>
+</tr>
+<tr>
+<td>31 January 2026</td>
+<td>1 month</td>
+<td>28 February 2026</td>
+<td>Month-end dates may roll to the last valid day of the following month.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>Salary in lieu of notice</h2>
+<p>
         Salary in lieu of notice means paying the other party for the notice period that is not
         served. This may apply when an employee resigns without serving full notice or when an
         employer asks an employee to leave before the notice period ends.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>Employee does not serve notice</strong>
-          <p>If you resign immediately, you may need to pay salary in lieu to your employer.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Employer ends employment early</strong>
-          <p>If the employer ends employment early, salary in lieu may be payable to the employee.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Mutual waiver</strong>
-          <p>Notice can be waived if both parties agree. It is safer to record this in writing.</p>
-        </div>
-      </div>
-
-      <div class="note">
-        Simple estimate used in this calculator: monthly salary ÷ 26 × unserved notice days.
+<div class="grid-3">
+<div class="info-card">
+<strong>Employee does not serve notice</strong>
+<p>If you resign immediately, you may need to pay salary in lieu to your employer.</p>
+</div>
+<div class="info-card">
+<strong>Employer ends employment early</strong>
+<p>If the employer ends employment early, salary in lieu may be payable to the employee.</p>
+</div>
+<div class="info-card">
+<strong>Mutual waiver</strong>
+<p>Notice can be waived if both parties agree. It is safer to record this in writing.</p>
+</div>
+</div>
+<div class="note">
+        Salary in lieu uses the MOM gross daily rate: 12 × monthly gross rate ÷ (52 × average working days per week) × unserved notice days.
         This is only a planning estimate. Actual payroll treatment can depend on contract wording,
         salary type and specific circumstances.
       </div>
-    </section>
-
-    <section class="section">
-      <h2>Annual leave, sick leave and notice period</h2>
-      <p>
+</section>
+<section class="section">
+<h2>Annual leave, sick leave and notice period</h2>
+<p>
         Leave during notice period can be confusing. The treatment may differ depending on whether
         you are taking annual leave, offsetting notice, taking sick leave or applying for unpaid leave.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Situation</th>
-            <th>General treatment</th>
-            <th>Important note</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Approved annual leave during notice</td>
-            <td>Usually part of notice period</td>
-            <td>You remain employed until the last day unless notice is offset.</td>
-          </tr>
-          <tr>
-            <td>Annual leave used to offset notice</td>
-            <td>Can bring forward last day if employer agrees</td>
-            <td>This is different from simply taking leave during notice.</td>
-          </tr>
-          <tr>
-            <td>Sick leave during notice</td>
-            <td>Generally treated as part of notice period if valid</td>
-            <td>Valid sick leave usually does not extend the notice period.</td>
-          </tr>
-          <tr>
-            <td>Unpaid leave during notice</td>
-            <td>May require employer agreement</td>
-            <td>Unpaid leave approval is usually at employer discretion.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Official sources to check</h2>
-      <p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>General treatment</th>
+<th>Important note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved annual leave during notice</td>
+<td>Usually part of notice period</td>
+<td>You remain employed until the last day unless notice is offset.</td>
+</tr>
+<tr>
+<td>Annual leave used to offset notice</td>
+<td>Can bring forward last day if employer agrees</td>
+<td>This is different from simply taking leave during notice.</td>
+</tr>
+<tr>
+<td>Sick leave during notice</td>
+<td>Generally treated as part of notice period if valid</td>
+<td>Valid sick leave usually does not extend the notice period.</td>
+</tr>
+<tr>
+<td>Unpaid leave during notice</td>
+<td>May require employer agreement</td>
+<td>Unpaid leave approval is usually at employer discretion.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>Official sources to check</h2>
+<p>
         This calculator provides estimates only. For official Singapore termination, resignation,
         notice period and salary in lieu rules, always check MOM directly.
       </p>
-
-      <div class="grid-3">
-        <a class="info-card" href="https://www.mom.gov.sg/employment-practices/termination-of-employment/termination-with-notice" target="_blank" rel="noopener">
-          <strong>MOM Termination With Notice</strong>
-          <p>Official notice period counting and resignation rules.</p>
-        </a>
-
-        <a class="info-card" href="https://www.mom.gov.sg/employment-practices/termination-of-employment/termination-without-notice" target="_blank" rel="noopener">
-          <strong>MOM Termination Without Notice</strong>
-          <p>Official salary in lieu and breach of contract guidance.</p>
-        </a>
-
-        <a class="info-card" href="https://www.mom.gov.sg/employment-practices/termination-of-employment" target="_blank" rel="noopener">
-          <strong>MOM Termination of Employment</strong>
-          <p>Main MOM termination of employment section.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore calculators</h2>
-      <p class="muted">Use these calculators to plan salary, leave, overtime and resignation-related calculations.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <strong>Salary Calculator</strong>
-          <span>Estimate monthly take-home pay after CPF and income tax.</span>
-        </a>
-
-        <a class="related-card" href="annual-leave-calculator.html">
-          <strong>Annual Leave Calculator</strong>
-          <span>Estimate annual leave entitlement and leave balance.</span>
-        </a>
-
-        <a class="related-card" href="overtime-calculator.html">
-          <strong>Overtime Calculator</strong>
-          <span>Estimate overtime pay based on hourly rate and hours worked.</span>
-        </a>
-
-        <a class="related-card" href="hourly-rate-calculator.html">
-          <strong>Hourly Rate Calculator</strong>
-          <span>Convert monthly salary into estimated hourly rate.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="calculators.html">View All Calculators →</a>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore salary guides</h2>
-      <p class="muted">Learn more about Singapore employment rules, contracts and salary planning.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="employment-contract-guide.html">
-          <strong>Employment Contract Guide</strong>
-          <span>Understand salary, notice period and key employment clauses.</span>
-        </a>
-
-        <a class="related-card" href="probation-period-guide.html">
-          <strong>Probation Guide</strong>
-          <span>Learn how probation, confirmation and notice usually work.</span>
-        </a>
-
-        <a class="related-card" href="annual-leave-guide.html">
-          <strong>Annual Leave Guide</strong>
-          <span>Understand annual leave entitlement and leave planning basics.</span>
-        </a>
-
-        <a class="related-card" href="sick-leave-guide.html">
-          <strong>Sick Leave Guide</strong>
-          <span>Learn about paid sick leave, MC and hospitalisation leave.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="guides.html">View All Guides →</a>
-    </section>
-
-    <section class="section">
-      <h2>Frequently Asked Questions</h2>
-
-      <details open>
-        <summary>How do I calculate my notice period in Singapore?</summary>
-        <p>
+<div class="grid-3">
+<a class="info-card" href="https://www.mom.gov.sg/employment-practices/termination-of-employment/termination-with-notice" rel="noopener" target="_blank">
+<strong>MOM Termination With Notice</strong>
+<p>Official notice period counting and resignation rules.</p>
+</a>
+<a class="info-card" href="https://www.mom.gov.sg/employment-practices/termination-of-employment/termination-without-notice" rel="noopener" target="_blank">
+<strong>MOM Termination Without Notice</strong>
+<p>Official salary in lieu and breach of contract guidance.</p>
+</a>
+<a class="info-card" href="https://www.mom.gov.sg/employment-practices/termination-of-employment" rel="noopener" target="_blank">
+<strong>MOM Termination of Employment</strong>
+<p>Main MOM termination of employment section.</p>
+</a>
+</div>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="notice-period-guide.html">Notice Period Guide</a> · <a href="resignation-guide.html">Resignation Guide</a> · <a href="final-salary-calculator.html">Final Salary Calculator</a></p></section><section class="section">
+<h2>Related Singapore calculators</h2>
+<p class="muted">Use these calculators to plan salary, leave, overtime and resignation-related calculations.</p>
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<strong>Salary Calculator</strong>
+<span>Estimate monthly take-home pay after CPF and income tax.</span>
+</a>
+<a class="related-card" href="annual-leave-calculator.html">
+<strong>Annual Leave Calculator</strong>
+<span>Estimate annual leave entitlement and leave balance.</span>
+</a>
+<a class="related-card" href="overtime-calculator.html">
+<strong>Overtime Calculator</strong>
+<span>Estimate overtime pay based on hourly rate and hours worked.</span>
+</a>
+<a class="related-card" href="hourly-rate-calculator.html">
+<strong>Hourly Rate Calculator</strong>
+<span>Convert monthly salary into estimated hourly rate.</span>
+</a>
+</div>
+<a class="view-all" href="calculators.html">View All Calculators →</a>
+</section>
+<section class="section">
+<h2>Related Singapore salary guides</h2>
+<p class="muted">Learn more about Singapore employment rules, contracts and salary planning.</p>
+<div class="related-grid">
+<a class="related-card" href="employment-contract-guide.html">
+<strong>Employment Contract Guide</strong>
+<span>Understand salary, notice period and key employment clauses.</span>
+</a>
+<a class="related-card" href="probation-guide.html">
+<strong>Probation Guide</strong>
+<span>Learn how probation, confirmation and notice usually work.</span>
+</a>
+<a class="related-card" href="annual-leave-guide.html">
+<strong>Annual Leave Guide</strong>
+<span>Understand annual leave entitlement and leave planning basics.</span>
+</a>
+<a class="related-card" href="sick-leave-guide.html">
+<strong>Sick Leave Guide</strong>
+<span>Learn about paid sick leave, MC and hospitalisation leave.</span>
+</a>
+</div>
+<a class="view-all" href="guides.html">View All Guides →</a>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<details open="">
+<summary>How do I calculate my notice period in Singapore?</summary>
+<p>
           Start from the date you give notice. The notice period generally includes the notice date
           itself, public holidays, rest days and non-working days. For example, if you give 1 month
           notice on 15 July, your estimated last day is usually 14 August.
         </p>
-      </details>
-
-      <details>
-        <summary>Does notice period include weekends in Singapore?</summary>
-        <p>
+</details>
+<details>
+<summary>Does notice period include weekends in Singapore?</summary>
+<p>
           Yes. Notice period generally includes rest days and non-working days, so weekends are
           normally counted unless your specific contract or situation provides otherwise.
         </p>
-      </details>
-
-      <details>
-        <summary>Does notice period include public holidays?</summary>
-        <p>
+</details>
+<details>
+<summary>Does notice period include public holidays?</summary>
+<p>
           Yes. Public holidays during the notice period are generally included and do not automatically
           extend your last day.
         </p>
-      </details>
-
-      <details>
-        <summary>Is the resignation date counted as part of notice period?</summary>
-        <p>
+</details>
+<details>
+<summary>Is the resignation date counted as part of notice period?</summary>
+<p>
           Yes. The day on which notice is given is generally included as part of the notice period.
         </p>
-      </details>
-
-      <details>
-        <summary>What if my contract does not mention notice period?</summary>
-        <p>
+</details>
+<details>
+<summary>What if my contract does not mention notice period?</summary>
+<p>
           If your employment contract does not specify a notice period, the default notice period depends
           on length of service: less than 26 weeks is 1 day, 26 weeks to less than 2 years is 1 week,
           2 years to less than 5 years is 2 weeks, and 5 years or more is 4 weeks.
         </p>
-      </details>
-
-      <details>
-        <summary>Can I resign immediately in Singapore?</summary>
-        <p>
+</details>
+<details>
+<summary>Can I resign immediately in Singapore?</summary>
+<p>
           You can end employment without serving notice by paying salary in lieu of notice, unless the
           notice is waived by mutual consent or a special situation applies. Always check your contract
           and MOM guidance.
         </p>
-      </details>
-
-      <details>
-        <summary>What is salary in lieu of notice?</summary>
-        <p>
+</details>
+<details>
+<summary>What is salary in lieu of notice?</summary>
+<p>
           Salary in lieu of notice is money equivalent to the salary that would have been earned during
           the required notice period that was not served.
         </p>
-      </details>
-
-      <details>
-        <summary>Can annual leave offset notice period?</summary>
-        <p>
+</details>
+<details>
+<summary>Can annual leave offset notice period?</summary>
+<p>
           Annual leave can offset notice period only if your employer agrees. Offsetting notice with
           annual leave is different from taking approved annual leave while still serving the full notice.
         </p>
-      </details>
-
-      <details>
-        <summary>Does sick leave extend my notice period?</summary>
-        <p>
+</details>
+<details>
+<summary>Does sick leave extend my notice period?</summary>
+<p>
           Valid sick leave during notice is generally treated as part of the notice period. In normal
           cases, it does not automatically extend the notice period.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this notice period calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this notice period calculator official?</summary>
+<p>
           No. SG Salary Tools provides general planning calculators only. For official rules and special
           cases, always refer to MOM or seek professional advice.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides general information only and is not official MOM, payroll or legal advice.
-  </footer>
-
-  <script>
-    function formatDate(date) {
-      return date.toLocaleDateString("en-SG", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      });
-    }
-
-    function addMonths(date, months) {
-      const result = new Date(date);
-      const originalDay = result.getDate();
-
-      result.setMonth(result.getMonth() + months);
-
-      if (result.getDate() !== originalDay) {
-        result.setDate(0);
-      }
-
-      return result;
-    }
-
-    function calculateNotice() {
-      const noticeDateValue = document.getElementById("noticeDate").value;
-      let noticeValue = Number(document.getElementById("noticeValue").value);
-      let noticeUnit = document.getElementById("noticeUnit").value;
-
-      const defaultNotice = document.getElementById("defaultNotice").value;
-      const monthlySalary = Number(document.getElementById("monthlySalary").value || 0);
-      const unservedDays = Number(document.getElementById("unservedDays").value || 0);
-
-      if (!noticeDateValue) {
-        alert("Please select your resignation date.");
-        return;
-      }
-
-      if (defaultNotice) {
-        const parts = defaultNotice.split("-");
-        noticeValue = Number(parts[0]);
-        noticeUnit = parts[1];
-
-        document.getElementById("noticeValue").value = noticeValue;
-        document.getElementById("noticeUnit").value = noticeUnit;
-      }
-
-      if (!noticeValue || noticeValue <= 0) {
-        alert("Please enter a valid notice period.");
-        return;
-      }
-
-      const startDate = new Date(noticeDateValue + "T00:00:00");
-      let lastDay = new Date(startDate);
-      let calendarDays = 0;
-
-      if (noticeUnit === "days") {
-        calendarDays = noticeValue;
-        lastDay.setDate(startDate.getDate() + noticeValue - 1);
-      }
-
-      if (noticeUnit === "weeks") {
-        calendarDays = noticeValue * 7;
-        lastDay.setDate(startDate.getDate() + calendarDays - 1);
-      }
-
-      if (noticeUnit === "months") {
-        lastDay = addMonths(startDate, noticeValue);
-        lastDay.setDate(lastDay.getDate() - 1);
-
-        const diffTime = lastDay.getTime() - startDate.getTime();
-        calendarDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
-      }
-
-      let salaryLieu = "-";
-      if (monthlySalary > 0 && unservedDays > 0) {
-        const amount = (monthlySalary / 26) * unservedDays;
-        salaryLieu = "S$" + amount.toLocaleString("en-SG", {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        });
-      }
-
-      const periodText =
-        noticeValue + " " +
-        (noticeValue === 1 ? noticeUnit.replace("s", "") : noticeUnit);
-
-      document.getElementById("lastDayResult").textContent = formatDate(lastDay);
-      document.getElementById("startDateResult").textContent = formatDate(startDate);
-      document.getElementById("periodUsedResult").textContent = periodText;
-      document.getElementById("calendarDaysResult").textContent = calendarDays + " days";
-      document.getElementById("salaryLieuResult").textContent = salaryLieu;
-    }
-
-    window.addEventListener("DOMContentLoaded", function () {
-      const today = new Date();
-      const yyyy = today.getFullYear();
-      const mm = String(today.getMonth() + 1).padStart(2, "0");
-      const dd = String(today.getDate()).padStart(2, "0");
-
-      document.getElementById("noticeDate").value = `${yyyy}-${mm}-${dd}`;
-      calculateNotice();
-    });
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function formatDate(d){return d.toLocaleDateString("en-SG",{day:"numeric",month:"long",year:"numeric"});} function addMonths(date,months){const r=new Date(date),day=r.getDate();r.setMonth(r.getMonth()+months);if(r.getDate()!==day)r.setDate(0);return r;}
+    function calculateNotice(){const dv=document.getElementById("noticeDate").value;let n=+document.getElementById("noticeValue").value,u=document.getElementById("noticeUnit").value;const def=document.getElementById("defaultNotice").value,salary=+document.getElementById("monthlySalary").value||0,avg=+document.getElementById("avgDaysWeek").value||5,unserved=+document.getElementById("unservedDays").value||0;if(!dv)return;if(def){const p=def.split("-");n=+p[0];u=p[1];document.getElementById("noticeValue").value=n;document.getElementById("noticeUnit").value=u;}if(!n||n<=0)return;const start=new Date(dv+"T00:00:00"),last=new Date(start);let days=0;if(u==="days"){days=n;last.setDate(start.getDate()+n-1);}else if(u==="weeks"){days=n*7;last.setDate(start.getDate()+days-1);}else{const x=addMonths(start,n);x.setDate(x.getDate()-1);last.setTime(x.getTime());days=Math.floor((last-start)/86400000)+1;}let lieu="-";if(salary>0&&unserved>0)lieu="S$"+(SG2026.grossDailyRate(salary,avg)*unserved).toLocaleString("en-SG",{minimumFractionDigits:2,maximumFractionDigits:2});const pt=n+" "+(n===1?u.replace("s",""):u);document.getElementById("lastDayResult").textContent=formatDate(last);document.getElementById("startDateResult").textContent=formatDate(start);document.getElementById("periodUsedResult").textContent=pt;document.getElementById("calendarDaysResult").textContent=days+" days";document.getElementById("salaryLieuResult").textContent=lieu;}
+    window.addEventListener("DOMContentLoaded",()=>{const t=new Date();document.getElementById("noticeDate").value=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`;["noticeDate","noticeValue","noticeUnit","monthlySalary","avgDaysWeek","unservedDays","defaultNotice"].forEach(id=>document.getElementById(id).addEventListener("input",calculateNotice));calculateNotice();});
   </script>
 </body>
 </html>

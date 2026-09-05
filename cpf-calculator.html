@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>CPF Calculator Singapore 2026 | Employee & Employer CPF Contribution</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/cpf-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore CPF Calculator 2026. Estimate employee CPF, employer CPF, total CPF contribution and salary after CPF based on monthly salary and age group." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>CPF Calculator Singapore 2026 | Employee &amp; Employer CPF Contribution</title>
+<link href="https://sgsalarytools.com/cpf-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore CPF Calculator 2026. Estimate employee CPF, employer CPF, total CPF contribution and salary after CPF based on monthly salary and age group." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
@@ -704,602 +701,431 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
-
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore CPF Calculator 2026</div>
-
-      <h1>Calculate your <em>CPF contribution</em> in Singapore</h1>
-
-      <p>
+<header class="topbar">
+<nav class="nav">
+<a aria-label="SG Salary Tools home" class="brand" href="index.html">
+<img alt="SG Salary Tools" src="logo-icon.png"/>
+<span class="brand-text">
+<strong>SG Salary<span>Tools</span></strong>
+<small>CPF · TAX · TAKE-HOME PAY</small>
+</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</div>
+</nav>
+</header>
+<section class="hero-wrap">
+<div class="hero">
+<div class="eyebrow">Singapore CPF Calculator 2026</div>
+<h1>Calculate your <em>CPF contribution</em> in Singapore</h1>
+<p>
         Estimate employee CPF, employer CPF, total CPF contribution and salary after CPF.
         Built for Singapore Citizens and PRs planning monthly salary, bonus and payroll deductions.
       </p>
-
-      <div class="quick-stats">
-        <span>Employee CPF</span>
-        <span>Employer CPF</span>
-        <span>OW Ceiling Included</span>
-        <span>Low-Wage Rule Included</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="calculator-grid">
-      <div class="panel">
-        <h2>CPF inputs</h2>
-        <p class="panel-desc">
+<div class="quick-stats">
+<span>Employee CPF</span>
+<span>Employer CPF</span>
+<span>OW Ceiling Included</span>
+<span>Low-Wage Rule Included</span>
+</div>
+</div>
+</section>
+<section class="calculator-section" id="calculator">
+<div class="calculator-grid">
+<div class="panel">
+<h2>CPF inputs</h2>
+<p class="panel-desc">
           Enter your monthly salary and age group. The calculator estimates CPF for Ordinary Wages and optional bonus.
         </p>
-
-        <div class="field">
-          <label for="salary">Gross monthly salary</label>
-          <input id="salary" type="number" value="5000" min="0" step="100">
-        </div>
-
-        <div class="field">
-          <label for="bonus">Annual bonus / Additional Wage</label>
-          <input id="bonus" type="number" value="0" min="0" step="100">
-        </div>
-
-        <div class="field">
-          <label for="age">Age group</label>
-          <select id="age">
-            <option value="55below">55 and below</option>
-            <option value="55to60">Above 55 to 60</option>
-            <option value="60to65">Above 60 to 65</option>
-            <option value="65to70">Above 65 to 70</option>
-            <option value="70above">Above 70</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="cpfEligibility">CPF eligibility</label>
-          <select id="cpfEligibility">
-            <option value="cpf">Singapore Citizen / PR third year onwards</option>
-            <option value="noCpf">Foreigner / No CPF contribution</option>
-          </select>
-        </div>
-
-        <button class="calculate-btn" onclick="calculateCpf()">Calculate CPF</button>
-      </div>
-
-      <div class="results">
-        <div class="main-result">
-          <small>Estimated monthly salary after employee CPF</small>
-          <div class="take-home" id="salaryAfterCpf">S$4,000</div>
-          <div class="sub-result" id="monthlyCpfSummary">
+<div class="field">
+<label for="salary">Gross monthly salary</label>
+<input id="salary" min="0" step="100" type="number" value="5000"/>
+</div>
+<div class="field">
+<label for="bonus">Annual bonus / Additional Wage</label>
+<input id="bonus" min="0" step="100" type="number" value="0"/>
+</div>
+<div class="field">
+<label for="age">Age group</label>
+<select id="age">
+<option value="55below">55 and below</option>
+<option value="55to60">Above 55 to 60</option>
+<option value="60to65">Above 60 to 65</option>
+<option value="65to70">Above 65 to 70</option>
+<option value="70above">Above 70</option>
+</select>
+</div>
+<div class="field">
+<label for="cpfEligibility">CPF eligibility</label>
+<select id="cpfEligibility">
+<option value="cpf">Singapore Citizen / PR third year onwards</option>
+<option value="noCpf">Foreigner / No CPF contribution</option>
+</select>
+</div>
+<button class="calculate-btn" onclick="calculateCpf()">Calculate CPF</button>
+</div>
+<div class="results">
+<div class="main-result">
+<small>Estimated monthly salary after employee CPF</small>
+<div class="take-home" id="salaryAfterCpf">S$4,000</div>
+<div class="sub-result" id="monthlyCpfSummary">
             Employee CPF: S$1,000 · Employer CPF: S$850
           </div>
-        </div>
-
-        <div class="result-cards">
-          <div class="result-card">
-            <span>Employee CPF</span>
-            <strong id="employeeCpf">S$1,000</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Employer CPF</span>
-            <strong id="employerCpf">S$850</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Total CPF</span>
-            <strong id="totalCpf">S$1,850</strong>
-          </div>
-        </div>
-
-        <div class="breakdown">
-          <h3>CPF breakdown</h3>
-
-          <div class="row">
-            <span>Gross monthly salary</span>
-            <strong id="grossMonthly">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Ordinary Wage subject to CPF</span>
-            <strong id="owSubject">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Less: employee CPF</span>
-            <strong class="negative" id="employeeCpfDeduction">-S$1,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Salary after employee CPF</span>
-            <strong class="positive" id="netMonthly">S$4,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Employer CPF contribution</span>
-            <strong id="employerCpfRow">S$850</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated CPF on annual bonus</span>
-            <strong id="bonusCpf">S$0</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated AW ceiling used</span>
-            <strong id="awCeilingUsed">S$42,000</strong>
-          </div>
-        </div>
-
-        <div class="note-box" id="calculationNote">
+</div>
+<div class="result-cards">
+<div class="result-card">
+<span>Employee CPF</span>
+<strong id="employeeCpf">S$1,000</strong>
+</div>
+<div class="result-card">
+<span>Employer CPF</span>
+<strong id="employerCpf">S$850</strong>
+</div>
+<div class="result-card">
+<span>Total CPF</span>
+<strong id="totalCpf">S$1,850</strong>
+</div>
+</div>
+<div class="breakdown">
+<h3>CPF breakdown</h3>
+<div class="row">
+<span>Gross monthly salary</span>
+<strong id="grossMonthly">S$5,000</strong>
+</div>
+<div class="row">
+<span>Ordinary Wage subject to CPF</span>
+<strong id="owSubject">S$5,000</strong>
+</div>
+<div class="row">
+<span>Less: employee CPF</span>
+<strong class="negative" id="employeeCpfDeduction">-S$1,000</strong>
+</div>
+<div class="row">
+<span>Salary after employee CPF</span>
+<strong class="positive" id="netMonthly">S$4,000</strong>
+</div>
+<div class="row">
+<span>Employer CPF contribution</span>
+<strong id="employerCpfRow">S$850</strong>
+</div>
+<div class="row">
+<span>Estimated CPF on annual bonus</span>
+<strong id="bonusCpf">S$0</strong>
+</div>
+<div class="row">
+<span>Estimated AW ceiling used</span>
+<strong id="awCeilingUsed">S$42,000</strong>
+</div>
+</div>
+<div class="note-box" id="calculationNote">
           This calculator uses 2026 CPF rates for Singapore Citizens and PRs from the third year onwards.
           Ordinary Wages are capped at the CPF Ordinary Wage ceiling of S$8,000.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <section class="content-section">
-      <h2 class="section-title">How this CPF calculator works</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<main class="content">
+<section class="content-section">
+<h2 class="section-title">How this CPF calculator works</h2>
+<p class="section-desc">
         CPF contributions are calculated based on your CPF eligibility, age group and wages subject to CPF.
         For monthly salary, CPF is generally calculated on Ordinary Wages up to the Ordinary Wage ceiling.
         Employer CPF is paid by the employer separately, while employee CPF is deducted from your gross salary.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>1. Enter salary</h3>
-          <p>Use your gross monthly salary before CPF deduction, tax or other payroll deductions.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>2. Select age group</h3>
-          <p>CPF rates change when an employee is above 55, above 60, above 65 and above 70.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>3. Check CPF result</h3>
-          <p>See employee CPF, employer CPF, total CPF and salary after employee CPF deduction.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">CPF contribution rates from 1 January 2026</h2>
-      <p class="section-desc">
+<div class="info-grid">
+<div class="info-card">
+<h3>1. Enter salary</h3>
+<p>Use your gross monthly salary before CPF deduction, tax or other payroll deductions.</p>
+</div>
+<div class="info-card">
+<h3>2. Select age group</h3>
+<p>CPF rates change when an employee is above 55, above 60, above 65 and above 70.</p>
+</div>
+<div class="info-card">
+<h3>3. Check CPF result</h3>
+<p>See employee CPF, employer CPF, total CPF and salary after employee CPF deduction.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">CPF contribution rates from 1 January 2026</h2>
+<p class="section-desc">
         The table below is for Singapore Citizens and Singapore Permanent Residents from the third year onwards,
         based on monthly wages above S$750.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Employee Age</th>
-              <th>Employer CPF</th>
-              <th>Employee CPF</th>
-              <th>Total CPF</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>55 and below</td>
-              <td>17%</td>
-              <td>20%</td>
-              <td>37%</td>
-            </tr>
-
-            <tr>
-              <td>Above 55 to 60</td>
-              <td>16%</td>
-              <td>18%</td>
-              <td>34%</td>
-            </tr>
-
-            <tr>
-              <td>Above 60 to 65</td>
-              <td>12.5%</td>
-              <td>12.5%</td>
-              <td>25%</td>
-            </tr>
-
-            <tr>
-              <td>Above 65 to 70</td>
-              <td>9%</td>
-              <td>7.5%</td>
-              <td>16.5%</td>
-            </tr>
-
-            <tr>
-              <td>Above 70</td>
-              <td>7.5%</td>
-              <td>5%</td>
-              <td>12.5%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Low monthly wage CPF treatment</h2>
-      <p class="section-desc">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Employee Age</th>
+<th>Employer CPF</th>
+<th>Employee CPF</th>
+<th>Total CPF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 and below</td>
+<td>17%</td>
+<td>20%</td>
+<td>37%</td>
+</tr>
+<tr>
+<td>Above 55 to 60</td>
+<td>16%</td>
+<td>18%</td>
+<td>34%</td>
+</tr>
+<tr>
+<td>Above 60 to 65</td>
+<td>12.5%</td>
+<td>12.5%</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Above 65 to 70</td>
+<td>9%</td>
+<td>7.5%</td>
+<td>16.5%</td>
+</tr>
+<tr>
+<td>Above 70</td>
+<td>7.5%</td>
+<td>5%</td>
+<td>12.5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Low monthly wage CPF treatment</h2>
+<p class="section-desc">
         CPF treatment is different for low monthly wages. This calculator includes a simplified low-wage treatment
         so part-time and lower-wage salary estimates do not overstate employee CPF deduction.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>S$50 or below</h3>
-          <p>Monthly wages of S$50 or below generally do not attract CPF contributions.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>Above S$50 to S$500</h3>
-          <p>Employee CPF is S$0, but employer CPF may still apply for CPF-eligible employees.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>Above S$500 to S$750</h3>
-          <p>Employee CPF is phased in before the full CPF contribution rates apply above S$750.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Common CPF examples</h2>
-      <p class="section-desc">
+<div class="info-grid">
+<div class="info-card">
+<h3>S$50 or below</h3>
+<p>Monthly wages of S$50 or below generally do not attract CPF contributions.</p>
+</div>
+<div class="info-card">
+<h3>Above S$50 to S$500</h3>
+<p>Employee CPF is S$0, but employer CPF may still apply for CPF-eligible employees.</p>
+</div>
+<div class="info-card">
+<h3>Above S$500 to S$750</h3>
+<p>Employee CPF is phased in before the full CPF contribution rates apply above S$750.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Common CPF examples</h2>
+<p class="section-desc">
         These examples assume a Singapore Citizen or PR third year onwards, aged 55 and below.
       </p>
-
-      <div class="scenario-grid">
-        <div class="scenario-card">
-          <h3>S$3,000 salary</h3>
-          <p>Employee CPF is about S$600. Employer CPF is about S$510. Salary after CPF is about S$2,400.</p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>S$5,000 salary</h3>
-          <p>Employee CPF is about S$1,000. Employer CPF is about S$850. Salary after CPF is about S$4,000.</p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>S$8,000 salary</h3>
-          <p>Employee CPF is about S$1,600. Employer CPF is about S$1,360. Salary after CPF is about S$6,400.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Ordinary Wage and Additional Wage</h2>
-      <p class="section-desc">
+<div class="scenario-grid">
+<div class="scenario-card">
+<h3>S$3,000 salary</h3>
+<p>Employee CPF is about S$600. Employer CPF is about S$510. Salary after CPF is about S$2,400.</p>
+</div>
+<div class="scenario-card">
+<h3>S$5,000 salary</h3>
+<p>Employee CPF is about S$1,000. Employer CPF is about S$850. Salary after CPF is about S$4,000.</p>
+</div>
+<div class="scenario-card">
+<h3>S$8,000 salary</h3>
+<p>Employee CPF is about S$1,600. Employer CPF is about S$1,360. Salary after CPF is about S$6,400.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Ordinary Wage and Additional Wage</h2>
+<p class="section-desc">
         Monthly salary is usually treated as Ordinary Wage. Bonuses, annual wage supplement and commissions may be treated as Additional Wages.
         Additional Wage CPF depends on the annual Additional Wage ceiling, so this calculator provides a simplified estimate for planning.
       </p>
-
-      <div class="trust-grid">
-        <div class="trust-card">
-          <h3>Ordinary Wage</h3>
-          <p>Regular monthly salary is usually Ordinary Wage. CPF applies up to the monthly OW ceiling.</p>
-        </div>
-
-        <div class="trust-card">
-          <h3>Additional Wage</h3>
-          <p>Bonus and annual wage supplement are usually Additional Wages and may be subject to the AW ceiling.</p>
-        </div>
-
-        <div class="trust-card">
-          <h3>CPF ceiling</h3>
-          <p>CPF is not always calculated on your full salary if your wages exceed CPF wage ceilings.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="authority-box">
-        <h2 class="section-title">Official sources to check</h2>
-        <p class="section-desc">
+<div class="trust-grid">
+<div class="trust-card">
+<h3>Ordinary Wage</h3>
+<p>Regular monthly salary is usually Ordinary Wage. CPF applies up to the monthly OW ceiling.</p>
+</div>
+<div class="trust-card">
+<h3>Additional Wage</h3>
+<p>Bonus and annual wage supplement are usually Additional Wages and may be subject to the AW ceiling.</p>
+</div>
+<div class="trust-card">
+<h3>CPF ceiling</h3>
+<p>CPF is not always calculated on your full salary if your wages exceed CPF wage ceilings.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<div class="authority-box">
+<h2 class="section-title">Official sources to check</h2>
+<p class="section-desc">
           This calculator provides estimates only. For official CPF contribution rules and exact payroll calculation,
           always refer to CPF Board resources.
         </p>
-
-        <div class="authority-list">
-          <a class="authority-item" href="https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay" target="_blank" rel="noopener">
+<div class="authority-list">
+<a class="authority-item" href="https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay" rel="noopener" target="_blank">
             CPF Contribution Rates
             <span>Official employer and employee CPF rates</span>
-          </a>
-
-          <a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-ordinary-wage-ow-ceiling" target="_blank" rel="noopener">
+</a>
+<a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-ordinary-wage-ow-ceiling" rel="noopener" target="_blank">
             OW Ceiling
             <span>Ordinary Wage ceiling explanation</span>
-          </a>
-
-          <a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-additional-wage-aw-ceiling" target="_blank" rel="noopener">
+</a>
+<a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-additional-wage-aw-ceiling" rel="noopener" target="_blank">
             AW Ceiling
             <span>Additional Wage ceiling explanation</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore calculators</h2>
-      <p class="section-desc">
+</a>
+</div>
+</div>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="cpf-contribution-rates-guide.html">CPF Contribution Rates Guide</a> · <a href="index.html">Singapore Salary Calculator</a> · <a href="bonus-calculator.html">Bonus Calculator</a></p></section><section class="content-section">
+<h2 class="section-title">Related Singapore calculators</h2>
+<p class="section-desc">
         Use these calculators to estimate salary, tax and take-home pay in Singapore.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <h3>Salary Calculator</h3>
-          <p>Estimate take-home pay after CPF and income tax.</p>
-        </a>
-
-        <a class="related-card" href="income-tax-calculator.html">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate Singapore resident income tax based on chargeable income.</p>
-        </a>
-
-        <a class="related-card" href="take-home-pay-calculator.html">
-          <h3>Take Home Pay Calculator</h3>
-          <p>Check monthly net salary after CPF and common deductions.</p>
-        </a>
-
-        <a class="related-card" href="annual-leave-calculator.html">
-          <h3>Annual Leave Calculator</h3>
-          <p>Estimate annual leave entitlement in Singapore.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore salary guides</h2>
-      <p class="section-desc">
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<h3>Salary Calculator</h3>
+<p>Estimate take-home pay after CPF and income tax.</p>
+</a>
+<a class="related-card" href="income-tax-calculator.html">
+<h3>Income Tax Calculator</h3>
+<p>Estimate Singapore resident income tax based on chargeable income.</p>
+</a>
+<a class="related-card" href="take-home-pay-calculator.html">
+<h3>Take Home Pay Calculator</h3>
+<p>Check monthly net salary after CPF and common deductions.</p>
+</a>
+<a class="related-card" href="annual-leave-calculator.html">
+<h3>Annual Leave Calculator</h3>
+<p>Estimate annual leave entitlement in Singapore.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="calculators.html">View All Calculators →</a>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Singapore salary guides</h2>
+<p class="section-desc">
         Learn the key CPF, tax and employment rules behind your salary calculation.
       </p>
-
-      <div class="related-grid">
+<div class="related-grid">
 <a class="related-card" href="cpf-contribution-rates-guide.html">
-  <h3>CPF Contribution Rates Guide</h3>
-  <p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
+<h3>CPF Contribution Rates Guide</h3>
+<p>Understand employee CPF rates, employer CPF rates, wage ceilings and CPF examples.</p>
 </a>
-        <a class="related-card" href="income-tax-guide.html">
-          <h3>Income Tax Guide</h3>
-          <p>Learn how Singapore income tax works for employees and tax residents.</p>
-        </a>
-
-        <a class="related-card" href="salary-after-tax-guide.html">
-          <h3>Salary After Tax Guide</h3>
-          <p>Understand how CPF and income tax affect your final take-home salary.</p>
-        </a>
-
-        <a class="related-card" href="annual-leave-guide.html">
-          <h3>Annual Leave Guide</h3>
-          <p>Learn basic annual leave entitlement and employment rules in Singapore.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="guides.html">View All Guides →</a>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>How much CPF do employees contribute in Singapore?</summary>
-        <p>
+<a class="related-card" href="income-tax-guide.html">
+<h3>Income Tax Guide</h3>
+<p>Learn how Singapore income tax works for employees and tax residents.</p>
+</a>
+<a class="related-card" href="gross-salary-vs-net-salary-guide.html">
+<h3>Salary After Tax Guide</h3>
+<p>Understand how CPF and income tax affect your final take-home salary.</p>
+</a>
+<a class="related-card" href="annual-leave-guide.html">
+<h3>Annual Leave Guide</h3>
+<p>Learn basic annual leave entitlement and employment rules in Singapore.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="guides.html">View All Guides →</a>
+</div>
+</section>
+<section class="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<details>
+<summary>How much CPF do employees contribute in Singapore?</summary>
+<p>
           For Singapore Citizens and PRs from the third year onwards, employees aged 55 and below generally contribute 20%
           of wages subject to CPF. Rates are lower for older age groups.
         </p>
-      </details>
-
-      <details>
-        <summary>How much CPF does the employer contribute?</summary>
-        <p>
+</details>
+<details>
+<summary>How much CPF does the employer contribute?</summary>
+<p>
           For employees aged 55 and below, the employer CPF rate is generally 17% of wages subject to CPF.
           Employer CPF is paid separately and does not reduce the employee's gross salary.
         </p>
-      </details>
-
-      <details>
-        <summary>Is CPF deducted from my salary?</summary>
-        <p>
+</details>
+<details>
+<summary>Is CPF deducted from my salary?</summary>
+<p>
           Yes. Employee CPF is deducted from your gross salary before you receive your monthly pay.
           Employer CPF is an additional contribution paid by your employer.
         </p>
-      </details>
-
-      <details>
-        <summary>Is CPF calculated on the full monthly salary?</summary>
-        <p>
+</details>
+<details>
+<summary>Is CPF calculated on the full monthly salary?</summary>
+<p>
           Not always. CPF on Ordinary Wages is subject to the Ordinary Wage ceiling. In 2026, the Ordinary Wage ceiling is S$8,000.
         </p>
-      </details>
-
-      <details>
-        <summary>Do low monthly wages attract CPF?</summary>
-        <p>
+</details>
+<details>
+<summary>Do low monthly wages attract CPF?</summary>
+<p>
           Monthly wages of S$50 or below generally do not attract CPF. If wages are above S$50 but not more than S$500,
           employee CPF is generally S$0, while employer CPF may still apply.
         </p>
-      </details>
-
-      <details>
-        <summary>Do foreigners need to contribute CPF?</summary>
-        <p>
+</details>
+<details>
+<summary>Do foreigners need to contribute CPF?</summary>
+<p>
           Foreign employees generally do not contribute CPF. CPF usually applies to Singapore Citizens and Singapore Permanent Residents.
         </p>
-      </details>
-
-      <details>
-        <summary>Does CPF apply to bonus?</summary>
-        <p>
+</details>
+<details>
+<summary>Does CPF apply to bonus?</summary>
+<p>
           Bonus is usually treated as Additional Wage. CPF may apply, but it is subject to the Additional Wage ceiling.
           This calculator gives a simplified estimate for planning.
         </p>
-      </details>
-
-      <details>
-        <summary>What is salary after CPF?</summary>
-        <p>
+</details>
+<details>
+<summary>What is salary after CPF?</summary>
+<p>
           Salary after CPF means your gross monthly salary minus employee CPF contribution.
           For example, if your salary is S$5,000 and employee CPF is S$1,000, salary after CPF is about S$4,000 before tax.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this CPF calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this CPF calculator official?</summary>
+<p>
           No. This is an independent calculator for simple salary planning. For official calculation, refer to CPF Board.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides estimates only and is not official CPF, payroll or tax advice.
-  </footer>
-
-  <script>
-    function money(value) {
-      return "S$" + Math.round(value).toLocaleString("en-SG");
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function money(v){return "S$"+Math.round(v).toLocaleString("en-SG");}
+    function calculateCpf(){
+      const salary=+document.getElementById("salary").value||0, bonus=+document.getElementById("bonus").value||0;
+      const age=document.getElementById("age").value, eligible=document.getElementById("cpfEligibility").value==="cpf";
+      const c=SG2026.annualCpf(salary,bonus,age,eligible), m=c.monthly;
+      document.getElementById("salaryAfterCpf").textContent=money(salary-m.employee);
+      document.getElementById("monthlyCpfSummary").textContent="Employee CPF: "+money(m.employee)+" · Employer CPF: "+money(m.employer);
+      document.getElementById("employeeCpf").textContent=money(m.employee); document.getElementById("employerCpf").textContent=money(m.employer); document.getElementById("totalCpf").textContent=money(m.total);
+      document.getElementById("grossMonthly").textContent=money(salary); document.getElementById("owSubject").textContent=money(m.owSubject); document.getElementById("employeeCpfDeduction").textContent="-"+money(m.employee); document.getElementById("netMonthly").textContent=money(salary-m.employee); document.getElementById("employerCpfRow").textContent=money(m.employer);
+      document.getElementById("bonusCpf").textContent=money(c.bonusTotal); document.getElementById("awCeilingUsed").textContent=money(c.awCeiling);
+      const note=document.getElementById("calculationNote");
+      if(!eligible) note.textContent="CPF is set to S$0 because the no-CPF option is selected.";
+      else if(salary<=50) note.textContent="Monthly wages of S$50 or below do not attract CPF contributions under the 2026 contribution tables.";
+      else note.textContent="Uses 2026 CPF rates, the S$8,000 monthly OW ceiling, S$102,000 annual salary ceiling, and CPF rounding rules: total contribution rounded to nearest dollar, employee share rounded down, employer share as the balance.";
     }
-
-    function getCpfRates(ageGroup) {
-      const rates = {
-        "55below": { employee: 0.20, employer: 0.17 },
-        "55to60": { employee: 0.18, employer: 0.16 },
-        "60to65": { employee: 0.125, employer: 0.125 },
-        "65to70": { employee: 0.075, employer: 0.09 },
-        "70above": { employee: 0.05, employer: 0.075 }
-      };
-
-      return rates[ageGroup] || rates["55below"];
-    }
-
-    function calculateEmployeeCpfForMonthlyWage(wage, employeeRate) {
-      if (wage <= 50) {
-        return 0;
-      }
-
-      if (wage <= 500) {
-        return 0;
-      }
-
-      if (wage <= 750) {
-        const phasedAmount = (wage - 500) * employeeRate * 3;
-        return Math.round(Math.max(0, phasedAmount));
-      }
-
-      return Math.round(wage * employeeRate);
-    }
-
-    function calculateEmployerCpfForMonthlyWage(wage, employerRate) {
-      if (wage <= 50) {
-        return 0;
-      }
-
-      return Math.round(wage * employerRate);
-    }
-
-    function calculateCpf() {
-      const salary = Number(document.getElementById("salary").value) || 0;
-      const bonus = Number(document.getElementById("bonus").value) || 0;
-      const age = document.getElementById("age").value;
-      const cpfEligibility = document.getElementById("cpfEligibility").value;
-
-      const owCeiling = 8000;
-      const annualWageCeiling = 102000;
-
-      const owSubject = Math.min(salary, owCeiling);
-      const rates = getCpfRates(age);
-
-      let employeeCpf = 0;
-      let employerCpf = 0;
-      let bonusEmployeeCpf = 0;
-      let bonusEmployerCpf = 0;
-      let awCeiling = 0;
-
-      if (cpfEligibility === "cpf") {
-        employeeCpf = calculateEmployeeCpfForMonthlyWage(owSubject, rates.employee);
-        employerCpf = calculateEmployerCpfForMonthlyWage(owSubject, rates.employer);
-
-        const annualOwSubject = owSubject * 12;
-        awCeiling = Math.max(0, annualWageCeiling - annualOwSubject);
-        const bonusSubject = Math.min(bonus, awCeiling);
-
-        bonusEmployeeCpf = Math.round(bonusSubject * rates.employee);
-        bonusEmployerCpf = Math.round(bonusSubject * rates.employer);
-      }
-
-      const totalCpf = employeeCpf + employerCpf;
-      const salaryAfterCpf = salary - employeeCpf;
-      const bonusTotalCpf = bonusEmployeeCpf + bonusEmployerCpf;
-
-      document.getElementById("salaryAfterCpf").textContent = money(salaryAfterCpf);
-      document.getElementById("monthlyCpfSummary").textContent =
-        "Employee CPF: " + money(employeeCpf) + " · Employer CPF: " + money(employerCpf);
-
-      document.getElementById("employeeCpf").textContent = money(employeeCpf);
-      document.getElementById("employerCpf").textContent = money(employerCpf);
-      document.getElementById("totalCpf").textContent = money(totalCpf);
-
-      document.getElementById("grossMonthly").textContent = money(salary);
-      document.getElementById("owSubject").textContent = money(owSubject);
-      document.getElementById("employeeCpfDeduction").textContent = "-" + money(employeeCpf);
-      document.getElementById("netMonthly").textContent = money(salaryAfterCpf);
-      document.getElementById("employerCpfRow").textContent = money(employerCpf);
-      document.getElementById("bonusCpf").textContent = money(bonusTotalCpf);
-      document.getElementById("awCeilingUsed").textContent = money(awCeiling);
-
-      const note = document.getElementById("calculationNote");
-
-      if (cpfEligibility === "noCpf") {
-        note.textContent =
-          "CPF is set to S$0 because the no CPF option is selected. This is commonly used for foreign employees who are not required to contribute CPF unless they become Singapore PR.";
-      } else if (salary <= 50) {
-        note.textContent =
-          "Monthly wages of S$50 or below generally do not attract CPF contributions. This calculator sets both employee CPF and employer CPF to S$0.";
-      } else if (salary <= 500) {
-        note.textContent =
-          "For monthly wages above S$50 and not more than S$500, employee CPF is generally S$0. Employer CPF may still apply for CPF-eligible employees.";
-      } else if (salary <= 750) {
-        note.textContent =
-          "For monthly wages above S$500 and not more than S$750, employee CPF is phased in. This calculator uses a simplified graduated estimate for planning.";
-      } else {
-        note.textContent =
-          "This calculator uses 2026 CPF rates for Singapore Citizens and PRs from the third year onwards. Ordinary Wages are capped at S$8,000. Bonus CPF is simplified and subject to the estimated annual Additional Wage ceiling.";
-      }
-    }
-
     calculateCpf();
   </script>
 </body>

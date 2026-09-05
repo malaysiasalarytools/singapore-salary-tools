@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Hourly Rate Calculator 2026 | Salary to Hourly Pay</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/hourly-rate-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Hourly Rate Calculator 2026. Convert monthly salary to hourly rate, daily rate and annual salary estimate using Singapore salary formulas." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Hourly Rate Calculator 2026 | Salary to Hourly Pay</title>
+<link href="https://sgsalarytools.com/hourly-rate-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Hourly Rate Calculator 2026. Convert monthly salary to hourly rate, daily rate and annual salary estimate using Singapore salary formulas." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -707,476 +704,401 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
-
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore Hourly Rate Calculator 2026</div>
-
-      <h1>Convert monthly salary to <em>hourly rate</em></h1>
-
-      <p>
+<header class="topbar">
+<nav class="nav">
+<a aria-label="SG Salary Tools home" class="brand" href="index.html">
+<img alt="SG Salary Tools" src="logo-icon.png"/>
+<span class="brand-text">
+<strong>SG Salary<span>Tools</span></strong>
+<small>CPF · TAX · TAKE-HOME PAY</small>
+</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</div>
+</nav>
+</header>
+<section class="hero-wrap">
+<div class="hero">
+<div class="eyebrow">Singapore Hourly Rate Calculator 2026</div>
+<h1>Convert monthly salary to <em>hourly rate</em></h1>
+<p>
         Estimate your hourly pay, daily rate, weekly pay and annual salary from your monthly salary.
         Useful for salary comparison, overtime planning, part-time work and freelance rate checks.
       </p>
-
-      <div class="quick-stats">
-        <span>Monthly to Hourly</span>
-        <span>Daily Rate Estimate</span>
-        <span>Annual Salary</span>
-        <span>Singapore Salary Planning</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="calculator-grid">
-      <div class="panel">
-        <h2>Hourly rate inputs</h2>
-        <p class="panel-desc">
+<div class="quick-stats">
+<span>Monthly to Hourly</span>
+<span>Daily Rate Estimate</span>
+<span>Annual Salary</span>
+<span>Singapore Salary Planning</span>
+</div>
+</div>
+</section>
+<section class="calculator-section" id="calculator">
+<div class="calculator-grid">
+<div class="panel">
+<h2>Hourly rate inputs</h2>
+<p class="panel-desc">
           Enter your monthly salary and working pattern to estimate your hourly and daily rate.
         </p>
-
-        <div class="field">
-          <label for="monthlySalary">Monthly salary</label>
-          <input id="monthlySalary" type="number" value="5000" min="0" step="100" oninput="calculateHourlyRate()" />
-        </div>
-
-        <div class="field">
-          <label for="salaryType">Salary type</label>
-          <select id="salaryType" onchange="calculateHourlyRate()">
-            <option value="basic">Monthly basic salary</option>
-            <option value="gross">Monthly gross salary</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="weeklyHours">Working hours per week</label>
-          <input id="weeklyHours" type="number" value="44" min="1" step="0.5" oninput="calculateHourlyRate()" />
-        </div>
-
-        <div class="field">
-          <label for="workingDays">Working days per week</label>
-          <input id="workingDays" type="number" value="5.5" min="1" max="7" step="0.5" oninput="calculateHourlyRate()" />
-        </div>
-
-        <p class="mini-note">
+<div class="field">
+<label for="monthlySalary">Monthly salary</label>
+<input id="monthlySalary" min="0" oninput="calculateHourlyRate()" step="100" type="number" value="5000"/>
+</div>
+<div class="field">
+<label for="salaryType">Salary type</label>
+<select id="salaryType" onchange="calculateHourlyRate()">
+<option value="basic">Monthly basic salary</option>
+<option value="gross">Monthly gross salary</option>
+</select>
+</div>
+<div class="field">
+<label for="weeklyHours">Working hours per week</label>
+<input id="weeklyHours" min="1" oninput="calculateHourlyRate()" step="0.5" type="number" value="44"/>
+</div>
+<div class="field">
+<label for="workingDays">Working days per week</label>
+<input id="workingDays" max="7" min="1" oninput="calculateHourlyRate()" step="0.5" type="number" value="5.5"/>
+</div>
+<p class="mini-note">
           MOM’s hourly basic rate formula for monthly-rated employees commonly uses:
           (12 × monthly basic salary) ÷ (52 × weekly working hours).
         </p>
-
-        <div class="field">
-          <label for="comparisonHours">Custom comparison hours</label>
-          <input id="comparisonHours" type="number" value="10" min="0" step="0.5" oninput="calculateHourlyRate()" />
-        </div>
-
-        <button class="calculate-btn" onclick="calculateHourlyRate()">Calculate hourly rate</button>
-      </div>
-
-      <div class="results">
-        <div class="main-result">
-          <small>Estimated hourly rate</small>
-          <div class="take-home" id="hourlyRate">S$26.22</div>
-          <div class="sub-result" id="hourlySummary">Based on S$5,000 monthly salary and 44 working hours per week</div>
-        </div>
-
-        <div class="result-cards">
-          <div class="result-card">
-            <span>Daily rate</span>
-            <strong id="dailyRate">S$209.79</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Weekly pay</span>
-            <strong id="weeklyPay">S$1,153.85</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Annual salary</span>
-            <strong id="annualSalary">S$60,000</strong>
-          </div>
-        </div>
-
-        <div class="breakdown">
-          <h3>Rate breakdown</h3>
-
-          <div class="row">
-            <span>Monthly salary entered</span>
-            <strong id="monthlySalaryResult">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Annual salary</span>
-            <strong id="annualSalaryBreakdown">S$60,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Working hours per year</span>
-            <strong id="annualHours">2,288 hours</strong>
-          </div>
-
-          <div class="row">
-            <span>Hourly rate</span>
-            <strong class="positive" id="hourlyRateBreakdown">S$26.22</strong>
-          </div>
-
-          <div class="row">
-            <span>Daily rate</span>
-            <strong id="dailyRateBreakdown">S$209.79</strong>
-          </div>
-
-          <div class="row">
-            <span>Pay for custom comparison hours</span>
-            <strong id="customHoursPay">S$262.24</strong>
-          </div>
-        </div>
-
-        <div class="note-box" id="calculationNote">
+<div class="field">
+<label for="comparisonHours">Custom comparison hours</label>
+<input id="comparisonHours" min="0" oninput="calculateHourlyRate()" step="0.5" type="number" value="10"/>
+</div>
+<button class="calculate-btn" onclick="calculateHourlyRate()">Calculate hourly rate</button>
+</div>
+<div class="results">
+<div class="main-result">
+<small>Estimated hourly rate</small>
+<div class="take-home" id="hourlyRate">S$26.22</div>
+<div class="sub-result" id="hourlySummary">Based on S$5,000 monthly salary and 44 working hours per week</div>
+</div>
+<div class="result-cards">
+<div class="result-card">
+<span>Daily rate</span>
+<strong id="dailyRate">S$209.79</strong>
+</div>
+<div class="result-card">
+<span>Weekly pay</span>
+<strong id="weeklyPay">S$1,153.85</strong>
+</div>
+<div class="result-card">
+<span>Annual salary</span>
+<strong id="annualSalary">S$60,000</strong>
+</div>
+</div>
+<div class="breakdown">
+<h3>Rate breakdown</h3>
+<div class="row">
+<span>Monthly salary entered</span>
+<strong id="monthlySalaryResult">S$5,000</strong>
+</div>
+<div class="row">
+<span>Annual salary</span>
+<strong id="annualSalaryBreakdown">S$60,000</strong>
+</div>
+<div class="row">
+<span>Working hours per year</span>
+<strong id="annualHours">2,288 hours</strong>
+</div>
+<div class="row">
+<span>Hourly rate</span>
+<strong class="positive" id="hourlyRateBreakdown">S$26.22</strong>
+</div>
+<div class="row">
+<span>Daily rate</span>
+<strong id="dailyRateBreakdown">S$209.79</strong>
+</div>
+<div class="row">
+<span>Pay for custom comparison hours</span>
+<strong id="customHoursPay">S$262.24</strong>
+</div>
+</div>
+<div class="note-box" id="calculationNote">
           This calculator converts monthly salary into hourly and daily estimates. Actual payroll calculation may depend on your contract and salary definition.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <section class="content-section">
-      <h2 class="section-title">How this Singapore hourly rate calculator works</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<main class="content">
+<section class="content-section">
+<h2 class="section-title">How this Singapore hourly rate calculator works</h2>
+<p class="section-desc">
         This calculator converts monthly salary into annual salary, weekly pay, daily rate and hourly rate.
         It is useful when comparing monthly salary with hourly jobs, part-time work, overtime pay or freelance rates.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>1. Annualise salary</h3>
-          <p>Monthly salary is multiplied by 12 to estimate annual salary.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>2. Estimate yearly hours</h3>
-          <p>Weekly working hours are multiplied by 52 weeks to estimate annual working hours.</p>
-        </div>
-
-        <div class="info-card">
-          <h3>3. Calculate hourly rate</h3>
-          <p>Annual salary is divided by annual working hours to estimate hourly rate.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Hourly rate formula in Singapore</h2>
-      <p class="section-desc">
+<div class="info-grid">
+<div class="info-card">
+<h3>1. Annualise salary</h3>
+<p>Monthly salary is multiplied by 12 to estimate annual salary.</p>
+</div>
+<div class="info-card">
+<h3>2. Estimate yearly hours</h3>
+<p>Weekly working hours are multiplied by 52 weeks to estimate annual working hours.</p>
+</div>
+<div class="info-card">
+<h3>3. Calculate hourly rate</h3>
+<p>Annual salary is divided by annual working hours to estimate hourly rate.</p>
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Hourly rate formula in Singapore</h2>
+<p class="section-desc">
         For a monthly-rated employee, a common formula for hourly basic rate is:
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Formula</th>
-              <th>Example</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Annual salary</td>
-              <td>Monthly salary × 12</td>
-              <td>S$5,000 × 12 = S$60,000</td>
-            </tr>
-
-            <tr>
-              <td>Annual working hours</td>
-              <td>Weekly working hours × 52</td>
-              <td>44 × 52 = 2,288 hours</td>
-            </tr>
-
-            <tr>
-              <td>Hourly rate</td>
-              <td>Annual salary ÷ annual working hours</td>
-              <td>S$60,000 ÷ 2,288 = about S$26.22 per hour</td>
-            </tr>
-
-            <tr>
-              <td>Daily rate estimate</td>
-              <td>Annual salary ÷ annual working days</td>
-              <td>S$60,000 ÷ 286 = about S$209.79 per day</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Formula</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Annual salary</td>
+<td>Monthly salary × 12</td>
+<td>S$5,000 × 12 = S$60,000</td>
+</tr>
+<tr>
+<td>Annual working hours</td>
+<td>Weekly working hours × 52</td>
+<td>44 × 52 = 2,288 hours</td>
+</tr>
+<tr>
+<td>Hourly rate</td>
+<td>Annual salary ÷ annual working hours</td>
+<td>S$60,000 ÷ 2,288 = about S$26.22 per hour</td>
+</tr>
+<tr>
+<td>Daily rate estimate</td>
+<td>Annual salary ÷ annual working days</td>
+<td>S$60,000 ÷ 286 = about S$209.79 per day</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note-box">
         Basic salary and gross salary may produce different hourly rates. For overtime calculation, basic rate of pay may be required.
       </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Monthly salary to hourly rate examples</h2>
-      <p class="section-desc">
+</section>
+<section class="content-section">
+<h2 class="section-title">Monthly salary to hourly rate examples</h2>
+<p class="section-desc">
         These examples assume 44 working hours per week.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Monthly Salary</th>
-              <th>Annual Salary</th>
-              <th>Estimated Hourly Rate</th>
-              <th>Estimated Daily Rate</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>S$2,000</td>
-              <td>S$24,000</td>
-              <td>S$10.49</td>
-              <td>S$83.92</td>
-            </tr>
-
-            <tr>
-              <td>S$3,000</td>
-              <td>S$36,000</td>
-              <td>S$15.73</td>
-              <td>S$125.87</td>
-            </tr>
-
-            <tr>
-              <td>S$4,000</td>
-              <td>S$48,000</td>
-              <td>S$20.98</td>
-              <td>S$167.83</td>
-            </tr>
-
-            <tr>
-              <td>S$5,000</td>
-              <td>S$60,000</td>
-              <td>S$26.22</td>
-              <td>S$209.79</td>
-            </tr>
-
-            <tr>
-              <td>S$6,000</td>
-              <td>S$72,000</td>
-              <td>S$31.47</td>
-              <td>S$251.75</td>
-            </tr>
-
-            <tr>
-              <td>S$8,000</td>
-              <td>S$96,000</td>
-              <td>S$41.96</td>
-              <td>S$335.66</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">When is hourly rate useful?</h2>
-      <p class="section-desc">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Monthly Salary</th>
+<th>Annual Salary</th>
+<th>Estimated Hourly Rate</th>
+<th>Estimated Daily Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S$2,000</td>
+<td>S$24,000</td>
+<td>S$10.49</td>
+<td>S$83.92</td>
+</tr>
+<tr>
+<td>S$3,000</td>
+<td>S$36,000</td>
+<td>S$15.73</td>
+<td>S$125.87</td>
+</tr>
+<tr>
+<td>S$4,000</td>
+<td>S$48,000</td>
+<td>S$20.98</td>
+<td>S$167.83</td>
+</tr>
+<tr>
+<td>S$5,000</td>
+<td>S$60,000</td>
+<td>S$26.22</td>
+<td>S$209.79</td>
+</tr>
+<tr>
+<td>S$6,000</td>
+<td>S$72,000</td>
+<td>S$31.47</td>
+<td>S$251.75</td>
+</tr>
+<tr>
+<td>S$8,000</td>
+<td>S$96,000</td>
+<td>S$41.96</td>
+<td>S$335.66</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">When is hourly rate useful?</h2>
+<p class="section-desc">
         Hourly rate is useful when you want to compare monthly salary with hourly jobs, overtime pay,
         freelance work or part-time salary offers.
       </p>
-
-      <div class="scenario-grid">
-        <div class="scenario-card">
-          <h3>Salary comparison</h3>
-          <p>
+<div class="scenario-grid">
+<div class="scenario-card">
+<h3>Salary comparison</h3>
+<p>
             Compare two jobs with different working hours by checking the estimated hourly value of each salary.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Overtime planning</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Overtime planning</h3>
+<p>
             Hourly basic rate is often used as a starting point when estimating overtime pay.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Part-time or freelance work</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Part-time or freelance work</h3>
+<p>
             Convert your monthly salary into an hourly benchmark before accepting part-time or freelance rates.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="authority-box">
-        <h2 class="section-title">Official sources to check</h2>
-        <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<div class="authority-box">
+<h2 class="section-title">Official sources to check</h2>
+<p class="section-desc">
           This calculator provides estimates only. For official salary and hourly rate formulas, check MOM directly.
         </p>
-
-        <div class="authority-list">
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days" target="_blank" rel="noopener">
-            <strong>MOM Overtime Rules</strong>
-            <span>Hourly basic rate and overtime formula</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/part-time-employment/hourly-and-daily-pay" target="_blank" rel="noopener">
-            <strong>Hourly & Daily Pay</strong>
-            <span>Hourly and daily pay guidance</span>
-          </a>
-
-          <a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/monthly-and-daily-salary" target="_blank" rel="noopener">
-            <strong>Monthly & Daily Salary</strong>
-            <span>Salary calculation guidance</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore calculators</h2>
-      <p class="section-desc">
+<div class="authority-list">
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days" rel="noopener" target="_blank">
+<strong>MOM Overtime Rules</strong>
+<span>Hourly basic rate and overtime formula</span>
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/part-time-employment/hourly-and-daily-pay" rel="noopener" target="_blank">
+<strong>Hourly &amp; Daily Pay</strong>
+<span>Hourly and daily pay guidance</span>
+</a>
+<a class="authority-item" href="https://www.mom.gov.sg/employment-practices/salary/monthly-and-daily-salary" rel="noopener" target="_blank">
+<strong>Monthly &amp; Daily Salary</strong>
+<span>Salary calculation guidance</span>
+</a>
+</div>
+</div>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="hourly-rate-guide.html">Hourly Rate Guide</a> · <a href="overtime-calculator.html">Overtime Calculator</a> · <a href="daily-wage-calculator.html">Daily Wage Calculator</a></p></section><section class="content-section">
+<h2 class="section-title">Related Singapore calculators</h2>
+<p class="section-desc">
         Use these calculators together to estimate salary, CPF, overtime and take-home pay.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <h3>Salary Calculator</h3>
-          <p>Estimate monthly take-home pay after CPF and income tax.</p>
-        </a>
-
-        <a class="related-card" href="overtime-calculator.html">
-          <h3>Overtime Calculator</h3>
-          <p>Estimate overtime pay using hourly basic rate and OT hours.</p>
-        </a>
-
-        <a class="related-card" href="payslip-generator.html">
-          <h3>Payslip Generator</h3>
-          <p>Create a simple printable Singapore salary slip.</p>
-        </a>
-
-        <a class="related-card" href="bonus-calculator.html">
-          <h3>Bonus Calculator</h3>
-          <p>Estimate bonus after CPF and tax impact.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore salary guides</h2>
-      <p class="section-desc">
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<h3>Salary Calculator</h3>
+<p>Estimate monthly take-home pay after CPF and income tax.</p>
+</a>
+<a class="related-card" href="overtime-calculator.html">
+<h3>Overtime Calculator</h3>
+<p>Estimate overtime pay using hourly basic rate and OT hours.</p>
+</a>
+<a class="related-card" href="payslip-generator.html">
+<h3>Payslip Generator</h3>
+<p>Create a simple printable Singapore salary slip.</p>
+</a>
+<a class="related-card" href="bonus-calculator.html">
+<h3>Bonus Calculator</h3>
+<p>Estimate bonus after CPF and tax impact.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="calculators.html">View All Calculators →</a>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Singapore salary guides</h2>
+<p class="section-desc">
         Learn more about salary, overtime, CPF and payroll planning.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="hourly-rate-guide.html">
-          <h3>Hourly Rate Guide</h3>
-          <p>Understand how hourly pay and daily pay are calculated in Singapore.</p>
-        </a>
-
-        <a class="related-card" href="overtime-guide.html">
-          <h3>Overtime Guide</h3>
-          <p>Understand overtime pay, working hours and common OT rules.</p>
-        </a>
-
-        <a class="related-card" href="cpf-contribution-rates-guide.html">
-          <h3>CPF Contribution Rates Guide</h3>
-          <p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
-        </a>
-
-        <a class="related-card" href="payslip-guide.html">
-          <h3>Payslip Guide</h3>
-          <p>Learn what a payslip should include and how to read salary details.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="guides.html">View All Guides →</a>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>How do I calculate hourly rate from monthly salary in Singapore?</summary>
-        <p>
+<div class="related-grid">
+<a class="related-card" href="hourly-rate-guide.html">
+<h3>Hourly Rate Guide</h3>
+<p>Understand how hourly pay and daily pay are calculated in Singapore.</p>
+</a>
+<a class="related-card" href="overtime-guide.html">
+<h3>Overtime Guide</h3>
+<p>Understand overtime pay, working hours and common OT rules.</p>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<h3>CPF Contribution Rates Guide</h3>
+<p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
+</a>
+<a class="related-card" href="payslip-guide.html">
+<h3>Payslip Guide</h3>
+<p>Learn what a payslip should include and how to read salary details.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="guides.html">View All Guides →</a>
+</div>
+</section>
+<section class="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<details>
+<summary>How do I calculate hourly rate from monthly salary in Singapore?</summary>
+<p>
           A common estimate is: hourly rate = monthly salary × 12 ÷ annual working hours.
           If you work 44 hours per week, annual working hours are 44 × 52 = 2,288 hours.
         </p>
-      </details>
-
-      <details>
-        <summary>What is the hourly rate for S$5,000 monthly salary?</summary>
-        <p>
+</details>
+<details>
+<summary>What is the hourly rate for S$5,000 monthly salary?</summary>
+<p>
           If you earn S$5,000 per month and work 44 hours per week, the estimated hourly rate is about S$26.22 per hour.
         </p>
-      </details>
-
-      <details>
-        <summary>Should I use basic salary or gross salary?</summary>
-        <p>
+</details>
+<details>
+<summary>Should I use basic salary or gross salary?</summary>
+<p>
           For overtime and basic rate calculations, basic salary may be more relevant.
           For general salary comparison, gross salary can be useful.
         </p>
-      </details>
-
-      <details>
-        <summary>Is hourly rate the same as overtime rate?</summary>
-        <p>
+</details>
+<details>
+<summary>Is hourly rate the same as overtime rate?</summary>
+<p>
           No. Hourly rate is the base hourly value of your salary. Overtime rate is usually higher,
           often calculated as hourly basic rate multiplied by the overtime multiplier.
         </p>
-      </details>
-
-      <details>
-        <summary>Can I use this for part-time salary comparison?</summary>
-        <p>
+</details>
+<details>
+<summary>Can I use this for part-time salary comparison?</summary>
+<p>
           Yes. You can use this calculator to compare a monthly salary with an hourly or part-time rate.
           Actual employment terms may still differ.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this calculator official?</summary>
+<p>
           No. This calculator provides estimates only. For official salary and payroll calculations,
           refer to MOM guidance or your employment contract.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides estimates only and is not official MOM, payroll or legal advice.
-  </footer>
-
-  <script>
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script>
     function money(value) {
       return "S$" + Number(value).toLocaleString("en-SG", {
         minimumFractionDigits: 2,

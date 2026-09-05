@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Bonus Calculator 2026 | Estimate Bonus After CPF & Tax</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/bonus-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Bonus Calculator 2026. Estimate bonus after employee CPF, employer CPF, income tax impact and final bonus take-home amount." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Bonus Calculator 2026 | Estimate Bonus After CPF &amp; Tax</title>
+<link href="https://sgsalarytools.com/bonus-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Bonus Calculator 2026. Estimate bonus after employee CPF, employer CPF, income tax impact and final bonus take-home amount." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -711,707 +708,491 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand" href="index.html" aria-label="SG Salary Tools home">
-        <img src="logo-icon.png" alt="SG Salary Tools">
-
-        <span class="brand-text">
-          <strong>SG Salary<span>Tools</span></strong>
-          <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero-wrap">
-    <div class="hero">
-      <div class="eyebrow">Singapore Bonus Calculator 2026</div>
-
-      <h1>Estimate your bonus <em>after CPF & tax</em></h1>
-
-      <p>
+<header class="topbar">
+<nav class="nav">
+<a aria-label="SG Salary Tools home" class="brand" href="index.html">
+<img alt="SG Salary Tools" src="logo-icon.png"/>
+<span class="brand-text">
+<strong>SG Salary<span>Tools</span></strong>
+<small>CPF · TAX · TAKE-HOME PAY</small>
+</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a class="active" href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</div>
+</nav>
+</header>
+<section class="hero-wrap">
+<div class="hero">
+<div class="eyebrow">Singapore Bonus Calculator 2026</div>
+<h1>Estimate your bonus <em>after CPF &amp; tax</em></h1>
+<p>
         Calculate your estimated bonus payout in Singapore after employee CPF,
         employer CPF and estimated income tax impact. Useful for AWS, 13th month bonus,
         performance bonus and annual bonus planning.
       </p>
-
-      <div class="quick-stats">
-        <span>AWS / 13th Month Bonus</span>
-        <span>Employee CPF Estimate</span>
-        <span>Employer CPF Estimate</span>
-        <span>Tax Impact Estimate</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="calculator-grid">
-      <div class="panel">
-        <h2>Bonus inputs</h2>
-        <p class="panel-desc">
+<div class="quick-stats">
+<span>AWS / 13th Month Bonus</span>
+<span>Employee CPF Estimate</span>
+<span>Employer CPF Estimate</span>
+<span>Tax Impact Estimate</span>
+</div>
+</div>
+</section>
+<section class="calculator-section" id="calculator">
+<div class="calculator-grid">
+<div class="panel">
+<h2>Bonus inputs</h2>
+<p class="panel-desc">
           Enter your monthly salary and bonus details to estimate your bonus after CPF and tax.
         </p>
-
-        <div class="field">
-          <label for="monthlySalary">Gross monthly salary</label>
-          <input id="monthlySalary" type="number" value="5000" min="0" step="100" oninput="calculateBonus()" />
-        </div>
-
-        <div class="field">
-          <label for="bonusMonths">Bonus in months</label>
-          <input id="bonusMonths" type="number" value="1" min="0" step="0.1" oninput="calculateBonus()" />
-        </div>
-
-        <div class="field">
-          <label for="fixedBonus">Additional fixed bonus amount</label>
-          <input id="fixedBonus" type="number" value="0" min="0" step="100" oninput="calculateBonus()" />
-        </div>
-
-        <p class="mini-note">
+<div class="field">
+<label for="monthlySalary">Gross monthly salary</label>
+<input id="monthlySalary" min="0" oninput="calculateBonus()" step="100" type="number" value="5000"/>
+</div>
+<div class="field">
+<label for="bonusMonths">Bonus in months</label>
+<input id="bonusMonths" min="0" oninput="calculateBonus()" step="0.1" type="number" value="1"/>
+</div>
+<div class="field">
+<label for="fixedBonus">Additional fixed bonus amount</label>
+<input id="fixedBonus" min="0" oninput="calculateBonus()" step="100" type="number" value="0"/>
+</div>
+<p class="mini-note">
           Example: If your salary is S$5,000 and you receive 1 month AWS, enter 1 bonus month and S$0 fixed bonus.
           If you receive an extra S$2,000 performance bonus, enter it as fixed bonus.
         </p>
-
-        <div class="field">
-          <label for="cpfEligibility">CPF eligibility</label>
-          <select id="cpfEligibility" onchange="calculateBonus()">
-            <option value="cpf">Singapore Citizen / PR third year onwards</option>
-            <option value="noCpf">Foreigner / No CPF contribution</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="age">Age group</label>
-          <select id="age" onchange="calculateBonus()">
-            <option value="55below">55 and below</option>
-            <option value="55to60">Above 55 to 60</option>
-            <option value="60to65">Above 60 to 65</option>
-            <option value="65to70">Above 65 to 70</option>
-            <option value="70above">Above 70</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="taxResidency">Tax residency</label>
-          <select id="taxResidency" onchange="calculateBonus()">
-            <option value="resident">Tax resident</option>
-            <option value="nonresident">Non-resident employment income</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="relief">Estimated personal tax reliefs</label>
-          <input id="relief" type="number" value="0" min="0" step="100" oninput="calculateBonus()" />
-        </div>
-
-        <button class="calculate-btn" onclick="calculateBonus()">Calculate bonus</button>
-      </div>
-
-      <div class="results">
-        <div class="main-result">
-          <small>Estimated bonus after CPF and tax</small>
-          <div class="take-home" id="bonusAfterCpfTax">S$3,950</div>
-          <div class="sub-result" id="bonusSummary">Gross bonus: S$5,000 · Employee CPF: S$1,000 · Estimated tax impact: S$50</div>
-        </div>
-
-        <div class="result-cards">
-          <div class="result-card">
-            <span>Gross bonus</span>
-            <strong id="grossBonus">S$5,000</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Employee CPF on bonus</span>
-            <strong id="employeeCpf">S$1,000</strong>
-          </div>
-
-          <div class="result-card">
-            <span>Employer CPF on bonus</span>
-            <strong id="employerCpf">S$850</strong>
-          </div>
-        </div>
-
-        <div class="breakdown">
-          <h3>Bonus breakdown</h3>
-
-          <div class="row">
-            <span>Monthly salary</span>
-            <strong id="monthlySalaryResult">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Annual salary before bonus</span>
-            <strong id="annualSalaryResult">S$60,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Gross bonus</span>
-            <strong id="grossBonusBreakdown">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Bonus subject to CPF</span>
-            <strong id="bonusSubjectCpf">S$5,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Less: employee CPF on bonus</span>
-            <strong class="negative" id="cpfDeduction">-S$1,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated bonus after CPF</span>
-            <strong class="positive" id="bonusAfterCpf">S$4,000</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated tax impact from bonus</span>
-            <strong class="negative" id="taxImpact">-S$50</strong>
-          </div>
-
-          <div class="row">
-            <span>Estimated bonus after CPF and tax</span>
-            <strong class="positive" id="finalBonus">S$3,950</strong>
-          </div>
-        </div>
-
-        <div class="note-box" id="calculationNote">
+<div class="field">
+<label for="cpfEligibility">CPF eligibility</label>
+<select id="cpfEligibility" onchange="calculateBonus()">
+<option value="cpf">Singapore Citizen / PR third year onwards</option>
+<option value="noCpf">Foreigner / No CPF contribution</option>
+</select>
+</div>
+<div class="field">
+<label for="age">Age group</label>
+<select id="age" onchange="calculateBonus()">
+<option value="55below">55 and below</option>
+<option value="55to60">Above 55 to 60</option>
+<option value="60to65">Above 60 to 65</option>
+<option value="65to70">Above 65 to 70</option>
+<option value="70above">Above 70</option>
+</select>
+</div>
+<div class="field">
+<label for="taxResidency">Tax residency</label>
+<select id="taxResidency" onchange="calculateBonus()">
+<option value="resident">Tax resident</option>
+<option value="nonresident">Non-resident employment income</option>
+</select>
+</div>
+<div class="field">
+<label for="relief">Other personal tax reliefs (exclude compulsory employee CPF)</label>
+<input id="relief" min="0" oninput="calculateBonus()" step="100" type="number" value="0"/>
+</div>
+<button class="calculate-btn" onclick="calculateBonus()">Calculate bonus</button>
+</div>
+<div class="results">
+<div class="main-result">
+<small>Estimated bonus after CPF and tax</small>
+<div class="take-home" id="bonusAfterCpfTax">S$3,950</div>
+<div class="sub-result" id="bonusSummary">Gross bonus: S$5,000 · Employee CPF: S$1,000 · Estimated tax impact: S$50</div>
+</div>
+<div class="result-cards">
+<div class="result-card">
+<span>Gross bonus</span>
+<strong id="grossBonus">S$5,000</strong>
+</div>
+<div class="result-card">
+<span>Employee CPF on bonus</span>
+<strong id="employeeCpf">S$1,000</strong>
+</div>
+<div class="result-card">
+<span>Employer CPF on bonus</span>
+<strong id="employerCpf">S$850</strong>
+</div>
+</div>
+<div class="breakdown">
+<h3>Bonus breakdown</h3>
+<div class="row">
+<span>Monthly salary</span>
+<strong id="monthlySalaryResult">S$5,000</strong>
+</div>
+<div class="row">
+<span>Annual salary before bonus</span>
+<strong id="annualSalaryResult">S$60,000</strong>
+</div>
+<div class="row">
+<span>Gross bonus</span>
+<strong id="grossBonusBreakdown">S$5,000</strong>
+</div>
+<div class="row">
+<span>Bonus subject to CPF</span>
+<strong id="bonusSubjectCpf">S$5,000</strong>
+</div>
+<div class="row">
+<span>Less: employee CPF on bonus</span>
+<strong class="negative" id="cpfDeduction">-S$1,000</strong>
+</div>
+<div class="row">
+<span>Estimated bonus after CPF</span>
+<strong class="positive" id="bonusAfterCpf">S$4,000</strong>
+</div>
+<div class="row">
+<span>Estimated tax impact from bonus</span>
+<strong class="negative" id="taxImpact">-S$50</strong>
+</div>
+<div class="row">
+<span>Estimated bonus after CPF and tax</span>
+<strong class="positive" id="finalBonus">S$3,950</strong>
+</div>
+</div>
+<div class="note-box" id="calculationNote">
           CPF on bonus is estimated using Singapore Citizen / PR third year onwards rates and the Additional Wage ceiling.
           Income tax impact is estimated by comparing annual tax before and after bonus.
         </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <section class="content-section">
-      <h2 class="section-title">How this Singapore bonus calculator works</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<main class="content">
+<section class="content-section">
+<h2 class="section-title">How this Singapore bonus calculator works</h2>
+<p class="section-desc">
         A bonus is usually treated as additional employment income. This calculator estimates your gross bonus,
         CPF on bonus, tax impact from bonus, and final estimated bonus after CPF and tax.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>1. Calculate gross bonus</h3>
-          <p>
+<div class="info-grid">
+<div class="info-card">
+<h3>1. Calculate gross bonus</h3>
+<p>
             Gross bonus is calculated from bonus months plus any fixed bonus amount.
             For example, S$5,000 salary × 1 month = S$5,000 bonus.
           </p>
-        </div>
-
-        <div class="info-card">
-          <h3>2. Estimate CPF on bonus</h3>
-          <p>
+</div>
+<div class="info-card">
+<h3>2. Estimate CPF on bonus</h3>
+<p>
             Bonus is usually treated as Additional Wages for CPF. CPF on bonus is subject to the Additional Wage ceiling.
           </p>
-        </div>
-
-        <div class="info-card">
-          <h3>3. Estimate tax impact</h3>
-          <p>
+</div>
+<div class="info-card">
+<h3>3. Estimate tax impact</h3>
+<p>
             Bonus is generally taxable. The calculator estimates extra tax by comparing your tax before and after bonus.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Bonus examples in Singapore</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Bonus examples in Singapore</h2>
+<p class="section-desc">
         These examples assume a Singapore Citizen or PR third year onwards employee aged 55 and below.
         Actual CPF and tax may differ depending on CPF eligibility, tax reliefs, income level and payroll treatment.
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Monthly Salary</th>
-              <th>Bonus</th>
-              <th>Gross Bonus</th>
-              <th>Approx. Employee CPF</th>
-              <th>Bonus After CPF Before Tax</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>S$3,000</td>
-              <td>1 month</td>
-              <td>S$3,000</td>
-              <td>S$600</td>
-              <td>S$2,400</td>
-            </tr>
-
-            <tr>
-              <td>S$4,000</td>
-              <td>1 month</td>
-              <td>S$4,000</td>
-              <td>S$800</td>
-              <td>S$3,200</td>
-            </tr>
-
-            <tr>
-              <td>S$5,000</td>
-              <td>1 month</td>
-              <td>S$5,000</td>
-              <td>S$1,000</td>
-              <td>S$4,000</td>
-            </tr>
-
-            <tr>
-              <td>S$6,000</td>
-              <td>2 months</td>
-              <td>S$12,000</td>
-              <td>S$2,400</td>
-              <td>S$9,600</td>
-            </tr>
-
-            <tr>
-              <td>S$8,000</td>
-              <td>2 months</td>
-              <td>S$16,000</td>
-              <td>Depends on AW ceiling</td>
-              <td>Depends on annual CPF wage ceiling</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Monthly Salary</th>
+<th>Bonus</th>
+<th>Gross Bonus</th>
+<th>Approx. Employee CPF</th>
+<th>Bonus After CPF Before Tax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S$3,000</td>
+<td>1 month</td>
+<td>S$3,000</td>
+<td>S$600</td>
+<td>S$2,400</td>
+</tr>
+<tr>
+<td>S$4,000</td>
+<td>1 month</td>
+<td>S$4,000</td>
+<td>S$800</td>
+<td>S$3,200</td>
+</tr>
+<tr>
+<td>S$5,000</td>
+<td>1 month</td>
+<td>S$5,000</td>
+<td>S$1,000</td>
+<td>S$4,000</td>
+</tr>
+<tr>
+<td>S$6,000</td>
+<td>2 months</td>
+<td>S$12,000</td>
+<td>S$2,400</td>
+<td>S$9,600</td>
+</tr>
+<tr>
+<td>S$8,000</td>
+<td>2 months</td>
+<td>S$16,000</td>
+<td>Depends on AW ceiling</td>
+<td>Depends on annual CPF wage ceiling</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note-box">
         The examples above show simple CPF estimates. For higher salary levels, CPF on bonus may be limited by the Additional Wage ceiling.
       </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">What is AWS or 13th month bonus?</h2>
-      <p class="section-desc">
+</section>
+<section class="content-section">
+<h2 class="section-title">What is AWS or 13th month bonus?</h2>
+<p class="section-desc">
         AWS stands for Annual Wage Supplement. It is commonly called 13th month bonus in Singapore.
         It is usually based on one month of basic salary, but whether you are entitled to AWS depends on your employment contract,
         company policy or collective agreement.
       </p>
-
-      <div class="scenario-grid">
-        <div class="scenario-card">
-          <h3>1 month AWS</h3>
-          <p>
+<div class="scenario-grid">
+<div class="scenario-card">
+<h3>1 month AWS</h3>
+<p>
             If your monthly salary is S$5,000 and your AWS is 1 month, your gross AWS amount is S$5,000.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Performance bonus</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Performance bonus</h3>
+<p>
             Performance bonus may be based on company performance, personal performance or management decision.
           </p>
-        </div>
-
-        <div class="scenario-card">
-          <h3>Fixed bonus</h3>
-          <p>
+</div>
+<div class="scenario-card">
+<h3>Fixed bonus</h3>
+<p>
             Some employees receive a fixed contractual bonus amount instead of a bonus based on months of salary.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">CPF on bonus in Singapore</h2>
-      <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">CPF on bonus in Singapore</h2>
+<p class="section-desc">
         Bonuses are usually Additional Wages for CPF. CPF on Additional Wages is limited by the Additional Wage ceiling.
         The simplified formula used by this calculator is:
       </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Formula / Rule</th>
-              <th>Meaning</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Ordinary Wage ceiling</td>
-              <td>S$8,000 per month in 2026</td>
-              <td>Monthly salary subject to CPF is capped at the OW ceiling.</td>
-            </tr>
-
-            <tr>
-              <td>Additional Wage ceiling</td>
-              <td>S$102,000 - Total Ordinary Wages subject to CPF for the year</td>
-              <td>Limits how much bonus or Additional Wages attract CPF.</td>
-            </tr>
-
-            <tr>
-              <td>Bonus subject to CPF</td>
-              <td>Lower of gross bonus and available AW ceiling</td>
-              <td>CPF is estimated only on this portion of the bonus.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Bonus and income tax</h2>
-      <p class="section-desc">
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Formula / Rule</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinary Wage ceiling</td>
+<td>S$8,000 per month in 2026</td>
+<td>Monthly salary subject to CPF is capped at the OW ceiling.</td>
+</tr>
+<tr>
+<td>Additional Wage ceiling</td>
+<td>S$102,000 - Total Ordinary Wages subject to CPF for the year</td>
+<td>Limits how much bonus or Additional Wages attract CPF.</td>
+</tr>
+<tr>
+<td>Bonus subject to CPF</td>
+<td>Lower of gross bonus and available AW ceiling</td>
+<td>CPF is estimated only on this portion of the bonus.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Bonus and income tax</h2>
+<p class="section-desc">
         Bonus is generally taxable employment income in Singapore. This calculator estimates the tax impact of your bonus
         by calculating annual income tax before and after bonus, then showing the difference as estimated tax impact.
       </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>Contractual bonus</h3>
-          <p>
+<div class="info-grid">
+<div class="info-card">
+<h3>Contractual bonus</h3>
+<p>
             A contractual bonus is usually based on your employment contract or bonus plan.
           </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Non-contractual bonus</h3>
-          <p>
+</div>
+<div class="info-card">
+<h3>Non-contractual bonus</h3>
+<p>
             A non-contractual bonus may depend on company decision, performance or other conditions.
           </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Tax impact</h3>
-          <p>
+</div>
+<div class="info-card">
+<h3>Tax impact</h3>
+<p>
             Your bonus can increase chargeable income and may push part of your income into a higher tax bracket.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="authority-box">
-        <h2 class="section-title">Official sources to check</h2>
-        <p class="section-desc">
+</div>
+</div>
+</section>
+<section class="content-section">
+<div class="authority-box">
+<h2 class="section-title">Official sources to check</h2>
+<p class="section-desc">
           This calculator provides estimates only. For official CPF and tax treatment, always refer to CPF Board and IRAS.
         </p>
-
-        <div class="authority-list">
-          <a class="authority-item" href="https://www.cpf.gov.sg/employer/employer-obligations/what-payments-attract-cpf-contributions" target="_blank" rel="noopener">
-            <strong>CPF on Payments</strong>
-            <span>Official CPF guidance on Ordinary Wages, Additional Wages and AW ceiling</span>
-          </a>
-
-          <a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-additional-wage-aw-ceiling" target="_blank" rel="noopener">
-            <strong>AW Ceiling</strong>
-            <span>Official CPF Additional Wage ceiling explanation</span>
-          </a>
-
-          <a class="authority-item" href="https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not/employment-income/salary-bonus-director%27s-fee-commission-and-others" target="_blank" rel="noopener">
-            <strong>IRAS Bonus Tax</strong>
-            <span>Official IRAS guidance on salary and bonus tax treatment</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore calculators</h2>
-      <p class="section-desc">
+<div class="authority-list">
+<a class="authority-item" href="https://www.cpf.gov.sg/employer/employer-obligations/what-payments-attract-cpf-contributions" rel="noopener" target="_blank">
+<strong>CPF on Payments</strong>
+<span>Official CPF guidance on Ordinary Wages, Additional Wages and AW ceiling</span>
+</a>
+<a class="authority-item" href="https://www.cpf.gov.sg/service/article/what-is-the-additional-wage-aw-ceiling" rel="noopener" target="_blank">
+<strong>AW Ceiling</strong>
+<span>Official CPF Additional Wage ceiling explanation</span>
+</a>
+<a class="authority-item" href="https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not/employment-income/salary-bonus-director%27s-fee-commission-and-others" rel="noopener" target="_blank">
+<strong>IRAS Bonus Tax</strong>
+<span>Official IRAS guidance on salary and bonus tax treatment</span>
+</a>
+</div>
+</div>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="bonus-guide.html">Bonus Guide</a> · <a href="aws-guide.html">AWS / 13th Month Guide</a> · <a href="cpf-calculator.html">CPF Calculator</a> · <a href="income-tax-calculator.html">Income Tax Calculator</a></p></section><section class="section"><h2>Continue with related cpf tools and guides</h2><p><a href="cpf-calculator.html">Calculate your CPF contribution in Singapore</a> · <a href="cpf-contribution-rates-guide.html">CPF Contribution Rates Guide Singapore 2026</a> · <a href="index.html">Know your real take-home pay in Singapore</a></p></section><section class="content-section">
+<h2 class="section-title">Related Singapore calculators</h2>
+<p class="section-desc">
         Use these calculators together to understand salary, CPF, tax and take-home pay.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <h3>Salary Calculator</h3>
-          <p>Estimate monthly take-home pay after CPF and income tax.</p>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <h3>CPF Calculator</h3>
-          <p>Estimate employee CPF and employer CPF based on salary and age.</p>
-        </a>
-
-        <a class="related-card" href="income-tax-calculator.html">
-          <h3>Income Tax Calculator</h3>
-          <p>Estimate Singapore resident or non-resident income tax.</p>
-        </a>
-
-        <a class="related-card" href="annual-leave-calculator.html">
-          <h3>Annual Leave Calculator</h3>
-          <p>Estimate annual leave entitlement for Singapore employment planning.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="calculators.html">View All Calculators →</a>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 class="section-title">Related Singapore salary guides</h2>
-      <p class="section-desc">
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<h3>Salary Calculator</h3>
+<p>Estimate monthly take-home pay after CPF and income tax.</p>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<h3>CPF Calculator</h3>
+<p>Estimate employee CPF and employer CPF based on salary and age.</p>
+</a>
+<a class="related-card" href="income-tax-calculator.html">
+<h3>Income Tax Calculator</h3>
+<p>Estimate Singapore resident or non-resident income tax.</p>
+</a>
+<a class="related-card" href="annual-leave-calculator.html">
+<h3>Annual Leave Calculator</h3>
+<p>Estimate annual leave entitlement for Singapore employment planning.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="calculators.html">View All Calculators →</a>
+</div>
+</section>
+<section class="content-section">
+<h2 class="section-title">Related Singapore salary guides</h2>
+<p class="section-desc">
         Learn more about bonus, CPF, tax and salary planning in Singapore.
       </p>
-
-      <div class="related-grid">
-        <a class="related-card" href="bonus-guide.html">
-          <h3>Bonus Guide</h3>
-          <p>Understand AWS, 13th month bonus, performance bonus and bonus planning.</p>
-        </a>
-
-        <a class="related-card" href="cpf-contribution-rates-guide.html">
-          <h3>CPF Contribution Rates Guide</h3>
-          <p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
-        </a>
-
-        <a class="related-card" href="income-tax-guide.html">
-          <h3>Income Tax Guide</h3>
-          <p>Learn how Singapore income tax works for employees and tax residents.</p>
-        </a>
-
-        <a class="related-card" href="salary-after-tax-guide.html">
-          <h3>Salary After Tax Guide</h3>
-          <p>Understand how CPF and income tax affect your final take-home salary.</p>
-        </a>
-      </div>
-
-      <div class="view-all">
-        <a href="guides.html">View All Guides →</a>
-      </div>
-    </section>
-
-    <section class="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-
-      <details>
-        <summary>How do I calculate bonus in Singapore?</summary>
-        <p>
+<div class="related-grid">
+<a class="related-card" href="bonus-guide.html">
+<h3>Bonus Guide</h3>
+<p>Understand AWS, 13th month bonus, performance bonus and bonus planning.</p>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<h3>CPF Contribution Rates Guide</h3>
+<p>Understand employee CPF rates, employer CPF rates and wage ceilings.</p>
+</a>
+<a class="related-card" href="income-tax-guide.html">
+<h3>Income Tax Guide</h3>
+<p>Learn how Singapore income tax works for employees and tax residents.</p>
+</a>
+<a class="related-card" href="gross-salary-vs-net-salary-guide.html">
+<h3>Salary After Tax Guide</h3>
+<p>Understand how CPF and income tax affect your final take-home salary.</p>
+</a>
+</div>
+<div class="view-all">
+<a href="guides.html">View All Guides →</a>
+</div>
+</section>
+<section class="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<details>
+<summary>How do I calculate bonus in Singapore?</summary>
+<p>
           A simple bonus calculation is monthly salary multiplied by bonus months, plus any fixed bonus amount.
           For example, S$5,000 salary with 1 month bonus gives a gross bonus of S$5,000.
         </p>
-      </details>
-
-      <details>
-        <summary>Is bonus taxable in Singapore?</summary>
-        <p>
+</details>
+<details>
+<summary>Is bonus taxable in Singapore?</summary>
+<p>
           Yes. Employment bonus is generally taxable in Singapore. This includes common forms of bonus such as AWS,
           13th month payment, contractual bonus and performance bonus.
         </p>
-      </details>
-
-      <details>
-        <summary>Is CPF payable on bonus?</summary>
-        <p>
+</details>
+<details>
+<summary>Is CPF payable on bonus?</summary>
+<p>
           CPF may be payable on bonus if CPF applies to your employment. Bonus is usually treated as Additional Wages
           and is subject to the CPF Additional Wage ceiling.
         </p>
-      </details>
-
-      <details>
-        <summary>What is the Additional Wage ceiling?</summary>
-        <p>
+</details>
+<details>
+<summary>What is the Additional Wage ceiling?</summary>
+<p>
           The Additional Wage ceiling limits how much bonus or Additional Wages attract CPF.
           It is generally calculated as S$102,000 minus total Ordinary Wages subject to CPF for the year.
         </p>
-      </details>
-
-      <details>
-        <summary>What is AWS in Singapore?</summary>
-        <p>
+</details>
+<details>
+<summary>What is AWS in Singapore?</summary>
+<p>
           AWS means Annual Wage Supplement. It is often called 13th month bonus. It is not automatically guaranteed for every employee
           unless it is provided under the employment contract, company policy or collective agreement.
         </p>
-      </details>
-
-      <details>
-        <summary>How much is 1 month bonus after CPF?</summary>
-        <p>
+</details>
+<details>
+<summary>How much is 1 month bonus after CPF?</summary>
+<p>
           For an employee aged 55 and below under full CPF rates, employee CPF is generally 20% on CPF-subject bonus.
           A S$5,000 bonus may become around S$4,000 after employee CPF before income tax.
         </p>
-      </details>
-
-      <details>
-        <summary>Do foreigners pay CPF on bonus in Singapore?</summary>
-        <p>
+</details>
+<details>
+<summary>Do foreigners pay CPF on bonus in Singapore?</summary>
+<p>
           Foreign employees generally do not contribute CPF. If CPF does not apply, choose the no CPF option in this calculator.
           Tax may still apply depending on tax residency and Singapore employment income.
         </p>
-      </details>
-
-      <details>
-        <summary>Does this calculator include income tax?</summary>
-        <p>
+</details>
+<details>
+<summary>Does this calculator include income tax?</summary>
+<p>
           Yes. It estimates the additional income tax caused by bonus by comparing estimated annual tax before bonus and after bonus.
           Actual IRAS assessment may differ.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this bonus calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this bonus calculator official?</summary>
+<p>
           No. This calculator provides estimates only. For official CPF and tax treatment, check CPF Board and IRAS directly.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides estimates only and is not official CPF, payroll or tax advice.
-  </footer>
-
-  <script>
-    function money(value) {
-      return "S$" + Math.round(value).toLocaleString("en-SG");
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function money(v){return "S$"+Math.round(v).toLocaleString("en-SG");}
+    function calculateBonus(){
+      const salary=+document.getElementById("monthlySalary").value||0, months=+document.getElementById("bonusMonths").value||0, fixed=+document.getElementById("fixedBonus").value||0, age=document.getElementById("age").value, eligible=document.getElementById("cpfEligibility").value==="cpf", resident=document.getElementById("taxResidency").value, other=+document.getElementById("relief").value||0;
+      const gross=Math.max(0,salary*months+fixed), beforeCpf=SG2026.annualCpf(salary,0,age,eligible), afterCpf=SG2026.annualCpf(salary,gross,age,eligible);
+      const taxBefore=SG2026.taxEstimate(salary*12,beforeCpf.annualEmployee,other,resident).tax, taxAfter=SG2026.taxEstimate(salary*12+gross,afterCpf.annualEmployee,other,resident).tax, taxImpact=Math.max(0,taxAfter-taxBefore);
+      const emp=afterCpf.bonusEmployee, er=afterCpf.bonusEmployer, afterCpfCash=gross-emp, final=afterCpfCash-taxImpact;
+      document.getElementById("bonusAfterCpfTax").textContent=money(final); document.getElementById("bonusSummary").textContent="Gross bonus: "+money(gross)+" · Employee CPF: "+money(emp)+" · Estimated tax impact: "+money(taxImpact); document.getElementById("grossBonus").textContent=money(gross); document.getElementById("employeeCpf").textContent=money(emp); document.getElementById("employerCpf").textContent=money(er); document.getElementById("monthlySalaryResult").textContent=money(salary); document.getElementById("annualSalaryResult").textContent=money(salary*12); document.getElementById("grossBonusBreakdown").textContent=money(gross); document.getElementById("bonusSubjectCpf").textContent=money(afterCpf.bonusSubject); document.getElementById("cpfDeduction").textContent="-"+money(emp); document.getElementById("bonusAfterCpf").textContent=money(afterCpfCash); document.getElementById("taxImpact").textContent="-"+money(taxImpact); document.getElementById("finalBonus").textContent=money(final);
+      document.getElementById("calculationNote").textContent=!eligible?"CPF is set to S$0. Bonus can still be taxable.":"Bonus CPF uses the 2026 Additional Wage ceiling and CPF rounding rules. The S$80,000 tax-relief cap includes compulsory employee CPF plus other personal reliefs.";
     }
-
-    function getCpfRates(ageGroup) {
-      const rates = {
-        "55below": { employee: 0.20, employer: 0.17 },
-        "55to60": { employee: 0.18, employer: 0.16 },
-        "60to65": { employee: 0.125, employer: 0.125 },
-        "65to70": { employee: 0.075, employer: 0.09 },
-        "70above": { employee: 0.05, employer: 0.075 }
-      };
-
-      return rates[ageGroup] || rates["55below"];
-    }
-
-    function residentTax(chargeableIncome) {
-      const brackets = [
-        { limit: 20000, rate: 0 },
-        { limit: 10000, rate: 0.02 },
-        { limit: 10000, rate: 0.035 },
-        { limit: 40000, rate: 0.07 },
-        { limit: 40000, rate: 0.115 },
-        { limit: 40000, rate: 0.15 },
-        { limit: 40000, rate: 0.18 },
-        { limit: 40000, rate: 0.19 },
-        { limit: 40000, rate: 0.195 },
-        { limit: 40000, rate: 0.20 },
-        { limit: 180000, rate: 0.22 },
-        { limit: 500000, rate: 0.23 },
-        { limit: Infinity, rate: 0.24 }
-      ];
-
-      let remaining = Math.max(0, chargeableIncome);
-      let tax = 0;
-
-      for (const bracket of brackets) {
-        const taxable = Math.min(remaining, bracket.limit);
-        tax += taxable * bracket.rate;
-        remaining -= taxable;
-
-        if (remaining <= 0) break;
-      }
-
-      return tax;
-    }
-
-    function estimateTax(totalIncome, employeeCpf, relief, residency) {
-      const reliefCapped = Math.min(Math.max(0, relief), 80000);
-      const reliefApplied = residency === "nonresident" ? 0 : reliefCapped;
-      const chargeableIncome = Math.max(0, totalIncome - employeeCpf - reliefApplied);
-
-      if (residency === "resident") {
-        return residentTax(chargeableIncome);
-      }
-
-      const progressiveTax = residentTax(chargeableIncome);
-      const nonResidentTax = totalIncome * 0.15;
-
-      return Math.max(progressiveTax, nonResidentTax);
-    }
-
-    function calculateBonus() {
-      const monthlySalary = Number(document.getElementById("monthlySalary").value) || 0;
-      const bonusMonths = Number(document.getElementById("bonusMonths").value) || 0;
-      const fixedBonus = Number(document.getElementById("fixedBonus").value) || 0;
-      const cpfEligibility = document.getElementById("cpfEligibility").value;
-      const age = document.getElementById("age").value;
-      const taxResidency = document.getElementById("taxResidency").value;
-      const relief = Number(document.getElementById("relief").value) || 0;
-
-      const grossBonus = Math.max(0, monthlySalary * bonusMonths + fixedBonus);
-      const annualSalaryBeforeBonus = monthlySalary * 12;
-
-      const owCeiling = 8000;
-      const annualCpfWageCeiling = 102000;
-      const owSubjectToCpf = Math.min(monthlySalary, owCeiling) * 12;
-      const additionalWageCeiling = Math.max(0, annualCpfWageCeiling - owSubjectToCpf);
-      const bonusSubjectToCpf = Math.min(grossBonus, additionalWageCeiling);
-
-      const rates = getCpfRates(age);
-
-      let employeeCpfOnBonus = 0;
-      let employerCpfOnBonus = 0;
-
-      if (cpfEligibility === "cpf") {
-        employeeCpfOnBonus = Math.floor(bonusSubjectToCpf * rates.employee);
-        employerCpfOnBonus = Math.round(bonusSubjectToCpf * rates.employer);
-      }
-
-      const regularMonthlyCpfSubject = Math.min(monthlySalary, owCeiling);
-      let annualEmployeeCpfBeforeBonus = 0;
-      let annualEmployeeCpfAfterBonus = 0;
-
-      if (cpfEligibility === "cpf") {
-        annualEmployeeCpfBeforeBonus = Math.floor(regularMonthlyCpfSubject * rates.employee) * 12;
-        annualEmployeeCpfAfterBonus = annualEmployeeCpfBeforeBonus + employeeCpfOnBonus;
-      }
-
-      const annualIncomeBeforeBonus = annualSalaryBeforeBonus;
-      const annualIncomeAfterBonus = annualSalaryBeforeBonus + grossBonus;
-
-      const taxBeforeBonus = estimateTax(annualIncomeBeforeBonus, annualEmployeeCpfBeforeBonus, relief, taxResidency);
-      const taxAfterBonus = estimateTax(annualIncomeAfterBonus, annualEmployeeCpfAfterBonus, relief, taxResidency);
-      const taxImpact = Math.max(0, taxAfterBonus - taxBeforeBonus);
-
-      const bonusAfterCpf = grossBonus - employeeCpfOnBonus;
-      const bonusAfterCpfTax = bonusAfterCpf - taxImpact;
-
-      document.getElementById("bonusAfterCpfTax").textContent = money(bonusAfterCpfTax);
-      document.getElementById("bonusSummary").textContent =
-        "Gross bonus: " + money(grossBonus) +
-        " · Employee CPF: " + money(employeeCpfOnBonus) +
-        " · Estimated tax impact: " + money(taxImpact);
-
-      document.getElementById("grossBonus").textContent = money(grossBonus);
-      document.getElementById("employeeCpf").textContent = money(employeeCpfOnBonus);
-      document.getElementById("employerCpf").textContent = money(employerCpfOnBonus);
-
-      document.getElementById("monthlySalaryResult").textContent = money(monthlySalary);
-      document.getElementById("annualSalaryResult").textContent = money(annualSalaryBeforeBonus);
-      document.getElementById("grossBonusBreakdown").textContent = money(grossBonus);
-      document.getElementById("bonusSubjectCpf").textContent = money(bonusSubjectToCpf);
-      document.getElementById("cpfDeduction").textContent = "-" + money(employeeCpfOnBonus);
-      document.getElementById("bonusAfterCpf").textContent = money(bonusAfterCpf);
-      document.getElementById("taxImpact").textContent = "-" + money(taxImpact);
-      document.getElementById("finalBonus").textContent = money(bonusAfterCpfTax);
-
-      const note = document.getElementById("calculationNote");
-
-      if (cpfEligibility === "noCpf") {
-        note.textContent =
-          "CPF is set to S$0 because the foreigner / no CPF option is selected. Bonus may still be taxable depending on tax residency and employment income.";
-      } else if (grossBonus > bonusSubjectToCpf) {
-        note.textContent =
-          "Only part of the bonus is subject to CPF because the Additional Wage ceiling is applied. Tax impact is estimated by comparing annual tax before and after bonus.";
-      } else {
-        note.textContent =
-          "CPF on bonus is estimated using CPF rates and the Additional Wage ceiling. Income tax impact is estimated by comparing annual tax before and after bonus.";
-      }
-    }
-
     calculateBonus();
   </script>
 </body>

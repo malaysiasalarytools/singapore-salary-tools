@@ -1,19 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <title>Singapore Prorated Salary Calculator 2026 | Partial Month Salary Calculator</title>
-
-  <link rel="canonical" href="https://sgsalarytools.com/prorated-salary-calculator.html">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <meta name="description" content="Free Singapore Prorated Salary Calculator 2026. Estimate partial month salary for new joiners, resignation, unpaid leave, mid-month start or last day of work." />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-
-  <style>
+<meta charset="utf-8"/>
+<title>Singapore Prorated Salary Calculator 2026 | Partial Month Salary Calculator</title>
+<link href="https://sgsalarytools.com/prorated-salary-calculator.html" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Free Singapore Prorated Salary Calculator 2026. Estimate partial month salary for new joiners, resignation, unpaid leave, mid-month start or last day of work." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -388,579 +384,334 @@
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="logo-icon.png" alt="SG Salary Tools logo">
-        <span>
+<header>
+<div class="nav">
+<a class="brand" href="index.html">
+<img alt="SG Salary Tools logo" src="logo-icon.png"/>
+<span>
           SG Salary Tools
           <small>CPF · TAX · TAKE-HOME PAY</small>
-        </span>
-      </a>
-
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="calculators.html">Calculators</a>
-        <a href="guides.html">Guides</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-wrap">
-      <div class="eyebrow">Singapore partial month salary calculator</div>
-      <h1>Calculate prorated salary in Singapore</h1>
-      <p>
+</span>
+</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="calculators.html">Calculators</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-wrap">
+<div class="eyebrow">Singapore partial month salary calculator</div>
+<h1>Calculate prorated salary in Singapore</h1>
+<p>
         Estimate partial month salary for new joiners, resignation, unpaid leave,
         mid-month start date, last working day or incomplete month payroll.
       </p>
-
-      <div class="hero-tags">
-        <span>New Joiner Salary</span>
-        <span>Resignation Month Pay</span>
-        <span>Unpaid Leave Deduction</span>
-        <span>Calendar or Working Day Basis</span>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="section">
-      <div class="calculator-grid">
-        <div>
-          <h2>Prorated salary inputs</h2>
-          <p class="muted">
+<div class="hero-tags">
+<span>New Joiner Salary</span>
+<span>Resignation Month Pay</span>
+<span>Unpaid Leave Deduction</span>
+<span>MOM Incomplete-Month Formula</span>
+</div>
+</div>
+</section>
+<main>
+<section class="section">
+<div class="calculator-grid">
+<div>
+<h2>Prorated salary inputs</h2>
+<p class="muted">
             Enter your monthly salary, payroll month and employment period within that month.
-            Choose whether to calculate based on calendar days, working days or a fixed 26-day basis.
+            This calculator uses the MOM incomplete-month framework: monthly gross rate of pay divided by total working days in the month, multiplied by days actually worked in the month.
           </p>
-
-          <label for="monthlySalary">Monthly salary</label>
-          <input type="number" id="monthlySalary" value="4000" min="0" step="0.01">
-
-          <label for="salaryMonth">Salary month</label>
-          <input type="month" id="salaryMonth">
-
-          <label for="startDate">Start date for salary calculation</label>
-          <input type="date" id="startDate">
-
-          <label for="endDate">End date for salary calculation</label>
-          <input type="date" id="endDate">
-
-          <label for="basis">Proration basis</label>
-          <select id="basis">
-            <option value="calendar" selected>Calendar days in the month</option>
-            <option value="working">Working days only, Monday to Friday</option>
-            <option value="fixed26">Fixed 26-day salary basis</option>
-          </select>
-
-          <label for="unpaidDays">Unpaid leave days / unpaid days</label>
-          <input type="number" id="unpaidDays" value="0" min="0" step="0.5">
-
-          <button onclick="calculateProratedSalary()">Calculate Prorated Salary</button>
-
-          <div class="note">
-            This calculator gives a general payroll estimate. Your employer may use a different
-            formula depending on employment contract, HR policy or payroll practice.
+<label for="monthlySalary">Monthly salary</label>
+<input id="monthlySalary" min="0" step="0.01" type="number" value="4000"/>
+<label for="salaryMonth">Salary month</label>
+<input id="salaryMonth" type="month"/>
+<label for="startDate">Start date for salary calculation</label>
+<input id="startDate" type="date"/>
+<label for="endDate">End date for salary calculation</label>
+<input id="endDate" type="date"/>
+<label for="workSchedule">Work schedule</label>
+<select id="workSchedule"><option value="mon-fri">5-day week (Mon–Fri)</option><option value="mon-sat">6-day week (Mon–Sat)</option><option value="tue-sat">5-day week (Tue–Sat)</option></select>
+<label for="unpaidDays">Unpaid leave days / unpaid days</label>
+<input id="unpaidDays" min="0" step="0.5" type="number" value="0"/>
+<button onclick="calculateProratedSalary()">Calculate Prorated Salary</button>
+<div class="note">
+            For monthly-rated full-time employees, MOM treats a mid-month start, early departure or no-pay leave as an incomplete month of work. Choose the employee’s normal work schedule. Public holidays that fall on scheduled working days remain in the working-day denominator; verify rotating or irregular rosters separately.
           </div>
-        </div>
-
-        <div class="result-card">
-          <h2>Your estimated result</h2>
-          <p>Estimated prorated salary</p>
-
-          <div class="big-result" id="proratedSalaryResult">S$0.00</div>
-
-          <div class="result-line">
-            <span>Monthly salary</span>
-            <span id="monthlySalaryResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Daily rate</span>
-            <span id="dailyRateResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Payable days</span>
-            <span id="payableDaysResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Unpaid days deducted</span>
-            <span id="unpaidDaysResult">-</span>
-          </div>
-
-          <div class="result-line">
-            <span>Basis used</span>
-            <span id="basisResult">-</span>
-          </div>
-
-          <p class="muted" style="color:#cfe6d5; margin-top:16px;">
+</div>
+<div class="result-card">
+<h2>Your estimated result</h2>
+<p>Estimated prorated salary</p>
+<div class="big-result" id="proratedSalaryResult">S$0.00</div>
+<div class="result-line">
+<span>Monthly salary</span>
+<span id="monthlySalaryResult">-</span>
+</div>
+<div class="result-line">
+<span>Daily rate</span>
+<span id="dailyRateResult">-</span>
+</div>
+<div class="result-line">
+<span>Payable days</span>
+<span id="payableDaysResult">-</span>
+</div>
+<div class="result-line">
+<span>Unpaid days deducted</span>
+<span id="unpaidDaysResult">-</span>
+</div>
+<div class="result-line">
+<span>Basis used</span>
+<span id="basisResult">-</span>
+</div>
+<p class="muted" style="color:#cfe6d5; margin-top:16px;">
             Use this as an estimate for partial month salary. CPF and tax are not deducted in this result.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>How this prorated salary calculator works</h2>
-      <p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>How this prorated salary calculator works</h2>
+<p>
         This calculator estimates salary for an incomplete month. This usually happens when an
         employee joins mid-month, resigns before the month ends, takes unpaid leave, or has only
         worked part of the payroll month.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>1. Enter monthly salary</strong>
-          <p>Use the employee’s fixed monthly basic salary before CPF, tax or other deductions.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>2. Choose date range</strong>
-          <p>Select the first and last date that should be paid within the salary month.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>3. Choose formula basis</strong>
-          <p>Calculate using calendar days, working days or a fixed 26-day daily rate basis.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Prorated salary formula</h2>
-      <p>
-        A common way to estimate prorated salary is to calculate a daily rate, then multiply it
-        by the number of payable days.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Basis</th>
-            <th>Formula</th>
-            <th>Common use</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Calendar days</td>
-            <td>Monthly salary ÷ calendar days in the month × payable calendar days</td>
-            <td>Simple partial-month calculation for joining or leaving mid-month.</td>
-          </tr>
-          <tr>
-            <td>Working days</td>
-            <td>Monthly salary ÷ working days in the month × payable working days</td>
-            <td>Useful when payroll is based on Monday to Friday working days.</td>
-          </tr>
-          <tr>
-            <td>Fixed 26-day basis</td>
-            <td>Monthly salary ÷ 26 × payable days</td>
-            <td>Often used for daily rate estimates, unpaid leave or salary deduction estimates.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
-        There is no single formula that fits every company. The safest method is to follow the
-        employment contract, staff handbook or company payroll policy.
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>When do you need prorated salary?</h2>
-      <p>
+<div class="grid-3">
+<div class="info-card">
+<strong>1. Enter monthly salary</strong>
+<p>Use the employee’s fixed monthly basic salary before CPF, tax or other deductions.</p>
+</div>
+<div class="info-card">
+<strong>2. Choose date range</strong>
+<p>Select the first and last date that should be paid within the salary month.</p>
+</div>
+<div class="info-card">
+<strong>3. Choose formula basis</strong>
+<p>Use the working-day formula for an incomplete month of work.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>MOM incomplete-month salary formula</h2>
+<p>For a monthly-rated full-time employee who joins after the first day of the month, leaves before the last day, or otherwise has an incomplete month, MOM uses the monthly gross rate of pay divided by the total number of working days in that month, multiplied by the number of days actually worked.</p>
+<div class="formula">Monthly gross rate of pay ÷ total working days in the month × days actually worked</div>
+<div class="note">Rest days and non-working days are excluded from the denominator, while public holidays that fall on scheduled working days are included. Choose the work schedule that matches the employee.</div>
+</section>
+<section class="section">
+<h2>When do you need prorated salary?</h2>
+<p>
         Prorated salary is usually needed when an employee does not work the full salary month.
         Instead of paying the full monthly salary, payroll calculates only the portion that should
         be paid.
       </p>
-
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>New joiner</strong>
-          <p>An employee starts work in the middle of the month and should only receive salary from the start date.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Resignation month</strong>
-          <p>An employee’s last day is before the month end, so final salary is paid up to the last working day.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Unpaid leave</strong>
-          <p>An employee takes unpaid leave, no-pay leave or has unpaid absence during the month.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Prorated salary examples</h2>
-      <p>
+<div class="grid-3">
+<div class="info-card">
+<strong>New joiner</strong>
+<p>An employee starts work in the middle of the month and should only receive salary from the start date.</p>
+</div>
+<div class="info-card">
+<strong>Resignation month</strong>
+<p>An employee’s last day is before the month end, so final salary is paid up to the last working day.</p>
+</div>
+<div class="info-card">
+<strong>Unpaid leave</strong>
+<p>An employee takes unpaid leave, no-pay leave or has unpaid absence during the month.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Prorated salary examples</h2>
+<p>
         These examples show how the calculator can be used for common Singapore payroll situations.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Scenario</th>
-            <th>Monthly salary</th>
-            <th>Example calculation</th>
-            <th>Estimated salary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>New joiner starts on 16 July 2026</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 31 × 16 calendar days</td>
-            <td>About S$2,064.52</td>
-          </tr>
-          <tr>
-            <td>Employee resigns with last day on 20 July 2026</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 31 × 20 calendar days</td>
-            <td>About S$2,580.65</td>
-          </tr>
-          <tr>
-            <td>Employee takes 3 days unpaid leave</td>
-            <td>S$4,000</td>
-            <td>S$4,000 - (S$4,000 ÷ 26 × 3 days)</td>
-            <td>About S$3,538.46</td>
-          </tr>
-          <tr>
-            <td>Working day basis, paid 10 of 23 working days</td>
-            <td>S$4,000</td>
-            <td>S$4,000 ÷ 23 × 10 working days</td>
-            <td>About S$1,739.13</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Calendar days vs working days vs 26 days</h2>
-      <p>
-        The result can be different depending on the basis used. This is why employees and employers
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Monthly salary</th>
+<th>Example calculation</th>
+<th>Estimated salary</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>New joiner works 12 of 23 working days</td><td>S$4,000</td><td>S$4,000 ÷ 23 × 12</td><td>About S$2,086.96</td></tr>
+<tr><td>Employee works 15 of 22 working days before leaving</td><td>S$4,000</td><td>S$4,000 ÷ 22 × 15</td><td>About S$2,727.27</td></tr>
+<tr><td>Employee takes 3 no-pay leave days in a 23-working-day month</td><td>S$4,000</td><td>S$4,000 ÷ 23 × 20</td><td>About S$3,478.26</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section">
+<h2>MOM incomplete-month salary formula</h2>
+<p>
+        For monthly-rated full-time employees, MOM provides an incomplete-month formula. Employees and employers
         should be clear about the payroll method used for partial month salary.
       </p>
+<div class="note">For monthly-rated full-time employees, the statutory incomplete-month calculation uses the total working days in the relevant month. This calculator lets you choose a common fixed weekly schedule so that denominator can be counted correctly.</div>
 
-      <div class="grid-3">
-        <div class="info-card">
-          <strong>Calendar days</strong>
-          <p>Counts every day in the month, including weekends and public holidays.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>Working days</strong>
-          <p>Counts only Monday to Friday in this calculator. Public holidays are not separately removed.</p>
-        </div>
-
-        <div class="info-card">
-          <strong>26-day basis</strong>
-          <p>Uses monthly salary divided by 26. This is commonly seen in salary deduction estimates.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Important notes before using the result</h2>
-      <p>
+</section>
+<section class="section">
+<h2>Important notes before using the result</h2>
+<p>
         Prorated salary is a payroll estimate. Before relying on the result, check how your company
         calculates partial month salary and whether any other pay components should be included.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>What to check</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Basic salary</td>
-            <td>Confirm whether the calculation should use basic salary only or gross monthly salary.</td>
-          </tr>
-          <tr>
-            <td>Allowances</td>
-            <td>Some allowances may be prorated, while others may not be payable for partial months.</td>
-          </tr>
-          <tr>
-            <td>CPF</td>
-            <td>CPF is not deducted in this calculator. CPF may apply separately based on actual wages paid.</td>
-          </tr>
-          <tr>
-            <td>Overtime</td>
-            <td>Overtime pay should usually be calculated separately from prorated basic salary.</td>
-          </tr>
-          <tr>
-            <td>Public holidays</td>
-            <td>This calculator does not remove Singapore public holidays from working days automatically.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore calculators</h2>
-      <p class="muted">Use these tools to estimate salary, CPF, leave and resignation-related amounts.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="index.html">
-          <strong>Salary Calculator</strong>
-          <span>Estimate monthly take-home pay after CPF and tax.</span>
-        </a>
-
-        <a class="related-card" href="cpf-calculator.html">
-          <strong>CPF Calculator</strong>
-          <span>Calculate employee and employer CPF contributions.</span>
-        </a>
-
-        <a class="related-card" href="notice-period-calculator.html">
-          <strong>Notice Period Calculator</strong>
-          <span>Estimate resignation last day and notice period end date.</span>
-        </a>
-
-        <a class="related-card" href="annual-leave-calculator.html">
-          <strong>Annual Leave Calculator</strong>
-          <span>Estimate annual leave entitlement and leave balance.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="calculators.html">View All Calculators →</a>
-    </section>
-
-    <section class="section">
-      <h2>Related Singapore salary guides</h2>
-      <p class="muted">Learn more about salary, CPF, employment contracts and payroll calculations.</p>
-
-      <div class="related-grid">
-        <a class="related-card" href="employment-contract-guide.html">
-          <strong>Employment Contract Guide</strong>
-          <span>Understand salary clauses, working hours and notice period terms.</span>
-        </a>
-
-        <a class="related-card" href="cpf-contribution-rates-guide.html">
-          <strong>CPF Contribution Rates Guide</strong>
-          <span>Learn how CPF rates work by age, wage type and citizenship status.</span>
-        </a>
-
-        <a class="related-card" href="payslip-guide.html">
-          <strong>Payslip Guide</strong>
-          <span>Understand salary items, deductions and monthly payslip details.</span>
-        </a>
-
-        <a class="related-card" href="annual-leave-guide.html">
-          <strong>Annual Leave Guide</strong>
-          <span>Learn how annual leave entitlement works in Singapore.</span>
-        </a>
-      </div>
-
-      <a class="view-all" href="guides.html">View All Guides →</a>
-    </section>
-
-    <section class="section">
-      <h2>Frequently Asked Questions</h2>
-
-      <details open>
-        <summary>What is prorated salary?</summary>
-        <p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic salary</td>
+<td>Confirm whether the calculation should use basic salary only or gross monthly salary.</td>
+</tr>
+<tr>
+<td>Allowances</td>
+<td>Some allowances may be prorated, while others may not be payable for partial months.</td>
+</tr>
+<tr>
+<td>CPF</td>
+<td>CPF is not deducted in this calculator. CPF may apply separately based on actual wages paid.</td>
+</tr>
+<tr>
+<td>Overtime</td>
+<td>Overtime pay should usually be calculated separately from prorated basic salary.</td>
+</tr>
+<tr>
+<td>Public holidays</td>
+<td>This calculator does not remove Singapore public holidays from working days automatically.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="section"><h2>Related tools and guides</h2><p><a href="unpaid-leave-calculator.html">Unpaid Leave Calculator</a> · <a href="final-salary-calculator.html">Final Salary Calculator</a> · <a href="salary-deduction-guide.html">Salary Deduction Guide</a></p></section><section class="section">
+<h2>Related Singapore calculators</h2>
+<p class="muted">Use these tools to estimate salary, CPF, leave and resignation-related amounts.</p>
+<div class="related-grid">
+<a class="related-card" href="index.html">
+<strong>Salary Calculator</strong>
+<span>Estimate monthly take-home pay after CPF and tax.</span>
+</a>
+<a class="related-card" href="cpf-calculator.html">
+<strong>CPF Calculator</strong>
+<span>Calculate employee and employer CPF contributions.</span>
+</a>
+<a class="related-card" href="notice-period-calculator.html">
+<strong>Notice Period Calculator</strong>
+<span>Estimate resignation last day and notice period end date.</span>
+</a>
+<a class="related-card" href="annual-leave-calculator.html">
+<strong>Annual Leave Calculator</strong>
+<span>Estimate annual leave entitlement and leave balance.</span>
+</a>
+</div>
+<a class="view-all" href="calculators.html">View All Calculators →</a>
+</section>
+<section class="section">
+<h2>Related Singapore salary guides</h2>
+<p class="muted">Learn more about salary, CPF, employment contracts and payroll calculations.</p>
+<div class="related-grid">
+<a class="related-card" href="employment-contract-guide.html">
+<strong>Employment Contract Guide</strong>
+<span>Understand salary clauses, working hours and notice period terms.</span>
+</a>
+<a class="related-card" href="cpf-contribution-rates-guide.html">
+<strong>CPF Contribution Rates Guide</strong>
+<span>Learn how CPF rates work by age, wage type and citizenship status.</span>
+</a>
+<a class="related-card" href="payslip-guide.html">
+<strong>Payslip Guide</strong>
+<span>Understand salary items, deductions and monthly payslip details.</span>
+</a>
+<a class="related-card" href="annual-leave-guide.html">
+<strong>Annual Leave Guide</strong>
+<span>Learn how annual leave entitlement works in Singapore.</span>
+</a>
+</div>
+<a class="view-all" href="guides.html">View All Guides →</a>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<details open="">
+<summary>What is prorated salary?</summary>
+<p>
           Prorated salary is a partial salary amount paid when an employee does not work the full
           salary month. It is commonly used for new joiners, resigning employees, unpaid leave or
           incomplete month payroll.
         </p>
-      </details>
-
-      <details>
-        <summary>How do I calculate prorated salary in Singapore?</summary>
-        <p>
-          A common method is monthly salary divided by the number of days in the payroll basis,
-          then multiplied by the number of payable days. The basis may be calendar days, working
-          days or a fixed 26-day basis.
+</details>
+<details>
+<summary>How do I calculate prorated salary in Singapore?</summary>
+<p>
+          For a monthly-rated full-time employee, use the MOM incomplete-month formula: monthly gross rate divided by total working days in the month, multiplied by days actually worked.
         </p>
-      </details>
-
-      <details>
-        <summary>Should prorated salary be based on calendar days or working days?</summary>
-        <p>
-          It depends on the employment contract and company payroll policy. Calendar days are simple
-          and common for partial months, while working days may be used when payroll is based on actual
-          working days.
+</details>
+<details>
+<summary>Should prorated salary be based on calendar days or working days?</summary>
+<p>
+          For the statutory incomplete-month calculation for a monthly-rated full-time employee, MOM uses working days in the relevant month rather than an arbitrary calendar-day or fixed 26-day divisor.
         </p>
-      </details>
-
-      <details>
-        <summary>Is CPF deducted from prorated salary?</summary>
-        <p>
+</details>
+<details>
+<summary>Is CPF deducted from prorated salary?</summary>
+<p>
           This calculator does not deduct CPF. In practice, CPF is generally calculated separately
           based on the actual wages paid and the employee’s CPF eligibility.
         </p>
-      </details>
-
-      <details>
-        <summary>How is salary calculated if I resign mid-month?</summary>
-        <p>
+</details>
+<details>
+<summary>How is salary calculated if I resign mid-month?</summary>
+<p>
           Your final month salary is usually calculated up to your last day of employment, then adjusted
           for any unpaid leave, deductions, CPF, allowances or other payroll items.
         </p>
-      </details>
-
-      <details>
-        <summary>How is salary calculated if I join mid-month?</summary>
-        <p>
+</details>
+<details>
+<summary>How is salary calculated if I join mid-month?</summary>
+<p>
           Your first month salary is usually prorated from your start date to the end of the salary
           month, based on the company’s payroll formula.
         </p>
-      </details>
-
-      <details>
-        <summary>Does this calculator include public holidays?</summary>
-        <p>
+</details>
+<details>
+<summary>Does this calculator include public holidays?</summary>
+<p>
           For calendar day basis, public holidays are naturally included because all calendar days are
           counted. For working day basis, this calculator counts Monday to Friday only and does not
           separately remove Singapore public holidays.
         </p>
-      </details>
-
-      <details>
-        <summary>Can unpaid leave be deducted using the 26-day formula?</summary>
-        <p>
-          Some employers use monthly salary divided by 26 to estimate daily salary deduction. However,
-          the actual method should follow the employment contract, HR policy or payroll practice.
+</details>
+<details>
+<summary>Can unpaid leave be deducted using the 26-day formula?</summary>
+<p>
+          A fixed 26-day shortcut should not replace the MOM incomplete-month formula for a monthly-rated full-time employee. 
+          check the current MOM guidance and the employee’s actual work schedule for the statutory calculation.
         </p>
-      </details>
-
-      <details>
-        <summary>Is this prorated salary calculator official?</summary>
-        <p>
+</details>
+<details>
+<summary>Is this prorated salary calculator official?</summary>
+<p>
           No. SG Salary Tools provides general planning calculators only. For exact payroll treatment,
           check your employment contract, HR policy or seek professional advice.
         </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
+</details>
+</section>
+</main>
+<footer>
     © 2026 SG Salary Tools. This calculator provides general information only and is not official MOM, CPF, tax, payroll or legal advice.
-  </footer>
-
-  <script>
-    function money(amount) {
-      return "S$" + amount.toLocaleString("en-SG", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-    }
-
-    function getDaysInMonth(year, monthIndex) {
-      return new Date(year, monthIndex + 1, 0).getDate();
-    }
-
-    function countCalendarDays(startDate, endDate) {
-      const oneDay = 1000 * 60 * 60 * 24;
-      return Math.floor((endDate - startDate) / oneDay) + 1;
-    }
-
-    function countWorkingDays(startDate, endDate) {
-      let count = 0;
-      const current = new Date(startDate);
-
-      while (current <= endDate) {
-        const day = current.getDay();
-        if (day !== 0 && day !== 6) {
-          count++;
-        }
-        current.setDate(current.getDate() + 1);
-      }
-
-      return count;
-    }
-
-    function calculateProratedSalary() {
-      const monthlySalary = Number(document.getElementById("monthlySalary").value || 0);
-      const salaryMonth = document.getElementById("salaryMonth").value;
-      const startDateValue = document.getElementById("startDate").value;
-      const endDateValue = document.getElementById("endDate").value;
-      const basis = document.getElementById("basis").value;
-      const unpaidDays = Number(document.getElementById("unpaidDays").value || 0);
-
-      if (!monthlySalary || monthlySalary <= 0) {
-        alert("Please enter a valid monthly salary.");
-        return;
-      }
-
-      if (!salaryMonth || !startDateValue || !endDateValue) {
-        alert("Please select salary month, start date and end date.");
-        return;
-      }
-
-      const [year, month] = salaryMonth.split("-").map(Number);
-      const monthIndex = month - 1;
-
-      const monthStart = new Date(year, monthIndex, 1);
-      const monthEnd = new Date(year, monthIndex, getDaysInMonth(year, monthIndex));
-
-      let startDate = new Date(startDateValue + "T00:00:00");
-      let endDate = new Date(endDateValue + "T00:00:00");
-
-      if (startDate > endDate) {
-        alert("Start date cannot be after end date.");
-        return;
-      }
-
-      if (startDate < monthStart) startDate = monthStart;
-      if (endDate > monthEnd) endDate = monthEnd;
-
-      let denominator = 0;
-      let payableDaysBeforeUnpaid = 0;
-      let basisText = "";
-
-      if (basis === "calendar") {
-        denominator = getDaysInMonth(year, monthIndex);
-        payableDaysBeforeUnpaid = countCalendarDays(startDate, endDate);
-        basisText = "Calendar days";
-      }
-
-      if (basis === "working") {
-        denominator = countWorkingDays(monthStart, monthEnd);
-        payableDaysBeforeUnpaid = countWorkingDays(startDate, endDate);
-        basisText = "Working days";
-      }
-
-      if (basis === "fixed26") {
-        denominator = 26;
-        payableDaysBeforeUnpaid = countCalendarDays(startDate, endDate);
-        basisText = "Fixed 26-day basis";
-      }
-
-      const payableDays = Math.max(payableDaysBeforeUnpaid - unpaidDays, 0);
-      const dailyRate = monthlySalary / denominator;
-      const proratedSalary = dailyRate * payableDays;
-
-      document.getElementById("proratedSalaryResult").textContent = money(proratedSalary);
-      document.getElementById("monthlySalaryResult").textContent = money(monthlySalary);
-      document.getElementById("dailyRateResult").textContent = money(dailyRate);
-      document.getElementById("payableDaysResult").textContent = payableDays + " days";
-      document.getElementById("unpaidDaysResult").textContent = unpaidDays + " days";
-      document.getElementById("basisResult").textContent = basisText;
-    }
-
-    window.addEventListener("DOMContentLoaded", function () {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-      const daysInMonth = getDaysInMonth(year, today.getMonth());
-
-      document.getElementById("salaryMonth").value = `${year}-${month}`;
-      document.getElementById("startDate").value = `${year}-${month}-01`;
-      document.getElementById("endDate").value = `${year}-${month}-${String(daysInMonth).padStart(2, "0")}`;
-
-      calculateProratedSalary();
-    });
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p></footer>
+<script src="calculator-engine-2026.js"></script>
+<script>
+function money(v){return "S$"+v.toLocaleString("en-SG",{minimumFractionDigits:2,maximumFractionDigits:2});} function getDaysInMonth(y,m){return new Date(y,m+1,0).getDate();}
+    function calculateProratedSalary(){const salary=+document.getElementById("monthlySalary").value||0,mv=document.getElementById("salaryMonth").value,sv=document.getElementById("startDate").value,ev=document.getElementById("endDate").value,unpaid=+document.getElementById("unpaidDays").value||0,schedule=document.getElementById("workSchedule").value;if(!mv||!sv||!ev)return;const [y,m]=mv.split("-").map(Number),start=new Date(sv+"T00:00:00"),end=new Date(ev+"T00:00:00"),ms=new Date(y,m-1,1),me=new Date(y,m,0);if(start>end||start<ms||end>me)return;const total=SG2026.countScheduledDays(ms,me,schedule),worked=Math.max(0,SG2026.countScheduledDays(start,end,schedule)-unpaid),daily=total?salary/total:0,result=SG2026.incompleteMonthPay(salary,total,worked);document.getElementById("proratedSalaryResult").textContent=money(result);document.getElementById("monthlySalaryResult").textContent=money(salary);document.getElementById("dailyRateResult").textContent=money(daily);document.getElementById("payableDaysResult").textContent=worked.toFixed(1);document.getElementById("unpaidDaysResult").textContent=unpaid.toFixed(1);document.getElementById("basisResult").textContent="MOM incomplete-month formula · "+schedule;}
+    window.addEventListener("DOMContentLoaded",()=>{const t=new Date(),y=t.getFullYear(),m=String(t.getMonth()+1).padStart(2,"0"),d=getDaysInMonth(y,t.getMonth());document.getElementById("salaryMonth").value=`${y}-${m}`;document.getElementById("startDate").value=`${y}-${m}-01`;document.getElementById("endDate").value=`${y}-${m}-${String(d).padStart(2,"0")}`;["monthlySalary","salaryMonth","startDate","endDate","unpaidDays","workSchedule"].forEach(id=>document.getElementById(id).addEventListener("input",calculateProratedSalary));calculateProratedSalary();});
   </script>
 </body>
 </html>
